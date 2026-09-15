@@ -1,7 +1,0 @@
-{"event": "camera_checker_ready", "domain_id": 94, "localhost_only": true}
-{
-  "valid": true,
-  "synchronized_frames": 3,
-  "errors": [],
-  "report": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/reports/cameras/ros_topic_validation.json"
-}

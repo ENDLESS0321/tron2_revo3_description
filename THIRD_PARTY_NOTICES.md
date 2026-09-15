@@ -1,22 +1,24 @@
-# Upstream assets
+# Third-party model assets
 
-This local integration does not grant additional rights to third-party assets.
+This integration does not grant additional rights to third-party geometry.
 
-- LimX: https://github.com/limxdynamics/tron2-robot-description at
-  `9939c22e69d27653ec0ba8a505859a2903dd1a71`. Original Apache-2.0 LICENSE,
-  NOTICE, ASSETS.md and THIRD_PARTY_NOTICES.md remain in
-  `vendor/tron2-robot-description/`. The upstream mesh provenance includes
-  qualifications which are retained verbatim.
-- BrainCo: https://github.com/BrainCoTech/brainco-description at
-  `f332a6f0dc944e26b82976b637074b03f7ee8a2c`. Its current README says license
-  information will be provided with the public release; no LICENSE file was
-  present in the inspected tree. Preserve this unresolved license status when
-  considering redistribution. Original assets and README are in
-  `vendor/brainco-revo3/`.
-- The printed adapter is user-provided. Original file remains at
-  `../../tron2-revo3转接件_第1版.3mf` relative to this project directory.
-  Its hash and every geometric conversion are recorded in
-  `meshes/adapter/adapter_report.json`.
+- LimX: `limxdynamics/tron2-robot-description`, commit
+  `9939c22e69d27653ec0ba8a505859a2903dd1a71`. The original Apache-2.0 license,
+  notice, asset qualifications and third-party notices are retained in
+  [licenses/limx](licenses/limx/).
+- BrainCo: `BrainCoTech/brainco-description`, commit
+  `f332a6f0dc944e26b82976b637074b03f7ee8a2c`. No LICENSE file was present in
+  the inspected tree. Its licensing statement is preserved in
+  [the upstream README](licenses/brainco/UPSTREAM_README.md). License status
+  remains unresolved; obtain appropriate permission before redistribution.
+- RealSense: `realsenseai/realsense-ros`, commit
+  `9a11121700cb4780e273e34141f6402fe184321d`. The original license, notice
+  and copyright text are retained in [licenses/realsense](licenses/realsense/).
+- Hand adapters and camera brackets derive from user-provided CAD. Final
+  custom geometry includes revised adapter interfaces and aligned V3 camera
+  mounts. Ownership/permission for those inputs is not changed here.
 
-Generated copies under `meshes/` retain the provenance of their sources. This
-project has not been published or sent to any third party.
+Meshes were converted/rebased for URDF and MuJoCo use; upstream authors do not
+certify this assembled model. Asset digests and source versions are recorded in
+`assets/manifest.json`. Original development assets and local vendor metadata
+are preserved on `dev`. This cleanup has not published or pushed the repository.
