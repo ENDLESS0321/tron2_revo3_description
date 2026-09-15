@@ -21,4 +21,6 @@ This integration does not grant additional rights to third-party geometry.
 Meshes were converted/rebased for URDF and MuJoCo use; upstream authors do not
 certify this assembled model. Asset digests and source versions are recorded in
 `assets/manifest.json`. Original development assets and local vendor metadata
-are preserved on `dev`. This cleanup has not published or pushed the repository.
+are preserved on `dev`. Both branches and their shared history are published at
+[clearlab-sustech/tron2_revo3_description](https://github.com/clearlab-sustech/tron2_revo3_description).
+Publication does not resolve the license qualifications stated above.
