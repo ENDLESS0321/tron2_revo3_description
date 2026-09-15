@@ -108,7 +108,7 @@ model = mujoco.MjModel.from_xml_path("assets/scene.xml")
   vendor 仓库的本地 Git 元数据。
 - `main`：最终模型及四类查看功能。切换前请关闭窗口并保存本地修改。单文件恢复：
   `git restore --source dev -- <路径>`；完整开发版：`git switch dev`。
-- 公开仓库：[clearlab-sustech/tron2_revo3_description](https://github.com/clearlab-sustech/tron2_revo3_description)。
+- 公开仓库：[ENDLESS0321/tron2_revo3_description](https://github.com/ENDLESS0321/tron2_revo3_description)。
   `main` 和 `dev` 均发布，完整开发快照与原始 CAD 也在公开历史中；从 `main` 工作树
   删除文件不会使历史中的文件变为私有。相邻手套程序、交付包、skill 交接包不包含在本仓库。
 - 相机型号/内参是仿真选型与名义值，非实机标定。未完成实机装配、线缆/工具空间、
