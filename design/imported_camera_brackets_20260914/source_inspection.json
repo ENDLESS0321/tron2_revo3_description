@@ -1,0 +1,4005 @@
+{
+  "schema": "camera_bracket_source_inspection_v1",
+  "sources": {
+    "left": {
+      "path": "/home/endless/Documents/Project/Dexterous_Hand/Tron2灵巧手相机支架-l.stp",
+      "filename": "Tron2灵巧手相机支架-l.stp",
+      "bytes": 319607,
+      "sha256": "72aef92562da42c9f9b5b8bbad0f3bf6c9b89bb43446026d74a728454ddb267e",
+      "first_16_bytes_hex": "49534f2d31303330332d32313b0d0a48",
+      "step_p21_magic_offset": 0,
+      "step_data_token_offset": 245,
+      "source_modified": false,
+      "brep": {
+        "solid_count": 1,
+        "solids": [
+          {
+            "index": 0,
+            "valid": true,
+            "volume_mm3": 8684.976664742002,
+            "surface_area_mm2": 6099.219668439513,
+            "center_mm": [
+              -6.534239632188548,
+              0.6550519219429471,
+              41.470117463749254
+            ],
+            "bounds_mm": [
+              [
+                -33.94729633430533,
+                -5.900029634877,
+                7.971248335479753
+              ],
+              [
+                32.364993943090006,
+                5.900008666586,
+                80.13037460476734
+              ]
+            ],
+            "faces": [
+              {
+                "index": 0,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 283.33956870460156,
+                "center_mm": [
+                  0.0007977423935468621,
+                  -5.9,
+                  24.30977155862037
+                ],
+                "plane_normal": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ],
+                "plane_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ]
+              },
+              {
+                "index": 1,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 34.8814169574789,
+                "center_mm": [
+                  1.0310776974792333e-06,
+                  -5.749779159146705,
+                  26.718373482527817
+                ]
+              },
+              {
+                "index": 2,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.7756050386676763,
+                "center_mm": [
+                  -32.00585437533426,
+                  -5.747806562312408,
+                  10.51143096481289
+                ]
+              },
+              {
+                "index": 3,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.7627639787946915,
+                "center_mm": [
+                  -30.50604355659328,
+                  -5.74897024668447,
+                  8.328295083240919
+                ],
+                "plane_normal": [
+                  -0.1830127018921963,
+                  -0.7071067811865857,
+                  -0.6830127018921862
+                ],
+                "plane_origin_mm": [
+                  -30.42576511892,
+                  -5.75,
+                  8.307850619776
+                ]
+              },
+              {
+                "index": 4,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 18.684378737994695,
+                "center_mm": [
+                  -30.561230901911134,
+                  -0.023591754815283528,
+                  8.188857139869045
+                ],
+                "plane_normal": [
+                  -0.2588190451024935,
+                  -0.0,
+                  -0.9659258262890758
+                ],
+                "plane_origin_mm": [
+                  -33.32444100697,
+                  -5.9,
+                  8.929257056037
+                ]
+              },
+              {
+                "index": 5,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 114.52017789948503,
+                "center_mm": [
+                  -4.9333422777606316e-05,
+                  5.40270404188161,
+                  22.909887756785437
+                ]
+              },
+              {
+                "index": 6,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 815.048744044293,
+                "center_mm": [
+                  -9.623949601851538e-06,
+                  -0.32790540112768796,
+                  22.76955739474113
+                ],
+                "cylinder_radius_mm": 30.5,
+                "cylinder_axis_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 7,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.25844086430821,
+                "center_mm": [
+                  27.919620046737545,
+                  -2.4482027439495235,
+                  16.119400143805482
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  -24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 8,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.258440864322903,
+                "center_mm": [
+                  27.91962004167179,
+                  -0.35179725605045387,
+                  16.119400152585296
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  -24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 9,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 24.63008640414398,
+                "center_mm": [
+                  29.444863728670004,
+                  -1.4,
+                  17.0
+                ],
+                "plane_normal": [
+                  0.866025403784429,
+                  -0.0,
+                  0.5000000000000168
+                ],
+                "plane_origin_mm": [
+                  29.44486372867,
+                  -1.4,
+                  17.0
+                ]
+              },
+              {
+                "index": 10,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338139153,
+                "center_mm": [
+                  29.63118085470389,
+                  -3.593997198116866,
+                  17.107570242921724
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  -24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 11,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.3222883381288035,
+                "center_mm": [
+                  29.6311808547466,
+                  0.7939971981155443,
+                  17.1075702428452
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  -24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 12,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 616.2289317487055,
+                "center_mm": [
+                  2.7356001028941095,
+                  -0.4309304008666016,
+                  25.54710452204207
+                ],
+                "cylinder_radius_mm": 34.5,
+                "cylinder_axis_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 13,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338128883,
+                "center_mm": [
+                  -29.631180854745804,
+                  -3.5939971981155354,
+                  17.10757024284658
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  -22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 14,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338139289,
+                "center_mm": [
+                  -29.631180854703143,
+                  0.7939971981168676,
+                  17.107570242923035
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  -22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 15,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 24.63008640414392,
+                "center_mm": [
+                  -29.44486372867,
+                  -1.3999999999999995,
+                  17.0
+                ],
+                "plane_normal": [
+                  -0.866025403784429,
+                  -0.0,
+                  0.5000000000000168
+                ],
+                "plane_origin_mm": [
+                  -29.44486372867,
+                  -1.4,
+                  17.0
+                ]
+              },
+              {
+                "index": 16,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.258440864308266,
+                "center_mm": [
+                  -27.91962004673667,
+                  -0.35179725605047607,
+                  16.119400143806974
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  -22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 17,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.25844086432275,
+                "center_mm": [
+                  -27.919620041670942,
+                  -2.4482027439495457,
+                  16.1194001525868
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  -22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 18,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 47.97145100300678,
+                "center_mm": [
+                  -32.153802881127454,
+                  -1.0744094616837758e-08,
+                  10.515284823051495
+                ],
+                "cylinder_radius_mm": 4.5,
+                "cylinder_axis_origin_mm": [
+                  -27.86499384309,
+                  -5.9,
+                  11.1258194922
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 19,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.7756050648401578,
+                "center_mm": [
+                  -32.00585437552312,
+                  5.747806561263,
+                  10.511431031479404
+                ]
+              },
+              {
+                "index": 20,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.28494807099076,
+                "center_mm": [
+                  -31.45096732592398,
+                  -3.3799338722917936e-11,
+                  8.462951237105317
+                ],
+                "plane_normal": [
+                  -0.5709328333910093,
+                  -0.0,
+                  -0.8209967720741136
+                ],
+                "plane_origin_mm": [
+                  -31.45096795843,
+                  2.13162820728e-14,
+                  8.462951676959
+                ]
+              },
+              {
+                "index": 21,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4971750150628096,
+                "center_mm": [
+                  -30.807717944136293,
+                  5.742076635670526,
+                  8.401991700480467
+                ],
+                "plane_normal": [
+                  -0.18301270189220925,
+                  0.7071067811865357,
+                  -0.6830127018922343
+                ],
+                "plane_origin_mm": [
+                  -30.42576511892,
+                  5.75,
+                  8.307850619776
+                ]
+              },
+              {
+                "index": 22,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 295.7693936877357,
+                "center_mm": [
+                  -1.6850606047274004,
+                  5.9,
+                  26.79235222943848
+                ],
+                "plane_normal": [
+                  -0.0,
+                  1.0,
+                  -0.0
+                ],
+                "plane_origin_mm": [
+                  0.0,
+                  5.9,
+                  0.0
+                ]
+              },
+              {
+                "index": 23,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.497180916148535,
+                "center_mm": [
+                  30.807709640522067,
+                  5.742078514077246,
+                  8.401991420203476
+                ],
+                "plane_normal": [
+                  0.18301270189220925,
+                  0.7071067811865357,
+                  -0.6830127018922344
+                ],
+                "plane_origin_mm": [
+                  30.42576511892,
+                  5.75,
+                  8.307850619776
+                ]
+              },
+              {
+                "index": 24,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 18.68459758761445,
+                "center_mm": [
+                  30.561221544962457,
+                  -0.02356968512029689,
+                  8.188854632680485
+                ],
+                "plane_normal": [
+                  0.2588190451024935,
+                  -0.0,
+                  -0.9659258262890758
+                ],
+                "plane_origin_mm": [
+                  29.46073770182,
+                  -5.9,
+                  7.893980875627
+                ]
+              },
+              {
+                "index": 25,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 4.527428292023006,
+                "center_mm": [
+                  29.56662118301582,
+                  -0.3123579064172799,
+                  8.07542337204509
+                ],
+                "plane_normal": [
+                  -0.4957763640761151,
+                  -0.0,
+                  -0.8684502270271264
+                ],
+                "plane_origin_mm": [
+                  29.56577744812,
+                  3.552713678801e-14,
+                  8.075905039049
+                ]
+              },
+              {
+                "index": 26,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 33.85065219206654,
+                "center_mm": [
+                  -0.00018699302684985948,
+                  -5.750183965698648,
+                  22.69896516879996
+                ]
+              },
+              {
+                "index": 27,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.7628185987009671,
+                "center_mm": [
+                  30.505998708868987,
+                  -5.748975885106591,
+                  8.32828890365353
+                ],
+                "plane_normal": [
+                  0.18301270189220925,
+                  -0.7071067811865357,
+                  -0.6830127018922344
+                ],
+                "plane_origin_mm": [
+                  30.42576511892,
+                  -5.75,
+                  8.307850619776
+                ]
+              },
+              {
+                "index": 28,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.7756050189326809,
+                "center_mm": [
+                  32.00585437364279,
+                  -5.747806564073792,
+                  10.511430977750674
+                ]
+              },
+              {
+                "index": 29,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 47.971448961581956,
+                "center_mm": [
+                  32.15380288275418,
+                  8.92214926604457e-08,
+                  10.515284734201748
+                ],
+                "cylinder_radius_mm": 4.5,
+                "cylinder_axis_origin_mm": [
+                  27.86499384309,
+                  -5.9,
+                  11.1258194922
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 30,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.7756050655282283,
+                "center_mm": [
+                  32.005854375538476,
+                  5.7478065612444045,
+                  10.511431032262166
+                ]
+              },
+              {
+                "index": 31,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 14.28304417506685,
+                "center_mm": [
+                  21.422723454902577,
+                  5.749777177237289,
+                  25.09042202654909
+                ]
+              },
+              {
+                "index": 32,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.529792941095559,
+                "center_mm": [
+                  5.944817085843127,
+                  5.752380945594648,
+                  34.5214774633172
+                ]
+              },
+              {
+                "index": 33,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 21.54709844127339,
+                "center_mm": [
+                  6.156962717047246,
+                  2.381142831954707,
+                  34.514594263933205
+                ],
+                "cylinder_radius_mm": 3.0,
+                "cylinder_axis_origin_mm": [
+                  8.061780913401,
+                  21.28248,
+                  36.62318512233
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 34,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 6.549627162701941,
+                "center_mm": [
+                  5.35183701871967,
+                  -1.3192686626954497,
+                  34.372983306392584
+                ]
+              },
+              {
+                "index": 35,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.7524130354297296,
+                "center_mm": [
+                  4.777908027026423,
+                  1.062297914429803,
+                  36.14712630893428
+                ]
+              },
+              {
+                "index": 36,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 16.582581612485818,
+                "center_mm": [
+                  4.603925911963963,
+                  4.044108169511998,
+                  38.461910842048624
+                ],
+                "plane_normal": [
+                  0.9781476007337973,
+                  -0.0,
+                  0.2079116908177994
+                ],
+                "plane_origin_mm": [
+                  12.22684500917,
+                  0.0,
+                  2.598896135222
+                ]
+              },
+              {
+                "index": 37,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.6340745373688386,
+                "center_mm": [
+                  4.148649835490215,
+                  5.675015967500208,
+                  39.881258128036734
+                ]
+              },
+              {
+                "index": 38,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 141.17287985278261,
+                "center_mm": [
+                  -8.130869329462593,
+                  5.731490055028337,
+                  38.2527329688054
+                ],
+                "cylinder_radius_mm": 33.0,
+                "cylinder_axis_origin_mm": [
+                  126.6634057029,
+                  -27.1,
+                  63.95601579567
+                ],
+                "cylinder_axis_direction": [
+                  0.9781476007337973,
+                  0.0,
+                  0.2079116908177994
+                ]
+              },
+              {
+                "index": 39,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 1303.0922569114891,
+                "center_mm": [
+                  -12.518305670027928,
+                  2.189739475918393,
+                  58.835678143093205
+                ],
+                "plane_normal": [
+                  -0.036103486226150325,
+                  0.984807753012209,
+                  0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -12.68181665103,
+                  12.41042478537,
+                  -0.4584228499933
+                ]
+              },
+              {
+                "index": 40,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635272298,
+                "center_mm": [
+                  -3.7509268654317647,
+                  0.649395111408619,
+                  60.79899310243547
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -3.789654687464,
+                  30.37723494568,
+                  65.92626699461
+                ],
+                "cylinder_axis_direction": [
+                  -0.036103486226150325,
+                  0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 41,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635268583,
+                "center_mm": [
+                  -1.6514512487583979,
+                  0.7241393788629183,
+                  60.811884531252275
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -3.789654687464,
+                  30.37723494568,
+                  65.92626699461
+                ],
+                "cylinder_axis_direction": [
+                  -0.036103486226150325,
+                  0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 42,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 1315.3606230858456,
+                "center_mm": [
+                  -12.395905851200741,
+                  -0.7627935561327318,
+                  58.31815278262448
+                ],
+                "plane_normal": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  -0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -20.30385668588,
+                  2.9,
+                  35.40045619365
+                ]
+              },
+              {
+                "index": 43,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635272685,
+                "center_mm": [
+                  -23.313878880107765,
+                  0.6493951114085863,
+                  56.64075928608545
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -23.35260670214,
+                  30.37723494568,
+                  61.76803317826
+                ],
+                "cylinder_axis_direction": [
+                  -0.036103486226150325,
+                  0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 44,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635268946,
+                "center_mm": [
+                  -21.214403263434335,
+                  0.7241393788612145,
+                  56.65365071490197
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -23.35260670214,
+                  30.37723494568,
+                  61.76803317826
+                ],
+                "cylinder_axis_direction": [
+                  -0.036103486226150325,
+                  0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 45,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 40.80223304206684,
+                "center_mm": [
+                  -8.418503489969375,
+                  2.5869955847595008,
+                  39.605676872670884
+                ],
+                "cylinder_radius_mm": 30.0,
+                "cylinder_axis_origin_mm": [
+                  -131.4950094305,
+                  -27.1,
+                  9.082750708727
+                ],
+                "cylinder_axis_direction": [
+                  -0.9781476007337973,
+                  0.0,
+                  -0.2079116908177994
+                ]
+              },
+              {
+                "index": 46,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.8204497949674785,
+                "center_mm": [
+                  3.82062417267908,
+                  2.732918320551393,
+                  42.25453362219655
+                ]
+              },
+              {
+                "index": 47,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829212424220359,
+                "center_mm": [
+                  4.755720380561861,
+                  2.5588878579983954,
+                  43.56976713940674
+                ]
+              },
+              {
+                "index": 48,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4242649147071256,
+                "center_mm": [
+                  5.995505619014058,
+                  2.54372084155286,
+                  43.939371975223374
+                ],
+                "plane_normal": [
+                  0.17031128656489197,
+                  -0.573576436351073,
+                  -0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  5.995507029816,
+                  2.543720838757,
+                  43.9393722771
+                ]
+              },
+              {
+                "index": 49,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658157168,
+                "center_mm": [
+                  8.167682063280779,
+                  2.3840326944177606,
+                  45.34163484983529
+                ]
+              },
+              {
+                "index": 50,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944475191,
+                "center_mm": [
+                  5.515082921187622,
+                  -0.6427233860560856,
+                  62.312200061760805
+                ],
+                "plane_normal": [
+                  0.7171838214152169,
+                  -0.6963642403200162,
+                  0.026911170613580615
+                ],
+                "plane_origin_mm": [
+                  5.515083115438,
+                  -0.6427232214308,
+                  62.31219914489
+                ]
+              },
+              {
+                "index": 51,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658344396,
+                "center_mm": [
+                  1.035614743964808,
+                  -3.664567921677156,
+                  78.89534239681058
+                ]
+              },
+              {
+                "index": 52,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944483702,
+                "center_mm": [
+                  -16.19114466578652,
+                  -3.8291672811155872,
+                  76.17334212480047
+                ],
+                "plane_normal": [
+                  -0.11925324669500027,
+                  -0.8191520442890018,
+                  0.5610424150542014
+                ],
+                "plane_origin_mm": [
+                  -16.19114373486,
+                  -3.829167281619,
+                  76.17334232194
+                ]
+              },
+              {
+                "index": 53,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658283396,
+                "center_mm": [
+                  -33.035712867834974,
+                  -3.664566798630771,
+                  71.65325163671821
+                ]
+              },
+              {
+                "index": 54,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944521016,
+                "center_mm": [
+                  -30.38293363728573,
+                  -0.6427230555794818,
+                  54.68183917522431
+                ],
+                "plane_normal": [
+                  -0.6661257815452291,
+                  -0.6963642403200305,
+                  -0.2671203623168117
+                ],
+                "plane_origin_mm": [
+                  -30.38293383149,
+                  -0.6427232214308,
+                  54.68184009188
+                ]
+              },
+              {
+                "index": 55,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658303655,
+                "center_mm": [
+                  -25.903645548524405,
+                  2.384033817462564,
+                  38.099544089738885
+                ]
+              },
+              {
+                "index": 56,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.42426410729173947,
+                "center_mm": [
+                  -23.348918646880165,
+                  2.543720861626959,
+                  37.702022034711646
+                ],
+                "plane_normal": [
+                  0.17031128656489197,
+                  -0.573576436351073,
+                  -0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  -23.3489209922,
+                  2.543720838757,
+                  37.70202155257
+                ]
+              },
+              {
+                "index": 57,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829220201192745,
+                "center_mm": [
+                  -22.065987049858094,
+                  2.5588883820347763,
+                  37.868635784079416
+                ]
+              },
+              {
+                "index": 58,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.8204509371926354,
+                "center_mm": [
+                  -20.676799864061085,
+                  2.73291538401764,
+                  37.047462552878805
+                ]
+              },
+              {
+                "index": 59,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 0.5617789048883569,
+                "center_mm": [
+                  -20.17969446294722,
+                  2.9237838269262926,
+                  35.53658269061352
+                ]
+              },
+              {
+                "index": 60,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.1018244313468852,
+                "center_mm": [
+                  -19.774192205032545,
+                  2.7964011698240236,
+                  33.58873401775095
+                ]
+              },
+              {
+                "index": 61,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 87.44834630967483,
+                "center_mm": [
+                  -7.9160653453395025,
+                  2.3874526260633933,
+                  37.24227756227298
+                ]
+              },
+              {
+                "index": 62,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.1017235902881242,
+                "center_mm": [
+                  4.402842925599934,
+                  2.7964360341653562,
+                  38.72781093139997
+                ]
+              },
+              {
+                "index": 63,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 0.561766205641229,
+                "center_mm": [
+                  3.981034975773357,
+                  2.923782572726801,
+                  40.67211912025735
+                ]
+              },
+              {
+                "index": 64,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 48.30619055052935,
+                "center_mm": [
+                  -7.433072740250417,
+                  0.9331541608483499,
+                  35.04048841650874
+                ]
+              },
+              {
+                "index": 65,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 75.02859523532798,
+                "center_mm": [
+                  -7.127695868158882,
+                  -1.1188395621124558,
+                  33.55496474956537
+                ]
+              },
+              {
+                "index": 66,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Sphere",
+                "area_mm2": 0.06389999391721375,
+                "center_mm": [
+                  -18.052688302906766,
+                  -0.5982110094301902,
+                  30.089916754195187
+                ]
+              },
+              {
+                "index": 67,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.12345139750039057,
+                "center_mm": [
+                  -18.763683922364372,
+                  1.0806133237778015,
+                  31.285423049390257
+                ]
+              },
+              {
+                "index": 68,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.68897903058968,
+                "center_mm": [
+                  -19.077725908911123,
+                  1.0609439610256826,
+                  31.070699077161834
+                ]
+              },
+              {
+                "index": 69,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 6.5199959459343315,
+                "center_mm": [
+                  -18.87358309538282,
+                  -1.322706815822149,
+                  29.220517293740446
+                ]
+              },
+              {
+                "index": 70,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 21.54743750463789,
+                "center_mm": [
+                  -19.663016369489043,
+                  2.3810889003419664,
+                  29.0263855886166
+                ],
+                "cylinder_radius_mm": 3.0,
+                "cylinder_axis_origin_mm": [
+                  -22.26079470935,
+                  -21.28248,
+                  30.17792270698
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 71,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.5297929023416168,
+                "center_mm": [
+                  -19.472010462588482,
+                  5.752380954234209,
+                  29.118964031988373
+                ]
+              },
+              {
+                "index": 72,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.8811448793529666,
+                "center_mm": [
+                  -19.395533419813617,
+                  5.74999999677004,
+                  31.848591343118834
+                ],
+                "plane_normal": [
+                  -0.6916548014802354,
+                  0.7071067811865362,
+                  -0.14701576646520756
+                ],
+                "plane_origin_mm": [
+                  -19.39553341699,
+                  5.75,
+                  31.84859134537
+                ]
+              },
+              {
+                "index": 73,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.634074537356891,
+                "center_mm": [
+                  -20.01114926519811,
+                  5.6750159674978775,
+                  34.74593430055047
+                ]
+              },
+              {
+                "index": 74,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.823387267665909,
+                "center_mm": [
+                  -20.77188313834194,
+                  5.401499252433182,
+                  37.49808425018219
+                ]
+              },
+              {
+                "index": 75,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829212332180792,
+                "center_mm": [
+                  -22.163689584705228,
+                  5.22393820057002,
+                  38.32828855807419
+                ]
+              },
+              {
+                "index": 76,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4242641188728409,
+                "center_mm": [
+                  -23.44639804508136,
+                  5.202701756451666,
+                  38.16062661220752
+                ],
+                "plane_normal": [
+                  0.11925324669500027,
+                  0.8191520442890018,
+                  -0.5610424150542014
+                ],
+                "plane_origin_mm": [
+                  -23.44640040501,
+                  5.20270177189,
+                  38.16062613313
+                ]
+              },
+              {
+                "index": 77,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255445650432,
+                "center_mm": [
+                  -26.000950615050392,
+                  5.038101493875167,
+                  38.55730557429272
+                ]
+              },
+              {
+                "index": 78,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944320643,
+                "center_mm": [
+                  -30.480413050053983,
+                  2.0162578763231136,
+                  55.14044375557758
+                ],
+                "plane_normal": [
+                  -0.717183821415217,
+                  0.6963642403200165,
+                  -0.026911170613570623
+                ],
+                "plane_origin_mm": [
+                  -30.4804132443,
+                  2.016257711702,
+                  55.14044467244
+                ]
+              },
+              {
+                "index": 79,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255445636495,
+                "center_mm": [
+                  -33.13300794585593,
+                  -1.0104990209293931,
+                  72.1110146571088
+                ]
+              },
+              {
+                "index": 80,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944530916,
+                "center_mm": [
+                  -16.288624078551187,
+                  -1.1701863492064566,
+                  76.63194670515084
+                ],
+                "plane_normal": [
+                  -0.17031128656489197,
+                  0.573576436351073,
+                  0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  -16.28862314767,
+                  -1.170186348486,
+                  76.6319469025
+                ]
+              },
+              {
+                "index": 81,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255445646676,
+                "center_mm": [
+                  0.938321161242701,
+                  -1.0104983919409567,
+                  79.35309557678718
+                ]
+              },
+              {
+                "index": 82,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.15218494442696,
+                "center_mm": [
+                  5.417603508421448,
+                  2.0162575458514453,
+                  62.77080464210689
+                ],
+                "plane_normal": [
+                  0.6661257815452292,
+                  0.6963642403200304,
+                  0.2671203623168117
+                ],
+                "plane_origin_mm": [
+                  5.417603702627,
+                  2.016257711702,
+                  62.77080372545
+                ]
+              },
+              {
+                "index": 83,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255445644824,
+                "center_mm": [
+                  8.070378492053027,
+                  5.038102122860089,
+                  45.79938649397539
+                ]
+              },
+              {
+                "index": 84,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4242649263133432,
+                "center_mm": [
+                  5.898026192835803,
+                  5.202701770507353,
+                  44.39797655292475
+                ],
+                "plane_normal": [
+                  0.11925324669500026,
+                  0.8191520442890019,
+                  -0.5610424150542013
+                ],
+                "plane_origin_mm": [
+                  5.898027617005,
+                  5.20270177189,
+                  44.39797685766
+                ]
+              },
+              {
+                "index": 85,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829219782828435,
+                "center_mm": [
+                  4.658018473320961,
+                  5.223938214555751,
+                  44.02941698309067
+                ]
+              },
+              {
+                "index": 86,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.823387482831895,
+                "center_mm": [
+                  3.724228506669098,
+                  5.401496413678117,
+                  42.704909169925436
+                ]
+              },
+              {
+                "index": 87,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 7.943073487648161,
+                "center_mm": [
+                  4.312944022052742,
+                  4.004219076662858,
+                  43.003933948217345
+                ]
+              },
+              {
+                "index": 88,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.4000049173687406,
+                "center_mm": [
+                  5.977478861286813,
+                  3.899258534570632,
+                  44.02418116513465
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  3.477956048996,
+                  5.376470161492,
+                  43.75918256175
+                ]
+              },
+              {
+                "index": 89,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503106836,
+                "center_mm": [
+                  8.230171206502884,
+                  3.727382808027183,
+                  45.49953799400407
+                ]
+              },
+              {
+                "index": 90,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421919525,
+                "center_mm": [
+                  5.613065389782883,
+                  0.6867671099858232,
+                  62.57268893851611
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  9.346841653398,
+                  5.376470161492,
+                  45.00665270666
+                ]
+              },
+              {
+                "index": 91,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.91121150311259,
+                "center_mm": [
+                  1.059633624686898,
+                  -2.353848481135375,
+                  79.23426047724901
+                ]
+              },
+              {
+                "index": 92,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421922022,
+                "center_mm": [
+                  -16.270597159316836,
+                  -2.5257240417020843,
+                  76.54713755151953
+                ],
+                "plane_normal": [
+                  -0.20475304505920952,
+                  -0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  1.770978986208,
+                  -1.048512412184,
+                  80.648284316
+                ]
+              },
+              {
+                "index": 93,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503104878,
+                "center_mm": [
+                  -33.195501335366295,
+                  -2.353848317755575,
+                  71.95310582332797
+                ]
+              },
+              {
+                "index": 94,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421922913,
+                "center_mm": [
+                  -30.578395518647294,
+                  0.686767380285585,
+                  54.87995487881799
+                ],
+                "plane_normal": [
+                  -0.9781476007337971,
+                  -0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -34.42048224094,
+                  -1.048512412184,
+                  72.95555175574
+                ]
+              },
+              {
+                "index": 95,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503115442,
+                "center_mm": [
+                  -26.024963753554335,
+                  3.7273829714061333,
+                  38.21838334008384
+                ]
+              },
+              {
+                "index": 96,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.400001181539626,
+                "center_mm": [
+                  -23.366945561862273,
+                  3.8992585345615414,
+                  37.786831205562734
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -26.84461957375,
+                  5.376470161492,
+                  37.3139201464
+                ]
+              },
+              {
+                "index": 97,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 7.943073869179371,
+                "center_mm": [
+                  -21.43134597431523,
+                  4.00421914793171,
+                  37.53181607434916
+                ]
+              },
+              {
+                "index": 98,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 16.58259613113684,
+                "center_mm": [
+                  -19.84976256882045,
+                  4.044104502783831,
+                  33.2641113379743
+                ],
+                "plane_normal": [
+                  -0.9781476007337973,
+                  0.0,
+                  -0.2079116908177994
+                ],
+                "plane_origin_mm": [
+                  -12.22684500917,
+                  0.0,
+                  -2.598896135222
+                ]
+              },
+              {
+                "index": 99,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 8.178523070907735,
+                "center_mm": [
+                  -26.89256005251727,
+                  5.749773831404544,
+                  20.641809987468392
+                ]
+              },
+              {
+                "index": 100,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.7740000000032052,
+                "center_mm": [
+                  -9.695941792290093,
+                  2.1147384870037613,
+                  59.57607321853672
+                ],
+                "plane_normal": [
+                  -0.9781476007337971,
+                  -0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -10.49014125098,
+                  1.491960427083,
+                  63.31248790482
+                ]
+              },
+              {
+                "index": 101,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.09674999999900023,
+                "center_mm": [
+                  -10.961514978524313,
+                  1.4427200394318045,
+                  63.20341794697502
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -11.43649905469,
+                  1.491960427083,
+                  63.11133334396
+                ]
+              },
+              {
+                "index": 102,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.6751914896127086,
+                "center_mm": [
+                  -10.743456312904726,
+                  2.0289488981646695,
+                  59.8508235937919
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -10.05402391974,
+                  2.664418144548,
+                  56.60729919846
+                ]
+              },
+              {
+                "index": 103,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4837499999955802,
+                "center_mm": [
+                  -12.418113254703801,
+                  2.6151777568976615,
+                  56.09592011887767
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -14.78581293829,
+                  2.664418144548,
+                  55.60152639413
+                ]
+              },
+              {
+                "index": 104,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.09880851039364723,
+                "center_mm": [
+                  -14.682851047072225,
+                  2.700967345735523,
+                  55.11712878059242
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -14.58349950448,
+                  2.835997322225,
+                  54.64971652189
+                ]
+              },
+              {
+                "index": 105,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.5805000000027415,
+                "center_mm": [
+                  -11.742620919037916,
+                  2.7867569345737953,
+                  55.24468752707322
+                ],
+                "plane_normal": [
+                  -0.20475304505920952,
+                  -0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -8.905352682218,
+                  2.835997322225,
+                  55.85664388709
+                ]
+              },
+              {
+                "index": 106,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 12.26831169023503,
+                "center_mm": [
+                  -11.00413467842462,
+                  2.2938989530618774,
+                  57.96486790373655
+                ],
+                "plane_normal": [
+                  -0.03610348622615033,
+                  0.984807753012209,
+                  0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -0.4513612932321,
+                  12.31194401007,
+                  2.123487930393
+                ]
+              },
+              {
+                "index": 107,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.8811448905874517,
+                "center_mm": [
+                  4.764712327384164,
+                  5.749999996768577,
+                  36.984010094716986
+                ],
+                "plane_normal": [
+                  0.6916548014802354,
+                  0.7071067811865362,
+                  0.14701576646520756
+                ],
+                "plane_origin_mm": [
+                  4.764712321136,
+                  5.75,
+                  36.98401010857
+                ]
+              },
+              {
+                "index": 108,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.2849480709801995,
+                "center_mm": [
+                  31.450967325923784,
+                  3.801139997594934e-12,
+                  8.462951237105182
+                ],
+                "plane_normal": [
+                  0.5709328333910093,
+                  -0.0,
+                  -0.8209967720741136
+                ],
+                "plane_origin_mm": [
+                  31.45096795843,
+                  2.84217094304e-14,
+                  8.462951676959
+                ]
+              },
+              {
+                "index": 109,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 4.52684376295248,
+                "center_mm": [
+                  -29.566663790000423,
+                  -0.3121588124776846,
+                  8.075399048790572
+                ],
+                "plane_normal": [
+                  0.4957763640761151,
+                  -0.0,
+                  -0.8684502270271264
+                ],
+                "plane_origin_mm": [
+                  -29.56577744812,
+                  0.0,
+                  8.075905039049
+                ]
+              }
+            ]
+          }
+        ],
+        "coordinate_unit_note": "CadQuery/OCP working coordinates expected in mm; STEP unit declaration must be verified before manufacturing use"
+      },
+      "status": "brep_readable_requires_component_identification",
+      "can_infer_geometry": true,
+      "ocp_raw_read_status": "IFSelect_ReturnStatus.IFSelect_RetDone",
+      "ocp_raw_read_succeeded": true,
+      "ocp_raw_root_count": 1
+    },
+    "right": {
+      "path": "/home/endless/Documents/Project/Dexterous_Hand/Tron2灵巧手相机支架-r.stp",
+      "filename": "Tron2灵巧手相机支架-r.stp",
+      "bytes": 359059,
+      "sha256": "936533c45d43687f28e30837a49cf347abc1d76ab4d409fe6f1e9e1920f8075e",
+      "first_16_bytes_hex": "49534f2d31303330332d32313b0d0a48",
+      "step_p21_magic_offset": 0,
+      "step_data_token_offset": 245,
+      "source_modified": false,
+      "brep": {
+        "solid_count": 1,
+        "solids": [
+          {
+            "index": 0,
+            "valid": true,
+            "volume_mm3": 8683.922492928808,
+            "surface_area_mm2": 6101.201241190285,
+            "center_mm": [
+              -6.533399815878659,
+              0.6548939206969271,
+              -41.46798581226611
+            ],
+            "bounds_mm": [
+              [
+                -33.94729633430533,
+                -5.900029634877,
+                -80.13037460476734
+              ],
+              [
+                32.364993943090006,
+                5.900008666586,
+                -7.971248335479753
+              ]
+            ],
+            "faces": [
+              {
+                "index": 0,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 283.3395687046016,
+                "center_mm": [
+                  0.0007977423935502983,
+                  -5.9,
+                  -24.30977155862037
+                ],
+                "plane_normal": [
+                  0.0,
+                  -1.0,
+                  -0.0
+                ],
+                "plane_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ]
+              },
+              {
+                "index": 1,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 34.88142232589285,
+                "center_mm": [
+                  1.0310777205077357e-06,
+                  -5.74977782996673,
+                  -26.718374516194167
+                ]
+              },
+              {
+                "index": 2,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.7756049403036145,
+                "center_mm": [
+                  32.005854383791664,
+                  -5.747806553711875,
+                  -10.511430977127864
+                ]
+              },
+              {
+                "index": 3,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.7628185987009718,
+                "center_mm": [
+                  30.505998708868987,
+                  -5.748975885106591,
+                  -8.32828890365353
+                ],
+                "plane_normal": [
+                  0.18301270189220925,
+                  -0.7071067811865357,
+                  0.6830127018922344
+                ],
+                "plane_origin_mm": [
+                  30.42576511892,
+                  -5.75,
+                  -8.307850619776
+                ]
+              },
+              {
+                "index": 4,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 33.84518115897646,
+                "center_mm": [
+                  -0.00018699139675685026,
+                  -5.750305439599177,
+                  -22.699059430938114
+                ]
+              },
+              {
+                "index": 5,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.7627639787946898,
+                "center_mm": [
+                  -30.50604355659328,
+                  -5.74897024668447,
+                  -8.328295083240919
+                ],
+                "plane_normal": [
+                  -0.1830127018921963,
+                  -0.7071067811865857,
+                  0.6830127018921862
+                ],
+                "plane_origin_mm": [
+                  -30.42576511892,
+                  -5.75,
+                  -8.307850619776
+                ]
+              },
+              {
+                "index": 6,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 18.684378737994695,
+                "center_mm": [
+                  -30.561230901911134,
+                  -0.023591754815283306,
+                  -8.188857139869045
+                ],
+                "plane_normal": [
+                  -0.2588190451024935,
+                  0.0,
+                  0.9659258262890758
+                ],
+                "plane_origin_mm": [
+                  -33.32444100697,
+                  -5.9,
+                  -8.929257056037
+                ]
+              },
+              {
+                "index": 7,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 114.5217951310517,
+                "center_mm": [
+                  -4.933345342171243e-05,
+                  5.402674031490385,
+                  -22.909865152008553
+                ]
+              },
+              {
+                "index": 8,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 815.048744044293,
+                "center_mm": [
+                  -9.623949602113074e-06,
+                  -0.3279054011276879,
+                  -22.769557394741135
+                ],
+                "cylinder_radius_mm": 30.5,
+                "cylinder_axis_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 9,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.25844086430821,
+                "center_mm": [
+                  27.919620046737545,
+                  -2.4482027439495235,
+                  -16.11940014380548
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 10,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.258440864322903,
+                "center_mm": [
+                  27.91962004167179,
+                  -0.35179725605045387,
+                  -16.119400152585296
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 11,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 24.63008640414398,
+                "center_mm": [
+                  29.444863728670004,
+                  -1.4,
+                  -17.0
+                ],
+                "plane_normal": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ],
+                "plane_origin_mm": [
+                  29.44486372867,
+                  -1.4,
+                  -17.0
+                ]
+              },
+              {
+                "index": 12,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338139153,
+                "center_mm": [
+                  29.63118085470389,
+                  -3.593997198116866,
+                  -17.107570242921728
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 13,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.3222883381288035,
+                "center_mm": [
+                  29.6311808547466,
+                  0.7939971981155443,
+                  -17.1075702428452
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  -43.23758033441,
+                  -1.4,
+                  24.96322864518
+                ],
+                "cylinder_axis_direction": [
+                  0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 14,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 616.2289317487053,
+                "center_mm": [
+                  2.7356001028941215,
+                  -0.4309304008666011,
+                  -25.54710452204207
+                ],
+                "cylinder_radius_mm": 34.5,
+                "cylinder_axis_origin_mm": [
+                  0.0,
+                  -5.9,
+                  0.0
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 15,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338128883,
+                "center_mm": [
+                  -29.631180854745804,
+                  -3.5939971981155354,
+                  -17.10757024284658
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 16,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 4.322288338139289,
+                "center_mm": [
+                  -29.631180854703143,
+                  0.7939971981168672,
+                  -17.107570242923035
+                ],
+                "cylinder_radius_mm": 3.25,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 17,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 24.63008640414392,
+                "center_mm": [
+                  -29.44486372867,
+                  -1.3999999999999995,
+                  -17.0
+                ],
+                "plane_normal": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ],
+                "plane_origin_mm": [
+                  -29.44486372867,
+                  -1.4,
+                  -17.0
+                ]
+              },
+              {
+                "index": 18,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.25844086430827,
+                "center_mm": [
+                  -27.91962004673667,
+                  -0.3517972560504765,
+                  -16.119400143806974
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 19,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 18.25844086432275,
+                "center_mm": [
+                  -27.919620041670942,
+                  -2.4482027439495457,
+                  -16.1194001525868
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  39.61387753868,
+                  -1.4,
+                  22.8710828606
+                ],
+                "cylinder_axis_direction": [
+                  -0.866025403784429,
+                  0.0,
+                  -0.5000000000000168
+                ]
+              },
+              {
+                "index": 20,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 47.97144896158195,
+                "center_mm": [
+                  32.15380288275418,
+                  8.922149258476778e-08,
+                  -10.515284734201748
+                ],
+                "cylinder_radius_mm": 4.5,
+                "cylinder_axis_origin_mm": [
+                  27.86499384309,
+                  -5.9,
+                  -11.1258194922
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 21,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.775605065517733,
+                "center_mm": [
+                  32.00585437553458,
+                  5.747806561248542,
+                  -10.51143103226289
+                ]
+              },
+              {
+                "index": 22,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.2849480709801995,
+                "center_mm": [
+                  31.450967325923784,
+                  3.801270525362683e-12,
+                  -8.462951237105182
+                ],
+                "plane_normal": [
+                  0.5709328333910093,
+                  0.0,
+                  0.8209967720741136
+                ],
+                "plane_origin_mm": [
+                  31.45096795843,
+                  2.84217094304e-14,
+                  -8.462951676959
+                ]
+              },
+              {
+                "index": 23,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 18.68459758761445,
+                "center_mm": [
+                  30.561221544962457,
+                  -0.02356968512029667,
+                  -8.188854632680485
+                ],
+                "plane_normal": [
+                  0.2588190451024935,
+                  0.0,
+                  0.9659258262890758
+                ],
+                "plane_origin_mm": [
+                  29.46073770182,
+                  -5.9,
+                  -7.893980875627
+                ]
+              },
+              {
+                "index": 24,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.497180916148535,
+                "center_mm": [
+                  30.807709640522067,
+                  5.742078514077246,
+                  -8.401991420203476
+                ],
+                "plane_normal": [
+                  0.18301270189220925,
+                  0.7071067811865357,
+                  0.6830127018922344
+                ],
+                "plane_origin_mm": [
+                  30.42576511892,
+                  5.75,
+                  -8.307850619776
+                ]
+              },
+              {
+                "index": 25,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 295.7693936877356,
+                "center_mm": [
+                  -1.6850606047274,
+                  5.9,
+                  -26.792352229438485
+                ],
+                "plane_normal": [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                "plane_origin_mm": [
+                  0.0,
+                  5.9,
+                  0.0
+                ]
+              },
+              {
+                "index": 26,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.49717501506280964,
+                "center_mm": [
+                  -30.807717944136293,
+                  5.742076635670526,
+                  -8.401991700480467
+                ],
+                "plane_normal": [
+                  -0.18301270189220925,
+                  0.7071067811865357,
+                  0.6830127018922343
+                ],
+                "plane_origin_mm": [
+                  -30.42576511892,
+                  5.75,
+                  -8.307850619776
+                ]
+              },
+              {
+                "index": 27,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.28494807099076,
+                "center_mm": [
+                  -31.45096732592398,
+                  -3.3799497462319726e-11,
+                  -8.462951237105317
+                ],
+                "plane_normal": [
+                  -0.5709328333910093,
+                  0.0,
+                  0.8209967720741136
+                ],
+                "plane_origin_mm": [
+                  -31.45096795843,
+                  2.13162820728e-14,
+                  -8.462951676959
+                ]
+              },
+              {
+                "index": 28,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.775605006280995,
+                "center_mm": [
+                  -32.005854378076066,
+                  -5.747806559558794,
+                  -10.511430964777118
+                ]
+              },
+              {
+                "index": 29,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 47.97145100300678,
+                "center_mm": [
+                  -32.153802881127454,
+                  -1.0744094534315069e-08,
+                  -10.515284823051495
+                ],
+                "cylinder_radius_mm": 4.5,
+                "cylinder_axis_origin_mm": [
+                  -27.86499384309,
+                  -5.9,
+                  -11.1258194922
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 30,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.775605065043793,
+                "center_mm": [
+                  -32.00585437554211,
+                  5.747806561242179,
+                  -10.511431031474064
+                ]
+              },
+              {
+                "index": 31,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 8.178523071934844,
+                "center_mm": [
+                  -26.892560052529515,
+                  5.749773831389009,
+                  -20.641809987477593
+                ]
+              },
+              {
+                "index": 32,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.5297929023257322,
+                "center_mm": [
+                  -19.472010462591914,
+                  5.752380954230333,
+                  -29.118964031989677
+                ]
+              },
+              {
+                "index": 33,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 21.547437504637905,
+                "center_mm": [
+                  -19.663016369489043,
+                  2.3810889003419673,
+                  -29.026385588616602
+                ],
+                "cylinder_radius_mm": 3.0,
+                "cylinder_axis_origin_mm": [
+                  -22.26079470935,
+                  -21.28248,
+                  -30.17792270698
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 34,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 6.519916393098736,
+                "center_mm": [
+                  -18.873548811615265,
+                  -1.3227100493745556,
+                  -29.220538969026475
+                ]
+              },
+              {
+                "index": 35,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Sphere",
+                "area_mm2": 0.06389999391719202,
+                "center_mm": [
+                  -18.052688302906816,
+                  -0.5982110094299561,
+                  -30.08991675419527
+                ]
+              },
+              {
+                "index": 36,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.12345139749950566,
+                "center_mm": [
+                  -18.76368392236563,
+                  1.080613323778298,
+                  -31.285423049390143
+                ]
+              },
+              {
+                "index": 37,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 48.306190550529244,
+                "center_mm": [
+                  -7.433072740250417,
+                  0.9331541608483516,
+                  -35.04048841650874
+                ]
+              },
+              {
+                "index": 38,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 75.02855049804178,
+                "center_mm": [
+                  -7.127688272496804,
+                  -1.1188396426028264,
+                  -33.55496715077695
+                ]
+              },
+              {
+                "index": 39,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 6.549567465894654,
+                "center_mm": [
+                  5.351817393195452,
+                  -1.3192710504198635,
+                  -34.372985922824896
+                ]
+              },
+              {
+                "index": 40,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.7524130354297367,
+                "center_mm": [
+                  4.777908027026425,
+                  1.0622979144298015,
+                  -36.14712630893428
+                ]
+              },
+              {
+                "index": 41,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 16.582581612485818,
+                "center_mm": [
+                  4.603925911963963,
+                  4.044108169511998,
+                  -38.461910842048624
+                ],
+                "plane_normal": [
+                  0.9781476007337973,
+                  0.0,
+                  -0.2079116908177994
+                ],
+                "plane_origin_mm": [
+                  12.22684500917,
+                  0.0,
+                  -2.598896135222
+                ]
+              },
+              {
+                "index": 42,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.6340745373693588,
+                "center_mm": [
+                  4.14864983549168,
+                  5.675015967499746,
+                  -39.88125812803283
+                ]
+              },
+              {
+                "index": 43,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 141.17287985278261,
+                "center_mm": [
+                  -8.130869329462595,
+                  5.731490055028337,
+                  -38.2527329688054
+                ],
+                "cylinder_radius_mm": 33.0,
+                "cylinder_axis_origin_mm": [
+                  126.6634057029,
+                  -27.1,
+                  -63.95601579567
+                ],
+                "cylinder_axis_direction": [
+                  -0.9781476007337973,
+                  0.0,
+                  0.2079116908177994
+                ]
+              },
+              {
+                "index": 44,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 1282.6229789777647,
+                "center_mm": [
+                  -12.515075688038912,
+                  2.188591175079016,
+                  -58.84302252413045
+                ],
+                "plane_normal": [
+                  -0.036103486226150325,
+                  0.984807753012209,
+                  -0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -12.68181665103,
+                  12.41042478537,
+                  0.4584228499933
+                ]
+              },
+              {
+                "index": 45,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 10.07092250152324,
+                "center_mm": [
+                  -11.971217298021815,
+                  2.4891073801647785,
+                  -57.21623575720916
+                ],
+                "plane_normal": [
+                  -0.036103486226150325,
+                  0.984807753012209,
+                  -0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -12.68181665103,
+                  12.41042478537,
+                  0.4584228499933
+                ]
+              },
+              {
+                "index": 46,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635272298,
+                "center_mm": [
+                  -3.7509268654317642,
+                  0.6493951114086192,
+                  -60.79899310243547
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -3.789654687464,
+                  30.37723494568,
+                  -65.92626699461
+                ],
+                "cylinder_axis_direction": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 47,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635268583,
+                "center_mm": [
+                  -1.651451248758398,
+                  0.7241393788629183,
+                  -60.811884531252275
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -3.789654687464,
+                  30.37723494568,
+                  -65.92626699461
+                ],
+                "cylinder_axis_direction": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 48,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 1315.3606230858456,
+                "center_mm": [
+                  -12.395905851200743,
+                  -0.7627935561327319,
+                  -58.31815278262448
+                ],
+                "plane_normal": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -20.30385668588,
+                  2.9,
+                  -35.40045619365
+                ]
+              },
+              {
+                "index": 49,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635272685,
+                "center_mm": [
+                  -23.313878880107765,
+                  0.6493951114085863,
+                  -56.64075928608545
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -23.35260670214,
+                  30.37723494568,
+                  -61.76803317826
+                ],
+                "cylinder_axis_direction": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 50,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 15.550883635268946,
+                "center_mm": [
+                  -21.214403263434335,
+                  0.7241393788612145,
+                  -56.65365071490197
+                ],
+                "cylinder_radius_mm": 1.65,
+                "cylinder_axis_origin_mm": [
+                  -23.35260670214,
+                  30.37723494568,
+                  -61.76803317826
+                ],
+                "cylinder_axis_direction": [
+                  0.036103486226150325,
+                  -0.9848077530122089,
+                  0.16985354835670152
+                ]
+              },
+              {
+                "index": 51,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 40.80223304206391,
+                "center_mm": [
+                  -8.418503489970256,
+                  2.586995584759495,
+                  -39.60567687267074
+                ],
+                "cylinder_radius_mm": 30.0,
+                "cylinder_axis_origin_mm": [
+                  -131.4950094305,
+                  -27.1,
+                  -9.082750708727
+                ],
+                "cylinder_axis_direction": [
+                  0.9781476007337973,
+                  0.0,
+                  -0.2079116908177994
+                ]
+              },
+              {
+                "index": 52,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.820450937192641,
+                "center_mm": [
+                  -20.676799864061085,
+                  2.7329153840176392,
+                  -37.047462552878805
+                ]
+              },
+              {
+                "index": 53,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829220201192714,
+                "center_mm": [
+                  -22.065987049858094,
+                  2.5588883820347768,
+                  -37.868635784079416
+                ]
+              },
+              {
+                "index": 54,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4242641072917401,
+                "center_mm": [
+                  -23.348918646880165,
+                  2.543720861626959,
+                  -37.702022034711646
+                ],
+                "plane_normal": [
+                  0.17031128656489197,
+                  -0.573576436351073,
+                  0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  -23.3489209922,
+                  2.543720838757,
+                  -37.70202155257
+                ]
+              },
+              {
+                "index": 55,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658303824,
+                "center_mm": [
+                  -25.903645548524402,
+                  2.3840338174625626,
+                  -38.099544089738885
+                ]
+              },
+              {
+                "index": 56,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944521014,
+                "center_mm": [
+                  -30.382933637285728,
+                  -0.6427230555794811,
+                  -54.68183917522432
+                ],
+                "plane_normal": [
+                  -0.6661257815452291,
+                  -0.6963642403200305,
+                  0.2671203623168117
+                ],
+                "plane_origin_mm": [
+                  -30.38293383149,
+                  -0.6427232214308,
+                  -54.68184009188
+                ]
+              },
+              {
+                "index": 57,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658283285,
+                "center_mm": [
+                  -33.035712867834974,
+                  -3.664566798630772,
+                  -71.65325163671821
+                ]
+              },
+              {
+                "index": 58,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944483704,
+                "center_mm": [
+                  -16.19114466578652,
+                  -3.8291672811155872,
+                  -76.17334212480047
+                ],
+                "plane_normal": [
+                  -0.11925324669500027,
+                  -0.8191520442890018,
+                  -0.5610424150542014
+                ],
+                "plane_origin_mm": [
+                  -16.19114373486,
+                  -3.829167281619,
+                  -76.17334232194
+                ]
+              },
+              {
+                "index": 59,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062550658344622,
+                "center_mm": [
+                  1.0356147439648102,
+                  -3.6645679216771563,
+                  -78.89534239681056
+                ]
+              },
+              {
+                "index": 60,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944475191,
+                "center_mm": [
+                  5.515082921187622,
+                  -0.6427233860560855,
+                  -62.312200061760805
+                ],
+                "plane_normal": [
+                  0.7171838214152169,
+                  -0.6963642403200162,
+                  -0.026911170613580615
+                ],
+                "plane_origin_mm": [
+                  5.515083115438,
+                  -0.6427232214308,
+                  -62.31219914489
+                ]
+              },
+              {
+                "index": 61,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255065815708,
+                "center_mm": [
+                  8.167682063280779,
+                  2.3840326944177614,
+                  -45.34163484983529
+                ]
+              },
+              {
+                "index": 62,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4242649147071261,
+                "center_mm": [
+                  5.995505619014058,
+                  2.5437208415528603,
+                  -43.939371975223374
+                ],
+                "plane_normal": [
+                  0.17031128656489197,
+                  -0.573576436351073,
+                  0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  5.995507029816,
+                  2.543720838757,
+                  -43.9393722771
+                ]
+              },
+              {
+                "index": 63,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829212424220321,
+                "center_mm": [
+                  4.755720380561867,
+                  2.5588878579983945,
+                  -43.56976713940675
+                ]
+              },
+              {
+                "index": 64,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.8204497949674793,
+                "center_mm": [
+                  3.8206241726790835,
+                  2.732918320551393,
+                  -42.25453362219656
+                ]
+              },
+              {
+                "index": 65,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 0.561766180883731,
+                "center_mm": [
+                  3.981034969442491,
+                  2.9237825661550643,
+                  -40.6721191183003
+                ]
+              },
+              {
+                "index": 66,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.1017235902881226,
+                "center_mm": [
+                  4.402842925599934,
+                  2.7964360341653567,
+                  -38.72781093139997
+                ]
+              },
+              {
+                "index": 67,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 87.44834198619645,
+                "center_mm": [
+                  -7.916060542934375,
+                  2.3874526141308197,
+                  -37.24227853017291
+                ]
+              },
+              {
+                "index": 68,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.1018244313468648,
+                "center_mm": [
+                  -19.774192205032545,
+                  2.7964011698240254,
+                  -33.58873401775096
+                ]
+              },
+              {
+                "index": 69,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 0.5617786767317751,
+                "center_mm": [
+                  -20.179694445586698,
+                  2.9237838095863604,
+                  -35.536582692690466
+                ]
+              },
+              {
+                "index": 70,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 16.582596131136842,
+                "center_mm": [
+                  -19.84976256882045,
+                  4.044104502783831,
+                  -33.2641113379743
+                ],
+                "plane_normal": [
+                  -0.9781476007337973,
+                  -0.0,
+                  0.2079116908177994
+                ],
+                "plane_origin_mm": [
+                  -12.22684500917,
+                  0.0,
+                  2.598896135222
+                ]
+              },
+              {
+                "index": 71,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.8811448793529747,
+                "center_mm": [
+                  -19.39553341981362,
+                  5.74999999677004,
+                  -31.848591343118844
+                ],
+                "plane_normal": [
+                  -0.6916548014802354,
+                  0.7071067811865362,
+                  0.14701576646520756
+                ],
+                "plane_origin_mm": [
+                  -19.39553341699,
+                  5.75,
+                  -31.84859134537
+                ]
+              },
+              {
+                "index": 72,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.6340745373690515,
+                "center_mm": [
+                  -20.011149265196046,
+                  5.675015967499719,
+                  -34.745934300549315
+                ]
+              },
+              {
+                "index": 73,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.8233872676659018,
+                "center_mm": [
+                  -20.77188313834194,
+                  5.40149925243318,
+                  -37.49808425018218
+                ]
+              },
+              {
+                "index": 74,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 7.943073869179382,
+                "center_mm": [
+                  -21.43134597431523,
+                  4.00421914793171,
+                  -37.53181607434916
+                ]
+              },
+              {
+                "index": 75,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.4000011815396265,
+                "center_mm": [
+                  -23.366945561862273,
+                  3.899258534561542,
+                  -37.786831205562734
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -26.84461957375,
+                  5.376470161492,
+                  -37.3139201464
+                ]
+              },
+              {
+                "index": 76,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.91121150311546,
+                "center_mm": [
+                  -26.02496375355434,
+                  3.7273829714061315,
+                  -38.21838334008385
+                ]
+              },
+              {
+                "index": 77,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421922913,
+                "center_mm": [
+                  -30.578395518647294,
+                  0.686767380285585,
+                  -54.87995487881799
+                ],
+                "plane_normal": [
+                  -0.9781476007337971,
+                  0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -34.42048224094,
+                  -1.048512412184,
+                  -72.95555175574
+                ]
+              },
+              {
+                "index": 78,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503104807,
+                "center_mm": [
+                  -33.1955013353663,
+                  -2.3538483177555705,
+                  -71.95310582332797
+                ]
+              },
+              {
+                "index": 79,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421922025,
+                "center_mm": [
+                  -16.270597159316843,
+                  -2.5257240417020843,
+                  -76.54713755151953
+                ],
+                "plane_normal": [
+                  -0.20475304505920952,
+                  -0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  1.770978986208,
+                  -1.048512412184,
+                  -80.648284316
+                ]
+              },
+              {
+                "index": 80,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503112595,
+                "center_mm": [
+                  1.0596336246868983,
+                  -2.3538484811353735,
+                  -79.23426047724901
+                ]
+              },
+              {
+                "index": 81,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 74.39999421919553,
+                "center_mm": [
+                  5.613065389782895,
+                  0.6867671099858318,
+                  -62.57268893851605
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  9.346841653398,
+                  5.376470161492,
+                  -45.00665270666
+                ]
+              },
+              {
+                "index": 82,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 11.911211503106557,
+                "center_mm": [
+                  8.230171206502872,
+                  3.7273828080271962,
+                  -45.49953799400402
+                ]
+              },
+              {
+                "index": 83,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 2.40000491736874,
+                "center_mm": [
+                  5.977478861286813,
+                  3.8992585345706328,
+                  -44.02418116513465
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  3.477956048996,
+                  5.376470161492,
+                  -43.75918256175
+                ]
+              },
+              {
+                "index": 84,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_SurfaceOfExtrusion",
+                "area_mm2": 7.943073487648132,
+                "center_mm": [
+                  4.312944022052743,
+                  4.004219076662862,
+                  -43.003933948217345
+                ]
+              },
+              {
+                "index": 85,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.8233874828318879,
+                "center_mm": [
+                  3.724228506669098,
+                  5.4014964136781165,
+                  -42.704909169925436
+                ]
+              },
+              {
+                "index": 86,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829219782828517,
+                "center_mm": [
+                  4.658018473320961,
+                  5.223938214555752,
+                  -44.02941698309067
+                ]
+              },
+              {
+                "index": 87,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.42426492631334345,
+                "center_mm": [
+                  5.898026192835803,
+                  5.202701770507352,
+                  -44.39797655292476
+                ],
+                "plane_normal": [
+                  0.11925324669500026,
+                  0.8191520442890019,
+                  0.5610424150542013
+                ],
+                "plane_origin_mm": [
+                  5.898027617005,
+                  5.20270177189,
+                  -44.39797685766
+                ]
+              },
+              {
+                "index": 88,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062554456448276,
+                "center_mm": [
+                  8.070378492053027,
+                  5.038102122860088,
+                  -45.7993864939754
+                ]
+              },
+              {
+                "index": 89,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944426963,
+                "center_mm": [
+                  5.417603508421447,
+                  2.016257545851445,
+                  -62.770804642106896
+                ],
+                "plane_normal": [
+                  0.6661257815452292,
+                  0.6963642403200304,
+                  -0.2671203623168117
+                ],
+                "plane_origin_mm": [
+                  5.417603702627,
+                  2.016257711702,
+                  -62.77080372545
+                ]
+              },
+              {
+                "index": 90,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.006255445646679,
+                "center_mm": [
+                  0.9383211612427013,
+                  -1.010498391940957,
+                  -79.35309557678718
+                ]
+              },
+              {
+                "index": 91,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944530918,
+                "center_mm": [
+                  -16.288624078551187,
+                  -1.1701863492064566,
+                  -76.63194670515084
+                ],
+                "plane_normal": [
+                  -0.17031128656489197,
+                  0.573576436351073,
+                  -0.8012516067574621
+                ],
+                "plane_origin_mm": [
+                  -16.28862314767,
+                  -1.170186348486,
+                  -76.6319469025
+                ]
+              },
+              {
+                "index": 92,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062554456365373,
+                "center_mm": [
+                  -33.133007945855915,
+                  -1.0104990209293911,
+                  -72.1110146571088
+                ]
+              },
+              {
+                "index": 93,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 13.152184944320643,
+                "center_mm": [
+                  -30.480413050053983,
+                  2.0162578763231136,
+                  -55.14044375557758
+                ],
+                "plane_normal": [
+                  -0.717183821415217,
+                  0.6963642403200165,
+                  0.026911170613570623
+                ],
+                "plane_origin_mm": [
+                  -30.4804132443,
+                  2.016257711702,
+                  -55.14044467244
+                ]
+              },
+              {
+                "index": 94,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 2.0062554456504333,
+                "center_mm": [
+                  -26.000950615050396,
+                  5.038101493875167,
+                  -38.55730557429272
+                ]
+              },
+              {
+                "index": 95,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.42426411887284143,
+                "center_mm": [
+                  -23.44639804508136,
+                  5.202701756451666,
+                  -38.16062661220752
+                ],
+                "plane_normal": [
+                  0.11925324669500027,
+                  0.8191520442890018,
+                  0.5610424150542014
+                ],
+                "plane_origin_mm": [
+                  -23.44640040501,
+                  5.20270177189,
+                  -38.16062613313
+                ]
+              },
+              {
+                "index": 96,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 0.6829212332180707,
+                "center_mm": [
+                  -22.163689584705224,
+                  5.223938200570018,
+                  -38.328288558074185
+                ]
+              },
+              {
+                "index": 97,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_BSplineSurface",
+                "area_mm2": 1.6889790305896795,
+                "center_mm": [
+                  -19.07772590891112,
+                  1.060943961025683,
+                  -31.070699077161834
+                ]
+              },
+              {
+                "index": 98,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.2833333253889561,
+                "center_mm": [
+                  -11.888533247263505,
+                  2.040845654251318,
+                  -59.53845280454128
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -10.5046293594,
+                  2.090086041902,
+                  -59.84148703569
+                ]
+              },
+              {
+                "index": 99,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.35744681358429303,
+                "center_mm": [
+                  -10.868765802729731,
+                  1.73049571529372,
+                  -61.554614310927
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -11.23651259468,
+                  1.469386163986,
+                  -63.284726941
+                ]
+              },
+              {
+                "index": 100,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.09999999999840042,
+                "center_mm": [
+                  -10.745633620004005,
+                  1.420145776335511,
+                  -63.380190108993645
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -10.25836499395,
+                  1.469386163986,
+                  -63.49263863182
+                ]
+              },
+              {
+                "index": 101,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.8000000000030688,
+                "center_mm": [
+                  -9.437547639401291,
+                  2.1147384870025325,
+                  -59.63099659123208
+                ],
+                "plane_normal": [
+                  -0.9781476007337971,
+                  -0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -8.620340633476,
+                  2.858571585322,
+                  -55.78633990548
+                ]
+              },
+              {
+                "index": 102,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.4000000000059234,
+                "center_mm": [
+                  -10.57483066063174,
+                  2.809331197670499,
+                  -55.36202384642738
+                ],
+                "plane_normal": [
+                  -0.20475304505920952,
+                  -0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -12.53293103641,
+                  2.858571585322,
+                  -54.95469314221
+                ]
+              },
+              {
+                "index": 103,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.0850539292547373,
+                "center_mm": [
+                  -12.956113229133676,
+                  2.7945526311215274,
+                  -54.941552468658635
+                ],
+                "plane_normal": [
+                  -0.004860893955467136,
+                  -0.17013539949720477,
+                  -0.9854087058413278
+                ],
+                "plane_origin_mm": [
+                  -13.38290577048,
+                  2.829014452221,
+                  -54.94539714995
+                ]
+              },
+              {
+                "index": 104,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.08397592759709933,
+                "center_mm": [
+                  -13.759427085647095,
+                  2.7354383649191707,
+                  -55.11354626683552
+                ],
+                "plane_normal": [
+                  0.4322400231226169,
+                  -0.13785548726630542,
+                  -0.8911590357739348
+                ],
+                "plane_origin_mm": [
+                  -14.13955874944,
+                  2.740343052919,
+                  -55.29868073855
+                ]
+              },
+              {
+                "index": 105,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.08447236593138273,
+                "center_mm": [
+                  -14.451993631278768,
+                  2.6319883990668136,
+                  -55.56613770471206
+                ],
+                "plane_normal": [
+                  0.6671959834570141,
+                  -0.10278401448400218,
+                  -0.7377567119487156
+                ],
+                "plane_origin_mm": [
+                  -14.76803886174,
+                  2.622114520516,
+                  -55.85058002571
+                ]
+              },
+              {
+                "index": 106,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.053714907975487884,
+                "center_mm": [
+                  -14.900023276729733,
+                  2.5285384332145275,
+                  -56.07070706529158
+                ],
+                "plane_normal": [
+                  0.866340665818208,
+                  -0.05387952141153051,
+                  -0.4965388684908046
+                ],
+                "plane_origin_mm": [
+                  -15.03561804034,
+                  2.533443121214,
+                  -56.30781945971
+                ]
+              },
+              {
+                "index": 107,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.06808514595068926,
+                "center_mm": [
+                  -15.103516070815417,
+                  2.425088425960817,
+                  -56.6272545782417
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -15.17502444991,
+                  2.41521450601,
+                  -56.96367505161
+                ]
+              },
+              {
+                "index": 108,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.05371490797632795,
+                "center_mm": [
+                  -15.143984420248993,
+                  2.32163841870762,
+                  -57.218454006617065
+                ],
+                "plane_normal": [
+                  0.9934021325558985,
+                  0.05387952141152992,
+                  0.10123833367779984
+                ],
+                "plane_origin_mm": [
+                  -15.11655473921,
+                  2.326543106708,
+                  -57.49021831646
+                ]
+              },
+              {
+                "index": 109,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.08447236593260085,
+                "center_mm": [
+                  -14.939915820676845,
+                  2.2181884528554443,
+                  -57.86163112803124
+                ],
+                "plane_normal": [
+                  0.9095865484692133,
+                  0.1027840144840015,
+                  0.4026012384611059
+                ],
+                "plane_origin_mm": [
+                  -14.76688725077,
+                  2.208314574305,
+                  -58.25002929444
+                ]
+              },
+              {
+                "index": 110,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.07485544386779232,
+                "center_mm": [
+                  -14.473884531932331,
+                  2.1295170535543546,
+                  -58.47480428057552
+                ],
+                "plane_normal": [
+                  0.6271933620477114,
+                  0.15465197745880283,
+                  0.7633552596736138
+                ],
+                "plane_origin_mm": [
+                  -14.18449216172,
+                  2.149200308104,
+                  -58.71656462155
+                ]
+              },
+              {
+                "index": 111,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.41924207937645075,
+                "center_mm": [
+                  -15.31709088358382,
+                  1.76005284839424,
+                  -60.43772191182205
+                ],
+                "plane_normal": [
+                  0.8401385295548103,
+                  -0.06212932320331076,
+                  -0.5388016317308068
+                ],
+                "plane_origin_mm": [
+                  -16.45329995407,
+                  1.469386163986,
+                  -62.17586455693
+                ]
+              },
+              {
+                "index": 112,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.11666669845620685,
+                "center_mm": [
+                  -15.880908523858633,
+                  1.4201457763352772,
+                  -62.28865373220189
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -15.31212744227,
+                  1.469386163986,
+                  -62.41842826231
+                ]
+              },
+              {
+                "index": 113,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.3815049150409712,
+                "center_mm": [
+                  -14.292282288698578,
+                  1.7304957152929956,
+                  -60.82692341785216
+                ],
+                "plane_normal": [
+                  -0.8449048125169052,
+                  0.06068883535394036,
+                  0.5314628143616033
+                ],
+                "plane_origin_mm": [
+                  -13.27604748375,
+                  2.090086041902,
+                  -59.25240392823
+                ]
+              },
+              {
+                "index": 114,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 22.66666712236525,
+                "center_mm": [
+                  -12.122952899339687,
+                  2.1329048700006696,
+                  -58.66049648555023
+                ],
+                "plane_normal": [
+                  -0.03610348622615033,
+                  0.984807753012209,
+                  -0.16985354835670155
+                ],
+                "plane_origin_mm": [
+                  -0.4513612932321,
+                  12.31194401007,
+                  -2.123487930393
+                ]
+              },
+              {
+                "index": 115,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.3166666507689399,
+                "center_mm": [
+                  -11.84244834062428,
+                  2.2181884528548323,
+                  -58.520018165479925
+                ],
+                "plane_normal": [
+                  -0.20475304505920952,
+                  -0.1736481776669081,
+                  -0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -13.39298713836,
+                  2.267428840506,
+                  -58.19931734896
+                ]
+              },
+              {
+                "index": 116,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.05281783588786335,
+                "center_mm": [
+                  -13.61829307523839,
+                  2.23296701940542,
+                  -58.05686485726659
+                ],
+                "plane_normal": [
+                  -0.5090509802192956,
+                  -0.1643840331092986,
+                  -0.8448934780174927
+                ],
+                "plane_origin_mm": [
+                  -13.84720936074,
+                  2.296985973607,
+                  -57.93139772041
+                ]
+              },
+              {
+                "index": 117,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.04764459384080834,
+                "center_mm": [
+                  -13.973577286303481,
+                  2.2773027190568684,
+                  -57.72428929485702
+                ],
+                "plane_normal": [
+                  -0.8421468057469903,
+                  -0.12148860725559861,
+                  -0.5253848835636938
+                ],
+                "plane_origin_mm": [
+                  -14.10355556049,
+                  2.356100239808,
+                  -57.53416622414
+                ]
+              },
+              {
+                "index": 118,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.0537149079758001,
+                "center_mm": [
+                  -14.13098524152836,
+                  2.3511955518082557,
+                  -57.262401914297115
+                ],
+                "plane_normal": [
+                  -0.9934021325558985,
+                  -0.05387952141152992,
+                  -0.10123833367779984
+                ],
+                "plane_origin_mm": [
+                  -14.16202527119,
+                  2.44477163911,
+                  -57.00762295929
+                ]
+              },
+              {
+                "index": 119,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.05106387138404528,
+                "center_mm": [
+                  -14.107942681090456,
+                  2.439866992511277,
+                  -56.75318437749178
+                ],
+                "plane_normal": [
+                  -0.9781476007337971,
+                  -0.0,
+                  0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -14.05747043961,
+                  2.533443121214,
+                  -56.51573115053
+                ]
+              },
+              {
+                "index": 120,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.05371490797633904,
+                "center_mm": [
+                  -13.921875675999818,
+                  2.5285384332148033,
+                  -56.27861875610658
+                ],
+                "plane_normal": [
+                  -0.866340665818208,
+                  0.05387952141153051,
+                  0.4965388684908046
+                ],
+                "plane_origin_mm": [
+                  -13.78989126101,
+                  2.622114520516,
+                  -56.05849171652
+                ]
+              },
+              {
+                "index": 121,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.0476445938393565,
+                "center_mm": [
+                  -13.59020983085727,
+                  2.60243126596563,
+                  -55.92068722095917
+                ],
+                "plane_normal": [
+                  -0.5556461051949932,
+                  0.1214886072555985,
+                  0.8224949386401899
+                ],
+                "plane_origin_mm": [
+                  -13.39413874933,
+                  2.681228786718,
+                  -55.79986808023
+                ]
+              },
+              {
+                "index": 122,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.052817835888830565,
+                "center_mm": [
+                  -13.130370885844089,
+                  2.646766965617939,
+                  -55.76137143393899
+                ],
+                "plane_normal": [
+                  -0.1213920736823974,
+                  0.16438403310929653,
+                  0.9788982858835791
+                ],
+                "plane_origin_mm": [
+                  -12.87021337098,
+                  2.710785919818,
+                  -55.73986014249
+                ]
+              },
+              {
+                "index": 123,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.3166666507696398,
+                "center_mm": [
+                  -11.319674573241494,
+                  2.6615455321673505,
+                  -56.060560959013586
+                ],
+                "plane_normal": [
+                  0.20475304505920952,
+                  0.1736481776669081,
+                  0.963287340792945
+                ],
+                "plane_origin_mm": [
+                  -9.772746124125,
+                  2.710785919818,
+                  -56.39824713037
+                ]
+              },
+              {
+                "index": 124,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.25531916618458983,
+                "center_mm": [
+                  -10.03232783350868,
+                  2.4398669925113663,
+                  -57.61948305618163
+                ],
+                "plane_normal": [
+                  0.9781476007337971,
+                  -0.0,
+                  -0.20791169081779934
+                ],
+                "plane_origin_mm": [
+                  -10.29551989151,
+                  2.267428840506,
+                  -58.85770433683
+                ]
+              },
+              {
+                "index": 125,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 0.8811448905874524,
+                "center_mm": [
+                  4.764712327384164,
+                  5.749999996768576,
+                  -36.984010094716986
+                ],
+                "plane_normal": [
+                  0.6916548014802354,
+                  0.7071067811865362,
+                  -0.14701576646520756
+                ],
+                "plane_origin_mm": [
+                  4.764712321136,
+                  5.75,
+                  -36.98401010857
+                ]
+              },
+              {
+                "index": 126,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 1.5297929574244238,
+                "center_mm": [
+                  5.944817081278132,
+                  5.752380952392406,
+                  -34.5214774587851
+                ]
+              },
+              {
+                "index": 127,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+                "area_mm2": 21.54709844127337,
+                "center_mm": [
+                  6.1569627170472465,
+                  2.381142831954709,
+                  -34.514594263933205
+                ],
+                "cylinder_radius_mm": 3.0,
+                "cylinder_axis_origin_mm": [
+                  8.061780913401,
+                  21.28248,
+                  -36.62318512233
+                ],
+                "cylinder_axis_direction": [
+                  0.0,
+                  -1.0,
+                  0.0
+                ]
+              },
+              {
+                "index": 128,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Cone",
+                "area_mm2": 14.283044174966554,
+                "center_mm": [
+                  21.422723454903164,
+                  5.749777177236335,
+                  -25.090422026549795
+                ]
+              },
+              {
+                "index": 129,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 4.527428292023044,
+                "center_mm": [
+                  29.566621183015823,
+                  -0.31235790641729544,
+                  -8.075423372045092
+                ],
+                "plane_normal": [
+                  -0.4957763640761151,
+                  0.0,
+                  0.8684502270271264
+                ],
+                "plane_origin_mm": [
+                  29.56577744812,
+                  3.552713678801e-14,
+                  -8.075905039049
+                ]
+              },
+              {
+                "index": 130,
+                "surface_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+                "area_mm2": 4.52684376295248,
+                "center_mm": [
+                  -29.566663790000423,
+                  -0.31215881247768484,
+                  -8.075399048790572
+                ],
+                "plane_normal": [
+                  0.4957763640761151,
+                  0.0,
+                  0.8684502270271264
+                ],
+                "plane_origin_mm": [
+                  -29.56577744812,
+                  0.0,
+                  -8.075905039049
+                ]
+              }
+            ]
+          }
+        ],
+        "coordinate_unit_note": "CadQuery/OCP working coordinates expected in mm; STEP unit declaration must be verified before manufacturing use"
+      },
+      "status": "brep_readable_requires_component_identification",
+      "can_infer_geometry": true,
+      "ocp_raw_read_status": "IFSelect_ReturnStatus.IFSelect_RetDone",
+      "ocp_raw_read_succeeded": true,
+      "ocp_raw_root_count": 1
+    }
+  },
+  "environment_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1",
+    "numpy": "2.2.6"
+  },
+  "left_right_relationship": "requires_solid_registration_and_feature_comparison",
+  "geometry_production_available": false,
+  "required_next_evidence": "Readable standard STEP export and identification of actual mount/rod/plate BRep features before any parameterized production geometry can be validated."
+}

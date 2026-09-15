@@ -1,0 +1,19 @@
+{
+  "revision": "V2 radial upright",
+  "requested_changes": [
+    "Remove both V1 9.5 mm access-relief cuts and retain continuous material there.",
+    "Delete the complete longitudinal +Y arm, not relocate it.",
+    "Extend the radial +Z upright directly to the independently tilted camera plate.",
+    "Retain two wrist 3.4 mm through-holes with 6 mm seats and two camera 3.4 mm through-holes.",
+    "Use a solid 24 by 12 mm upright rather than the preliminary open-U section."
+  ],
+  "reference_diagrams": [
+    {"path": "/tmp/codex-clipboard-qMvrAs.png", "sha256": "2f2543736e91c3ff1715ebbfbfae41823e955c2958f520394c3ef3c60acd8475"},
+    {"path": "/tmp/codex-clipboard-DD7Ktg.png", "sha256": "eb4d11060ec250cb278fe0af524054a27ee6d3b116cd2d76697acbf72c80a5a8"}
+  ],
+  "length_definition": "Z-span of the solid upright starting at Z=35.8 mm; plate pivot=[0,0,35.8+length_mm] mm.",
+  "camera_separate": true,
+  "generator_sha256": "570d99013ac23f787a533d93ebdfaccdba6ddbd91532def837aab58ff44180e5",
+  "unchanged_v1_generator_sha256": "b0ef45d97785146c5e1d0694c390a4ece4de4cfefba8f8ca665b8a2cc94bce3f",
+  "dimensional_status": "New explicit design dimensions and retained verified mounting axes; diagrams do not provide dimensional metrology; material and real fastener engagement remain unconfirmed."
+}

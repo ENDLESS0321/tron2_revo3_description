@@ -1,0 +1,3789 @@
+{
+  "status": "kinematic_assembly_pass",
+  "claim_boundary": "Forward-kinematics assembly and load validation only. No hard-set image, joint sweep, or optional finite smoke demonstrates collision freedom, control tracking, grasp success, print fit, or physical stability.",
+  "mujoco_version": "3.13.0",
+  "source_urdf": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/urdf/tron2_dach_revo3_cameras.urdf",
+  "source_urdf_sha256": "035e04b04204957ce149dbe453aa17aaaa07d289edc8fd274a2eb0d1e0534521",
+  "scene": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/simulation/cameras/side_bend_v4_preview.xml",
+  "scene_sha256": "41d34b1645e88ce293a998ed51ca676ba7bfde89d1cb22d47ca95bfc270ded89",
+  "producer_sha256": "ce5573fa89d5a06b9546b878e12141665fc54c6811d17574afdf970bb5b3fef3",
+  "model_counts": {
+    "nq": 58,
+    "nv": 58,
+    "njnt": 58,
+    "nbody": 107,
+    "ngeom": 283,
+    "nmesh": 264,
+    "nu": 0
+  },
+  "checks": {
+    "expected_dof": true,
+    "source_joint_names_preserved": true,
+    "all_joints_hinge": true,
+    "no_free_base_joint": true,
+    "source_link_bodies_retained": true,
+    "no_actuators_added": true,
+    "joint_axes_and_limits_preserved": true,
+    "positive_mass_values_preserved": true,
+    "positive_mass_inertias_preserved": true,
+    "source_and_scene_dof_match": true,
+    "all_joint_individual_sweeps_pass": true,
+    "source_fk_preserved": true,
+    "mount_fixed_relationships_preserved": true,
+    "scene_relocation_pass": true,
+    "per_body_source_meshes_preserved": true
+  },
+  "scene_relocation": {
+    "pass": true,
+    "relative_asset_count": 264,
+    "relocated_nq": 58,
+    "method": "Compiled scene copied into a separate temporary project layout with relative meshes; temporary test files removed after loading."
+  },
+  "mesh_bindings": {
+    "pass": true,
+    "source_unique_mesh_files": 264,
+    "scene_mesh_asset_count": 264,
+    "compared_body_geometry_groups": 212,
+    "comparisons": [
+      {
+        "link": "base_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_imu",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_imu",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_2_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_2_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_3_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "base_3_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_base_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_base_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_yaw_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_yaw_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_pitch_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_pitch_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_pitch_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_pitch_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_roll_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_roll_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_yaw_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_yaw_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "elbow_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "elbow_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_yaw_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_yaw_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_pitch_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_pitch_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_roll_L_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_roll_L_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_pitch_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_pitch_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_roll_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_roll_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_yaw_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "proximal_yaw_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "elbow_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "elbow_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_yaw_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_yaw_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_pitch_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_pitch_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_roll_R_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "wrist_roll_R_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "d435_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "d435_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "d435_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "d435_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_adapter_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_adapter_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 48,
+        "scene_mesh_geom_count": 48,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_palm",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_palm",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_hand_base_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_hand_base_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 25,
+        "scene_mesh_geom_count": 25,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_CMP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_CMP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_CMR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_CMR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_thumb_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_index_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_middle_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_ring_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_little_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_adapter_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_adapter_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 48,
+        "scene_mesh_geom_count": 48,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_palm",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_palm",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_hand_base_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_hand_base_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 28,
+        "scene_mesh_geom_count": 28,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_CMP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_CMP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_CMR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_CMR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_thumb_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_index_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_middle_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_ring_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_MPR_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_MPR_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_MCP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_MCP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_PIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_PIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_DIP_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_DIP_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_tip_Link",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_little_tip_Link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_mount_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_mount_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_bottom_screw_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_bottom_screw_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_depth_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_depth_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_depth_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_depth_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_color_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_color_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_color_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "head_camera_color_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_mount_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_mount_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_rod_end_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_rod_end_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_plate_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_plate_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_bottom_screw_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_bottom_screw_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_depth_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_depth_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_depth_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_depth_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_color_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_color_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_color_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "left_wrist_camera_color_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_mount_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_mount_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_rod_end_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_rod_end_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_plate_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_plate_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_bottom_screw_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_bottom_screw_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_link",
+        "kind": "visual",
+        "source_mesh_geom_count": 1,
+        "scene_mesh_geom_count": 1,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_link",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_depth_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_depth_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_depth_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_depth_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_color_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_color_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_color_optical_frame",
+        "kind": "visual",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      },
+      {
+        "link": "right_wrist_camera_color_optical_frame",
+        "kind": "collision",
+        "source_mesh_geom_count": 0,
+        "scene_mesh_geom_count": 0,
+        "source_file_sha256_multiset_matches": true
+      }
+    ],
+    "mismatches": [],
+    "method": "Per body and visual/collision role: compare multisets of SHA256 over referenced mesh files. Distinct left/right meshes sharing a basename must not alias."
+  },
+  "joint_schema": [
+    {
+      "name": "head_yaw_Joint",
+      "qpos_address": 0,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        -1.5708,
+        1.5708
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.673205103416066e-06
+    },
+    {
+      "name": "head_pitch_Joint",
+      "qpos_address": 1,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_rad": [
+        -0.785398,
+        1.0472
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 2.4488034022773775e-06
+    },
+    {
+      "name": "proximal_pitch_L_Joint",
+      "qpos_address": 2,
+      "axis": [
+        0.0,
+        0.9961947301437549,
+        -0.08715537639073777
+      ],
+      "limits_rad": [
+        -3.14159,
+        2.60054
+      ],
+      "axis_error": 3.715723344288602e-08,
+      "limit_error_rad": 2.6535897932333796e-06
+    },
+    {
+      "name": "proximal_roll_L_Joint",
+      "qpos_address": 3,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -0.261799,
+        3.19395
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 2.531149622786444e-06
+    },
+    {
+      "name": "proximal_yaw_L_Joint",
+      "qpos_address": 4,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        -3.66519,
+        1.48353
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 1.4291880923167355e-06
+    },
+    {
+      "name": "elbow_L_Joint",
+      "qpos_address": 5,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_rad": [
+        -2.61799,
+        0.523599
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.877991494594113e-06
+    },
+    {
+      "name": "wrist_yaw_L_Joint",
+      "qpos_address": 6,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        -1.74533,
+        1.39626
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.4015954635258083e-06
+    },
+    {
+      "name": "wrist_pitch_L_Joint",
+      "qpos_address": 7,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_rad": [
+        -0.785398,
+        0.785398
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 1.6339744823845592e-07
+    },
+    {
+      "name": "wrist_roll_L_Joint",
+      "qpos_address": 8,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -1.5708,
+        1.5708
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.673205103416066e-06
+    },
+    {
+      "name": "proximal_pitch_R_Joint",
+      "qpos_address": 30,
+      "axis": [
+        0.0,
+        0.9961947301437549,
+        0.08715537639073777
+      ],
+      "limits_rad": [
+        -3.14159,
+        2.60054
+      ],
+      "axis_error": 3.715723344288602e-08,
+      "limit_error_rad": 2.6535897932333796e-06
+    },
+    {
+      "name": "proximal_roll_R_Joint",
+      "qpos_address": 31,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -3.19395,
+        0.261799
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 2.531149622786444e-06
+    },
+    {
+      "name": "proximal_yaw_R_Joint",
+      "qpos_address": 32,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        -1.48353,
+        3.66519
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 1.4291880923167355e-06
+    },
+    {
+      "name": "elbow_R_Joint",
+      "qpos_address": 33,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_rad": [
+        -2.61799,
+        0.523599
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.877991494594113e-06
+    },
+    {
+      "name": "wrist_yaw_R_Joint",
+      "qpos_address": 34,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        -1.39626,
+        1.74533
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.4015954635258083e-06
+    },
+    {
+      "name": "wrist_pitch_R_Joint",
+      "qpos_address": 35,
+      "axis": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "limits_rad": [
+        -0.785398,
+        0.785398
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 1.6339744823845592e-07
+    },
+    {
+      "name": "wrist_roll_R_Joint",
+      "qpos_address": 36,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        -1.5708,
+        1.5708
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 3.673205103416066e-06
+    },
+    {
+      "name": "left_thumb_CMP_joint",
+      "qpos_address": 9,
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.9199
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_thumb_CMR_joint",
+      "qpos_address": 10,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        2.0071
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_thumb_MCP_joint",
+      "qpos_address": 11,
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        0.8727
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_thumb_PIP_joint",
+      "qpos_address": 12,
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_thumb_DIP_joint",
+      "qpos_address": 13,
+      "axis": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_index_MPR_joint",
+      "qpos_address": 14,
+      "axis": [
+        -0.9983571883205136,
+        0.057296810807920213,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 2.7735288100905198e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_index_MCP_joint",
+      "qpos_address": 15,
+      "axis": [
+        -0.05719019470191548,
+        0.9964829076860868,
+        0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_index_PIP_joint",
+      "qpos_address": 16,
+      "axis": [
+        -0.05719019470191548,
+        0.9964829076860868,
+        0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_index_DIP_joint",
+      "qpos_address": 17,
+      "axis": [
+        -0.05719019470191548,
+        0.9964829076860868,
+        0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_middle_MPR_joint",
+      "qpos_address": 18,
+      "axis": [
+        -0.9998174826550076,
+        0.019105009222811695,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 5.730442249884948e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_middle_MCP_joint",
+      "qpos_address": 19,
+      "axis": [
+        -0.019100995142894518,
+        0.9996087458140227,
+        0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_middle_PIP_joint",
+      "qpos_address": 20,
+      "axis": [
+        -0.019100995142894518,
+        0.9996087458140227,
+        0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_middle_DIP_joint",
+      "qpos_address": 21,
+      "axis": [
+        -0.019100995142894518,
+        0.9996087458140227,
+        0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_ring_MPR_joint",
+      "qpos_address": 22,
+      "axis": [
+        -0.9998174826550076,
+        -0.019105009222811695,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 5.730442249884948e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_ring_MCP_joint",
+      "qpos_address": 23,
+      "axis": [
+        0.019100995142894518,
+        0.9996087458140227,
+        -0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_ring_PIP_joint",
+      "qpos_address": 24,
+      "axis": [
+        0.019100995142894518,
+        0.9996087458140227,
+        -0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_ring_DIP_joint",
+      "qpos_address": 25,
+      "axis": [
+        0.019100995142894518,
+        0.9996087458140227,
+        -0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_little_MPR_joint",
+      "qpos_address": 26,
+      "axis": [
+        -0.9983571883205136,
+        -0.057296810807920213,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 2.7735288100905198e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_little_MCP_joint",
+      "qpos_address": 27,
+      "axis": [
+        0.05719019470191548,
+        0.9964829076860868,
+        -0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_little_PIP_joint",
+      "qpos_address": 28,
+      "axis": [
+        0.05719019470191548,
+        0.9964829076860868,
+        -0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "left_little_DIP_joint",
+      "qpos_address": 29,
+      "axis": [
+        0.05719019470191548,
+        0.9964829076860868,
+        -0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_thumb_CMP_joint",
+      "qpos_address": 37,
+      "axis": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.9199
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_thumb_CMR_joint",
+      "qpos_address": 38,
+      "axis": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        2.0071
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_thumb_MCP_joint",
+      "qpos_address": 39,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        0.8727
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_thumb_PIP_joint",
+      "qpos_address": 40,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_thumb_DIP_joint",
+      "qpos_address": 41,
+      "axis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 0.0,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_index_MPR_joint",
+      "qpos_address": 42,
+      "axis": [
+        0.9983571883205136,
+        -0.057296810807920213,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 2.7735288100905198e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_index_MCP_joint",
+      "qpos_address": 43,
+      "axis": [
+        0.05719019470191548,
+        0.9964829076860868,
+        -0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_index_PIP_joint",
+      "qpos_address": 44,
+      "axis": [
+        0.05719019820456865,
+        0.9964829687163742,
+        -0.061245198077265826
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678238333217475e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_index_DIP_joint",
+      "qpos_address": 45,
+      "axis": [
+        0.05719012084185616,
+        0.9964823631491203,
+        -0.06125512232326894
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.2804889879268764e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_middle_MPR_joint",
+      "qpos_address": 46,
+      "axis": [
+        0.9998174826550076,
+        -0.019105009222811695,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 5.730442249884948e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_middle_MCP_joint",
+      "qpos_address": 47,
+      "axis": [
+        0.019100995142894518,
+        0.9996087458140227,
+        -0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_middle_PIP_joint",
+      "qpos_address": 48,
+      "axis": [
+        0.019100995533175416,
+        0.9996087662385186,
+        -0.02043199522191718
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.0423976353906026e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_middle_DIP_joint",
+      "qpos_address": 49,
+      "axis": [
+        0.019100991239036313,
+        0.9996085415141537,
+        -0.020442990623507636
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.0434958249854196e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_ring_MPR_joint",
+      "qpos_address": 50,
+      "axis": [
+        0.9998174826550076,
+        0.019105009222811695,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 5.730442249884948e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_ring_MCP_joint",
+      "qpos_address": 51,
+      "axis": [
+        -0.019100995142894518,
+        0.9996087458140227,
+        0.020432994804186363
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042497471155258e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_ring_PIP_joint",
+      "qpos_address": 52,
+      "axis": [
+        -0.019100994752594545,
+        0.9996087253885283,
+        0.020433994386394268
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.042597306226024e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_ring_DIP_joint",
+      "qpos_address": 53,
+      "axis": [
+        -0.01910099865473581,
+        0.9996089295985452,
+        0.020423998561558257
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.041598950314194e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_little_MPR_joint",
+      "qpos_address": 54,
+      "axis": [
+        0.9983571883205136,
+        0.057296810807920213,
+        0.0
+      ],
+      "limits_rad": [
+        -0.2618,
+        0.2618
+      ],
+      "axis_error": 2.7735288100905198e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_little_MCP_joint",
+      "qpos_address": 55,
+      "axis": [
+        -0.05719019470191548,
+        0.9964829076860868,
+        0.06124619432616875
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678246312945465e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_little_PIP_joint",
+      "qpos_address": 56,
+      "axis": [
+        -0.057190191199205744,
+        0.9964828466548139,
+        0.0612471905748886
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 2.7678254278795666e-08,
+      "limit_error_rad": 0.0
+    },
+    {
+      "name": "right_little_DIP_joint",
+      "qpos_address": 57,
+      "axis": [
+        -0.05718917250584069,
+        0.9964835209324515,
+        0.06123717055973273
+      ],
+      "limits_rad": [
+        0.0,
+        1.4835
+      ],
+      "axis_error": 4.553790476646835e-08,
+      "limit_error_rad": 0.0
+    }
+  ],
+  "mass_and_inertia_preservation": {
+    "max_mass_error_kg": 4.7539369499305373e-07,
+    "max_inertia_component_error_kg_m2": 2.52765759489737e-07,
+    "roundtrip_note": "Saved MJCF rounds numeric values; tolerances reflect XML serialization, not changed physical parameters."
+  },
+  "poses": {
+    "zero": {
+      "finite": true,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "joint_values_rad": {
+        "head_yaw_Joint": 0.0,
+        "head_pitch_Joint": 0.0,
+        "proximal_pitch_L_Joint": 0.0,
+        "proximal_roll_L_Joint": 0.0,
+        "proximal_yaw_L_Joint": 0.0,
+        "elbow_L_Joint": 0.0,
+        "wrist_yaw_L_Joint": 0.0,
+        "wrist_pitch_L_Joint": 0.0,
+        "wrist_roll_L_Joint": 0.0,
+        "left_thumb_CMP_joint": 0.0,
+        "left_thumb_CMR_joint": 0.0,
+        "left_thumb_MCP_joint": 0.0,
+        "left_thumb_PIP_joint": 0.0,
+        "left_thumb_DIP_joint": 0.0,
+        "left_index_MPR_joint": 0.0,
+        "left_index_MCP_joint": 0.0,
+        "left_index_PIP_joint": 0.0,
+        "left_index_DIP_joint": 0.0,
+        "left_middle_MPR_joint": 0.0,
+        "left_middle_MCP_joint": 0.0,
+        "left_middle_PIP_joint": 0.0,
+        "left_middle_DIP_joint": 0.0,
+        "left_ring_MPR_joint": 0.0,
+        "left_ring_MCP_joint": 0.0,
+        "left_ring_PIP_joint": 0.0,
+        "left_ring_DIP_joint": 0.0,
+        "left_little_MPR_joint": 0.0,
+        "left_little_MCP_joint": 0.0,
+        "left_little_PIP_joint": 0.0,
+        "left_little_DIP_joint": 0.0,
+        "proximal_pitch_R_Joint": 0.0,
+        "proximal_roll_R_Joint": 0.0,
+        "proximal_yaw_R_Joint": 0.0,
+        "elbow_R_Joint": 0.0,
+        "wrist_yaw_R_Joint": 0.0,
+        "wrist_pitch_R_Joint": 0.0,
+        "wrist_roll_R_Joint": 0.0,
+        "right_thumb_CMP_joint": 0.0,
+        "right_thumb_CMR_joint": 0.0,
+        "right_thumb_MCP_joint": 0.0,
+        "right_thumb_PIP_joint": 0.0,
+        "right_thumb_DIP_joint": 0.0,
+        "right_index_MPR_joint": 0.0,
+        "right_index_MCP_joint": 0.0,
+        "right_index_PIP_joint": 0.0,
+        "right_index_DIP_joint": 0.0,
+        "right_middle_MPR_joint": 0.0,
+        "right_middle_MCP_joint": 0.0,
+        "right_middle_PIP_joint": 0.0,
+        "right_middle_DIP_joint": 0.0,
+        "right_ring_MPR_joint": 0.0,
+        "right_ring_MCP_joint": 0.0,
+        "right_ring_PIP_joint": 0.0,
+        "right_ring_DIP_joint": 0.0,
+        "right_little_MPR_joint": 0.0,
+        "right_little_MCP_joint": 0.0,
+        "right_little_PIP_joint": 0.0,
+        "right_little_DIP_joint": 0.0
+      },
+      "collision_proxy_diagnostic": {
+        "contact_count": 8,
+        "negative_distance_count": 8,
+        "minimum_distance_m": -0.01554808721138392,
+        "deepest_contacts": [
+          {
+            "distance_m": -0.01554808721138392,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015548033256683474,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015547825714977315,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015547775713727133,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015391155526997043,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015388302175961193,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.0153812593021957,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015377840875689962,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          }
+        ],
+        "deepest_link_pairs": [
+          {
+            "links": [
+              "base_Link",
+              "proximal_pitch_L_Link"
+            ],
+            "minimum_distance_m": -0.01554808721138392,
+            "negative_contact_count": 4
+          },
+          {
+            "links": [
+              "base_Link",
+              "proximal_pitch_R_Link"
+            ],
+            "minimum_distance_m": -0.015391155526997043,
+            "negative_contact_count": 4
+          }
+        ],
+        "scope": "MuJoCo collision-proxy contacts at one hard-set pose; not a full-surface clearance certificate"
+      }
+    },
+    "display": {
+      "finite": true,
+      "fk_max_position_error_m": 1.438684022001162e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "joint_values_rad": {
+        "head_yaw_Joint": 0.0,
+        "head_pitch_Joint": 0.05,
+        "proximal_pitch_L_Joint": 0.0,
+        "proximal_roll_L_Joint": 0.1,
+        "proximal_yaw_L_Joint": 0.0,
+        "elbow_L_Joint": -0.7,
+        "wrist_yaw_L_Joint": 0.0,
+        "wrist_pitch_L_Joint": 0.0,
+        "wrist_roll_L_Joint": 0.0,
+        "left_thumb_CMP_joint": 0.0,
+        "left_thumb_CMR_joint": 0.0,
+        "left_thumb_MCP_joint": 0.0,
+        "left_thumb_PIP_joint": 0.0,
+        "left_thumb_DIP_joint": 0.0,
+        "left_index_MPR_joint": 0.0,
+        "left_index_MCP_joint": 0.0,
+        "left_index_PIP_joint": 0.0,
+        "left_index_DIP_joint": 0.0,
+        "left_middle_MPR_joint": 0.0,
+        "left_middle_MCP_joint": 0.0,
+        "left_middle_PIP_joint": 0.0,
+        "left_middle_DIP_joint": 0.0,
+        "left_ring_MPR_joint": 0.0,
+        "left_ring_MCP_joint": 0.0,
+        "left_ring_PIP_joint": 0.0,
+        "left_ring_DIP_joint": 0.0,
+        "left_little_MPR_joint": 0.0,
+        "left_little_MCP_joint": 0.0,
+        "left_little_PIP_joint": 0.0,
+        "left_little_DIP_joint": 0.0,
+        "proximal_pitch_R_Joint": 0.0,
+        "proximal_roll_R_Joint": -0.1,
+        "proximal_yaw_R_Joint": 0.0,
+        "elbow_R_Joint": -0.7,
+        "wrist_yaw_R_Joint": 0.0,
+        "wrist_pitch_R_Joint": 0.0,
+        "wrist_roll_R_Joint": 0.0,
+        "right_thumb_CMP_joint": 0.0,
+        "right_thumb_CMR_joint": 0.0,
+        "right_thumb_MCP_joint": 0.0,
+        "right_thumb_PIP_joint": 0.0,
+        "right_thumb_DIP_joint": 0.0,
+        "right_index_MPR_joint": 0.0,
+        "right_index_MCP_joint": 0.0,
+        "right_index_PIP_joint": 0.0,
+        "right_index_DIP_joint": 0.0,
+        "right_middle_MPR_joint": 0.0,
+        "right_middle_MCP_joint": 0.0,
+        "right_middle_PIP_joint": 0.0,
+        "right_middle_DIP_joint": 0.0,
+        "right_ring_MPR_joint": 0.0,
+        "right_ring_MCP_joint": 0.0,
+        "right_ring_PIP_joint": 0.0,
+        "right_ring_DIP_joint": 0.0,
+        "right_little_MPR_joint": 0.0,
+        "right_little_MCP_joint": 0.0,
+        "right_little_PIP_joint": 0.0,
+        "right_little_DIP_joint": 0.0
+      },
+      "collision_proxy_diagnostic": {
+        "contact_count": 8,
+        "negative_distance_count": 8,
+        "minimum_distance_m": -0.01554808721138392,
+        "deepest_contacts": [
+          {
+            "distance_m": -0.01554808721138392,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015548033256683474,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015547825714977315,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015547775713727133,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_14",
+                "body": "proximal_pitch_L_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015391155526997043,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015388302175961193,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.0153812593021957,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          },
+          {
+            "distance_m": -0.015377840875689962,
+            "pair": [
+              {
+                "geom": "geom_2",
+                "body": "base_Link"
+              },
+              {
+                "geom": "geom_147",
+                "body": "proximal_pitch_R_Link"
+              }
+            ]
+          }
+        ],
+        "deepest_link_pairs": [
+          {
+            "links": [
+              "base_Link",
+              "proximal_pitch_L_Link"
+            ],
+            "minimum_distance_m": -0.01554808721138392,
+            "negative_contact_count": 4
+          },
+          {
+            "links": [
+              "base_Link",
+              "proximal_pitch_R_Link"
+            ],
+            "minimum_distance_m": -0.015391155526997043,
+            "negative_contact_count": 4
+          }
+        ],
+        "scope": "MuJoCo collision-proxy contacts at one hard-set pose; not a full-surface clearance certificate"
+      }
+    }
+  },
+  "joint_sweep": [
+    {
+      "joint": "head_yaw_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "head_pitch_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_pitch_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.5190677541595976e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_roll_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840232156562e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_yaw_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840228023167e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "elbow_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840278658076e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_yaw_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840228023167e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_pitch_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840278658076e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_roll_L_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840297900085e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_thumb_CMP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978359,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_thumb_CMR_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978356,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_thumb_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_thumb_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_thumb_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_index_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_index_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_index_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_index_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_middle_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_middle_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_middle_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_middle_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_ring_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_ring_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_ring_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_ring_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_little_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_little_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_little_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "left_little_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_pitch_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.5190751113315823e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_roll_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840297900085e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "proximal_yaw_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.438684023179184e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "elbow_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840278658076e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_yaw_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.438684023179184e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_pitch_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840278658076e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "wrist_roll_R_Joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250939,
+      "fk_max_position_error_m": 1.4386840297900085e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_thumb_CMP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978359,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_thumb_CMR_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978356,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_thumb_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_thumb_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_thumb_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_index_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_index_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_index_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.35263199449783567,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_index_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.35263199449783567,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_middle_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_middle_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_middle_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_middle_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_ring_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_ring_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_ring_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978358,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_ring_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_little_MPR_joint",
+      "sample_values_rad": [
+        -0.25,
+        -0.125,
+        0.0,
+        0.125,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.6997640691250937,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_little_MCP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978357,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_little_PIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.35263199449783567,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    },
+    {
+      "joint": "right_little_DIP_joint",
+      "sample_values_rad": [
+        1e-06,
+        0.06250075,
+        0.1250005,
+        0.18750025,
+        0.25
+      ],
+      "bounded": true,
+      "finite": true,
+      "child_rotation_change_frobenius": 0.3526319944978358,
+      "fk_max_position_error_m": 1.4386840212016733e-08,
+      "fk_max_rotation_matrix_error": 5.70836788338358e-07,
+      "pass": true
+    }
+  ],
+  "fk_worst_position_error_m": 1.5190751113315823e-08,
+  "fk_worst_rotation_matrix_error": 5.70836788338358e-07,
+  "fixed_mount_joint_names": [
+    "left_adapter_mount",
+    "left_hand_base_joint",
+    "right_adapter_mount",
+    "right_hand_base_joint",
+    "left_wrist_camera_reference_joint",
+    "right_wrist_camera_reference_joint"
+  ],
+  "mount_rigidity_max_transform_component_error": 4.896847323395681e-12,
+  "physics_parameters_modified": [],
+  "scene_additions": [
+    "static ground plane at z=-0.0001 m",
+    "lights/background",
+    "visual group=1 and collision group=3",
+    "zero/display keyframes",
+    "1 ms simulation timestep and Earth gravity"
+  ],
+  "dynamics_smoke": {
+    "status": "not_run"
+  },
+  "render": {
+    "status": "pass",
+    "backend": "egl",
+    "visual_geom_group": 1,
+    "collision_geom_group_hidden": 3,
+    "images": {
+      "assembly_overview.png": {
+        "path": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/reports/cameras/side_bend_v4_preview/assembly_overview.png",
+        "sha256": "99cdbd12b1cb8acde36908377d3f69af8f56183716a522fed71c559f008956bb",
+        "size_px": [
+          2200,
+          1110
+        ]
+      },
+      "mount_left.png": {
+        "path": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/reports/cameras/side_bend_v4_preview/mount_left.png",
+        "sha256": "46a454d778ab162022146d4772c5bb4dfbf2a1131f91badbae53ed2aa64de4e8",
+        "size_px": [
+          2200,
+          1110
+        ]
+      },
+      "mount_right.png": {
+        "path": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/reports/cameras/side_bend_v4_preview/mount_right.png",
+        "sha256": "7289783c88fae9772b094c25ce73ef4b1fe57e2fcf18c8d53a5659940c199e96",
+        "size_px": [
+          2200,
+          1110
+        ]
+      }
+    }
+  }
+}

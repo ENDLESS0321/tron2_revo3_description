@@ -1,0 +1,56 @@
+{
+  "source_urdf": "urdf/tron2_dach_revo3_v2.urdf",
+  "source_urdf_sha256": "79c36defc224cf3c9adaecbd784c237715f52492b6bf5fd4adeb7dd01571733f",
+  "config_path": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/config/camera_rig_supplied_step_20260914.json",
+  "config_sha256": "e0250f106efc7c125228450aed552d94d04ed48e30f576a9c8543dacc6577aeb",
+  "urdf_path": "urdf/tron2_dach_revo3_cameras_e0250f106efc7c12.urdf",
+  "scene_path": "simulation/cameras/variants/e0250f106efc7c12/scene.xml",
+  "urdf_sha256": "bcfb6463fb9ea83957866b27ce0bcc9133d0c91fee3c9d262b849f4d2fa6449b",
+  "scene_sha256": "7d1fbdfe5f9c050f81a6930d797debe06bd656e34ae508a969dca55093b83357",
+  "producer_sha256": "3a1fe2f0c188162d87d2e9938758bef3a10e18c9a15eeae7f2e43faa1ad630e2",
+  "geometry_status": "supplied_STEP_registered_candidate",
+  "hardware_model_status": "D405 wrists and D435i head are explicit simulation selections, not confirmed installed serial-specific hardware",
+  "camera_names": [
+    "head",
+    "left_wrist",
+    "right_wrist"
+  ],
+  "frames": {
+    "head": {
+      "prefix": "head_camera",
+      "model": "D435i"
+    },
+    "left_wrist": {
+      "prefix": "left_wrist_camera",
+      "model": "D405"
+    },
+    "right_wrist": {
+      "prefix": "right_wrist_camera",
+      "model": "D405"
+    }
+  },
+  "mutable_mount_frames": [],
+  "nq": 58,
+  "ncam": 6,
+  "complete_bracket_assembly": true,
+  "bracket_assets": {
+    "left": {
+      "key": "72aef92562da42c9",
+      "manifest": "design/imported_camera_brackets_20260914/left_manifest.json",
+      "manifest_sha256": "f7927a09932b7be59150fdaa772acf2380cf4a4a521dda3ad7f0d942031432f7",
+      "mesh": "meshes/wrist_camera_brackets/supplied_20260914/left_supplied_m.stl",
+      "mesh_sha256": "54c68e11c07706d7c390390fbf00d47126d16596d8e5193b41f24cba5e56ef1f",
+      "camera_separate": true
+    },
+    "right": {
+      "key": "936533c45d43687f",
+      "manifest": "design/imported_camera_brackets_20260914/right_manifest.json",
+      "manifest_sha256": "9c49b33aec8daa112d45c8969bd234ae44f10b736f1deea0a966d5791577b26d",
+      "mesh": "meshes/wrist_camera_brackets/supplied_20260914/right_supplied_m.stl",
+      "mesh_sha256": "fe09023edafd9903ffcb3a771afc0374e8b0c2e216905d4059119b732ba84c68",
+      "camera_separate": true
+    }
+  },
+  "physical_fit_or_strength_certified": false,
+  "legacy_body_camera_retained": true
+}

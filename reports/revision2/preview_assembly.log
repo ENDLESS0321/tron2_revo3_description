@@ -1,0 +1,24 @@
+{
+  "status": "kinematic_assembly_pass",
+  "checks": {
+    "expected_dof": true,
+    "source_joint_names_preserved": true,
+    "all_joints_hinge": true,
+    "no_free_base_joint": true,
+    "source_link_bodies_retained": true,
+    "no_actuators_added": true,
+    "joint_axes_and_limits_preserved": true,
+    "positive_mass_values_preserved": true,
+    "positive_mass_inertias_preserved": true,
+    "source_and_scene_dof_match": true,
+    "all_joint_individual_sweeps_pass": true,
+    "source_fk_preserved": true,
+    "mount_fixed_relationships_preserved": true,
+    "scene_relocation_pass": true,
+    "per_body_source_meshes_preserved": true
+  },
+  "render": "pass",
+  "report": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/reports/revision2/mujoco_validation.json",
+  "scene": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/simulation/revision2/scene.xml"
+}
+

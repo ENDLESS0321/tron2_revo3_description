@@ -1,0 +1,129 @@
+{
+  "schema": "realsense_description_vendor_source_v1",
+  "repository": "https://github.com/realsenseai/realsense-ros",
+  "commit": "9a11121700cb4780e273e34141f6402fe184321d",
+  "commit_time": "2026-08-30T21:33:54+03:00",
+  "retrieval": "depth 1, blob-filtered sparse checkout of D405/D435i description dependencies; no SDK/driver installation",
+  "license": "Apache-2.0",
+  "license_files": [
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "upstream_agents_md": [],
+  "original_tracked_files_modified": false,
+  "original_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 49,
+      "sha256": "f0b26913d3237014d6923b10fd4f956af5a2189b03392ce62769b4abda5d3fe3"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 3043,
+      "sha256": "3204aaa608bb45a4c5fbd42584aca6cee8ab0d5ccd5f61640695656272b51ff0"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10758,
+      "sha256": "7092398b52290edddcb41c6e2297f4c6343eb315ea6c83edfdbeea2a73adfbdb"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 30548,
+      "sha256": "da7bc58b3a30decbf86926d6938cbd15e4252fd2b674a25223f84110b6af344a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 78958,
+      "sha256": "405ebcffd6bff44ce23df8c92ec0e1c7f3508d135dbb4199cb554659451df329"
+    },
+    {
+      "path": "RealSense Copyright",
+      "bytes": 1205,
+      "sha256": "fcf618b496cddf9491317aaef37631139932845ab86f3813d9013b02ce509581"
+    },
+    {
+      "path": "realsense2_description/CMakeLists.txt",
+      "bytes": 861,
+      "sha256": "947fca8a461d4f134715948c3a114cfa347ee30d51f91f380ea84f6aeea8e6d3"
+    },
+    {
+      "path": "realsense2_description/meshes/d405.stl",
+      "bytes": 194684,
+      "sha256": "a248f41149d12b28311829feecbe7a80cf1481fd05e0f5df2c4c7ecd556edd48"
+    },
+    {
+      "path": "realsense2_description/meshes/d435.dae",
+      "bytes": 15782439,
+      "sha256": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78"
+    },
+    {
+      "path": "realsense2_description/meshes/plug.stl",
+      "bytes": 292334,
+      "sha256": "91a0bc6ec83fa24b5dcd4de0d1c0ed78032af2e7ed233b4b232bdbf906fea744"
+    },
+    {
+      "path": "realsense2_description/meshes/plug_collision.stl",
+      "bytes": 11284,
+      "sha256": "fc210c929bba2c9cf3f4ec074d4e6a38549904e9a1eddee9661f34ef7c610f5f"
+    },
+    {
+      "path": "realsense2_description/package.xml",
+      "bytes": 1071,
+      "sha256": "6e0df83f3d1ae6b27bab238656c95bfccb29cda9bfc6e99098723747f8abdebf"
+    },
+    {
+      "path": "realsense2_description/urdf/_d405.urdf.xacro",
+      "bytes": 7282,
+      "sha256": "81118e87388c06e4cf1b3dc8b114096de21c1b235bd283dafad84d2bd97aebb1"
+    },
+    {
+      "path": "realsense2_description/urdf/_d435.urdf.xacro",
+      "bytes": 7527,
+      "sha256": "ae3f57e8d38b3a6d5cc9de059e4afe545e4b895717d638b75d2ad0642cfb7f1b"
+    },
+    {
+      "path": "realsense2_description/urdf/_d435i.urdf.xacro",
+      "bytes": 1472,
+      "sha256": "eda8f0dcf1ca6fb88179cfc8415942dc98b71de9ba50bbeb5cb60d9f09b86602"
+    },
+    {
+      "path": "realsense2_description/urdf/_d435i_imu_modules.urdf.xacro",
+      "bytes": 2118,
+      "sha256": "adde35b74c532d160a9346be2802d832a3d54967a54f81d994a70be1a71a6bda"
+    },
+    {
+      "path": "realsense2_description/urdf/_materials.urdf.xacro",
+      "bytes": 1213,
+      "sha256": "cd8a4b4ab488b57855318e68226329a80310ee45e3aa489dd75222f2c607d005"
+    },
+    {
+      "path": "realsense2_description/urdf/_usb_plug.urdf.xacro",
+      "bytes": 1798,
+      "sha256": "22531ecdc0b09aa3ab4408641432617b000618933e98dc2f488ac31b88c8ad79"
+    },
+    {
+      "path": "realsense2_description/urdf/test_d405_camera.urdf.xacro",
+      "bytes": 437,
+      "sha256": "a0db6ae9ced56cd347be8f5909c598228860f7a1e5c6083af14b636087d28fc2"
+    },
+    {
+      "path": "realsense2_description/urdf/test_d435i_camera.urdf.xacro",
+      "bytes": 444,
+      "sha256": "75fba55a572de8e8294566d07753c45237da21a77c0aad5737622e3b02941aab"
+    },
+    {
+      "path": "security.md",
+      "bytes": 413,
+      "sha256": "3fb437ea74a9b527c47b22111498cd7a85b7b263b70c36eec5f04150b264b23b"
+    }
+  ],
+  "derived_assets_manifest": "generated/manifest.json",
+  "derived_assets_producer": "derive_nominal_assets.py",
+  "reference_datasheet": {
+    "path": "reference_docs/d400_datasheet_october_2025.pdf",
+    "url": "https://realsenseai.com/wp-content/uploads/2025/09/Intel-RealSense-D400-Series-Datasheet-October-2025.pdf",
+    "sha256": "d0156b43a82da64e809c6ae45a5b5d41f34d8697363534ed81f2e4407f38eaa4",
+    "license_note": "Public RealSense datasheet retained as a research source; do not assume the ROS repository Apache license covers this separate document."
+  }
+}

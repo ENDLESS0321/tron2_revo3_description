@@ -1,0 +1,657 @@
+{
+  "schema": "tron2_revo3_joint_map_v1",
+  "units": "radian",
+  "groups": {
+    "head": [
+      "head_yaw_Joint",
+      "head_pitch_Joint"
+    ],
+    "left_arm": [
+      "proximal_pitch_L_Joint",
+      "proximal_roll_L_Joint",
+      "proximal_yaw_L_Joint",
+      "elbow_L_Joint",
+      "wrist_yaw_L_Joint",
+      "wrist_pitch_L_Joint",
+      "wrist_roll_L_Joint"
+    ],
+    "right_arm": [
+      "proximal_pitch_R_Joint",
+      "proximal_roll_R_Joint",
+      "proximal_yaw_R_Joint",
+      "elbow_R_Joint",
+      "wrist_yaw_R_Joint",
+      "wrist_pitch_R_Joint",
+      "wrist_roll_R_Joint"
+    ],
+    "left_hand": [
+      "left_thumb_CMP_joint",
+      "left_thumb_CMR_joint",
+      "left_thumb_MCP_joint",
+      "left_thumb_PIP_joint",
+      "left_thumb_DIP_joint",
+      "left_index_MPR_joint",
+      "left_index_MCP_joint",
+      "left_index_PIP_joint",
+      "left_index_DIP_joint",
+      "left_middle_MPR_joint",
+      "left_middle_MCP_joint",
+      "left_middle_PIP_joint",
+      "left_middle_DIP_joint",
+      "left_ring_MPR_joint",
+      "left_ring_MCP_joint",
+      "left_ring_PIP_joint",
+      "left_ring_DIP_joint",
+      "left_little_MPR_joint",
+      "left_little_MCP_joint",
+      "left_little_PIP_joint",
+      "left_little_DIP_joint"
+    ],
+    "right_hand": [
+      "right_thumb_CMP_joint",
+      "right_thumb_CMR_joint",
+      "right_thumb_MCP_joint",
+      "right_thumb_PIP_joint",
+      "right_thumb_DIP_joint",
+      "right_index_MPR_joint",
+      "right_index_MCP_joint",
+      "right_index_PIP_joint",
+      "right_index_DIP_joint",
+      "right_middle_MPR_joint",
+      "right_middle_MCP_joint",
+      "right_middle_PIP_joint",
+      "right_middle_DIP_joint",
+      "right_ring_MPR_joint",
+      "right_ring_MCP_joint",
+      "right_ring_PIP_joint",
+      "right_ring_DIP_joint",
+      "right_little_MPR_joint",
+      "right_little_MCP_joint",
+      "right_little_PIP_joint",
+      "right_little_DIP_joint"
+    ]
+  },
+  "joints": [
+    {
+      "name": "head_yaw_Joint",
+      "axis": "0.0 0.0 1.0",
+      "limit": {
+        "lower": "-1.5707963267948966",
+        "upper": "1.5707963267948966",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "head_pitch_Joint",
+      "axis": "0.0 1.0 0.0",
+      "limit": {
+        "lower": "-0.7853981633974483",
+        "upper": "1.0471975511965976",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "proximal_pitch_L_Joint",
+      "axis": "0.0 0.9961947268929313 -0.0871554135479712",
+      "limit": {
+        "lower": "-3.141592653589793",
+        "upper": "2.600540585471551",
+        "effort": "150.0",
+        "velocity": "18.3"
+      }
+    },
+    {
+      "name": "proximal_roll_L_Joint",
+      "axis": "1.0 0.0 0.0",
+      "limit": {
+        "lower": "-0.2617993877991494",
+        "upper": "3.193952531149623",
+        "effort": "150.0",
+        "velocity": "18.3"
+      }
+    },
+    {
+      "name": "proximal_yaw_L_Joint",
+      "axis": "0.0 0.0 1.0",
+      "limit": {
+        "lower": "-3.6651914291880923",
+        "upper": "1.4835298641951802",
+        "effort": "60.0",
+        "velocity": "22.52"
+      }
+    },
+    {
+      "name": "elbow_L_Joint",
+      "axis": "0.0 1.0 0.0",
+      "limit": {
+        "lower": "-2.6179938779914944",
+        "upper": "0.5235987755982988",
+        "effort": "70.0",
+        "velocity": "22.52"
+      }
+    },
+    {
+      "name": "wrist_yaw_L_Joint",
+      "axis": "0.0 0.0 1.0",
+      "limit": {
+        "lower": "-1.7453292519943295",
+        "upper": "1.3962634015954636",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "wrist_pitch_L_Joint",
+      "axis": "0.0 1.0 0.0",
+      "limit": {
+        "lower": "-0.7853981633974483",
+        "upper": "0.7853981633974483",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "wrist_roll_L_Joint",
+      "axis": "1.0 0.0 0.0",
+      "limit": {
+        "lower": "-1.5707963267948966",
+        "upper": "1.5707963267948966",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "proximal_pitch_R_Joint",
+      "axis": "0.0 0.9961947268929313 0.0871554135479712",
+      "limit": {
+        "lower": "-3.141592653589793",
+        "upper": "2.600540585471551",
+        "effort": "150.0",
+        "velocity": "18.3"
+      }
+    },
+    {
+      "name": "proximal_roll_R_Joint",
+      "axis": "1.0 0.0 0.0",
+      "limit": {
+        "lower": "-3.193952531149623",
+        "upper": "0.2617993877991494",
+        "effort": "150.0",
+        "velocity": "18.3"
+      }
+    },
+    {
+      "name": "proximal_yaw_R_Joint",
+      "axis": "0.0 0.0 1.0",
+      "limit": {
+        "lower": "-1.4835298641951802",
+        "upper": "3.6651914291880923",
+        "effort": "60.0",
+        "velocity": "22.52"
+      }
+    },
+    {
+      "name": "elbow_R_Joint",
+      "axis": "0.0 1.0 0.0",
+      "limit": {
+        "lower": "-2.6179938779914944",
+        "upper": "0.5235987755982988",
+        "effort": "70.0",
+        "velocity": "22.52"
+      }
+    },
+    {
+      "name": "wrist_yaw_R_Joint",
+      "axis": "0.0 0.0 1.0",
+      "limit": {
+        "lower": "-1.3962634015954636",
+        "upper": "1.7453292519943295",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "wrist_pitch_R_Joint",
+      "axis": "0.0 1.0 0.0",
+      "limit": {
+        "lower": "-0.7853981633974483",
+        "upper": "0.7853981633974483",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "wrist_roll_R_Joint",
+      "axis": "1.0 0.0 0.0",
+      "limit": {
+        "lower": "-1.5707963267948966",
+        "upper": "1.5707963267948966",
+        "effort": "20.0",
+        "velocity": "17.8"
+      }
+    },
+    {
+      "name": "left_thumb_CMP_joint",
+      "axis": "0 0 1",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.9199",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_thumb_CMR_joint",
+      "axis": "0 -1 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "2.0071",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_thumb_MCP_joint",
+      "axis": "-1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "0.8727",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_thumb_PIP_joint",
+      "axis": "-1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_thumb_DIP_joint",
+      "axis": "-1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_index_MPR_joint",
+      "axis": "-0.99836 0.057297 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_index_MCP_joint",
+      "axis": "-0.05719 0.99648 0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_index_PIP_joint",
+      "axis": "-0.05719 0.99648 0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_index_DIP_joint",
+      "axis": "-0.05719 0.99648 0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_middle_MPR_joint",
+      "axis": "-0.99982 0.019105 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_middle_MCP_joint",
+      "axis": "-0.019101 0.99961 0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_middle_PIP_joint",
+      "axis": "-0.019101 0.99961 0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_middle_DIP_joint",
+      "axis": "-0.019101 0.99961 0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_ring_MPR_joint",
+      "axis": "-0.99982 -0.019105 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_ring_MCP_joint",
+      "axis": "0.019101 0.99961 -0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_ring_PIP_joint",
+      "axis": "0.019101 0.99961 -0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_ring_DIP_joint",
+      "axis": "0.019101 0.99961 -0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_little_MPR_joint",
+      "axis": "-0.99836 -0.057297 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_little_MCP_joint",
+      "axis": "0.05719 0.99648 -0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_little_PIP_joint",
+      "axis": "0.05719 0.99648 -0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "left_little_DIP_joint",
+      "axis": "0.05719 0.99648 -0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_thumb_CMP_joint",
+      "axis": "0 0 -1",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.9199",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_thumb_CMR_joint",
+      "axis": "0 -1 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "2.0071",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_thumb_MCP_joint",
+      "axis": "1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "0.8727",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_thumb_PIP_joint",
+      "axis": "1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_thumb_DIP_joint",
+      "axis": "1 0 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_index_MPR_joint",
+      "axis": "0.99836 -0.057297 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_index_MCP_joint",
+      "axis": "0.05719 0.99648 -0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_index_PIP_joint",
+      "axis": "0.05719 0.99648 -0.061245",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_index_DIP_joint",
+      "axis": "0.05719 0.99648 -0.061255",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_middle_MPR_joint",
+      "axis": "0.99982 -0.019105 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_middle_MCP_joint",
+      "axis": "0.019101 0.99961 -0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_middle_PIP_joint",
+      "axis": "0.019101 0.99961 -0.020432",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_middle_DIP_joint",
+      "axis": "0.019101 0.99961 -0.020443",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_ring_MPR_joint",
+      "axis": "0.99982 0.019105 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_ring_MCP_joint",
+      "axis": "-0.019101 0.99961 0.020433",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_ring_PIP_joint",
+      "axis": "-0.019101 0.99961 0.020434",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_ring_DIP_joint",
+      "axis": "-0.019101 0.99961 0.020424",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_little_MPR_joint",
+      "axis": "0.99836 0.057297 0",
+      "limit": {
+        "effort": "0.35",
+        "lower": "-0.2618",
+        "upper": "0.2618",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_little_MCP_joint",
+      "axis": "-0.05719 0.99648 0.061246",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_little_PIP_joint",
+      "axis": "-0.05719 0.99648 0.061247",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    },
+    {
+      "name": "right_little_DIP_joint",
+      "axis": "-0.057189 0.99648 0.061237",
+      "limit": {
+        "effort": "0.35",
+        "lower": "0",
+        "upper": "1.4835",
+        "velocity": "6.28"
+      }
+    }
+  ],
+  "note": "Name-based kinematic model order only; not a hardware bus or SDK motor index map."
+}

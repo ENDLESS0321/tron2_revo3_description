@@ -1,0 +1,461 @@
+{
+  "schema": "tron2_revo3_manufacturing_validation_v1",
+  "created_utc": "2026-09-11T02:55:53.240177+00:00",
+  "scope": "Native manufacturing file units, topology, scaling, print orientation, cable-slot handedness, and upper-geometry preservation. Not a mechanical-fit or print-strength certificate.",
+  "errors": [],
+  "sides": {
+    "left": {
+      "native_3mf": {
+        "model_members": [
+          "3D/3dmodel.model"
+        ],
+        "unit": "millimeter",
+        "model_objects": 1,
+        "build_elements": 1,
+        "build_items": 1,
+        "identity_build_transform": true,
+        "vertices": 82800,
+        "triangles": 165632
+      },
+      "geometry": {
+        "assembly_mm_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82801,
+          "triangles": 165634,
+          "bounds": [
+            [
+              -41.40999984741211,
+              -10.357999801635742,
+              -28.204269409179688
+            ],
+            [
+              41.40999984741211,
+              35.85499954223633,
+              28.204269409179688
+            ]
+          ],
+          "signed_volume": 83423.00371476209
+        },
+        "print_mm_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82800,
+          "triangles": 165632,
+          "bounds": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              82.81999969482422,
+              56.408538818359375,
+              46.21299743652344
+            ]
+          ],
+          "signed_volume": 83423.00218935874
+        },
+        "meter_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82801,
+          "triangles": 165634,
+          "bounds": [
+            [
+              -0.04140999913215637,
+              -0.010358000174164772,
+              -0.02820426970720291
+            ],
+            [
+              0.04140999913215637,
+              0.0358549989759922,
+              0.02820426970720291
+            ]
+          ],
+          "signed_volume": 8.342300461581692e-05
+        },
+        "native_3mf": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82800,
+          "triangles": 165632,
+          "bounds": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              82.81999969,
+              56.40853882,
+              46.21299744
+            ]
+          ],
+          "signed_volume": 83423.00219283195
+        }
+      },
+      "cross_format_geometry_checks": {
+        "assembly_to_print": {
+          "vertex_hausdorff_mm": 4.672030911985737e-06,
+          "triangle_centroid_nearest_centroid_distance_mm": 0.04373174265676663,
+          "triangle_centroid_surface_distance_bound_mm": 4.450480143905874e-06,
+          "centroids_checked_against_actual_surface": 2,
+          "triangle_counts": [
+            165634,
+            165632
+          ],
+          "bounds_max_error_mm": 1.9073486328125e-06,
+          "volume_relative_error": 1.828516436933923e-08,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        },
+        "print_stl_to_native_3mf": {
+          "vertex_hausdorff_mm": 8.415033448836282e-09,
+          "triangle_centroid_nearest_centroid_distance_mm": 7.157983206576651e-09,
+          "triangle_centroid_surface_distance_bound_mm": 7.157983206576651e-09,
+          "centroids_checked_against_actual_surface": 0,
+          "triangle_counts": [
+            165632,
+            165632
+          ],
+          "bounds_max_error_mm": 4.824215693588485e-09,
+          "volume_relative_error": 4.1633690706517754e-11,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        },
+        "assembly_mm_to_meters_times_1000": {
+          "vertex_hausdorff_mm": 2.613709973634172e-06,
+          "triangle_centroid_nearest_centroid_distance_mm": 2.2529969329178963e-06,
+          "triangle_centroid_surface_distance_bound_mm": 2.2529969329178963e-06,
+          "centroids_checked_against_actual_surface": 0,
+          "triangle_counts": [
+            165634,
+            165634
+          ],
+          "bounds_max_error_mm": 7.152557373046875e-07,
+          "volume_relative_error": 1.0801035489587308e-08,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        }
+      },
+      "expected_print_rotation": "+90 degrees about assembly X, then translate minimum XYZ to zero",
+      "print_translation_mm": [
+        41.40999984741211,
+        28.204269409179688,
+        10.357999801635742
+      ],
+      "independent_scale_from_untouched_features": {
+        "x_extent_ratio": 1.0099999962783441,
+        "top_y_ratio": 1.0099999899503191,
+        "expected_single_scale": 1.01,
+        "double_scale_to_reject": 1.0201
+      },
+      "hand_back_alignment": {
+        "dorsal_normal_adapter": [
+          -6.123233995736766e-17,
+          0.0,
+          1.0
+        ],
+        "slot_outward_normal_adapter": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "dot_product": 1.0
+      },
+      "slot_material_probes": {
+        "intended_slot": {
+          "sample_count": 60,
+          "solid_count": 0
+        },
+        "opposite_old_slot_region": {
+          "sample_count": 60,
+          "solid_count": 60
+        },
+        "slot_width_guard": {
+          "sample_count": 18,
+          "solid_count": 18
+        },
+        "slot_lower_edge_guard": {
+          "sample_count": 9,
+          "solid_count": 9
+        }
+      },
+      "upper_geometry_outside_slots": {
+        "reference": "Original source upper minus original negative part, in nominal CAD mm",
+        "removed_volume_mm3": 0.001988202350799631,
+        "added_volume_mm3": 0.001790239768576107,
+        "symmetric_difference_volume_mm3": 0.0037784421193757384,
+        "reference_volume_mm3": 28064.550212172824,
+        "valid": true
+      }
+    },
+    "right": {
+      "native_3mf": {
+        "model_members": [
+          "3D/3dmodel.model"
+        ],
+        "unit": "millimeter",
+        "model_objects": 1,
+        "build_elements": 1,
+        "build_items": 1,
+        "identity_build_transform": true,
+        "vertices": 82804,
+        "triangles": 165640
+      },
+      "geometry": {
+        "assembly_mm_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82805,
+          "triangles": 165642,
+          "bounds": [
+            [
+              -41.40999984741211,
+              -10.357999801635742,
+              -28.204269409179688
+            ],
+            [
+              41.40999984741211,
+              35.85499954223633,
+              28.204269409179688
+            ]
+          ],
+          "signed_volume": 83423.00964725636
+        },
+        "print_mm_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82804,
+          "triangles": 165640,
+          "bounds": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              82.81999969482422,
+              56.408538818359375,
+              46.21299743652344
+            ]
+          ],
+          "signed_volume": 83423.0081220994
+        },
+        "meter_stl": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82805,
+          "triangles": 165642,
+          "bounds": [
+            [
+              -0.04140999913215637,
+              -0.010358000174164772,
+              -0.02820426970720291
+            ],
+            [
+              0.04140999913215637,
+              0.0358549989759922,
+              0.02820426970720291
+            ]
+          ],
+          "signed_volume": 8.342301058516435e-05
+        },
+        "native_3mf": {
+          "finite_vertices": true,
+          "watertight": true,
+          "consistent_winding": true,
+          "positive_volume": true,
+          "connected_components": 1,
+          "vertices": 82804,
+          "triangles": 165640,
+          "bounds": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              82.81999969,
+              56.40853882,
+              46.21299744
+            ]
+          ],
+          "signed_volume": 83423.00812543051
+        }
+      },
+      "cross_format_geometry_checks": {
+        "assembly_to_print": {
+          "vertex_hausdorff_mm": 4.672030911985737e-06,
+          "triangle_centroid_nearest_centroid_distance_mm": 0.04373174265676663,
+          "triangle_centroid_surface_distance_bound_mm": 4.450480143905874e-06,
+          "centroids_checked_against_actual_surface": 2,
+          "triangle_counts": [
+            165642,
+            165640
+          ],
+          "bounds_max_error_mm": 1.9073486328125e-06,
+          "volume_relative_error": 1.828220987989451e-08,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        },
+        "print_stl_to_native_3mf": {
+          "vertex_hausdorff_mm": 8.415033448836282e-09,
+          "triangle_centroid_nearest_centroid_distance_mm": 7.157983206576651e-09,
+          "triangle_centroid_surface_distance_bound_mm": 7.157983206576651e-09,
+          "centroids_checked_against_actual_surface": 0,
+          "triangle_counts": [
+            165640,
+            165640
+          ],
+          "bounds_max_error_mm": 4.824215693588485e-09,
+          "volume_relative_error": 3.993032730107794e-11,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        },
+        "assembly_mm_to_meters_times_1000": {
+          "vertex_hausdorff_mm": 2.613709973634172e-06,
+          "triangle_centroid_nearest_centroid_distance_mm": 2.2529969329178963e-06,
+          "triangle_centroid_surface_distance_bound_mm": 2.2529969329178963e-06,
+          "centroids_checked_against_actual_surface": 0,
+          "triangle_counts": [
+            165642,
+            165642
+          ],
+          "bounds_max_error_mm": 7.152557373046875e-07,
+          "volume_relative_error": 1.1242797276317892e-08,
+          "coordinate_tolerance_mm": 5e-05,
+          "valid": true
+        }
+      },
+      "expected_print_rotation": "+90 degrees about assembly X, then translate minimum XYZ to zero",
+      "print_translation_mm": [
+        41.40999984741211,
+        28.204269409179688,
+        10.357999801635742
+      ],
+      "independent_scale_from_untouched_features": {
+        "x_extent_ratio": 1.0099999962783441,
+        "top_y_ratio": 1.0099999899503191,
+        "expected_single_scale": 1.01,
+        "double_scale_to_reject": 1.0201
+      },
+      "hand_back_alignment": {
+        "dorsal_normal_adapter": [
+          -6.123233995736766e-17,
+          0.0,
+          -1.0
+        ],
+        "slot_outward_normal_adapter": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "dot_product": 1.0
+      },
+      "slot_material_probes": {
+        "intended_slot": {
+          "sample_count": 60,
+          "solid_count": 0
+        },
+        "opposite_old_slot_region": {
+          "sample_count": 60,
+          "solid_count": 60
+        },
+        "slot_width_guard": {
+          "sample_count": 18,
+          "solid_count": 18
+        },
+        "slot_lower_edge_guard": {
+          "sample_count": 9,
+          "solid_count": 9
+        }
+      },
+      "upper_geometry_outside_slots": {
+        "reference": "Original source upper minus original negative part, in nominal CAD mm",
+        "removed_volume_mm3": 0.001988225615374403,
+        "added_volume_mm3": 0.0017903695873733919,
+        "symmetric_difference_volume_mm3": 0.003778595202747795,
+        "reference_volume_mm3": 28064.550212172824,
+        "valid": true
+      }
+    }
+  },
+  "manifest_sha256": "e97a33d07a46225ca020692f8fba7b341354f4225a1db0814e3453663ed4f9dc",
+  "producer_sha256": "5b3c6003e3bb407cb40f32472fca7260f9a6c0cf8b4f4fa8d84e329b4d18eb28",
+  "source_project_print_scale_singular_values": [
+    1.01,
+    1.01,
+    1.01
+  ],
+  "print_scale_baked": 1.01,
+  "assembly_config_sha256": "9ab1b6da240f9f887ac75557eda61ef2d394f306b7baa5110ce55a4fd0d93389",
+  "slot_exclusion_windows_nominal_mm": [
+    [
+      [
+        -7.502,
+        -1.032,
+        19.998
+      ],
+      [
+        7.502,
+        5.172,
+        27.927
+      ]
+    ],
+    [
+      [
+        -7.502,
+        -1.032,
+        -27.927
+      ],
+      [
+        7.502,
+        5.172,
+        -19.998
+      ]
+    ]
+  ],
+  "upper_compare_region_min_y_mm": -1.099,
+  "upper_difference_tolerance_mm3": 0.1,
+  "source_numerical_shared_face_repair": {
+    "shared_plane_y_mm": -1.1,
+    "tolerance_mm": 1e-05,
+    "vertices_snapped": 714,
+    "maximum_vertex_movement_mm": 6.000000012384987e-07
+  },
+  "verified_artifact_sha256": {
+    "adapter_left_v2_assembly_mm.stl": "9784cb013df067a283035268f50cb0ba0f82ea043fc2edb2ca4f54f7e7e65980",
+    "adapter_left_v2_m.stl": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
+    "adapter_left_v2_print_mm.stl": "7bf36a60fb3ee4b1db90e1750da8ae0c5b765e5a300d7941a2af4feb83e18657",
+    "adapter_left_v2.3mf": "6574f0fb8c4839b1c3fe1b60d73c44ec4e9b07ffbaf5f26c892ecad0ba0f6898",
+    "adapter_right_v2_assembly_mm.stl": "1100983eea534934ffbedfe6daabf4b5e10910ee1aadfcbf8a776f02de3c40cf",
+    "adapter_right_v2_m.stl": "19de2108c88c78564837f50ebc8e52e297425cdf45e346c6a2f91a87e27c4383",
+    "adapter_right_v2_print_mm.stl": "47a6b3ba7bf9830137e4d2dbc6ff92f7ca34ac4130891b8c4b33671d7e034553",
+    "adapter_right_v2.3mf": "4538bc82a088509531fe48f395d622abf97164ce95f70bb888cd9100025bc039"
+  },
+  "manifest_and_artifacts_stable_during_validation": true,
+  "valid": true
+}

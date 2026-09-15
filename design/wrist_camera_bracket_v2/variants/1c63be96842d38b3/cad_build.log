@@ -1,0 +1,102 @@
+{
+  "output": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/design/wrist_camera_bracket_v2/variants/1c63be96842d38b3",
+  "parameters": {
+    "length_mm": 80.0,
+    "plate_tilt_deg": 40.0,
+    "density_kg_m3": 1250.0,
+    "length_range_mm": [
+      20,
+      150
+    ],
+    "plate_tilt_range_deg": [
+      0,
+      75
+    ]
+  },
+  "plate_frame": {
+    "xyz_mm": [
+      0,
+      0,
+      115.8
+    ],
+    "rpy_deg": [
+      40.0,
+      0,
+      0
+    ],
+    "pivot_axis_in_root": [
+      1,
+      0,
+      0
+    ]
+  },
+  "whole": {
+    "volume_mm3": 34874.8905957432,
+    "mass_kg": 0.043593613244679,
+    "density_kg_m3": 1250.0,
+    "center_of_mass_mm": [
+      -1.3453270364227329e-08,
+      2.3742241737641687,
+      82.5856524505947
+    ],
+    "inertia_at_com_kg_m2": [
+      [
+        6.45805707721166e-05,
+        -4.170854770630816e-15,
+        1.3529657102225902e-12
+      ],
+      [
+        -4.170854770630816e-15,
+        6.304268551799893e-05,
+        -1.3231912893109746e-05
+      ],
+      [
+        1.3529657102225902e-12,
+        -1.3231912893109746e-05,
+        1.027474663467568e-05
+      ]
+    ],
+    "bounds_mm": [
+      [
+        -32.943401903503926,
+        -10.51351821229357,
+        11.775424765641615
+      ],
+      [
+        32.94340190350393,
+        41.11988636155996,
+        150.75704468993803
+      ]
+    ],
+    "brep_valid": true,
+    "solid_count": 1
+  },
+  "verification": {
+    "whole_step_roundtrip": {
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 34874.89059570356,
+      "volume_absolute_error_mm3": 3.9639417082071304e-08
+    },
+    "whole_stl_mm": {
+      "watertight": true,
+      "is_volume": true,
+      "faces": 6052,
+      "volume": 34875.401132543826,
+      "relative_volume_error": 1.463909397004552e-05
+    },
+    "whole_stl_m": {
+      "watertight": true,
+      "is_volume": true,
+      "faces": 6052,
+      "volume": 3.487539835201775e-05,
+      "relative_volume_error": 1.4559365373557128e-05
+    },
+    "component_volume_partition_error_mm3": 4.4643093133345246e-07,
+    "plate_partition_fragment_cleanup": {
+      "count": 0,
+      "volume_mm3": 0.0
+    },
+    "physical_fit_or_strength_certified": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "New parameterized bracket design using reference images for arrangement, not image-derived dimensional metrology or a reconstruction of legacy STEP files.",
+  "reference_images": [
+    {"path": "/tmp/codex-clipboard-goxvQB.png", "sha256": "c1318e1cd4ae9fd04745a2efc1ed277c96c98c3222d97fda8963cb7f12d70f7d"},
+    {"path": "/home/endless/Pictures/截图/B9FC10C83D90C5D7F842CA35B082142B.jpg", "sha256": "c479dee08f95fb99fb5048847d08cdd22e0bf12fbacdbb7c00b14b2801f00c13"},
+    {"path": "/home/endless/Pictures/截图/9F7A39B2C542E1285B6D9C37D99C1C7A.jpg", "sha256": "48fee41f1acd7cfba8c85b08bfd2841e32dd36265f7e458cb215cd0103e75c64"},
+    {"path": "/home/endless/Pictures/截图/982B5C72D1EE22EEC0CC2E78037424A0.jpg", "sha256": "090b678dbc78ba154b6b3aab7c79584a9d3a23d91a2389e311fea66fd757f180"}
+  ],
+  "camera_model_catalog": {
+    "path": "config/camera_model_catalog.json",
+    "sha256_at_design": "090d06bfc0630acebf3c3f892cb4db80c1fca9c0793059ca17527c6860400e68"
+  },
+  "wrist_geometry_provenance": "Official left/right wrist mesh fingerprints are recorded directly in manifest.json.reference_wrist_meshes.",
+  "verified_interface_inputs": {
+    "wrist_small_hole_angles_adapter_deg": [30,150],
+    "wrist_hole_axis_y_mm": -4.5,
+    "wrist_outer_radius_reference_mm": 30.5,
+    "robot_thread_type": "not confirmed; 3.4 mm clearance chosen without asserting the existing thread",
+    "D405_rear_hole_points_bottom_screw_frame_mm": [[-8.35,-10,21],[-8.35,10,21]],
+    "D405_rear_thread_depth_reference_mm": 4
+  },
+  "new_design_choices": "Arm dimensions, saddle clearance, pedestal rise, gussets, plate outline and fillets are explicit prototype design choices recorded in the generator/manifest, not measurements inferred from image pixels.",
+  "generator_sha256": "b0ef45d97785146c5e1d0694c390a4ece4de4cfefba8f8ca665b8a2cc94bce3f"
+}

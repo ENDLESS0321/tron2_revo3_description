@@ -1,0 +1,266 @@
+{
+  "config": "config/camera_rig_supplied_step_aligned_v3.json",
+  "config_sha256": "dccd9f215835854940c226a83cf63492a2f0c7202fec0144de972ff7b0ea2937",
+  "urdf": "urdf/tron2_dach_revo3_supplied_step_aligned_v3.urdf",
+  "scene": "simulation/cameras/supplied_step_aligned_v3/scene.xml",
+  "robot_and_hand_elements_unchanged": 163,
+  "nq": 58,
+  "ncam": 6,
+  "sides": {
+    "left": {
+      "wrist_hole_fits": [
+        {
+          "target_theta_deg": 30,
+          "axial_error_mm": 1.600418629266187e-05,
+          "tangent_error_mm": 3.201344777729854e-05,
+          "bracket_hole_diameter_mm": 3.3,
+          "wrist_hole_diameter_mm": 2.499955508188269
+        },
+        {
+          "target_theta_deg": 330,
+          "axial_error_mm": -4.489274097352336e-06,
+          "tangent_error_mm": -1.3516624714166684e-05,
+          "bracket_hole_diameter_mm": 3.3,
+          "wrist_hole_diameter_mm": 2.4999600892743388
+        }
+      ],
+      "rear_hole_max_error_mm": 3.161948393017358e-05,
+      "cad_verification": {
+        "camera_plate_shape_change_after_rigid_transform_mm3": 0.0,
+        "horizontal_edge_error_deg": 0.0,
+        "rear_hole_axis_error_mm": [
+          3.604594149771344e-12,
+          3.644668840095667e-12
+        ],
+        "camera_envelope_bracket_intersection_mm3": 2.4494063923975524,
+        "inherited_upper_camera_envelope_intersection_mm3": 2.449406392480329,
+        "new_root_camera_envelope_intersection_mm3": 0.0,
+        "small_screw_tool_access": [
+          {
+            "source_normalized_angle_deg": 60.0,
+            "tool_diameter_mm": 6.5,
+            "bracket_intersection_mm3": 0.0,
+            "camera_envelope_intersection_mm3": 0.0
+          },
+          {
+            "source_normalized_angle_deg": 120.0,
+            "tool_diameter_mm": 6.5,
+            "bracket_intersection_mm3": 0.0,
+            "camera_envelope_intersection_mm3": 0.0
+          }
+        ],
+        "free_retention_screw_access": [
+          {
+            "adapter_angle_deg": 105.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          },
+          {
+            "adapter_angle_deg": 195.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          },
+          {
+            "adapter_angle_deg": 285.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          }
+        ],
+        "step_roundtrip_relative_volume_error": 2.9291513659046586e-09,
+        "valid_connected_solid": true,
+        "physical_strength_certified": false
+      },
+      "mesh_watertight": true,
+      "axial_section_overlap": [
+        {
+          "y_mm": -0.01,
+          "bracket_wrist_overlap_mm2": 0.0,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -0.1,
+          "bracket_wrist_overlap_mm2": 0.0,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -0.5,
+          "bracket_wrist_overlap_mm2": 0.005596714151422988,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -1,
+          "bracket_wrist_overlap_mm2": 0.00662539407022808,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -2,
+          "bracket_wrist_overlap_mm2": 0.008576261603111007,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -3,
+          "bracket_wrist_overlap_mm2": 0.00770837135333613,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -4.5,
+          "bracket_wrist_overlap_mm2": 0.009458251992856964,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -6,
+          "bracket_wrist_overlap_mm2": 0.013156696970088755,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -8,
+          "bracket_wrist_overlap_mm2": 0.018901849837650447,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -10,
+          "bracket_wrist_overlap_mm2": 0.02587952416345965,
+          "bracket_adapter_overlap_mm2": 0.0
+        }
+      ],
+      "palm_normal_to_camera_deg": 52.19980632788728,
+      "camera_edge_to_hand_transverse_angle_deg": 0.0,
+      "palm_center_pixel": [
+        361.12272090537294,
+        8.668917673650824
+      ],
+      "palm_center_in_frame": true,
+      "valid_depth_fraction": 0.27869140625
+    },
+    "right": {
+      "wrist_hole_fits": [
+        {
+          "target_theta_deg": 330,
+          "axial_error_mm": 2.9629390763119545e-06,
+          "tangent_error_mm": 9.47840277713377e-06,
+          "bracket_hole_diameter_mm": 3.3,
+          "wrist_hole_diameter_mm": 2.4999600693688313
+        },
+        {
+          "target_theta_deg": 30,
+          "axial_error_mm": 2.345725721664138e-05,
+          "tangent_error_mm": 8.943321258386037e-06,
+          "bracket_hole_diameter_mm": 3.3,
+          "wrist_hole_diameter_mm": 2.4999555333849126
+        }
+      ],
+      "rear_hole_max_error_mm": 5.948130809001202e-06,
+      "cad_verification": {
+        "camera_plate_shape_change_after_rigid_transform_mm3": 0.0,
+        "horizontal_edge_error_deg": 0.0,
+        "rear_hole_axis_error_mm": [
+          3.604594149771344e-12,
+          8.571122779754481e-12
+        ],
+        "camera_envelope_bracket_intersection_mm3": 2.4494066539110517,
+        "inherited_upper_camera_envelope_intersection_mm3": 2.4494066419985616,
+        "new_root_camera_envelope_intersection_mm3": 0.0,
+        "small_screw_tool_access": [
+          {
+            "source_normalized_angle_deg": 60.0,
+            "tool_diameter_mm": 6.5,
+            "bracket_intersection_mm3": 0.0,
+            "camera_envelope_intersection_mm3": 0.0
+          },
+          {
+            "source_normalized_angle_deg": 120.0,
+            "tool_diameter_mm": 6.5,
+            "bracket_intersection_mm3": 0.0,
+            "camera_envelope_intersection_mm3": 0.0
+          }
+        ],
+        "free_retention_screw_access": [
+          {
+            "adapter_angle_deg": 105.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          },
+          {
+            "adapter_angle_deg": 195.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          },
+          {
+            "adapter_angle_deg": 285.0,
+            "clear_diameter_mm": 9.0,
+            "intersection_mm3": 0.0
+          }
+        ],
+        "step_roundtrip_relative_volume_error": 7.236796029097547e-08,
+        "valid_connected_solid": true,
+        "physical_strength_certified": false
+      },
+      "mesh_watertight": true,
+      "axial_section_overlap": [
+        {
+          "y_mm": -0.01,
+          "bracket_wrist_overlap_mm2": 0.0,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -0.1,
+          "bracket_wrist_overlap_mm2": 0.0,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -0.5,
+          "bracket_wrist_overlap_mm2": 0.005495727836113795,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -1,
+          "bracket_wrist_overlap_mm2": 0.00649700542174339,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -2,
+          "bracket_wrist_overlap_mm2": 0.00839562032978114,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -3,
+          "bracket_wrist_overlap_mm2": 0.007530582816502651,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -4.5,
+          "bracket_wrist_overlap_mm2": 0.009293298447239112,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -6,
+          "bracket_wrist_overlap_mm2": 0.012928675691826041,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -8,
+          "bracket_wrist_overlap_mm2": 0.018584467513201225,
+          "bracket_adapter_overlap_mm2": 0.0
+        },
+        {
+          "y_mm": -10,
+          "bracket_wrist_overlap_mm2": 0.025495749963307696,
+          "bracket_adapter_overlap_mm2": 0.0
+        }
+      ],
+      "palm_normal_to_camera_deg": 52.19979146223122,
+      "camera_edge_to_hand_transverse_angle_deg": 0.0,
+      "palm_center_pixel": [
+        361.12271933814753,
+        470.331227065508
+      ],
+      "palm_center_in_frame": true,
+      "valid_depth_fraction": 0.27888346354166665
+    }
+  },
+  "physical_fit_or_strength_certified": false,
+  "fixed_geometry_edit_guard_pass": true,
+  "requested_hole_alignment_pass": true,
+  "robot_hand_pose_preservation_pass": true,
+  "view_status": "See rendered RGB: geometric projection and depth checks are not a grasping/visibility certification."
+}

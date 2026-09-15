@@ -1,0 +1,143 @@
+{
+  "status": "pass",
+  "scope": "Model loading and offscreen rendering of all part/view combinations; desktop interaction not launched",
+  "producer_sha256": "b89e5a6eecbb4b8d919c6ae0916bcebd13f6cbe1b56e20bfbb58e39f200f42e5",
+  "parts": {
+    "left": {
+      "file": "design/revision2/adapter_left_v2_print_mm.stl",
+      "sha256": "7bf36a60fb3ee4b1db90e1750da8ae0c5b765e5a300d7941a2af4feb83e18657",
+      "camera_center_m": [
+        -0.055,
+        0,
+        0.02310649871826172
+      ],
+      "geom_group": 1
+    },
+    "right": {
+      "file": "design/revision2/adapter_right_v2_print_mm.stl",
+      "sha256": "47a6b3ba7bf9830137e4d2dbc6ff92f7ca34ac4130891b8c4b33671d7e034553",
+      "camera_center_m": [
+        0.055,
+        0,
+        0.02310649871826172
+      ],
+      "geom_group": 2
+    }
+  },
+  "nq": 0,
+  "ngeom": 2,
+  "views": [
+    {
+      "mode": "both",
+      "view": "front",
+      "visible_geom_ids": [
+        0,
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/both_front.png",
+      "sha256": "26e52de8c165877255946fe1e11c1b2776f7a49f4dd92de682f3fd289a706100"
+    },
+    {
+      "mode": "both",
+      "view": "back",
+      "visible_geom_ids": [
+        0,
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/both_back.png",
+      "sha256": "27c7ea1c214acb94068f4f5528751ec2b8eb3eaed917888e83a6a9db70dfcf23"
+    },
+    {
+      "mode": "both",
+      "view": "top",
+      "visible_geom_ids": [
+        0,
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/both_top.png",
+      "sha256": "7059606f71f1dbc01730f3ad9c53231965322788cd8ca36cdd5dc93ce861d996"
+    },
+    {
+      "mode": "both",
+      "view": "wrist",
+      "visible_geom_ids": [
+        0,
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/both_wrist.png",
+      "sha256": "d0d2e5c747324eb2811b2f5533f139a941a51a8b41fc70ed15db77e91e7854d4"
+    },
+    {
+      "mode": "left",
+      "view": "front",
+      "visible_geom_ids": [
+        0
+      ],
+      "image": "reports/revision2/parts_viewer/left_front.png",
+      "sha256": "ea3a76cba376471ab6660109960afc3f0b18d2b05230a4505eaab3229067a268"
+    },
+    {
+      "mode": "left",
+      "view": "back",
+      "visible_geom_ids": [
+        0
+      ],
+      "image": "reports/revision2/parts_viewer/left_back.png",
+      "sha256": "7a3165e8194eae718ff4bf65297184a77a670f8f9e9e574e3a55657218cc2b55"
+    },
+    {
+      "mode": "left",
+      "view": "top",
+      "visible_geom_ids": [
+        0
+      ],
+      "image": "reports/revision2/parts_viewer/left_top.png",
+      "sha256": "83538779ebbdff3bbe3dacd38a99f6d80288a179cffd20067abc30a9316904ef"
+    },
+    {
+      "mode": "left",
+      "view": "wrist",
+      "visible_geom_ids": [
+        0
+      ],
+      "image": "reports/revision2/parts_viewer/left_wrist.png",
+      "sha256": "6a38720353e24e7adbb7cb90d166357112f4f3ad8a556979bb3f4a032973582b"
+    },
+    {
+      "mode": "right",
+      "view": "front",
+      "visible_geom_ids": [
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/right_front.png",
+      "sha256": "998211386d6a46115e76d63d179c5d85415de0c3e37f413c8c56eefa4908fc7f"
+    },
+    {
+      "mode": "right",
+      "view": "back",
+      "visible_geom_ids": [
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/right_back.png",
+      "sha256": "39a46da63b9e89bff3fc38997bde177e25713346fdec88eb64d0587f3101ef85"
+    },
+    {
+      "mode": "right",
+      "view": "top",
+      "visible_geom_ids": [
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/right_top.png",
+      "sha256": "25b3cbdbea00e403f2ca6ba4625c1bd7abc036a35ddf850cd1bcda38571d85cc"
+    },
+    {
+      "mode": "right",
+      "view": "wrist",
+      "visible_geom_ids": [
+        1
+      ],
+      "image": "reports/revision2/parts_viewer/right_wrist.png",
+      "sha256": "b26e919a7fd6dd700a331558435e665c615d8c2d377270ff90fcd82d56609330"
+    }
+  ]
+}

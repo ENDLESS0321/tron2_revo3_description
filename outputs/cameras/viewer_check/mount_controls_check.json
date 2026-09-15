@@ -1,0 +1,257 @@
+{
+  "status": "real_offscreen_capture_and_live_mount_commands_verified",
+  "opened_gui": false,
+  "capture_worker_used": true,
+  "baseline_montage": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/outputs/cameras/viewer_check/rgbd_montage.png",
+  "length_montage": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/outputs/cameras/viewer_length_check/rgbd_montage.png",
+  "tilt_montage": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/outputs/cameras/viewer_tilt_check/rgbd_montage.png",
+  "baseline_parameters": {
+    "left": {
+      "model": "D405",
+      "parent": "wrist_roll_L_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        1,
+        0
+      ],
+      "length_mm": 50,
+      "plate_zero_rpy_rad": [
+        -1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 25,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    },
+    "right": {
+      "model": "D405",
+      "parent": "wrist_roll_R_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        -0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        -1,
+        0
+      ],
+      "length_mm": 50,
+      "plate_zero_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 25,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    }
+  },
+  "length_parameters": {
+    "left": {
+      "model": "D405",
+      "parent": "wrist_roll_L_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        1,
+        0
+      ],
+      "length_mm": 65.0,
+      "plate_zero_rpy_rad": [
+        -1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 25.0,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    },
+    "right": {
+      "model": "D405",
+      "parent": "wrist_roll_R_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        -0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        -1,
+        0
+      ],
+      "length_mm": 65.0,
+      "plate_zero_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 25.0,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    }
+  },
+  "tilt_parameters": {
+    "left": {
+      "model": "D405",
+      "parent": "wrist_roll_L_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        1,
+        0
+      ],
+      "length_mm": 65.0,
+      "plate_zero_rpy_rad": [
+        -1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 37.0,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    },
+    "right": {
+      "model": "D405",
+      "parent": "wrist_roll_R_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        -0.015,
+        -0.0767
+      ],
+      "mount_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        -1,
+        0
+      ],
+      "length_mm": 65.0,
+      "plate_zero_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "plate_tilt_axis": [
+        0,
+        1,
+        0
+      ],
+      "plate_tilt_deg": 37.0,
+      "mount_evidence": "Provisional frame between the two small rear-side wrist holes; STEP bracket geometry and attachment not yet recoverable"
+    }
+  },
+  "length_only_image_changes": {
+    "head": {
+      "changed_rgb_pixels": 1,
+      "rgb_mean_absolute_change": 4.340277777777778e-06,
+      "changed_depth_validity_pixels": 0,
+      "changed_common_depth_pixels": 440,
+      "mean_common_depth_change_m": 0.0007665518205612898
+    },
+    "left_wrist": {
+      "changed_rgb_pixels": 44092,
+      "rgb_mean_absolute_change": 15.152873263888889,
+      "changed_depth_validity_pixels": 11592,
+      "changed_common_depth_pixels": 38844,
+      "mean_common_depth_change_m": 0.017541082575917244
+    },
+    "right_wrist": {
+      "changed_rgb_pixels": 44294,
+      "rgb_mean_absolute_change": 21.95064236111111,
+      "changed_depth_validity_pixels": 11919,
+      "changed_common_depth_pixels": 35418,
+      "mean_common_depth_change_m": 0.021068640053272247
+    }
+  },
+  "tilt_only_image_changes": {
+    "head": {
+      "changed_rgb_pixels": 0,
+      "rgb_mean_absolute_change": 0.0,
+      "changed_depth_validity_pixels": 0,
+      "changed_common_depth_pixels": 329,
+      "mean_common_depth_change_m": 0.00028546416433528066
+    },
+    "left_wrist": {
+      "changed_rgb_pixels": 57280,
+      "rgb_mean_absolute_change": 40.675303819444444,
+      "changed_depth_validity_pixels": 15029,
+      "changed_common_depth_pixels": 41428,
+      "mean_common_depth_change_m": 0.030344877392053604
+    },
+    "right_wrist": {
+      "changed_rgb_pixels": 53798,
+      "rgb_mean_absolute_change": 48.21625434027778,
+      "changed_depth_validity_pixels": 15714,
+      "changed_common_depth_pixels": 37714,
+      "mean_common_depth_change_m": 0.03623906895518303
+    }
+  },
+  "input_config_path": "/home/endless/Documents/Project/Dexterous_Hand/code/tron2_revo3_description/config/camera_rig.json",
+  "input_config_sha256_before": "b6038e61b5d81a155cb00be92c70150a416f64d2b20119e2144604b54c032a80",
+  "input_config_sha256_after": "b6038e61b5d81a155cb00be92c70150a416f64d2b20119e2144604b54c032a80",
+  "saved_user_config": false,
+  "geometry_status": "camera_frames_only_source_step_unreadable"
+}

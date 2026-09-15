@@ -1,0 +1,187 @@
+{
+  "schema": "supplied_bracket_aligned_v3",
+  "source": "/home/endless/Documents/Project/Dexterous_Hand/Tron2\u7075\u5de7\u624b\u76f8\u673a\u652f\u67b6-r.stp",
+  "source_sha256": "936533c45d43687f28e30837a49cf347abc1d76ab4d409fe6f1e9e1920f8075e",
+  "original_file_modified": false,
+  "source_geometry_modified": true,
+  "camera_separate": true,
+  "step": "design/supplied_brackets_aligned_v3/camera_bracket_right_aligned_v3.step",
+  "geometry_sha256": "c2f218ebdadee9cb880b06fc914b6b2b1116e0e60c961d67037b07a8c0c343fe",
+  "stl_mm": "design/supplied_brackets_aligned_v3/camera_bracket_right_aligned_v3_mm.stl",
+  "parameters": {
+    "upper_leveling_rotation_about_source_y_deg": -12.0,
+    "radial_lift_mm": 10.0,
+    "normalized_saddle_angle_range_deg": [
+      46.0,
+      134.0
+    ],
+    "normalized_saddle_span_deg": 88.0,
+    "saddle_inner_radius_mm": 30.5,
+    "saddle_outer_radius_mm": 35.5,
+    "root_bridge_width_mm": 25.0,
+    "root_bridge_axial_depth_mm": 6.7,
+    "camera_fore_aft_pitch_preserved_deg": 10.0
+  },
+  "wrist_holes": [
+    {
+      "source_angle_deg": 300.0,
+      "axis_source": [
+        0.5000000000000001,
+        0.0,
+        -0.8660254037844386
+      ],
+      "point_at_contact_radius_mm": [
+        15.250000000000004,
+        -1.4,
+        -26.413774815425377
+      ],
+      "clearance_diameter_mm": 3.3,
+      "counterbore_diameter_mm": 6.5,
+      "counterbore_floor_radius_mm": 34.0
+    },
+    {
+      "source_angle_deg": 240.0,
+      "axis_source": [
+        -0.4999999999999998,
+        0.0,
+        -0.8660254037844387
+      ],
+      "point_at_contact_radius_mm": [
+        -15.249999999999993,
+        -1.4,
+        -26.41377481542538
+      ],
+      "clearance_diameter_mm": 3.3,
+      "counterbore_diameter_mm": 6.5,
+      "counterbore_floor_radius_mm": 34.0
+    }
+  ],
+  "camera_hole_centers_mm": [
+    [
+      9.999999999999783,
+      -0.7904443843821731,
+      -69.7778306078408
+    ],
+    [
+      -9.999999999999034,
+      -0.7904443843829796,
+      -69.7778306078457
+    ]
+  ],
+  "camera_bottom_xyz_mm": [
+    -4.86434708097587e-12,
+    -5.3669773910290814,
+    -47.646905511068034
+  ],
+  "camera_bottom_rotation": [
+    [
+      -2.9238033774607523e-15,
+      -1.0,
+      2.482697720970115e-13
+    ],
+    [
+      -0.9848077530122089,
+      -4.0323300254388076e-14,
+      -0.17364817766692567
+    ],
+    [
+      0.17364817766692567,
+      -2.449918447268182e-13,
+      -0.984807753012209
+    ]
+  ],
+  "whole": {
+    "volume_mm3": 9236.832080348957,
+    "mass_kg": 0.024939446616942185,
+    "density_kg_m3": 2700,
+    "center_of_mass_mm": [
+      -8.360205607522801e-05,
+      1.060964578805576,
+      -50.559007652661194
+    ],
+    "inertia_at_com_kg_m2": [
+      [
+        9.430145467508293e-06,
+        2.6062316458559706e-12,
+        -3.873731535594989e-11
+      ],
+      [
+        2.6062316458559706e-12,
+        1.2232349348476045e-05,
+        -2.2071539257434373e-07
+      ],
+      [
+        -3.873731535594989e-11,
+        -2.2071539257434373e-07,
+        3.181858585129388e-06
+      ]
+    ],
+    "bounds_mm": [
+      [
+        -24.36576827319864,
+        -5.923329000397264,
+        -88.47175902005105
+      ],
+      [
+        24.365768273198636,
+        5.923329000397264,
+        -22.22390247920278
+      ]
+    ],
+    "brep_valid": true,
+    "solid_count": 1
+  },
+  "material_status": "Assumed solid aluminum density only; strength not certified",
+  "verification": {
+    "camera_plate_shape_change_after_rigid_transform_mm3": 0.0,
+    "horizontal_edge_error_deg": 0.0,
+    "rear_hole_axis_error_mm": [
+      3.604594149771344e-12,
+      8.571122779754481e-12
+    ],
+    "camera_envelope_bracket_intersection_mm3": 2.4494066539110517,
+    "inherited_upper_camera_envelope_intersection_mm3": 2.4494066419985616,
+    "new_root_camera_envelope_intersection_mm3": 0.0,
+    "small_screw_tool_access": [
+      {
+        "source_normalized_angle_deg": 60.0,
+        "tool_diameter_mm": 6.5,
+        "bracket_intersection_mm3": 0.0,
+        "camera_envelope_intersection_mm3": 0.0
+      },
+      {
+        "source_normalized_angle_deg": 120.0,
+        "tool_diameter_mm": 6.5,
+        "bracket_intersection_mm3": 0.0,
+        "camera_envelope_intersection_mm3": 0.0
+      }
+    ],
+    "free_retention_screw_access": [
+      {
+        "adapter_angle_deg": 105.0,
+        "clear_diameter_mm": 9.0,
+        "intersection_mm3": 0.0
+      },
+      {
+        "adapter_angle_deg": 195.0,
+        "clear_diameter_mm": 9.0,
+        "intersection_mm3": 0.0
+      },
+      {
+        "adapter_angle_deg": 285.0,
+        "clear_diameter_mm": 9.0,
+        "intersection_mm3": 0.0
+      }
+    ],
+    "step_roundtrip_relative_volume_error": 7.236796029097547e-08,
+    "valid_connected_solid": true,
+    "physical_strength_certified": false
+  },
+  "generator_sha256": "5799e8e020bf19969dd4e284371bee0bbddb821aad9df25b44d0e41605754d36",
+  "cad_manifest": "design/supplied_brackets_aligned_v3/right_cad_manifest.json",
+  "cad_manifest_sha256": "91ab3aba3915c3c848a7f8d9f619a2d36b8c4366539f32f29d4dc3a7cd0df5a5",
+  "mesh_m": "meshes/wrist_camera_brackets/supplied_aligned_v3/right_aligned_v3_m.stl",
+  "mesh_sha256": "38b3bb31ebeff507db6cf039780817bc63d9ec05d09fc5d0ef50695a853934e6",
+  "stl_watertight": true,
+  "stl_volume_relative_error": 2.1000062025988697e-05
+}

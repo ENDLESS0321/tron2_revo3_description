@@ -1,0 +1,510 @@
+{
+  "schema": "adapter_revision2_collision_v1",
+  "side": "left",
+  "source": "design/revision2/adapter_left_v2_m.stl",
+  "source_sha256": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
+  "visual": "meshes/adapter_v2/left/adapter_left_v2_visual.stl",
+  "visual_sha256": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
+  "producer_sha256": "8870e6fd148baf93a37cc9413a5fff009e9cdec596fe3011df2a41713e5f0ff7",
+  "algorithm": "CoACD",
+  "coacd_version": "1.0.14",
+  "parameters": {
+    "threshold": 0.035,
+    "max_convex_hull": 48,
+    "preprocess_mode": "auto",
+    "resolution": 1500,
+    "mcts_nodes": 15,
+    "mcts_iterations": 80,
+    "mcts_max_depth": 3,
+    "merge": true,
+    "seed": 42
+  },
+  "worker_cpu_ids": [
+    0,
+    1
+  ],
+  "cached_pieces_reused": false,
+  "elapsed_seconds": 49.98007113200583,
+  "pieces": [
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_000.stl",
+      "sha256": "2686dd22d7ee6582b0620d8dc47690fa7c1ecbe21b02732cb522539826d47898",
+      "vertices": 204,
+      "faces": 404,
+      "volume_m3": 3.2558042439843557e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_001.stl",
+      "sha256": "b26b3d0a300b33fa13dcff2dad76d45d332c5f93306c4ad05e273ceedcd8f229",
+      "vertices": 209,
+      "faces": 414,
+      "volume_m3": 1.8265458483687328e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_002.stl",
+      "sha256": "691b3d824f68690a2a37dd2d44f984f5a95a893e7b12b798238f96e0eafd8e56",
+      "vertices": 46,
+      "faces": 88,
+      "volume_m3": 5.912087925150584e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_003.stl",
+      "sha256": "fd28066078788d11941ad252aa8bf4ead83f8b30d8ce7be7686ce2fbda1dce19",
+      "vertices": 165,
+      "faces": 326,
+      "volume_m3": 1.5679702376201776e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_004.stl",
+      "sha256": "d416e97c75389cd24c336e005eb79a66b91f17fe39b1dbcbb6666a945f6a3274",
+      "vertices": 155,
+      "faces": 306,
+      "volume_m3": 1.7548151680915391e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_005.stl",
+      "sha256": "06144a2ab7a6115ede957f5dae28abec5bb902b9068c0edf5bf12b3ef9584317",
+      "vertices": 360,
+      "faces": 716,
+      "volume_m3": 4.875934765644076e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_006.stl",
+      "sha256": "4763735016ede5344ed74e0a2b5e5b4b9a5f701e41e1dc7924aa7c8d361c763f",
+      "vertices": 39,
+      "faces": 74,
+      "volume_m3": 6.29401060576524e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_007.stl",
+      "sha256": "501d2fd36454ec70d3279273b165d6d60f6e0a18d651bc5028104fc55da4c766",
+      "vertices": 159,
+      "faces": 314,
+      "volume_m3": 1.6668730231806691e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_008.stl",
+      "sha256": "fe1604a9756a4b5245f61f81979fbd27a4a318890239cd4fd86973b9dd0ec62e",
+      "vertices": 157,
+      "faces": 310,
+      "volume_m3": 1.4720311365064695e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_009.stl",
+      "sha256": "40bf4128f7cfdbe1732d1ec1b683f9bd2d008d5d8c291971791aa70493666a58",
+      "vertices": 133,
+      "faces": 262,
+      "volume_m3": 5.788841959843745e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_010.stl",
+      "sha256": "21989f8cabae4ef045800264e47b4d8e72a2deef4868eda835fae430b900745b",
+      "vertices": 527,
+      "faces": 1050,
+      "volume_m3": 3.002772427206986e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_011.stl",
+      "sha256": "f7ee03bb96be08adab07ed3bdb39ca2548b719071d8010bcd5162707ca0bc6aa",
+      "vertices": 75,
+      "faces": 146,
+      "volume_m3": 9.59967948739844e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_012.stl",
+      "sha256": "4e0dc25261a40051f3b4c2b14e58ec1b81fbf9f4576dcb5c4f7ece9e4c3b6e65",
+      "vertices": 102,
+      "faces": 200,
+      "volume_m3": 1.074071824444205e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_013.stl",
+      "sha256": "3912d06fb4df92e87b3075739b7ce5db57ac6b8d60606d9416122592179f0f8f",
+      "vertices": 120,
+      "faces": 236,
+      "volume_m3": 9.006258899385452e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_014.stl",
+      "sha256": "fbfe256f5647ae068cb81ae39bff0101b54ce0ddc00408f868ec0b976c76f2c9",
+      "vertices": 143,
+      "faces": 282,
+      "volume_m3": 3.0098557800248006e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_015.stl",
+      "sha256": "f7fc6517a0df5dbf386ae87143e42e661220aa8b043f1530aa28f199d73e6385",
+      "vertices": 141,
+      "faces": 278,
+      "volume_m3": 9.318196001041854e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_016.stl",
+      "sha256": "4cffd8724e9d34fb6ab2131f5cc74176b4671e4df1ad0ffefb57f00e07d59669",
+      "vertices": 323,
+      "faces": 642,
+      "volume_m3": 1.1679982379769366e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_017.stl",
+      "sha256": "c27e0232d2adaf9d5443eb18174274d53cce5b61285d69576c3da109c44690be",
+      "vertices": 261,
+      "faces": 518,
+      "volume_m3": 1.0130915049479707e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_018.stl",
+      "sha256": "cf22d147fab3a997fdb1e3b84988aaafb8ab3af1a89bfbf8d53e670cea07b98e",
+      "vertices": 147,
+      "faces": 290,
+      "volume_m3": 1.625406357437267e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_019.stl",
+      "sha256": "e27ed216a8520fa95acf78fe68f157c38a79bc8c537bdeb65c4b11e2c7cb4b2e",
+      "vertices": 122,
+      "faces": 240,
+      "volume_m3": 1.070766615173815e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_020.stl",
+      "sha256": "606b7c4e7f9727fbb1000c138c5dfe9f5cf515b48d9732b8a361ede6e7cfe40f",
+      "vertices": 96,
+      "faces": 188,
+      "volume_m3": 2.335694202366078e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_021.stl",
+      "sha256": "1e98b272f91f6600cffbd284989ef090dd49bc6cb0bc66aabe9b69f947151969",
+      "vertices": 52,
+      "faces": 100,
+      "volume_m3": 2.467893585259924e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_022.stl",
+      "sha256": "6cc5d75adeb16ff3ee4040993faf0fc8d417b2024666fd668f191d99bacea3d1",
+      "vertices": 50,
+      "faces": 96,
+      "volume_m3": 3.3348054249362357e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_023.stl",
+      "sha256": "2530ad95a72dca532a6c8ee808e6877166bb631d003b029de103ea767d852721",
+      "vertices": 239,
+      "faces": 474,
+      "volume_m3": 6.067906627468037e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_024.stl",
+      "sha256": "b382353b2f4dee62d62a6149dc28432b737e8320004aef0792135bc9e1ab698e",
+      "vertices": 205,
+      "faces": 406,
+      "volume_m3": 2.4984076556556675e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_025.stl",
+      "sha256": "b0270130ef0f673564dce0ff945c3c971634b4cf0d26b94c39e87e80c1d16754",
+      "vertices": 76,
+      "faces": 148,
+      "volume_m3": 9.772954184797136e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_026.stl",
+      "sha256": "9c2cb2fa173d160c6d2c81794eff40cd0129637cef4c8ff35a077ab816ba8155",
+      "vertices": 343,
+      "faces": 682,
+      "volume_m3": 1.7196879677388881e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_027.stl",
+      "sha256": "163602a7a5f073ac703f9c6eaf3aed156498f7059109a78d28d018fbb8a138ba",
+      "vertices": 143,
+      "faces": 282,
+      "volume_m3": 7.509189765584859e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_028.stl",
+      "sha256": "eeab8f8eeabcd490b98bb5b57857f463188e120584e58a449d63c2d90aaa39c3",
+      "vertices": 8,
+      "faces": 12,
+      "volume_m3": 3.244356201574941e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_029.stl",
+      "sha256": "8cfbc855778463454da47e640363a3daf03a6f9893fe69ed58c1e8326f915ef9",
+      "vertices": 139,
+      "faces": 274,
+      "volume_m3": 5.799243076728699e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_030.stl",
+      "sha256": "1662168b218b31adacaa62f513d8dcb84578b126aa7519ba5fd634f79cc7513e",
+      "vertices": 28,
+      "faces": 52,
+      "volume_m3": 5.237971542570106e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_031.stl",
+      "sha256": "ad288d158f2d554ba3093b0eb5618134723741ec1a567fa3f20ed0c4c6e616ed",
+      "vertices": 132,
+      "faces": 260,
+      "volume_m3": 5.791620588286917e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_032.stl",
+      "sha256": "9796c506f7c00f305ae2e243f592f399d156439b95f8dba6a3fb7b92c73cb381",
+      "vertices": 355,
+      "faces": 706,
+      "volume_m3": 1.5904789782659684e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_033.stl",
+      "sha256": "44e443f0011c2e689230dcb2fcb81333861f7d0f289c6865ed5095972bc87018",
+      "vertices": 10,
+      "faces": 16,
+      "volume_m3": 1.8212862765851952e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_034.stl",
+      "sha256": "24d70e2f8ccba65fb4338a81385cb05c04d1e6033bcd0cc3909ddd3a5ecbd009",
+      "vertices": 141,
+      "faces": 278,
+      "volume_m3": 1.9161384484004593e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_035.stl",
+      "sha256": "20b30a92108b4bf1acf029551751b496cc556721143906a803ad021527764f20",
+      "vertices": 161,
+      "faces": 318,
+      "volume_m3": 1.0382409617553362e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_036.stl",
+      "sha256": "e755f8ef8ab336ce7da7535ba19eeadb022f9701f54baf9fecfc93f1bcd037fe",
+      "vertices": 72,
+      "faces": 140,
+      "volume_m3": 7.717494622960827e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_037.stl",
+      "sha256": "65efd84701361b156a479bd1464b55da49ff17378ccd6873e383b03ec11730bb",
+      "vertices": 74,
+      "faces": 144,
+      "volume_m3": 9.920114585660186e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_038.stl",
+      "sha256": "abe73c8ad15b762470a4875dfdd1907d9c60b24a39266ec1b18e545ac51e3462",
+      "vertices": 145,
+      "faces": 286,
+      "volume_m3": 7.501183307228506e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_039.stl",
+      "sha256": "45b887dc2025a8fcaf364631d69810eebdd8432d1ed524385755a257ff39d795",
+      "vertices": 7,
+      "faces": 10,
+      "volume_m3": 9.672631898985537e-08,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_040.stl",
+      "sha256": "3dd4a99c97c4b249548935d1e201f44b7912a341eafa2459d7387162e1bb9511",
+      "vertices": 177,
+      "faces": 350,
+      "volume_m3": 8.07454312125128e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_041.stl",
+      "sha256": "8775826ae5a0299a9c07bbdcd1541b864ffd327e7f98440782fc2fbb1bcc60d3",
+      "vertices": 55,
+      "faces": 106,
+      "volume_m3": 1.6128807761280267e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_042.stl",
+      "sha256": "656aafb0f411926fcb497f8ae4399e413de8f70bba47c383d4b303256b8640ed",
+      "vertices": 479,
+      "faces": 954,
+      "volume_m3": 1.3248399956965563e-05,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_043.stl",
+      "sha256": "6d8cad23519692830a9c72873b09cf0f51f8c23a30fe3200df485aa4d6f0f3b9",
+      "vertices": 289,
+      "faces": 574,
+      "volume_m3": 5.146530839052679e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_044.stl",
+      "sha256": "cae7f1c2520a274ccea926fbc6853f9a7c7122f1330c12fd2f1a637fc34dae40",
+      "vertices": 178,
+      "faces": 352,
+      "volume_m3": 7.851645931047055e-07,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_045.stl",
+      "sha256": "3b968815876f3fd64e3169c547a9635960c2f752a47910eca31f676d4921b612",
+      "vertices": 65,
+      "faces": 126,
+      "volume_m3": 2.269730253540934e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_046.stl",
+      "sha256": "825fa5816607929f53dab2df4614ca78141980fe352d87d7a985b6b84d630b27",
+      "vertices": 12,
+      "faces": 20,
+      "volume_m3": 5.339622566787031e-06,
+      "watertight": true,
+      "convex": true
+    },
+    {
+      "path": "meshes/adapter_v2/left/collision/adapter_left_v2_convex_047.stl",
+      "sha256": "29a0299fd37f51b20367612db1643a0d0db563a21c53a9890672e7e40837ed5f",
+      "vertices": 153,
+      "faces": 302,
+      "volume_m3": 1.5264588624936472e-06,
+      "watertight": true,
+      "convex": true
+    }
+  ],
+  "visual_volume_m3": 8.342300461581692e-05,
+  "sum_convex_volume_m3": 0.00010248286102335564,
+  "hull_cap_reached": true,
+  "requested_concavity_threshold_certified": false,
+  "cavity_axis_probes": [
+    {
+      "xyz_m": [
+        0.0,
+        0.015,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.02,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.025,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.03,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.034,
+        0.0
+      ],
+      "inside_any_proxy": false
+    }
+  ],
+  "cavity_axis_probes_pass": true,
+  "claim_boundary": "Simulator contact approximation for assembly preview. A 48-hull cap may prevent the requested concavity target. Five sleeve-axis probes do not certify the complete cavity, cable slot, screw holes, keyway, or physical contact success."
+}

@@ -1,0 +1,35 @@
+{
+  "source": "/home/endless/Documents/Project/Dexterous_Hand/Tron2\u7075\u5de7\u624b\u76f8\u673a\u652f\u67b6-l.stp",
+  "source_sha256": "72aef92562da42c9f9b5b8bbad0f3bf6c9b89bb43446026d74a728454ddb267e",
+  "source_geometry_modified": false,
+  "mesh_m": "meshes/wrist_camera_brackets/supplied_20260914/left_supplied_m.stl",
+  "mesh_sha256": "54c68e11c07706d7c390390fbf00d47126d16596d8e5193b41f24cba5e56ef1f",
+  "camera_separate": true,
+  "material_status": "Assumed solid aluminum 2700 kg/m3; not measured",
+  "whole": {
+    "center_of_mass_mm": [
+      -6.534239632188548,
+      0.6550519219429471,
+      41.470117463749254
+    ],
+    "mass_kg": 0.023453194486700794,
+    "inertia_at_com_kg_m2": [
+      [
+        8.256724987485986e-06,
+        1.1943609205462992e-08,
+        2.2227078082041894e-06
+      ],
+      [
+        1.1943609205462992e-08,
+        1.4476652337018193e-05,
+        1.1550594672284455e-07
+      ],
+      [
+        2.2227078082041894e-06,
+        1.1550594672284455e-07,
+        6.606805421383458e-06
+      ]
+    ],
+    "volume_mm3": 8684.976664742002
+  }
+}

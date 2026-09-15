@@ -1,0 +1,9 @@
+numpy==1.26.4
+scipy==1.15.3
+trimesh==5.1.0
+manifold3d==3.5.3
+coacd==1.0.14
+mujoco==3.13.0
+matplotlib==3.10.9
+pillow==12.3.0
+rtree==1.4.1

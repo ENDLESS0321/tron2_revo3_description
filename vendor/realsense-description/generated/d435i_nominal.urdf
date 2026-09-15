@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="realsense_d435i_nominal">
+  <!--Static nominal expansion of official Apache-2.0 xacros; calibrated runtime extrinsics are not represented. See the upstream LICENSE, NOTICE.md and generated/manifest.json.-->
+  <link name="base_link" />
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_bottom_screw_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_bottom_screw_frame" />
+  <joint name="camera_link_joint" type="fixed">
+    <parent link="camera_bottom_screw_frame" />
+    <child link="camera_link" />
+    <origin xyz="0.0106 0.0175 0.0125" rpy="0 0 0" />
+  </joint>
+  <link name="camera_link">
+    <visual>
+      <origin xyz="0.0043 -0.0175 0" rpy="1.5707963267949 0 1.5707963267949" />
+      <geometry>
+        <mesh filename="realsense_d435i_native_axes_m.stl" />
+      </geometry>
+      <material name="upstream_aluminum">
+        <color rgba="0.74902 0.74902 0.74902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0175 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.02505 0.09 0.025" />
+      </geometry>
+    </collision>
+    <!--Unreliable upstream placeholder mass/inertia retained only for faithful source expansion. Do not treat as calibrated physical parameters.-->
+    <inertial>
+      <mass value="0.072" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="0.003881243" ixy="0" ixz="0" iyy="0.000498940" iyz="0" izz="0.003879257" />
+    </inertial>
+  </link>
+  <joint name="camera_depth_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_depth_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_depth_frame" />
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <parent link="camera_depth_frame" />
+    <child link="camera_depth_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_depth_optical_frame" />
+  <joint name="camera_infra1_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_infra1_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_infra1_frame" />
+  <joint name="camera_infra1_optical_joint" type="fixed">
+    <parent link="camera_infra1_frame" />
+    <child link="camera_infra1_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_infra1_optical_frame" />
+  <joint name="camera_infra2_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_infra2_frame" />
+    <origin xyz="0 -0.05 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_infra2_frame" />
+  <joint name="camera_infra2_optical_joint" type="fixed">
+    <parent link="camera_infra2_frame" />
+    <child link="camera_infra2_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_infra2_optical_frame" />
+  <joint name="camera_color_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_color_frame" />
+    <origin xyz="0 0.015 0" rpy="0 0 0" />
+  </joint>
+  <link name="camera_color_frame" />
+  <joint name="camera_color_optical_joint" type="fixed">
+    <parent link="camera_color_frame" />
+    <child link="camera_color_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_color_optical_frame" />
+  <joint name="camera_accel_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_accel_frame" />
+    <origin xyz="-0.01174 -0.00552 0.0051" rpy="0 0 0" />
+  </joint>
+  <link name="camera_accel_frame" />
+  <joint name="camera_accel_optical_joint" type="fixed">
+    <parent link="camera_accel_frame" />
+    <child link="camera_accel_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_accel_optical_frame" />
+  <joint name="camera_gyro_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_gyro_frame" />
+    <origin xyz="-0.01174 -0.00552 0.0051" rpy="0 0 0" />
+  </joint>
+  <link name="camera_gyro_frame" />
+  <joint name="camera_gyro_optical_joint" type="fixed">
+    <parent link="camera_gyro_frame" />
+    <child link="camera_gyro_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.5707963267949 0 -1.5707963267949" />
+  </joint>
+  <link name="camera_gyro_optical_frame" />
+</robot>

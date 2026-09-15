@@ -1,0 +1,223 @@
+{
+  "stamp_ns": 66666667,
+  "geometry_status": "side_mount_v3_thumb_side_small_holes_330_30_plate15",
+  "camera_specs": [
+    {
+      "name": "head",
+      "model": "D435i",
+      "width": 640,
+      "height": 480,
+      "frame_id": "head_camera_depth_optical_frame",
+      "color_frame_id": "head_camera_color_optical_frame",
+      "depth_frame_id": "head_camera_depth_optical_frame",
+      "depth_range_m": [
+        0.3,
+        3.0
+      ],
+      "intrinsics_status": "nominal datasheet FOV pinhole, depth range is a configurable preview gate, not a hardware specification",
+      "color_K": [
+        [
+          465.60288917518244,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          625.2213755265124,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "depth_K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "left_wrist",
+      "model": "D405",
+      "width": 640,
+      "height": 480,
+      "frame_id": "left_wrist_camera_depth_optical_frame",
+      "color_frame_id": "left_wrist_camera_color_optical_frame",
+      "depth_frame_id": "left_wrist_camera_depth_optical_frame",
+      "depth_range_m": [
+        0.07,
+        0.5
+      ],
+      "intrinsics_status": "nominal datasheet FOV pinhole, not per-device calibration",
+      "color_K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "depth_K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "right_wrist",
+      "model": "D405",
+      "width": 640,
+      "height": 480,
+      "frame_id": "right_wrist_camera_depth_optical_frame",
+      "color_frame_id": "right_wrist_camera_color_optical_frame",
+      "depth_frame_id": "right_wrist_camera_depth_optical_frame",
+      "depth_range_m": [
+        0.07,
+        0.5
+      ],
+      "intrinsics_status": "nominal datasheet FOV pinhole, not per-device calibration",
+      "color_K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "depth_K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "K": [
+        [
+          337.20964008990796,
+          0.0,
+          319.5
+        ],
+        [
+          0.0,
+          432.97146126514167,
+          239.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "frames": {
+    "head": {
+      "rgb_std": 56.985920152733584,
+      "valid_depth_fraction": 0.7,
+      "min_depth_m": 0.5481077432632446,
+      "max_depth_m": 2.994415521621704
+    },
+    "left_wrist": {
+      "rgb_std": 60.25892675995624,
+      "valid_depth_fraction": 0.7023828125,
+      "min_depth_m": 0.0700000673532486,
+      "max_depth_m": 0.3070319592952728
+    },
+    "right_wrist": {
+      "rgb_std": 62.39375081914366,
+      "valid_depth_fraction": 0.6606705729166666,
+      "min_depth_m": 0.07000008970499039,
+      "max_depth_m": 0.30715689063072205
+    }
+  },
+  "dynamic_tf_count": 62,
+  "static_tf_count": 44
+}

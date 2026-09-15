@@ -1,0 +1,138 @@
+{
+  "schema": "supplied_bracket_inward_v2",
+  "source": "/home/endless/Documents/Project/Dexterous_Hand/Tron2\u7075\u5de7\u624b\u76f8\u673a\u652f\u67b6-r.stp",
+  "source_sha256": "936533c45d43687f28e30837a49cf347abc1d76ab4d409fe6f1e9e1920f8075e",
+  "source_geometry_modified": true,
+  "original_file_modified": false,
+  "camera_separate": true,
+  "geometry_sha256": "1a48013ef31ed0a58ee176ce473d48233195be5d7aabe2815a2aef6113e3a9c2",
+  "step": "design/supplied_brackets_inward_v2/camera_bracket_right_inward_v2.step",
+  "stl_mm": "design/supplied_brackets_inward_v2/camera_bracket_right_inward_v2_mm.stl",
+  "modification": "Fill original wrist holes; relocate \u00d83.3 bores and \u00d86.5 seats to 60-degree pair; clear outer wrist-band lip only. Protected upper support begins at |Z|=35 mm.",
+  "old_source_angles_deg": [
+    210,
+    330
+  ],
+  "new_source_angles_deg": [
+    240,
+    300
+  ],
+  "wrist_holes": [
+    {
+      "source_angle_deg": 240,
+      "axis_source": [
+        -0.5000000000000004,
+        0.0,
+        -0.8660254037844384
+      ],
+      "axis_origin_source_mm": [
+        0,
+        -1.4,
+        0
+      ],
+      "point_at_contact_radius_mm": [
+        -15.250000000000014,
+        -1.4,
+        -26.41377481542537
+      ],
+      "clearance_diameter_mm": 3.3,
+      "counterbore_diameter_mm": 6.5,
+      "counterbore_floor_radius_mm": 34.0,
+      "nominal_material_below_seat_mm": 3.5
+    },
+    {
+      "source_angle_deg": 300,
+      "axis_source": [
+        0.5000000000000001,
+        0.0,
+        -0.8660254037844386
+      ],
+      "axis_origin_source_mm": [
+        0,
+        -1.4,
+        0
+      ],
+      "point_at_contact_radius_mm": [
+        15.250000000000004,
+        -1.4,
+        -26.413774815425377
+      ],
+      "clearance_diameter_mm": 3.3,
+      "counterbore_diameter_mm": 6.5,
+      "counterbore_floor_radius_mm": 34.0,
+      "nominal_material_below_seat_mm": 3.5
+    }
+  ],
+  "whole": {
+    "volume_mm3": 8667.089281276747,
+    "mass_kg": 0.02340114105944722,
+    "density_kg_m3": 2700,
+    "center_of_mass_mm": [
+      -6.512245758016607,
+      0.6552063708517704,
+      -41.36263674286241
+    ],
+    "inertia_at_com_kg_m2": [
+      [
+        8.360305310298132e-06,
+        1.199411298910596e-08,
+        -2.2466427566636455e-06
+      ],
+      [
+        1.199411298910596e-08,
+        1.47073491906958e-05,
+        -1.0963997126341301e-07
+      ],
+      [
+        -2.2466427566636455e-06,
+        -1.0963997126341301e-07,
+        6.733840385131476e-06
+      ]
+    ],
+    "bounds_mm": [
+      [
+        -33.95342912943044,
+        -5.907457898275427,
+        -80.13647089297547
+      ],
+      [
+        32.36810306929243,
+        5.911758375811038,
+        -7.959490059668962
+      ]
+    ],
+    "brep_valid": true,
+    "solid_count": 1
+  },
+  "material_status": "Assumed solid aluminum 2700 kg/m3; not identified or strength certified",
+  "verification": {
+    "added_volume_mm3": 90.70021534610862,
+    "removed_volume_mm3": 107.42302261600429,
+    "change_outside_wrist_connection_region_mm3": 0.0,
+    "upper_support_plate_change_mm3": 0.0,
+    "rear_hole_axis_errors_mm": [
+      0.0,
+      0.0
+    ],
+    "step_roundtrip_volume_error_mm3": 0.0044291852918831864,
+    "step_roundtrip_relative_volume_error": 5.110333649546271e-07,
+    "boolean_tolerance_mm": 1e-05,
+    "valid_connected_solid": true,
+    "old_holes_solid_probe_pass": true,
+    "new_holes_open_probe_pass": true,
+    "fastener_access": [
+      {
+        "source_angle_deg": 240,
+        "d6_48_head_clearance_R34_01_to38_99_overlap_mm3": 0.0,
+        "long_straight_d6_5_tool_sweep_overlap_mm3": 67.07482592210164
+      },
+      {
+        "source_angle_deg": 300,
+        "d6_48_head_clearance_R34_01_to38_99_overlap_mm3": 0.0,
+        "long_straight_d6_5_tool_sweep_overlap_mm3": 0.0
+      }
+    ],
+    "strength_certified": false
+  },
+  "generator_sha256": "bdd5d7e0757c12ea869fb8ac281e3ee2a338f0c56b6bfd9264005532388c78b5"
+}

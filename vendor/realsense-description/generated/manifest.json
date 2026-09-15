@@ -1,0 +1,58 @@
+{
+  "schema": "realsense_nominal_asset_derivatives_v1",
+  "producer_sha256": "8629246a51b4954a96803f6827a0dffdfcb66fb38a7cfa6fc7066cb725d9d8c6",
+  "originals_modified": false,
+  "nominal_extrinsics": true,
+  "usb_plug_geometry": false,
+  "inertial_status": "Upstream explicitly marks mass/inertia unreliable; preserved here for provenance only.",
+  "models": {
+    "D405": {
+      "source": "realsense2_description/meshes/d405.stl",
+      "source_sha256": "a248f41149d12b28311829feecbe7a80cf1481fd05e0f5df2c4c7ecd556edd48",
+      "source_unit": "millimeter",
+      "derived_mesh": "generated/realsense_d405_native_axes_m.stl",
+      "derived_mesh_sha256": "d66438baed3467276573a5a7ad13b7f1c88f2c70d845da695ce7f715821ba863",
+      "derived_unit": "meter",
+      "native_axes_bounds_m": [
+        [
+          -0.02109000015258789,
+          -0.021,
+          -0.023
+        ],
+        [
+          0.021,
+          0.021,
+          0.0
+        ]
+      ],
+      "triangles": 3892,
+      "nominal_urdf": "generated/d405_nominal.urdf",
+      "nominal_urdf_sha256": "8d51a91c4788a3569c7c1d415ac6a9ca7f9e966936563b25be5eea0dda82da63",
+      "method": "scale original STL by 0.001"
+    },
+    "D435i": {
+      "source": "realsense2_description/meshes/d435.dae",
+      "source_sha256": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78",
+      "source_unit": "meter",
+      "derived_mesh": "generated/realsense_d435i_native_axes_m.stl",
+      "derived_mesh_sha256": "59d180d9b3475b7adcd6dfa910f57537267eed1a8055034e429aff2a08c352d0",
+      "derived_unit": "meter",
+      "native_axes_bounds_m": [
+        [
+          -0.0449142,
+          -0.0125,
+          -0.0250547
+        ],
+        [
+          0.0450001,
+          0.0125,
+          0.0
+        ]
+      ],
+      "triangles": 231186,
+      "nominal_urdf": "generated/d435i_nominal.urdf",
+      "nominal_urdf_sha256": "61849d4b46ba962200a353839a40b0acb1ca4e87c9ab21b64882c395f6a30131",
+      "method": "flatten 18 original identity-node COLLADA triangle instances; preserve vertex coordinates, omit single gray material from STL"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "request": {
+    "design": "parametric_vertical_v2",
+    "length_mm": 95.0,
+    "plate_tilt_deg": 40.0,
+    "producer_sha256": "570d99013ac23f787a533d93ebdfaccdba6ddbd91532def837aab58ff44180e5"
+  },
+  "mesh": "meshes/wrist_camera_brackets/a6619aa19c8fcde0/camera_bracket_a6619aa19c8fcde0.stl",
+  "manifest": "design/wrist_camera_bracket_v2/variants/a6619aa19c8fcde0/manifest.json",
+  "files": {
+    "design/wrist_camera_bracket_v2/variants/a6619aa19c8fcde0/whole_bracket_m.stl": "21fc24ee3b3e42f20da9313be6a0c749d39543a5d1fb90d0f475b926a8adbf65",
+    "design/wrist_camera_bracket_v2/variants/a6619aa19c8fcde0/whole_bracket_mm.stl": "e237660fa5bec41437145030d0cc874fc6d4818ce787e0e3028cb12594e2d171",
+    "design/wrist_camera_bracket_v2/variants/a6619aa19c8fcde0/whole_bracket.step": "fbbcce443fdd36672e467d36756dd530e3c57544a24541c8bed80df698331218",
+    "design/wrist_camera_bracket_v2/variants/a6619aa19c8fcde0/manifest.json": "e4282eba7d28f821713761344577a4d16c4ec2191f18addb7da27324014901bb",
+    "meshes/wrist_camera_brackets/a6619aa19c8fcde0/camera_bracket_a6619aa19c8fcde0.stl": "21fc24ee3b3e42f20da9313be6a0c749d39543a5d1fb90d0f475b926a8adbf65"
+  }
+}

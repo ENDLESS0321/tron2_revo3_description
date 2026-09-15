@@ -1,0 +1,347 @@
+{
+  "source_sha256": "6e156ba311c27949123633eed80f756491b238a87c575b7710524ecd55b46780",
+  "algorithm": "CoACD",
+  "parameters": {
+    "threshold": 0.035,
+    "max_convex_hull": 48,
+    "seed": 42
+  },
+  "pieces": [
+    {
+      "path": "meshes/adapter/collision/adapter_convex_000.stl",
+      "sha256": "7ce358122cc62011f23f8aabc090ef137df60f57f134b02d2e1824d77a4f35e7",
+      "vertices": 360,
+      "volume_m3": 2.4203765316825384e-05
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_001.stl",
+      "sha256": "84cf5f7811e530ed6fbb9b59e64814bfc30dc7200fccad07d3e42f34da884ac6",
+      "vertices": 401,
+      "volume_m3": 2.4235857294772672e-05
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_002.stl",
+      "sha256": "d6e7e9fbf39bace2e84362d9684506896ddf4d760e66fe6b9ab13c40f2376080",
+      "vertices": 85,
+      "volume_m3": 5.925544327604431e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_003.stl",
+      "sha256": "d728398b22c4d5830d37e513fec0789d93bafa9b94c33f2bdfedd38585a7d392",
+      "vertices": 19,
+      "volume_m3": 4.825289530505253e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_004.stl",
+      "sha256": "07ad51dcfe1a7928d1cee9f041097ad9c9167af405b90679b14de361c2b7fd87",
+      "vertices": 18,
+      "volume_m3": 4.963196153109975e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_005.stl",
+      "sha256": "7b93f134583382ff08b4741599974af3ea6bc22d454fe89162fc4b36912f5dfc",
+      "vertices": 17,
+      "volume_m3": 5.75699319702302e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_006.stl",
+      "sha256": "e45a6264a036a1950a34ac9f3b8681bc8c78bc9a6fa27ae9a372b638a09e012d",
+      "vertices": 3175,
+      "volume_m3": 9.672597891972515e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_007.stl",
+      "sha256": "bcf952d5bdae0a54f3d214e134236841fc7d3ea2e92adfcaa3d81329f2afe00c",
+      "vertices": 269,
+      "volume_m3": 1.6922041562290255e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_008.stl",
+      "sha256": "a4aa6d394e9a4890c4281edbfeb99f966f994e9fb87f56398d69461e79b50e38",
+      "vertices": 60,
+      "volume_m3": 4.149048126433122e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_009.stl",
+      "sha256": "322e0c63212827bd449f60f364e9c91d0a4def0b0b540762bedb46fc5e204490",
+      "vertices": 130,
+      "volume_m3": 8.219280595995433e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_010.stl",
+      "sha256": "302a6194c8567e5be8acfd888da3e7e489a44451615ebbdca6a383fbc435f5a0",
+      "vertices": 238,
+      "volume_m3": 1.7645616821970977e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_011.stl",
+      "sha256": "d5c1785b9c71dcf495cfc2496a7b21be4361374c9ca6cf75639dfa6c390935e9",
+      "vertices": 979,
+      "volume_m3": 9.962856075194593e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_012.stl",
+      "sha256": "16f02f4a0761180b1a6c34fd25122627cd11c87dc548cea4aaabd143f78c4849",
+      "vertices": 63,
+      "volume_m3": 5.524997536359401e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_013.stl",
+      "sha256": "bd6d35649932a0a5e7e977db404f8e4f05452fe783012a54cc3346daed667aa0",
+      "vertices": 238,
+      "volume_m3": 1.9493114480723334e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_014.stl",
+      "sha256": "994894b3c526c8f22bbe967796b259481f1720aa5f5055b8ebedfd921daea3bd",
+      "vertices": 1755,
+      "volume_m3": 6.174430598436722e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_015.stl",
+      "sha256": "2eefc9b17967ef6b92dbc221338a109ecc724c3579db63d74decf340f3b7f2bd",
+      "vertices": 62,
+      "volume_m3": 5.250520085753257e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_016.stl",
+      "sha256": "1cd71cbe0ffb4814fe0f3f6b3ea23f75cd3214bfd82dca2431df22ed6add0f9f",
+      "vertices": 61,
+      "volume_m3": 4.34852112507344e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_017.stl",
+      "sha256": "f9c364d6500e1b41cdd67ee1a15dc5b5f6c8185d400b8e6a4c5149dfefb1b5eb",
+      "vertices": 3049,
+      "volume_m3": 9.379417073134617e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_018.stl",
+      "sha256": "a3da4b3fd164ebacdc3bcc13a8fbaba199c1791abd087d5e425874538f230520",
+      "vertices": 1513,
+      "volume_m3": 5.805276716081834e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_019.stl",
+      "sha256": "504f314efdf951b03499d4555db9e734485dd9db93fb79b05804699f4c074f5a",
+      "vertices": 78,
+      "volume_m3": 5.115053847259196e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_020.stl",
+      "sha256": "7e959d0576e60173a8980850466512e68770f53bf7e0dfab3825820a4abc79e8",
+      "vertices": 175,
+      "volume_m3": 6.943285811479662e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_021.stl",
+      "sha256": "4f726547dfa1d4eb844d8487b1f6dedfcfc4a7e190fcd4630bbc957c54d7a0b8",
+      "vertices": 78,
+      "volume_m3": 4.0841814566926704e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_022.stl",
+      "sha256": "339be9c880183a43fdf12d211f069b22d0ef303ba79a5771add12eed738d5ba3",
+      "vertices": 216,
+      "volume_m3": 1.4644527334541169e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_023.stl",
+      "sha256": "9cbb4766cd7351a831dbdd842349835c744bbe4c358a4b2057448a525ae196df",
+      "vertices": 2931,
+      "volume_m3": 9.617874740332034e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_024.stl",
+      "sha256": "f9ddcda45410886e227beb6d609ee39fd2ed74fd80a4da2224bcdcc9c6abf7eb",
+      "vertices": 82,
+      "volume_m3": 5.916331157256454e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_025.stl",
+      "sha256": "b7f9d4c88f430a4e6440929a3e1e1fbd390c796f24b3bebf61c16238438064cb",
+      "vertices": 265,
+      "volume_m3": 2.431110557366885e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_026.stl",
+      "sha256": "f32ef11a8fa37b9f0baa420751420a8eaee01a858fc70b0b9110aace071a368f",
+      "vertices": 60,
+      "volume_m3": 2.2754536149799246e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_027.stl",
+      "sha256": "a2fa8cf47c85c105853f55336df1b421aefb6ff05906e7d19fbe00f6922739ec",
+      "vertices": 82,
+      "volume_m3": 5.914691116110029e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_028.stl",
+      "sha256": "394c0e7b6442ab72b44858d8c868d1b97f22b150f771a280314cee5e2a2f3a9e",
+      "vertices": 82,
+      "volume_m3": 5.92193931446891e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_029.stl",
+      "sha256": "a0398221469ce6e182a34c018fc490941c2e05c2d25ffd7e32932d0ef2aa88be",
+      "vertices": 4736,
+      "volume_m3": 7.301794023945312e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_030.stl",
+      "sha256": "16e1cbf6bf1bf88e3a696fc7bcb3529fc95c5895b2fbf3fbae9e6ac32058a3f1",
+      "vertices": 164,
+      "volume_m3": 9.363727414329721e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_031.stl",
+      "sha256": "4a3f541c479d4fe8e4aff55140362a7f7c40108f480393dc2a3acd14d5b87ca7",
+      "vertices": 4129,
+      "volume_m3": 1.932028362115786e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_032.stl",
+      "sha256": "fe458036392d139dfd6a205209d09644becc1119a96bc1e32a101814ce960efd",
+      "vertices": 112,
+      "volume_m3": 5.360813147935017e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_033.stl",
+      "sha256": "8bbca4515efbb8066771711926d345e9fbb8937327d82670a54f0cb39ea4233b",
+      "vertices": 94,
+      "volume_m3": 5.716119207438185e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_034.stl",
+      "sha256": "0e77847c91a1da32356514e41f0549b6aaf3020ab0dd94ca0404ec3b8c4ef15d",
+      "vertices": 69,
+      "volume_m3": 1.356628852041827e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_035.stl",
+      "sha256": "18b5ad791ccd5d91d3e8c05b850aa7e7461f3b479a194a95286ee31764585287",
+      "vertices": 5809,
+      "volume_m3": 2.4008916299402152e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_036.stl",
+      "sha256": "61f5645485227c8881dfcd19b3e69365bd4277819005c7b6d30b1d44ea9f82e0",
+      "vertices": 71,
+      "volume_m3": 4.3068759998919173e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_037.stl",
+      "sha256": "f9aeb9c0ecd37aa1f33ceb0d0b2f5ce0c0a3686b3f453c933e7f66990a67d226",
+      "vertices": 85,
+      "volume_m3": 4.0582626218722797e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_038.stl",
+      "sha256": "3172217a4d342f6bf7e926e6d1f6587aa2b8fd1ad4fe72a09c99c765b4e29f4d",
+      "vertices": 82,
+      "volume_m3": 4.876690707981005e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_039.stl",
+      "sha256": "1783ad8d04a5d3da70c23fa6c4dbaa443e03263b72a39d5ecad8bb6d4d86b49e",
+      "vertices": 60,
+      "volume_m3": 2.2647007884257836e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_040.stl",
+      "sha256": "afdee530a44153f65376bc421fe8ea1d3fae95b3d8a1d710e5b38c842a8bb0b6",
+      "vertices": 74,
+      "volume_m3": 5.544783729617137e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_041.stl",
+      "sha256": "1f644cf97680ef204f8b93dcdfd916c5d4b6647c573efa7f5ed3233ec79da359",
+      "vertices": 1550,
+      "volume_m3": 7.058017162927501e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_042.stl",
+      "sha256": "dc61b213da390b15b4d23d9dfb25cd73f9ce8f48dde50a8c3d26acea83ab779a",
+      "vertices": 285,
+      "volume_m3": 1.779802263360491e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_043.stl",
+      "sha256": "8727d3a859e9ea4f6a3b9b0e0462d1a5a56747fa967b41906370cb6cad7bf97a",
+      "vertices": 171,
+      "volume_m3": 1.5184923099679197e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_044.stl",
+      "sha256": "fd4338d05a31707d1e1da83bf7c9265130c467ddd68d636c9f7f797e76594b24",
+      "vertices": 57,
+      "volume_m3": 1.0474574714428717e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_045.stl",
+      "sha256": "cb09725894a7ca5208c9a37da62d1b13ff190032b0ae1ab2a9539fa3d0bfef98",
+      "vertices": 125,
+      "volume_m3": 6.893954530234966e-07
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_046.stl",
+      "sha256": "56c8a807ac50aaf819d5bcce4cf6c8ffa0cc52c575797b9284e82c561594f780",
+      "vertices": 120,
+      "volume_m3": 1.292239270923057e-06
+    },
+    {
+      "path": "meshes/adapter/collision/adapter_convex_047.stl",
+      "sha256": "5380c363bd249372656821ca1710b453d7744e188c18a5fa85623aa5b75a19de",
+      "vertices": 676,
+      "volume_m3": 3.7725597381068256e-07
+    }
+  ],
+  "visual_volume_m3": 8.345119185536574e-05,
+  "sum_convex_volume_m3": 8.807434529826823e-05,
+  "hull_cap_reached": true,
+  "requested_concavity_threshold_certified": false,
+  "cavity_axis_probes": [
+    {
+      "xyz_m": [
+        0.0,
+        0.015,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.02,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.025,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.03,
+        0.0
+      ],
+      "inside_any_proxy": false
+    },
+    {
+      "xyz_m": [
+        0.0,
+        0.034,
+        0.0
+      ],
+      "inside_any_proxy": false
+    }
+  ],
+  "cavity_axis_probes_pass": true,
+  "claim": "Convex contact approximation for assembly preview; hull cap may prevent the requested concavity threshold. Five sleeve-axis probes do not certify the complete opening or small fastener holes."
+}

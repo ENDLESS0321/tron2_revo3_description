@@ -1,0 +1,57 @@
+{
+  "stamp_ns": 66666667,
+  "depth_unit": "meter",
+  "geometry_status": "wrist_band_only_revision_inward_small_holes",
+  "bracket_geometry": "supplied_step_inward_v2",
+  "geometry_banner": "向内安装 V2：仅改腕部孔组；原支撑段和相机板不变，手姿态不变。固定 STEP 几何，实物装配待验证。",
+  "cameras": {
+    "head": {
+      "depth_display_limits_m": [
+        0.3,
+        3.0
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 64.04059311965655,
+      "positive_depth_pixels": 53760,
+      "finite_depth_pixels": 53760,
+      "depth_min_m": 0.581838846206665,
+      "depth_max_m": 2.98594331741333
+    },
+    "left_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 80.27847231357364,
+      "positive_depth_pixels": 19244,
+      "finite_depth_pixels": 19244,
+      "depth_min_m": 0.07000615447759628,
+      "depth_max_m": 0.4999890923500061
+    },
+    "right_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 91.60744802064856,
+      "positive_depth_pixels": 19259,
+      "finite_depth_pixels": 19259,
+      "depth_min_m": 0.07000240683555603,
+      "depth_max_m": 0.4999832808971405
+    }
+  }
+}

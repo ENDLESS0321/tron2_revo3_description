@@ -1,0 +1,708 @@
+{
+  "schema": "wrist_camera_bracket_radial_stem_v2",
+  "design_basis": "user V2 changes: remove both large relief holes, delete the complete +Y arm, extend the +Z stem directly to the plate",
+  "parameters": {
+    "length_mm": 20.0,
+    "plate_tilt_deg": 0.0,
+    "density_kg_m3": 1250.0,
+    "length_range_mm": [
+      20,
+      150
+    ],
+    "plate_tilt_range_deg": [
+      0,
+      75
+    ]
+  },
+  "parameter_semantics": {
+    "length": "radial upright length from fixed base top Z=35.8 along +Z; no inherited +Y arm length",
+    "plate_tilt": "Rx around the upright top; plate/short neck/gussets regenerated while base and upright stay fixed",
+    "parts": "three nonoverlapping semantic regions of one integral part; camera and fasteners separate",
+    "regenerate_on_parameter_change": true
+  },
+  "coordinate_convention": {
+    "units": "mm except *_m.stl and explicit SI fields",
+    "root": "original hand-adapter shoulder datum",
+    "axes": {
+      "X": "across wrist",
+      "Y": "wrist axis toward fingers",
+      "Z": "radially outward and along the V2 upright"
+    },
+    "theta": "atan2(Z,X), positive equals right-handed Ry(-theta)"
+  },
+  "plate_frame": {
+    "xyz_mm": [
+      0,
+      0,
+      55.8
+    ],
+    "rpy_deg": [
+      0.0,
+      0,
+      0
+    ],
+    "pivot_axis_in_root": [
+      1,
+      0,
+      0
+    ]
+  },
+  "camera_mount": {
+    "relative_to": "plate_frame",
+    "contact_point_mm": [
+      0,
+      32,
+      -2
+    ],
+    "contact_plane_normal_plate": [
+      0,
+      0,
+      1
+    ],
+    "camera_optical_direction_plate": [
+      0,
+      0,
+      -1
+    ],
+    "bottom_screw_frame": {
+      "xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "rotation_matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ]
+    },
+    "camera_geometry_included": false,
+    "camera_back_hole_points_bottom_screw_mm": [
+      [
+        -8.35,
+        -10,
+        21
+      ],
+      [
+        -8.35,
+        10,
+        21
+      ]
+    ],
+    "camera_thread_depth_reference_mm": 4
+  },
+  "features": {
+    "wrist_mount_holes": [
+      {
+        "theta_deg": 30.0,
+        "axis_direction": [
+          0.8660254037844387,
+          0,
+          0.49999999999999994
+        ],
+        "axis_point_at_wrist_r30_5_mm": [
+          26.41377481542538,
+          -4.5,
+          15.249999999999998
+        ],
+        "clearance_diameter_mm": 3.4,
+        "seat_counterbore_diameter_mm": 6.0,
+        "seat_plane_axis_radius_mm": 34.4,
+        "thread_status": "original robot thread and engagement depth are unconfirmed"
+      },
+      {
+        "theta_deg": 150.0,
+        "axis_direction": [
+          -0.8660254037844387,
+          0,
+          0.49999999999999994
+        ],
+        "axis_point_at_wrist_r30_5_mm": [
+          -26.41377481542538,
+          -4.5,
+          15.249999999999998
+        ],
+        "clearance_diameter_mm": 3.4,
+        "seat_counterbore_diameter_mm": 6.0,
+        "seat_plane_axis_radius_mm": 34.4,
+        "thread_status": "original robot thread and engagement depth are unconfirmed"
+      }
+    ],
+    "existing_adapter_retention_access_reliefs": {
+      "enabled": false,
+      "theta_deg": [],
+      "diameter_mm": 0,
+      "removed_from_v1": [
+        15,
+        105
+      ]
+    },
+    "longitudinal_arm_present": false,
+    "stem_axis_root": [
+      0,
+      0,
+      1
+    ],
+    "stem_start_mm": [
+      0,
+      0,
+      35.8
+    ],
+    "stem_end_mm": [
+      0,
+      0,
+      55.8
+    ],
+    "stem_prismatic_y_range_mm": [
+      -8.5,
+      3.5
+    ],
+    "plate_gusset_yz_root_mm": [
+      [
+        -6.0,
+        37.8
+      ],
+      [
+        3.0,
+        37.8
+      ],
+      [
+        8.0,
+        57.0
+      ],
+      [
+        2.0,
+        57.0
+      ]
+    ],
+    "camera_plate_holes": [
+      {
+        "center_plate_mm": [
+          -10,
+          32,
+          0
+        ],
+        "center_root_mm": [
+          -10,
+          32.0,
+          55.8
+        ],
+        "axis_plate": [
+          0,
+          0,
+          1
+        ],
+        "axis_root": [
+          0,
+          -0.0,
+          1.0
+        ],
+        "diameter_mm": 3.4
+      },
+      {
+        "center_plate_mm": [
+          10,
+          32,
+          0
+        ],
+        "center_root_mm": [
+          10,
+          32.0,
+          55.8
+        ],
+        "axis_plate": [
+          0,
+          0,
+          1
+        ],
+        "axis_root": [
+          0,
+          -0.0,
+          1.0
+        ],
+        "diameter_mm": 3.4
+      }
+    ],
+    "saddle_radial_clearance_mm": 0.3
+  },
+  "strength_geometry": {
+    "section_type": "solid_rectangle_with_vertical_edge_fillets",
+    "stem_axis": [
+      0,
+      0,
+      1
+    ],
+    "stem_start_z_mm": 35.8,
+    "stem_length_mm": 20.0,
+    "stem_width_mm": 24,
+    "stem_depth_mm": 12,
+    "web_thickness_mm": 12,
+    "web_y_range_mm": [
+      -8.5,
+      3.5
+    ],
+    "rib_width_mm": 0,
+    "rib_added_depth_mm": 0,
+    "section_bbox_xy_mm": [
+      [
+        -12,
+        -8.5
+      ],
+      [
+        12,
+        3.5
+      ]
+    ],
+    "plate_width_mm": 40,
+    "plate_length_mm": 42,
+    "plate_thickness_mm": 4,
+    "plate_root_gusset_width_mm": 2.6,
+    "plate_root_gusset_vertical_overlap_mm": 18,
+    "plate_root_gusset_max_plate_y_mm": 8,
+    "camera_com_plate_local_mm": [
+      0,
+      32,
+      -14
+    ],
+    "camera_com_status": "explicit review assumption, not a measured camera COM",
+    "density_kg_m3": 1250.0,
+    "saddle_inner_radius_mm": 30.8,
+    "saddle_outer_radius_mm": 35.8,
+    "saddle_y_range_mm": [
+      -10.5,
+      -0.5
+    ],
+    "fixed_root_pad_z_mm": [
+      32.8,
+      35.8
+    ],
+    "tilt_range_deg": [
+      0,
+      75
+    ],
+    "default_tilt_deg": 40,
+    "fillets": {
+      "saddle_end_edges": {
+        "applied": true,
+        "radius_mm": 0.8,
+        "edge_direction": "Y"
+      },
+      "root_pad_edges": {
+        "applied": true,
+        "radius_mm": 0.8,
+        "edge_direction": "Z"
+      },
+      "stem_vertical_edges": {
+        "applied": true,
+        "radius_mm": 0.8,
+        "edge_direction": "Z"
+      }
+    }
+  },
+  "whole": {
+    "volume_mm3": 17833.857546642663,
+    "mass_kg": 0.02229232193330333,
+    "density_kg_m3": 1250.0,
+    "center_of_mass_mm": [
+      -1.3024917336539072e-08,
+      9.795251165568756,
+      45.78857927667758
+    ],
+    "inertia_at_com_kg_m2": [
+      [
+        1.0717539432953903e-05,
+        -4.2785623308255566e-15,
+        6.80471503199804e-13
+      ],
+      [
+        -4.2785623308255566e-15,
+        6.628709736575215e-06,
+        -3.1385409773364423e-06
+      ],
+      [
+        6.80471503199804e-13,
+        -3.1385409773364423e-06,
+        1.080187926817522e-05
+      ]
+    ],
+    "bounds_mm": [
+      [
+        -32.943401903503926,
+        -10.51351821229357,
+        11.775424765641615
+      ],
+      [
+        32.94340190350393,
+        52.000000100000015,
+        57.80033613939089
+      ]
+    ],
+    "brep_valid": true,
+    "solid_count": 1
+  },
+  "parts": {
+    "base": {
+      "volume_mm3": 4221.26563476971,
+      "mass_kg": 0.005276582043462138,
+      "density_kg_m3": 1250.0,
+      "center_of_mass_mm": [
+        -3.430822190979627e-08,
+        -5.026613664750793,
+        27.231328614027404
+      ],
+      "inertia_at_com_kg_m2": [
+        [
+          2.778756097190286e-07,
+          -3.75405874948739e-17,
+          4.2886903945603054e-13
+        ],
+        [
+          -3.75405874948739e-17,
+          2.0375899477803675e-06,
+          -2.0898863935455302e-08
+        ],
+        [
+          4.2886903945603054e-13,
+          -2.0898863935455302e-08,
+          1.876799077448742e-06
+        ]
+      ],
+      "bounds_mm": [
+        [
+          -32.943401903503926,
+          -10.51351821229357,
+          11.775424765641615
+        ],
+        [
+          32.94340190350393,
+          3.5001543076143493,
+          35.80698576126068
+        ]
+      ],
+      "brep_valid": true,
+      "solid_count": 1,
+      "body_local_properties": {
+        "volume_mm3": 4221.265634769709,
+        "mass_kg": 0.005276582043462137,
+        "density_kg_m3": 1250.0,
+        "center_of_mass_mm": [
+          -3.430821931086486e-08,
+          -5.026613664750793,
+          27.23132861402741
+        ],
+        "inertia_at_com_kg_m2": [
+          [
+            2.778756097190286e-07,
+            -3.754056963441876e-17,
+            4.2886903951569094e-13
+          ],
+          [
+            -3.754056963441876e-17,
+            2.0375899477803654e-06,
+            -2.0898863935455302e-08
+          ],
+          [
+            4.2886903951569094e-13,
+            -2.0898863935455302e-08,
+            1.876799077448742e-06
+          ]
+        ],
+        "bounds_mm": [
+          [
+            -32.943271418073714,
+            -10.5000001,
+            11.775521343078301
+          ],
+          [
+            32.94327141807372,
+            3.5,
+            35.8000001
+          ]
+        ],
+        "brep_valid": true,
+        "solid_count": 1
+      },
+      "body_frame": {
+        "xyz_mm": [
+          0,
+          0,
+          0
+        ],
+        "rpy_deg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "files": {
+        "parts/base.step": "c8025c78e74f4d20da400026ea6703f94b990337e4013ad648a40de2934baf9d",
+        "parts/base_mm.stl": "535ee841eac13554b58d404326c70eec76e178e7f59e2f51e4f8ca96ad2d51a6",
+        "parts/base_body_m.stl": "50275a0af9cd8c5fb0558b501d4aa1766de1154e3b08264c4485b9dc5df768d3"
+      },
+      "step_roundtrip": {
+        "solid_count": 1,
+        "valid": true,
+        "volume_mm3": 4221.265634767669,
+        "volume_absolute_error_mm3": 2.040906110778451e-09
+      }
+    },
+    "stem": {
+      "volume_mm3": 5749.012385965932,
+      "mass_kg": 0.007186265482457415,
+      "density_kg_m3": 1250.0,
+      "center_of_mass_mm": [
+        0.0,
+        -2.5000000000000004,
+        45.8
+      ],
+      "inertia_at_com_kg_m2": [
+        [
+          3.2547644387087787e-07,
+          4.547473508864642e-24,
+          0.0
+        ],
+        [
+          4.547473508864642e-24,
+          5.832225673453859e-07,
+          -1.4551915228366853e-22
+        ],
+        [
+          0.0,
+          -1.4551915228366853e-22,
+          4.2961464571910467e-07
+        ]
+      ],
+      "bounds_mm": [
+        [
+          -12.00015430761435,
+          -8.50015430761435,
+          35.799845692385645
+        ],
+        [
+          12.00015430761435,
+          3.5001543076143493,
+          55.80015430761435
+        ]
+      ],
+      "brep_valid": true,
+      "solid_count": 1,
+      "body_local_properties": {
+        "volume_mm3": 5749.012385965932,
+        "mass_kg": 0.007186265482457415,
+        "density_kg_m3": 1250.0,
+        "center_of_mass_mm": [
+          0.0,
+          -2.5000000000000004,
+          10.0
+        ],
+        "inertia_at_com_kg_m2": [
+          [
+            3.254764438708795e-07,
+            4.547473508864642e-24,
+            0.0
+          ],
+          [
+            4.547473508864642e-24,
+            5.832225673453873e-07,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            4.2961464571910467e-07
+          ]
+        ],
+        "bounds_mm": [
+          [
+            -12.0,
+            -8.5,
+            0.0
+          ],
+          [
+            12.0,
+            3.5,
+            20.0
+          ]
+        ],
+        "brep_valid": true,
+        "solid_count": 1
+      },
+      "body_frame": {
+        "xyz_mm": [
+          0,
+          0,
+          35.8
+        ],
+        "rpy_deg": [
+          0,
+          0,
+          0
+        ]
+      },
+      "files": {
+        "parts/stem.step": "6d2985258a02ac53ced570aa034f2a95b93129f325265100067257c6ff0c4c1b",
+        "parts/stem_mm.stl": "87625327f8208a52273f531f4791ead53d6906b34547073d4c9e4613cb9381e6",
+        "parts/stem_body_m.stl": "03295a28ae34df0c33ef19bbd486134bffa5996a7472d1b0d8c2aadada831425"
+      },
+      "step_roundtrip": {
+        "solid_count": 1,
+        "valid": true,
+        "volume_mm3": 5749.012385965946,
+        "volume_absolute_error_mm3": 1.4551915228366852e-11
+      }
+    },
+    "plate": {
+      "volume_mm3": 7863.579525820179,
+      "mass_kg": 0.009829474407275225,
+      "density_kg_m3": 1250.0,
+      "center_of_mass_mm": [
+        -1.858341643892815e-13,
+        26.740788430780004,
+        55.74198870226601
+      ],
+      "inertia_at_com_kg_m2": [
+        [
+          2.2551554865172556e-06,
+          -1.860945474881767e-16,
+          -2.788406560740384e-20
+        ],
+        [
+          -1.860945474881767e-16,
+          1.2169819795272781e-06,
+          -9.41431592273293e-09
+        ],
+        [
+          -2.788406560740384e-20,
+          -9.41431592273293e-09,
+          3.4273491807682406e-06
+        ]
+      ],
+      "bounds_mm": [
+        [
+          -20.000000100000015,
+          -6.000000100000013,
+          38.67959129810917
+        ],
+        [
+          20.000000100000015,
+          52.000000100000015,
+          57.80033613939089
+        ]
+      ],
+      "brep_valid": true,
+      "solid_count": 1,
+      "body_local_properties": {
+        "volume_mm3": 7863.57952582018,
+        "mass_kg": 0.009829474407275225,
+        "density_kg_m3": 1250.0,
+        "center_of_mass_mm": [
+          -1.857268634462511e-13,
+          26.74078843078,
+          -0.05801129773399155
+        ],
+        "inertia_at_com_kg_m2": [
+          [
+            2.2551554865172683e-06,
+            -1.8609452647859489e-16,
+            -2.7984178315230725e-20
+          ],
+          [
+            -1.8609452647859489e-16,
+            1.2169819795272985e-06,
+            -9.414315922734462e-09
+          ],
+          [
+            -2.7984178315230725e-20,
+            -9.414315922734462e-09,
+            3.427349180768242e-06
+          ]
+        ],
+        "bounds_mm": [
+          [
+            -20.0,
+            -6.0,
+            -17.120062993102607
+          ],
+          [
+            20.0,
+            52.0,
+            2.0
+          ]
+        ],
+        "brep_valid": true,
+        "solid_count": 1
+      },
+      "body_frame": {
+        "xyz_mm": [
+          0,
+          0,
+          55.8
+        ],
+        "rpy_deg": [
+          0.0,
+          0,
+          0
+        ]
+      },
+      "files": {
+        "parts/plate.step": "2132aaa0e425a37cf476d0f723237eb07b6d781715d07c8764a85024e4f6431b",
+        "parts/plate_mm.stl": "d3fb9ade6a9b49b5b9c67b068278a171705d602d85e5b6c12213e545fbc502e0",
+        "parts/plate_body_m.stl": "8caa7f16b14ecbb32217e2629729e3dd3bec1e11a3db069c0c646c4f31abbabd"
+      },
+      "step_roundtrip": {
+        "solid_count": 1,
+        "valid": true,
+        "volume_mm3": 7863.579525807386,
+        "volume_absolute_error_mm3": 1.2792952475138009e-08
+      }
+    }
+  },
+  "files": {
+    "whole_bracket.step": "da5ea1c55473c65cb756b8d4245a3e998cc98ae028cf4c6c4b59da4257aee71c",
+    "whole_bracket_mm.stl": "77949dcf78ae05eb550de1f9846d4f2919d7e3d48e8345a9f9308e041dca661a",
+    "whole_bracket_m.stl": "64475045023ae625624fea53cc686b8e648fd9c40f739983027722bb17c41597"
+  },
+  "verification": {
+    "whole_step_roundtrip": {
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 17833.857546624127,
+      "volume_absolute_error_mm3": 1.8535502022132277e-08
+    },
+    "whole_stl_mm": {
+      "watertight": true,
+      "is_volume": true,
+      "faces": 6072,
+      "volume": 17834.403522202858,
+      "relative_volume_error": 3.061455205454739e-05
+    },
+    "whole_stl_m": {
+      "watertight": true,
+      "is_volume": true,
+      "faces": 6072,
+      "volume": 1.7834404515562884e-05,
+      "relative_volume_error": 3.067025284849139e-05
+    },
+    "component_volume_partition_error_mm3": 8.684219210408628e-08,
+    "plate_partition_fragment_cleanup": {
+      "count": 0,
+      "volume_mm3": 0.0
+    },
+    "physical_fit_or_strength_certified": false
+  },
+  "generator_sha256": "570d99013ac23f787a533d93ebdfaccdba6ddbd91532def837aab58ff44180e5",
+  "frozen_v1_helper_sha256": "b0ef45d97785146c5e1d0694c390a4ece4de4cfefba8f8ca665b8a2cc94bce3f",
+  "prototype_status": "material/print process and original robot threads/screw lengths unconfirmed; geometry is not a strength certification"
+}

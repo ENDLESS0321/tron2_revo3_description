@@ -1,0 +1,57 @@
+{
+  "stamp_ns": 66666667,
+  "depth_unit": "meter",
+  "geometry_status": "supplied_STEP_registered_candidate",
+  "bracket_geometry": "supplied_step_20260914",
+  "geometry_banner": "原始左右 STEP 支架：相机独立、孔位配准；固定几何，禁用旧版长度/倾角滑条。装配与视角仍需复核。",
+  "cameras": {
+    "head": {
+      "depth_display_limits_m": [
+        0.3,
+        3.0
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 64.08552485481745,
+      "positive_depth_pixels": 53760,
+      "finite_depth_pixels": 53760,
+      "depth_min_m": 0.581838846206665,
+      "depth_max_m": 2.98594331741333
+    },
+    "left_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 91.05492040624914,
+      "positive_depth_pixels": 9920,
+      "finite_depth_pixels": 9920,
+      "depth_min_m": 0.07252924889326096,
+      "depth_max_m": 0.2663688659667969
+    },
+    "right_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 104.1743151351636,
+      "positive_depth_pixels": 9921,
+      "finite_depth_pixels": 9921,
+      "depth_min_m": 0.07257390022277832,
+      "depth_max_m": 0.2659052014350891
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "schema": "vendored_robot_description_source_v1",
+  "upstream_repository": "https://github.com/limxdynamics/tron2-robot-description",
+  "commit": "9939c22e69d27653ec0ba8a505859a2903dd1a71",
+  "commit_time": "2026-08-21T21:07:29+08:00",
+  "retrieved_for": "Local DACH_TRON2A plus adapter plus bilateral Revo3 simulation URDF assembly",
+  "retrieval": "depth=1, filter=blob:none, sparse checkout; original tracked files unmodified",
+  "selected_urdf": "tron2a/DACH_TRON2A/urdf/robot.urdf",
+  "selected_urdf_sha256": "8a29336c53d5f83bc561868be65f0719b0a6b680e9c0e259f37fe177b88970bb",
+  "upstream_agents_md_files": [],
+  "license_files": [
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES.md",
+    "ASSETS.md"
+  ],
+  "license_note": "Repository declares Apache-2.0. Upstream ASSETS.md and THIRD_PARTY_NOTICES.md still mark STL provenance as TO CONFIRM; these notices are preserved verbatim.",
+  "mesh_reference_prefix": "package://robot_description/tron2/DACH_TRON2A/meshes/",
+  "mesh_reference_local_directory": "tron2a/DACH_TRON2A/meshes/",
+  "mesh_scale_in_selected_urdf": [
+    1,
+    1,
+    1
+  ],
+  "selected_urdf_required_meshes": [
+    "tron2a/DACH_TRON2A/meshes/base_2_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/base_3_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/base_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/elbow_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/elbow_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/grasper_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/grasper_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/head_base_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/head_pitch_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/head_yaw_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_pitch_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_pitch_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_roll_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_roll_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_yaw_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_yaw_L_Link_collision.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_yaw_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/proximal_yaw_R_Link_collision.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_pitch_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_pitch_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_roll_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_roll_L_Link_collision.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_roll_R_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_roll_R_Link_collision.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_yaw_L_Link.STL",
+    "tron2a/DACH_TRON2A/meshes/wrist_yaw_R_Link.STL"
+  ],
+  "selected_urdf_required_mesh_count": 26,
+  "selected_urdf_required_mesh_total_bytes": 52516284,
+  "other_urdf_variants_note": "The additional upstream URDF/xacro files are retained for source reference only; articulated gripper meshes and camera wrist variants not required by selected robot.urdf are not checked out.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 329,
+      "sha256": "54a9648382f28403045e643f58c46d0ca7ee83bc8da55a8dad8c937acaee1ec0"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 633,
+      "sha256": "788742eb52c92c7841d7686c9b9420fe14abc68ee1e72ec813c674c78a2ea7ce"
+    },
+    {
+      "path": "ASSETS.md",
+      "bytes": 11525,
+      "sha256": "0482082296e4096e3fd6bf0a2e275e4335c5786a42f808af4421222978109f98"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 4671,
+      "sha256": "f45bde4f92efe635b086f855724b23e460e2081d54df785e0f4747d27bb20a14"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 1244,
+      "sha256": "0d68f1efe74a0def1a0603f6341cac3dd474b686d05def4371269a2840eb36b3"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 6636,
+      "sha256": "da4a7a628c49bd5812c0fc38df2574769f8fe08806caa3e061ee00eb662f19dc"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 601,
+      "sha256": "fa088ffa82ada2b29f93aadbc79c92f2097af5f0c3bff19e99ea87619d7dda60"
+    },
+    {
+      "path": "README.md",
+      "bytes": 18508,
+      "sha256": "e49b8def1075225b86f22f2e3631c7e3ed7f7cb15e8c6b116cdad1e0e822e56f"
+    },
+    {
+      "path": "README_zh-CN.md",
+      "bytes": 19095,
+      "sha256": "c18ce793f46829c992ee6ff267d010c0463372fd9cbd4778828e847651b713cd"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2350,
+      "sha256": "ed1ecc6934d7caebf423ee9ce2b9dee1b3e94cca54f219c0d6807416010dfc72"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 5524,
+      "sha256": "097ea481140d1c9d22d31364f3e35af8add753344c3fa141c6011a80abd7a020"
+    },
+    {
+      "path": "package.xml",
+      "bytes": 1889,
+      "sha256": "ad4f1712efc36df3b3c4dc37e9826fef9d7a7846c14c682a67d88fa9473ee376"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/base_2_Link.STL",
+      "bytes": 796884,
+      "sha256": "0949b4cc8fe9908e42cadbd700b20248b813e216e37c36b4c5ed3c05f2132659"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/base_3_Link.STL",
+      "bytes": 4478484,
+      "sha256": "e97bbbb149445b4ce2a7df2589b53ac03045c0386e64590eb2efc5d3524c2fce"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/base_Link.STL",
+      "bytes": 5000084,
+      "sha256": "25b6fc44a8455e116c24ca636628f648426c26ad9b2903d10719ca387f999abc"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/elbow_L_Link.STL",
+      "bytes": 912084,
+      "sha256": "46497ab102b97d2ab6989fe045d3a9f1a2643d550b05e2a4c4b064eb550a1857"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/elbow_R_Link.STL",
+      "bytes": 915384,
+      "sha256": "956b51d6896448839193224a7fbb07ec3660dd4601f97caf2c1a87192a443d7e"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/grasper_L_Link.STL",
+      "bytes": 4476084,
+      "sha256": "d7e9c953da25135b7f26c056604c8bca5899794959d63f414fc23f41a5f7ba2f"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/grasper_R_Link.STL",
+      "bytes": 4476084,
+      "sha256": "9f6a32b450fbd523a433808a9367c7c9494b9bb36169e724545d06fe21ea95c1"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/head_base_Link.STL",
+      "bytes": 640184,
+      "sha256": "e6b25387d68c6f04d6dcd02921ba1f3c4dcec0643d1ef7c0695c25edc45efb06"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/head_pitch_Link.STL",
+      "bytes": 2744984,
+      "sha256": "dc4b2b780fddbf176694181c7c4b8ef532fc78eb8f8cf2f08b6ab26add131481"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/head_yaw_Link.STL",
+      "bytes": 1169684,
+      "sha256": "de86690ddec7325c3ba475b793ef0553451c497fc7f0debe65b249ba014b7a52"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_pitch_L_Link.STL",
+      "bytes": 1774184,
+      "sha256": "171103f1f263229576012211466e138c99dccc5a8550d5d3492c2f94e82fadac"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_pitch_R_Link.STL",
+      "bytes": 1771584,
+      "sha256": "4740dbcf4899717de6fb8adf11766f163679ecee0fdf8a6ec06f6bdf9f8bcf7c"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_roll_L_Link.STL",
+      "bytes": 2851084,
+      "sha256": "c416c88546061b0cd1a4500e327af0bc9f7cac0f8ef500ff86b63bf72d37ec86"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_roll_R_Link.STL",
+      "bytes": 3119684,
+      "sha256": "be9df467853b4c12938c7e80b95e7a7542506019d321291481b9967a050a6204"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_yaw_L_Link.STL",
+      "bytes": 2414384,
+      "sha256": "8e5253aed24455af89b99b253b102c1f71049375a1b7ad11fba32ef27339cde1"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_yaw_L_Link_collision.STL",
+      "bytes": 585234,
+      "sha256": "f2b044dde500d8cbdbdfc91aecbe48520488d739685396d1e6ce8b865be76df8"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_yaw_R_Link.STL",
+      "bytes": 2334284,
+      "sha256": "e2dc549ce47bb1fb833b0dfe5aa2a29c25f89a581fda343d3b2726cce0c27995"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/proximal_yaw_R_Link_collision.STL",
+      "bytes": 662934,
+      "sha256": "697b41afc439a30e0fb51bfcf7ffdce4d3da8bf3a20ce64846254bba58adb487"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_pitch_L_Link.STL",
+      "bytes": 1004984,
+      "sha256": "8aedb74d479b723b522395d8d4684ebeb1d17468a785442ccdd7e725082071d6"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_pitch_R_Link.STL",
+      "bytes": 1018184,
+      "sha256": "c16046ed84cecd27ac1ddf1ba5c3ae3e63cc2a006dd00097a97a7cadb5b8b763"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_roll_L_Link.STL",
+      "bytes": 1584184,
+      "sha256": "3dd3da5518daef34c5b085c0bd774090967634d49de0c4a5b59d2f9fd84014f2"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_roll_L_Link_collision.STL",
+      "bytes": 682734,
+      "sha256": "bcf56e6ce5a65bae40b6becfbe83c341a34556c516e686c0c2fdd943d3da6ca5"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_roll_R_Link.STL",
+      "bytes": 1584184,
+      "sha256": "ca68b01599b1cb941ceec2f7cc106cc7926b023ad884cf1cfc69ec3ca40367c9"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_roll_R_Link_collision.STL",
+      "bytes": 682734,
+      "sha256": "7f750db7fdcfd687d40766759c4d5e9702289d1e05fe6000cf7f286a99ea5661"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_yaw_L_Link.STL",
+      "bytes": 2417984,
+      "sha256": "4124b79f0550554c60a604002fe7d86945de937d38040cac44ff5d7e772115ec"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/meshes/wrist_yaw_R_Link.STL",
+      "bytes": 2417984,
+      "sha256": "a22e01ab09be564b16685ca00c263561ee781bfe11c08d84519f300a307a7969"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/urdf/robot.urdf",
+      "bytes": 21022,
+      "sha256": "8a29336c53d5f83bc561868be65f0719b0a6b680e9c0e259f37fe177b88970bb"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/urdf/robot_grasper.urdf",
+      "bytes": 39486,
+      "sha256": "a6be63bb75bea45d221341d9eb7adaf3ec9c052b5b3573ebf0d1bd4ee26ca7c1"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/urdf/robot_rl.urdf",
+      "bytes": 19193,
+      "sha256": "e31bdffec669dded008234e001fe7eb7384d87016e2c8257e2ca4d56918980e5"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/urdf/robot_zeromass_graser.urdf",
+      "bytes": 22376,
+      "sha256": "5dd0f877269f43dd270241c84d97532f7f50bc1b4edbd2090cfc982854e3d8f3"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/xacro/macros.xacro",
+      "bytes": 16642,
+      "sha256": "0eaae4f3ef645219aedfd9c4742f529fb8e7ebd37fbc9a5af65df4eb603729b2"
+    },
+    {
+      "path": "tron2a/DACH_TRON2A/xacro/robot.urdf.xacro",
+      "bytes": 22090,
+      "sha256": "8b3a787df414183342f21cf2c1b1022610e6895e8de972964119d3b5ea7b141c"
+    }
+  ]
+}

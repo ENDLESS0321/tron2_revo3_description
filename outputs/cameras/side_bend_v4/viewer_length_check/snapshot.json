@@ -1,0 +1,57 @@
+{
+  "stamp_ns": 266666667,
+  "depth_unit": "meter",
+  "geometry_status": "side_mount_v4_plate_to_stem_angle_convention",
+  "bracket_geometry": "parametric_side_bend_v4",
+  "geometry_banner": "V4侧面两小孔安装：界面角度是板与支撑杆的夹角，默认15°（几何内部Rx75°）；相机独立。",
+  "cameras": {
+    "head": {
+      "depth_display_limits_m": [
+        0.3,
+        3.0
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 56.9314950283361,
+      "positive_depth_pixels": 53760,
+      "finite_depth_pixels": 53760,
+      "depth_min_m": 0.5457406044006348,
+      "depth_max_m": 2.98594331741333
+    },
+    "left_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 71.44608384698101,
+      "positive_depth_pixels": 10701,
+      "finite_depth_pixels": 10701,
+      "depth_min_m": 0.3185936510562897,
+      "depth_max_m": 0.4999980926513672
+    },
+    "right_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 74.2256141871382,
+      "positive_depth_pixels": 9488,
+      "finite_depth_pixels": 9488,
+      "depth_min_m": 0.177444189786911,
+      "depth_max_m": 0.4999985992908478
+    }
+  }
+}

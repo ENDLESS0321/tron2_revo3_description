@@ -1,0 +1,141 @@
+{
+  "source": "/home/endless/Documents/Project/Dexterous_Hand/tron2-revo3转接件_第1版.3mf",
+  "source_sha256": "b933846237df86a8982ca9a4c61340965368c19dab714b5a3358b8cb2e903b4b",
+  "output": "meshes/adapter/adapter_visual.stl",
+  "output_sha256": "6e156ba311c27949123633eed80f756491b238a87c575b7710524ecd55b46780",
+  "source_unit": "millimeter",
+  "output_unit": "meter",
+  "source_parts": [
+    {
+      "id": "1",
+      "name": "Revo3展示底座支架",
+      "subtype": "normal_part",
+      "faces": 158382,
+      "volume_mm3": 29050.77391152094
+    },
+    {
+      "id": "2",
+      "name": "转接件 嵌螺母版本（用于3D打印塑料件）",
+      "subtype": "normal_part",
+      "faces": 5574,
+      "volume_mm3": 52191.76713261309
+    },
+    {
+      "id": "3",
+      "name": "目标孔_15x6.2",
+      "subtype": "negative_part",
+      "faces": 12,
+      "volume_mm3": 737.0296306055566
+    }
+  ],
+  "boolean_operation": "union(normal_part) minus every negative_part",
+  "volume_removed_by_negative_parts_mm3": 245.6354955136194,
+  "numerical_shared_face_repair": {
+    "shared_plane_y_mm": -1.1,
+    "tolerance_mm": 1e-05,
+    "vertices_snapped": 714,
+    "maximum_vertex_movement_mm": 6.000000012384987e-07
+  },
+  "ignored_printer_build_transform": "1.01 0 0 0 1.22380528e-16 1.01 0 -1.01 1.12132525e-16 128.402825 129.230754 23.1289998",
+  "print_scale": 1.01,
+  "assembly_datum_nominal_mm": [
+    0.0,
+    -12.6,
+    0.0
+  ],
+  "mounting_reference_nominal_mm": [
+    0.0,
+    -12.6,
+    0.0
+  ],
+  "datum_status": "inferred robot-side shoulder center; physical fit and insertion depth require measurement",
+  "axes": {
+    "x": "original CAD X",
+    "y": "original CAD Y, toward hand",
+    "z": "original CAD Z"
+  },
+  "nominal_cad_bounds_mm": [
+    [
+      -41.0,
+      -22.899999618530273,
+      -27.925018310546875
+    ],
+    [
+      41.0,
+      22.899999618530273,
+      27.925018310546875
+    ]
+  ],
+  "bounds_m": [
+    [
+      -0.04141,
+      -0.010402999614715577,
+      -0.028204268493652346
+    ],
+    [
+      0.04141,
+      0.03585499961471558,
+      0.028204268493652346
+    ]
+  ],
+  "dimensions_m": [
+    0.08282,
+    0.04625799922943116,
+    0.05640853698730469
+  ],
+  "faces": 163738,
+  "vertices": 81853,
+  "watertight": true,
+  "winding_consistent": true,
+  "euler_number": -16,
+  "stl_roundtrip_is_volume": true,
+  "stl_roundtrip_vertex_merge_digits": 12,
+  "density_kg_m3": 1240.0,
+  "mass_model": "homogeneous solid at assumed PLA density; not measured, ignores infill, fasteners and print voids",
+  "volume_m3": 8.345119332214331e-05,
+  "mass_kg": 0.1034794797194577,
+  "center_mass_m": [
+    -9.155632949871547e-07,
+    0.010770759830377296,
+    -0.00022231151963751752
+  ],
+  "inertia_at_com_kg_m2": [
+    [
+      3.8068140231450206e-05,
+      -1.405149380902511e-09,
+      -5.2758897805683735e-09
+    ],
+    [
+      -1.405149380902511e-09,
+      7.682762284283556e-05,
+      9.148966817558196e-08
+    ],
+    [
+      -5.2758897805683735e-09,
+      9.148966817558196e-08,
+      5.968640094038031e-05
+    ]
+  ],
+  "inertia_kg_m2": [
+    [
+      3.8068140231450206e-05,
+      -1.405149380902511e-09,
+      -5.2758897805683735e-09
+    ],
+    [
+      -1.405149380902511e-09,
+      7.682762284283556e-05,
+      9.148966817558196e-08
+    ],
+    [
+      -5.2758897805683735e-09,
+      9.148966817558196e-08,
+      5.968640094038031e-05
+    ]
+  ],
+  "inertia_eigenvalues_kg_m2": [
+    3.8068138894545397e-05,
+    5.9685913920650417e-05,
+    7.682811119947024e-05
+  ]
+}

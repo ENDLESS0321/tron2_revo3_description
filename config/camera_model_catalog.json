@@ -1,0 +1,666 @@
+{
+  "schema": "realsense_camera_model_catalog_v1",
+  "created_date": "2026-09-11",
+  "source_repository": "https://github.com/realsenseai/realsense-ros",
+  "source_commit": "9a11121700cb4780e273e34141f6402fe184321d",
+  "source_package_version": "4.58.4",
+  "units": {
+    "geometry": "meter",
+    "angles": "radian",
+    "fov": "degree",
+    "depth": "positive optical Z in meters"
+  },
+  "hardware_identification": {
+    "head_D435i": "User-selected simulation model; not confirmed as TRON2 head hardware by available public LimX evidence.",
+    "wrist_D405": "Simulation selection; not confirmed as TRON2 wrist hardware by available public LimX evidence.",
+    "confirmed_LimX_D435i_role": "TRON2 SDK section4.2 explicitly identifies D435i as waist camera.",
+    "head_wrist_guide": {
+      "url": "https://cwjgfm21di.feishu.cn/docx/NZ68dQnIHoANwOxZXzQczQSQnIg",
+      "status": "Officially linked but public fetch redirected to Feishu login."
+    }
+  },
+  "optical_convention": {
+    "camera_link_axes": {
+      "x": "forward",
+      "y": "left",
+      "z": "up"
+    },
+    "optical_axes": {
+      "x": "right",
+      "y": "down",
+      "z": "forward"
+    },
+    "camera_body_to_optical": {
+      "xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "rpy_rad": [
+        -1.5707963267948966,
+        0,
+        -1.5707963267948966
+      ],
+      "quaternion_wxyz": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ]
+    },
+    "optical_to_mujoco_camera": {
+      "xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "rpy_rad": [
+        3.141592653589793,
+        0,
+        0
+      ],
+      "note": "MuJoCo camera uses -Z forward, +Y up."
+    }
+  },
+  "limx_mount_references": {
+    "head_xacro": {
+      "parent": "head_pitch_Link",
+      "child_in_source": "d435_Link",
+      "xyz_m": [
+        0.058,
+        -0.0308,
+        0.0408
+      ],
+      "rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "source": "vendor/tron2-robot-description/tron2a/DACH_TRON2A/xacro/robot.urdf.xacro",
+      "status": "official camera marker; exact device and mounting datum unspecified"
+    },
+    "existing_torso_marker": {
+      "parent": "base_Link",
+      "child": "d435_Link",
+      "xyz_m": [
+        0.0968,
+        0.01759,
+        -0.00409
+      ],
+      "rpy_rad": [
+        0,
+        2.7227,
+        0
+      ],
+      "source": "vendor/tron2-robot-description/tron2a/DACH_TRON2A/urdf/robot.urdf",
+      "status": "official generated URDF differs from xacro head attachment"
+    },
+    "wrist_left": {
+      "parent": "wrist_roll_L_Link",
+      "child_in_source": "left_camera",
+      "xyz_m": [
+        0.0664,
+        -0.0012,
+        -0.0979
+      ],
+      "rpy_rad": [
+        1.78179,
+        1.451946,
+        -2.929144
+      ],
+      "source": "vendor/tron2-robot-description/tron2a/DACH_TRON2A/urdf/robot_grasper.urdf",
+      "status": "1g empty marker; body/screw/optical semantics unspecified"
+    },
+    "wrist_right": {
+      "parent": "wrist_roll_R_Link",
+      "child_in_source": "right_camera",
+      "xyz_m": [
+        0.0664,
+        -0.0012,
+        -0.0979
+      ],
+      "rpy_rad": [
+        1.78179,
+        1.451946,
+        -2.929144
+      ],
+      "source": "vendor/tron2-robot-description/tron2a/DACH_TRON2A/urdf/robot_grasper.urdf",
+      "status": "1g empty marker; body/screw/optical semantics unspecified"
+    }
+  },
+  "models": {
+    "D405": {
+      "model": "D405",
+      "source_xacro": "vendor/realsense-description/realsense2_description/urdf/_d405.urdf.xacro",
+      "nominal_urdf": "vendor/realsense-description/generated/d405_nominal.urdf",
+      "meshes": {
+        "visual_m": "vendor/realsense-description/generated/realsense_d405_native_axes_m.stl",
+        "visual_sha256": "d66438baed3467276573a5a7ad13b7f1c88f2c70d845da695ce7f715821ba863",
+        "visual_scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "visual_origin": {
+        "relative_to": "camera_link",
+        "xyz_m": [
+          0.0038,
+          -0.009,
+          0
+        ],
+        "rpy_rad": [
+          1.5707963267948966,
+          0,
+          1.5707963267948966
+        ]
+      },
+      "bottom_screw_to_camera_link": {
+        "xyz_m": [
+          0.01085,
+          0.009,
+          0.021
+        ],
+        "rpy_rad": [
+          0,
+          0,
+          0
+        ]
+      },
+      "sensor_frames_from_camera_link": {
+        "depth": {
+          "xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "infra1": {
+          "xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "infra2": {
+          "xyz_m": [
+            0,
+            -0.018,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": {
+          "xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "dimensions_width_height_depth_mm": [
+        42,
+        42,
+        23
+      ],
+      "mass_nominal_kg": 0.058,
+      "mass_source": "October 2025 D400 datasheet mechanical dimensions tables; nominal mass +/-10%",
+      "nominal_extrinsics_status": "official xacro approximations, not per-device calibration",
+      "upstream_inertial": {
+        "mass_kg": 0.072,
+        "inertia_kg_m2": [
+          [
+            0.003881243,
+            0,
+            0
+          ],
+          [
+            0,
+            0.00049894,
+            0
+          ],
+          [
+            0,
+            0,
+            0.003879257
+          ]
+        ],
+        "reliable": false,
+        "note": "Official xacro explicitly labels these values unreliable."
+      },
+      "description": "Short-range passive stereo. RGB comes from the left depth imager through ISP; no separate RGB imager, no IR projector, no IMU.",
+      "color": {
+        "fov_deg": [
+          87,
+          58
+        ],
+        "maximum_resolution_wh": [
+          1280,
+          720
+        ],
+        "suggested_preview_resolution_wh": [
+          640,
+          480
+        ],
+        "near_m": 0.01,
+        "far_m": 10,
+        "clip_status": "chosen simulation defaults, not calibrated clipping planes",
+        "nominal_preview_K": [
+          [
+            337.20964008990796,
+            0,
+            319.5
+          ],
+          [
+            0,
+            432.97146126514167,
+            239.5
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "intrinsics_status": "pinhole approximation from advertised FOV; real values depend on calibration and stream mode"
+      },
+      "depth": {
+        "fov_deg": [
+          87,
+          58
+        ],
+        "maximum_resolution_wh": [
+          1280,
+          720
+        ],
+        "suggested_preview_resolution_wh": [
+          640,
+          480
+        ],
+        "near_m": 0.07,
+        "far_m": 0.5,
+        "clip_status": "chosen simulation defaults, not calibrated clipping planes",
+        "nominal_preview_K": [
+          [
+            337.20964008990796,
+            0,
+            319.5
+          ],
+          [
+            0,
+            432.97146126514167,
+            239.5
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "intrinsics_status": "pinhole approximation from advertised FOV; real values depend on calibration and stream mode"
+      },
+      "ideal_working_range_m": [
+        0.07,
+        0.5
+      ],
+      "product_page_mass_kg": 0.06,
+      "upstream_collision_box": {
+        "size_xyz_m": [
+          0.023,
+          0.042,
+          0.042
+        ],
+        "origin_xyz_m": [
+          -0.0078,
+          -0.009,
+          0
+        ]
+      },
+      "mounting": {
+        "bottom_thread": "1/4-20 UNC",
+        "bottom_max_insertion_m": 0.005,
+        "rear_thread": "M3x0.5",
+        "rear_spacing_m": 0.02,
+        "rear_max_insertion_m": 0.004,
+        "rear_centers_in_bottom_screw_frame_m": [
+          [
+            -0.00835,
+            -0.01,
+            0.021
+          ],
+          [
+            -0.00835,
+            0.01,
+            0.021
+          ]
+        ],
+        "rear_hole_axis_into_case": [
+          1,
+          0,
+          0
+        ],
+        "side_USB_retention": {
+          "thread": "M2x0.4",
+          "count": 2,
+          "spacing_m": 0.018,
+          "max_insertion_m": 0.003
+        },
+        "coordinates_status": "rear coordinates derived from nominal drawing and official bottom-screw datum"
+      },
+      "source_mesh": "vendor/realsense-description/realsense2_description/meshes/d405.stl",
+      "source_mesh_unit": "millimeter",
+      "notes": [
+        "Current product page rounds mass to 60g; October 2025 datasheet gives 58g.",
+        "7cm Min-Z is specified at 480p, not a universal boundary for every mode.",
+        "1280x720 at 30fps is a supported color mode; up to 90fps at other modes."
+      ]
+    },
+    "D435i": {
+      "model": "D435i",
+      "source_xacro": "vendor/realsense-description/realsense2_description/urdf/_d435i.urdf.xacro",
+      "nominal_urdf": "vendor/realsense-description/generated/d435i_nominal.urdf",
+      "meshes": {
+        "visual_m": "vendor/realsense-description/generated/realsense_d435i_native_axes_m.stl",
+        "visual_sha256": "59d180d9b3475b7adcd6dfa910f57537267eed1a8055034e429aff2a08c352d0",
+        "visual_scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "visual_origin": {
+        "relative_to": "camera_link",
+        "xyz_m": [
+          0.0043,
+          -0.0175,
+          0
+        ],
+        "rpy_rad": [
+          1.5707963267948966,
+          0,
+          1.5707963267948966
+        ]
+      },
+      "bottom_screw_to_camera_link": {
+        "xyz_m": [
+          0.0106,
+          0.0175,
+          0.0125
+        ],
+        "rpy_rad": [
+          0,
+          0,
+          0
+        ]
+      },
+      "sensor_frames_from_camera_link": {
+        "depth": {
+          "xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "infra1": {
+          "xyz_m": [
+            0,
+            0,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "infra2": {
+          "xyz_m": [
+            0,
+            -0.05,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "color": {
+          "xyz_m": [
+            0,
+            0.015,
+            0
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "accel": {
+          "xyz_m": [
+            -0.01174,
+            -0.00552,
+            0.0051
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        },
+        "gyro": {
+          "xyz_m": [
+            -0.01174,
+            -0.00552,
+            0.0051
+          ],
+          "rpy_rad": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "dimensions_width_height_depth_mm": [
+        90,
+        25,
+        25
+      ],
+      "mass_nominal_kg": 0.075,
+      "mass_source": "October 2025 D400 datasheet mechanical dimensions tables; nominal mass +/-10%",
+      "nominal_extrinsics_status": "official xacro approximations, not per-device calibration",
+      "upstream_inertial": {
+        "mass_kg": 0.072,
+        "inertia_kg_m2": [
+          [
+            0.003881243,
+            0,
+            0
+          ],
+          [
+            0,
+            0.00049894,
+            0
+          ],
+          [
+            0,
+            0,
+            0.003879257
+          ]
+        ],
+        "reliable": false,
+        "note": "Official xacro explicitly labels these values unreliable."
+      },
+      "description": "D435 active-stereo depth and dedicated RGB imager plus IMU; official D435i xacro reuses the D435 case mesh.",
+      "color": {
+        "fov_deg": [
+          69,
+          42
+        ],
+        "maximum_resolution_wh": [
+          1920,
+          1080
+        ],
+        "suggested_preview_resolution_wh": [
+          640,
+          480
+        ],
+        "near_m": 0.01,
+        "far_m": 10,
+        "clip_status": "chosen simulation defaults, not calibrated clipping planes",
+        "nominal_preview_K": [
+          [
+            465.60288917518244,
+            0,
+            319.5
+          ],
+          [
+            0,
+            625.2213755265124,
+            239.5
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "intrinsics_status": "pinhole approximation from advertised FOV; real values depend on calibration and stream mode"
+      },
+      "depth": {
+        "fov_deg": [
+          87,
+          58
+        ],
+        "maximum_resolution_wh": [
+          1280,
+          720
+        ],
+        "suggested_preview_resolution_wh": [
+          640,
+          480
+        ],
+        "near_m": 0.28,
+        "far_m": 3,
+        "clip_status": "chosen simulation defaults, not calibrated clipping planes",
+        "nominal_preview_K": [
+          [
+            337.20964008990796,
+            0,
+            319.5
+          ],
+          [
+            0,
+            432.97146126514167,
+            239.5
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "intrinsics_status": "pinhole approximation from advertised FOV; real values depend on calibration and stream mode"
+      },
+      "ideal_working_range_m": [
+        0.3,
+        3
+      ],
+      "xacro_body_depth_mm": 25.05,
+      "upstream_collision_box": {
+        "size_xyz_m": [
+          0.02505,
+          0.09,
+          0.025
+        ],
+        "origin_xyz_m": [
+          0,
+          -0.0175,
+          0
+        ],
+        "note": "Approximate box center differs from detailed case mesh center."
+      },
+      "mounting": {
+        "bottom_thread": "1/4-20 UNC",
+        "rear_thread": "M3",
+        "rear_spacing_m": 0.045,
+        "rear_max_insertion_m": 0.003,
+        "rear_centers_in_bottom_screw_frame_m": [
+          [
+            -0.01015,
+            -0.0225,
+            0.0125
+          ],
+          [
+            -0.01015,
+            0.0225,
+            0.0125
+          ]
+        ],
+        "rear_hole_axis_into_case": [
+          1,
+          0,
+          0
+        ],
+        "coordinates_status": "rear coordinates derived using nominal 25.05mm xacro depth and datasheet screw spacing"
+      },
+      "source_mesh": "vendor/realsense-description/realsense2_description/meshes/d435.dae",
+      "source_mesh_unit": "meter",
+      "notes": [
+        "Depth imagers are global shutter; the dedicated RGB imager is rolling shutter.",
+        "Native depth/RGB views have different FOV and a nominal 15mm lateral offset.",
+        "~28cm Min-Z at maximum resolution is mode-dependent."
+      ]
+    }
+  },
+  "rgbd_interpretation": {
+    "ideal_depth": "Metric axial Z of rendered geometry, not Euclidean ray length.",
+    "D405": "Nominal RGB/depth origins coincide, consistent with left-imager RGB.",
+    "D435i": "Render ideal aligned depth from RGB optical pose for registered RGBD. This is not the raw stereo-depth output; raw depth uses its own pose/FOV.",
+    "not_simulated": [
+      "stereo matching and low-texture failures",
+      "IR projection",
+      "stereo/RGB alignment occlusion holes",
+      "per-device lens distortion/calibration",
+      "rolling shutter and exposure motion",
+      "sensor noise and quantization"
+    ],
+    "real_calibration": "librealsense stream intrinsics/extrinsics or ROS CameraInfo; no hardware queried."
+  },
+  "sources": {
+    "limx_sdk": "https://www.limxdynamics.com/en/documents/856848486581276672",
+    "d405_product": "https://www.realsenseai.com/products/stereo-depth-camera-d405/",
+    "d435i_product": "https://www.realsenseai.com/products/depth-camera-d435i/",
+    "datasheet": "https://realsenseai.com/wp-content/uploads/2025/09/Intel-RealSense-D400-Series-Datasheet-October-2025.pdf",
+    "datasheet_pages": {
+      "mechanical_dimensions": 69,
+      "D435i_mounting": 140,
+      "D405_mounting": 146
+    }
+  }
+}

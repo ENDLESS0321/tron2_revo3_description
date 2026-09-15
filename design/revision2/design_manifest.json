@@ -1,0 +1,146 @@
+{
+  "schema": "tron2_revo3_adapter_revision2_v1",
+  "source": "/home/endless/Documents/Project/Dexterous_Hand/tron2-revo3转接件_第1版.3mf",
+  "source_sha256": "b933846237df86a8982ca9a4c61340965368c19dab714b5a3358b8cb2e903b4b",
+  "producer_sha256": "5b3c6003e3bb407cb40f32472fca7260f9a6c0cf8b4f4fa8d84e329b4d18eb28",
+  "print_scale_baked": 1.01,
+  "source_shared_plane_repair": {
+    "shared_plane_y_mm": -1.1,
+    "tolerance_mm": 1e-05,
+    "vertices_snapped": 714,
+    "maximum_vertex_movement_mm": 6.000000012384987e-07
+  },
+  "csg_coordinate_precision": "float32, matching source mesh tessellation; exact shoulder and slot planes use the same representation",
+  "wrist": {
+    "edit": "Re-index only insertion crown below nominal CAD Y=-12.6; retain noncircular shoulder and hand mount",
+    "theta_convention": "atan2(adapter Z, adapter X); increasing theta equals negative right-handed Y rotation",
+    "crown_theta_rotation_deg": 15.0,
+    "target_bore_angles_deg": [
+      15.0,
+      105.0,
+      195.0,
+      285.0
+    ],
+    "target_bore_axis_y_adapter_mm": -4.5,
+    "nominal_bore_axis_y_mm": -17.055445544554455,
+    "nominal_bore_and_nut_translation_y_mm": 0.044554455445545926,
+    "original_bore_nominal_diameter_mm": 4.2,
+    "baked_bore_diameter_mm": 4.242,
+    "original_nut_across_flats_nominal_mm": 6.9,
+    "exposed_crown_depth_change_mm": -0.045000000000001386,
+    "original_crown_components": 4,
+    "lower_topology_genus_before_after": [
+      4,
+      4
+    ],
+    "retained_shoulder_difference_mm3": 0.0,
+    "key_status": "requires independent comparison against wrist key at theta=30 degrees; not inferred from bore pattern"
+  },
+  "sides": {
+    "left": {
+      "back_slot_adapter_z_sign": 1,
+      "slot_nominal_width_mm": 15.0,
+      "slot_baked_width_mm": 15.15,
+      "bounds_assembly_mm": [
+        [
+          -41.40999984741211,
+          -10.357999801635742,
+          -28.204269409179688
+        ],
+        [
+          41.40999984741211,
+          35.85499954223633,
+          28.204269409179688
+        ]
+      ],
+      "volume_mm3": 83423.00371476209,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_stl_zero_area_facets_removed": 2,
+      "print_stl_volume_mm3": 83423.00218935874,
+      "mass_kg_assumed_solid_PLA": 0.10344452460630497,
+      "center_mass_m": [
+        -9.420165221888316e-07,
+        0.010777466656297547,
+        -0.00022262629489048466
+      ],
+      "inertia_kg_m2": [
+        [
+          3.804379993233945e-05,
+          -1.4404186111996444e-09,
+          -4.979645504081391e-09
+        ],
+        [
+          -1.4404186111996444e-09,
+          7.680772533414474e-05,
+          9.094559216929031e-08
+        ],
+        [
+          -4.979645504081391e-09,
+          9.094559216929031e-08,
+          5.966234493929917e-05
+        ]
+      ],
+      "files": {
+        "adapter_left_v2_assembly_mm.stl": "9784cb013df067a283035268f50cb0ba0f82ea043fc2edb2ca4f54f7e7e65980",
+        "adapter_left_v2_m.stl": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
+        "adapter_left_v2_print_mm.stl": "7bf36a60fb3ee4b1db90e1750da8ae0c5b765e5a300d7941a2af4feb83e18657",
+        "adapter_left_v2.3mf": "6574f0fb8c4839b1c3fe1b60d73c44ec4e9b07ffbaf5f26c892ecad0ba0f6898"
+      }
+    },
+    "right": {
+      "back_slot_adapter_z_sign": -1,
+      "slot_nominal_width_mm": 15.0,
+      "slot_baked_width_mm": 15.15,
+      "bounds_assembly_mm": [
+        [
+          -41.40999984741211,
+          -10.357999801635742,
+          -28.204269409179688
+        ],
+        [
+          41.40999984741211,
+          35.85499954223633,
+          28.204269409179688
+        ]
+      ],
+      "volume_mm3": 83423.00964725636,
+      "connected_components": 1,
+      "watertight": true,
+      "winding_consistent": true,
+      "print_stl_zero_area_facets_removed": 2,
+      "print_stl_volume_mm3": 83423.0081220994,
+      "mass_kg_assumed_solid_PLA": 0.10344453196259788,
+      "center_mass_m": [
+        -9.420232014027542e-07,
+        0.010777466942161685,
+        0.00021794598627484542
+      ],
+      "inertia_kg_m2": [
+        [
+          3.804401636198538e-05,
+          -1.440413723275957e-09,
+          -5.022581513279075e-09
+        ],
+        [
+          -1.440413723275957e-09,
+          7.680794176004056e-05,
+          -9.313261832033334e-08
+        ],
+        [
+          -5.022581513279075e-09,
+          -9.313261832033334e-08,
+          5.966234522082975e-05
+        ]
+      ],
+      "files": {
+        "adapter_right_v2_assembly_mm.stl": "1100983eea534934ffbedfe6daabf4b5e10910ee1aadfcbf8a776f02de3c40cf",
+        "adapter_right_v2_m.stl": "19de2108c88c78564837f50ebc8e52e297425cdf45e346c6a2f91a87e27c4383",
+        "adapter_right_v2_print_mm.stl": "47a6b3ba7bf9830137e4d2dbc6ff92f7ca34ac4130891b8c4b33671d7e034553",
+        "adapter_right_v2.3mf": "4538bc82a088509531fe48f395d622abf97164ce95f70bb888cd9100025bc039"
+      }
+    }
+  },
+  "status": "geometry_candidate_pending_independent_fit_validation"
+}

@@ -1,0 +1,57 @@
+{
+  "stamp_ns": 266666667,
+  "depth_unit": "meter",
+  "geometry_status": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes",
+  "bracket_geometry": "parametric_vertical_v2",
+  "geometry_banner": "V2：蓝色竖段沿 +Z 加长，无橙色横臂、无大避让孔；绿色板单独调角，改参数会重建 CAD。",
+  "cameras": {
+    "head": {
+      "depth_display_limits_m": [
+        0.3,
+        3.0
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 57.90723097246125,
+      "positive_depth_pixels": 53760,
+      "finite_depth_pixels": 53760,
+      "depth_min_m": 0.5650891065597534,
+      "depth_max_m": 2.98594331741333
+    },
+    "left_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 74.0303506149454,
+      "positive_depth_pixels": 49401,
+      "finite_depth_pixels": 49401,
+      "depth_min_m": 0.09732472896575928,
+      "depth_max_m": 0.4999481737613678
+    },
+    "right_wrist": {
+      "depth_display_limits_m": [
+        0.07,
+        0.5
+      ],
+      "rgb_shape": [
+        240,
+        320,
+        3
+      ],
+      "rgb_std": 96.61316149691257,
+      "positive_depth_pixels": 52519,
+      "finite_depth_pixels": 52519,
+      "depth_min_m": 0.09732509404420853,
+      "depth_max_m": 0.49995186924934387
+    }
+  }
+}

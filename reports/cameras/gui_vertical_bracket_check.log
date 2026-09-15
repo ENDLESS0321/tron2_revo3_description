@@ -1,0 +1,413 @@
+{
+  "status": "real_offscreen_capture_and_live_mount_commands_verified",
+  "opened_gui": false,
+  "capture_worker_used": true,
+  "baseline_montage": "outputs/cameras/vertical_bracket_check/viewer_check/rgbd_montage.png",
+  "length_montage": "outputs/cameras/vertical_bracket_check/viewer_length_check/rgbd_montage.png",
+  "tilt_montage": "outputs/cameras/vertical_bracket_check/viewer_tilt_check/rgbd_montage.png",
+  "baseline_parameters": {
+    "left": {
+      "model": "D405",
+      "parent": "wrist_roll_L_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 80,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 40,
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "mount_evidence": "New CAD saddle matches nominal small-hole axes theta30/150; common bracket, mounting threads require measurement"
+    },
+    "right": {
+      "model": "D405",
+      "parent": "wrist_roll_R_Link",
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        -3.141592653589793
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 80,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 40,
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "mount_evidence": "Same bracket rotated 180 degrees about local distal axis, matches theta210/330 small-hole pair; not a mirrored CAD part"
+    }
+  },
+  "length_parameters": {
+    "left": {
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 95.0,
+      "model": "D405",
+      "mount_evidence": "New CAD saddle matches nominal small-hole axes theta30/150; common bracket, mounting threads require measurement",
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "parent": "wrist_roll_L_Link",
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 40.0,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ]
+    },
+    "right": {
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 95.0,
+      "model": "D405",
+      "mount_evidence": "Same bracket rotated 180 degrees about local distal axis, matches theta210/330 small-hole pair; not a mirrored CAD part",
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        -3.141592653589793
+      ],
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "parent": "wrist_roll_R_Link",
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 40.0,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "tilt_parameters": {
+    "left": {
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 95.0,
+      "model": "D405",
+      "mount_evidence": "New CAD saddle matches nominal small-hole axes theta30/150; common bracket, mounting threads require measurement",
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        0
+      ],
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "parent": "wrist_roll_L_Link",
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 52.0,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ]
+    },
+    "right": {
+      "camera_bottom_rpy_rad": [
+        1.5707963267948966,
+        1.5707963267948966,
+        0
+      ],
+      "camera_bottom_xyz_m": [
+        0,
+        0.053,
+        -0.01035
+      ],
+      "extension_axis": [
+        0,
+        0,
+        1
+      ],
+      "extension_origin_m": [
+        0,
+        0,
+        0.0358
+      ],
+      "length_mm": 95.0,
+      "model": "D405",
+      "mount_evidence": "Same bracket rotated 180 degrees about local distal axis, matches theta210/330 small-hole pair; not a mirrored CAD part",
+      "mount_rpy_rad": [
+        -1.5707963267948966,
+        0,
+        -3.141592653589793
+      ],
+      "mount_xyz_m": [
+        -0.0317,
+        0,
+        -0.0812
+      ],
+      "parent": "wrist_roll_R_Link",
+      "plate_tilt_axis": [
+        1,
+        0,
+        0
+      ],
+      "plate_tilt_deg": 52.0,
+      "plate_zero_rpy_rad": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "length_only_image_changes": {
+    "head": {
+      "changed_rgb_pixels": 4,
+      "rgb_mean_absolute_change": 0.0007769097222222222,
+      "changed_depth_validity_pixels": 0,
+      "changed_common_depth_pixels": 673,
+      "mean_common_depth_change_m": 0.0023128711618483067
+    },
+    "left_wrist": {
+      "changed_rgb_pixels": 48554,
+      "rgb_mean_absolute_change": 14.475013020833334,
+      "changed_depth_validity_pixels": 3533,
+      "changed_common_depth_pixels": 49067,
+      "mean_common_depth_change_m": 0.017293846234679222
+    },
+    "right_wrist": {
+      "changed_rgb_pixels": 47958,
+      "rgb_mean_absolute_change": 19.955564236111112,
+      "changed_depth_validity_pixels": 3717,
+      "changed_common_depth_pixels": 52282,
+      "mean_common_depth_change_m": 0.015158334746956825
+    }
+  },
+  "tilt_only_image_changes": {
+    "head": {
+      "changed_rgb_pixels": 1,
+      "rgb_mean_absolute_change": 0.0001388888888888889,
+      "changed_depth_validity_pixels": 0,
+      "changed_common_depth_pixels": 507,
+      "mean_common_depth_change_m": 0.0017429909203201532
+    },
+    "left_wrist": {
+      "changed_rgb_pixels": 50597,
+      "rgb_mean_absolute_change": 38.147473958333336,
+      "changed_depth_validity_pixels": 10277,
+      "changed_common_depth_pixels": 39188,
+      "mean_common_depth_change_m": 0.03008946031332016
+    },
+    "right_wrist": {
+      "changed_rgb_pixels": 52623,
+      "rgb_mean_absolute_change": 43.20740017361111,
+      "changed_depth_validity_pixels": 10249,
+      "changed_common_depth_pixels": 42341,
+      "mean_common_depth_change_m": 0.026886967942118645
+    }
+  },
+  "input_config_path": "config/camera_rig.json",
+  "input_config_sha256_before": "81977d9ebf36c3ee2d9070641b7d28a70292e11d97523a1fa4b7d9a060590a9b",
+  "input_config_sha256_after": "81977d9ebf36c3ee2d9070641b7d28a70292e11d97523a1fa4b7d9a060590a9b",
+  "saved_user_config": false,
+  "geometry_status": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes",
+  "bracket_geometry": "parametric_vertical_v2",
+  "geometry_status_by_stage": {
+    "baseline": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes",
+    "length": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes",
+    "tilt": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes"
+  },
+  "parameter_limits": {
+    "length_mm": [
+      20.0,
+      150.0
+    ],
+    "plate_tilt_deg": [
+      0.0,
+      75.0
+    ]
+  },
+  "rebuild_wait_timeout_seconds": 60.0,
+  "capture_lifecycle": [
+    {
+      "kind": "rebuilding",
+      "wall_time_monotonic": 89961.606617317,
+      "physical_CAD": true,
+      "requests": {
+        "left": {
+          "length_mm": 95.0,
+          "plate_tilt_deg": 40.0
+        },
+        "right": {
+          "length_mm": 95.0,
+          "plate_tilt_deg": 40.0
+        }
+      },
+      "previous_frame_retained": true
+    },
+    {
+      "kind": "rebuilt",
+      "wall_time_monotonic": 89968.776189066,
+      "elapsed_seconds": 7.169511493004393,
+      "stamp_ns": 200000000,
+      "geometry_status": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes"
+    },
+    {
+      "kind": "rebuilding",
+      "wall_time_monotonic": 89968.890063796,
+      "physical_CAD": true,
+      "requests": {
+        "left": {
+          "length_mm": 95.0,
+          "plate_tilt_deg": 52.0
+        },
+        "right": {
+          "length_mm": 95.0,
+          "plate_tilt_deg": 52.0
+        }
+      },
+      "previous_frame_retained": true
+    },
+    {
+      "kind": "rebuilt",
+      "wall_time_monotonic": 89975.878623927,
+      "elapsed_seconds": 6.988496774007217,
+      "stamp_ns": 333333333,
+      "geometry_status": "vertical_stem_bracket_v2_no_horizontal_arm_no_large_relief_holes"
+    }
+  ]
+}
+

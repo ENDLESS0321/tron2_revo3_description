@@ -1,0 +1,8 @@
+{
+  "status": "fixed_STEP_capture_verified",
+  "opened_gui": false,
+  "capture_worker_used": true,
+  "baseline_montage": "reports/cameras/supplied_step_20260914/ui_check/viewer_check/rgbd_montage.png",
+  "live_mount_edits": "disabled_for_fixed_geometry",
+  "input_config_unchanged": true
+}
