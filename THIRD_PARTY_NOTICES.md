@@ -14,6 +14,8 @@ This integration does not grant additional rights to third-party geometry.
 - RealSense: `realsenseai/realsense-ros`, commit
   `9a11121700cb4780e273e34141f6402fe184321d`. The original license, notice
   and copyright text are retained in [licenses/realsense](licenses/realsense/).
+  The head camera uses the upstream
+  `realsense2_description/meshes/d455.stl` asset at that commit.
 - Hand adapters and camera brackets derive from user-provided CAD. Final
   custom geometry includes revised adapter interfaces and aligned V3 camera
   mounts. Ownership/permission for those inputs is not changed here.

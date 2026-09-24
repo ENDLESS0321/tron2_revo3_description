@@ -3,8 +3,10 @@
 English | [简体中文](README.zh-CN.md)
 
 Visualize the DACH_TRON2A dual-arm robot, two BrainCo Revo3 hands, the final hand
-adapters, and the V3 camera brackets. The three-camera viewer renders RGB and
-metric depth from a head-mounted D435i and two wrist-mounted D405 cameras.
+adapters, and the V3 camera brackets. The appearance follows the graphite TRON2
+and silver Revo3 references, with red/cyan accents and purple hand flanges. The
+three-camera viewer renders RGB and metric depth from a head-mounted D455 and two
+wrist-mounted D405 cameras.
 
 `main` contains the final model assets and viewing tools. Development scripts,
 design iterations, previous versions, reports, and original CAD are preserved
@@ -75,8 +77,9 @@ optical frame names, a timestamp, and valid-pixel statistics.
 
 - Raw depth is `float32`, in meters, and measures optical-frame Z distance.
   Invalid values are `NaN` and appear black in the depth visualization.
-- The head depth preview range is 0.3–3 m; the wrist range is 0.07–0.5 m.
-- Raw depth is not registered to the color image. In particular, the D435i
+- The D455 head depth preview uses its nominal 0.6–6 m ideal range; the wrist
+  range is 0.07–0.5 m.
+- Raw depth is not registered to the color image. In particular, the D455
   color and depth streams have different optical origins and fields of view.
 - These are ideal pinhole simulations, not live hardware streams. The fixed
   model has no length/tilt sliders that could detach cameras from their mounts.
@@ -120,8 +123,9 @@ Use the 3MF/STL files in `assets/cad/adapters/` for the hand adapters. CAD STL
 files use millimeters; simulation meshes use meters. Camera bodies are not
 included in the bracket manufacturing files.
 
-The URDF includes camera geometry and optical frames. RGB/depth rendering uses
-the camera definitions in `scene.xml`.
+The URDF includes the official RealSense D455 body mesh, nominal depth, color,
+infrared and IMU frames, and the D405 wrist-camera frames. RGB/depth rendering
+uses the camera definitions in `scene.xml`.
 
 ```python
 import mujoco

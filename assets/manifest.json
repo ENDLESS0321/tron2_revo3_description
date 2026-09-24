@@ -1,14 +1,16 @@
 {
-  "schema": "final_model_assets_v1",
+  "schema": "final_model_assets_v2",
+  "release": "1.1.0",
   "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
   "geometry_changed_during_cleanup": false,
+  "release_geometry_changed": true,
   "source_urdf_sha256": "ce0cd7f00d6f9add64f803cb617ea1b0b68e557ac33ca383e119980f4f8abc85",
   "source_scene_sha256": "107eca40ce609a83618c1ff3c48f3be4a2363da535b8da6d7312391806481730",
   "referenced_mesh_count": 265,
   "files": {
     "assets/assembly.urdf": {
-      "sha256": "180faad7e72463812158cbbb984a970b8df60c8bce812d337d945eda522ca16d",
-      "bytes": 115946
+      "sha256": "7b55cdb19db067432467d915dffc4365d82e9e81ada03f9421e6d7ceae913591",
+      "bytes": 120092
     },
     "assets/cad/adapters/left.3mf": {
       "sha256": "6574f0fb8c4839b1c3fe1b60d73c44ec4e9b07ffbaf5f26c892ecad0ba0f6898",
@@ -438,9 +440,9 @@
       "sha256": "d66438baed3467276573a5a7ad13b7f1c88f2c70d845da695ce7f715821ba863",
       "bytes": 194684
     },
-    "assets/meshes/cameras/d435i_visual_m.obj": {
-      "sha256": "77909e70c6e7943eeb11650432be2e42e1ea8aa11f303e5385affcbbd7b485c6",
-      "bytes": 30870413
+    "assets/meshes/cameras/d455_visual_mm.stl": {
+      "sha256": "47e8321db7cb42291810c69329ab10b601108d651dfcac28bfc12469fa142fa6",
+      "bytes": 2558184
     },
     "assets/meshes/revo3/hands/collision/left/revo3__hands__collision__left__left_index_DIP_Link.STL": {
       "sha256": "70806f08a1a502f1f42a85e17f5c6913063c1028a15d8bc0e3d68d289dd65e7f",
@@ -1103,17 +1105,26 @@
       "bytes": 513084
     },
     "assets/runtime.json": {
-      "sha256": "763ca50b1d708629e586a6da3ef1d38ee6950e035c53e0c713f44ac533c62aaa",
-      "bytes": 2809
+      "sha256": "f83c6bc75fccf39fc822d6e1a662777cba3c8c54281a372194e20c5cd6b0f25e",
+      "bytes": 2877
     },
     "assets/scene.xml": {
-      "sha256": "bdc87c0a548384213c4ce2319090f7fe80f6861afe1de40a7de967cb9ba9eab0",
-      "bytes": 117206
+      "sha256": "7e4315bc49f82ad949e334ea8ffe7b158d1de7e930df2068d0eef0f5e1e71075",
+      "bytes": 119393
     }
   },
   "upstream": {
     "limx": "9939c22e69d27653ec0ba8a505859a2903dd1a71",
     "brainco": "f332a6f0dc944e26b82976b637074b03f7ee8a2c",
     "realsense": "9a11121700cb4780e273e34141f6402fe184321d"
+  },
+  "head_camera": {
+    "model": "RealSense D455",
+    "source_repository": "https://github.com/realsenseai/realsense-ros",
+    "source_commit": "9a11121700cb4780e273e34141f6402fe184321d",
+    "source_path": "realsense2_description/meshes/d455.stl",
+    "source_sha256": "47e8321db7cb42291810c69329ab10b601108d651dfcac28bfc12469fa142fa6",
+    "source_units": "millimeter",
+    "urdf_scale": [0.001, 0.001, 0.001]
   }
 }

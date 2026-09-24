@@ -1,6 +1,6 @@
 {
-  "schema": "tron2_revo3_final_runtime_v1",
-  "configuration": "DACH_TRON2A + Revo3 + adapter V2 + camera bracket V3",
+  "schema": "tron2_revo3_final_runtime_v2",
+  "configuration": "DACH_TRON2A + Revo3 + purple adapter V2 + camera bracket V3 + head D455",
   "pose": {
     "head_pitch_Joint": 0.75,
     "proximal_pitch_L_Joint": -0.4,
@@ -64,21 +64,21 @@
   "cameras": [
     {
       "name": "head",
-      "label": "头部 D435i",
-      "model": "D435i",
+      "label": "头部 D455",
+      "model": "D455",
       "color_frame": "head_camera_color_optical_frame",
       "depth_frame": "head_camera_depth_optical_frame",
       "color_fov_deg": [
-        69,
-        42
+        90,
+        65
       ],
       "depth_fov_deg": [
         87,
         58
       ],
       "depth_range_m": [
-        0.3,
-        3.0
+        0.6,
+        6.0
       ]
     },
     {
@@ -120,7 +120,7 @@
       ]
     }
   ],
-  "camera_status": "D405 wrists and D435i head are simulation selections, not serial-specific hardware/calibration verification",
+  "camera_status": "D405 wrists and D455 head are simulation selections using nominal fields of view and D455 frame offsets, not serial-specific hardware/calibration verification",
   "depth_convention": "Optical Z in meters; out-of-range pixels are NaN; raw depth is not color-registered",
   "kinematic_preview_only": true,
   "strength_certified": false
