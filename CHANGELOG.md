@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.2.0] - 2026-09-24
+
+### Features
+
+- Rotated both Revo3 hands by 180 degrees around their mounting axes.
+- Rotated both wrist-camera assemblies by 180 degrees around the wrist-roll
+  axes while preserving left/right mirror symmetry.
+
+### Design Rationale
+
+- The rotations are applied only at each assembly's fixed root joint, keeping
+  hand articulation, camera optical frames, and all actuated limits unchanged.
+- The centered head-mounted D455 remains in its forward-facing orientation
+  because it is not part of the left/right wrist pair.
+
+### Notes & Caveats
+
+- Any external calibration that depends on the old hand or wrist-camera poses
+  must be regenerated.
+- Physical cable routing and self-collision clearance should be revalidated on
+  hardware after the 180-degree wrist-camera flip.
+
 ## [1.1.0] - 2026-09-24
 
 ### Features

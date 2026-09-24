@@ -28,6 +28,9 @@ class ReleaseAssetTests(unittest.TestCase):
     def joint(self, name):
         return self.urdf.find(f"./joint[@name='{name}']")
 
+    def scene_body(self, name):
+        return self.scene.find(f".//body[@name='{name}']")
+
     def color(self, link_name):
         return self.link(link_name).find("./visual/material/color").get("rgba")
 
@@ -81,6 +84,32 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(head["color_fov_deg"], [90, 65])
         self.assertEqual(head["depth_fov_deg"], [87, 58])
         self.assertEqual(head["depth_range_m"], [0.6, 6.0])
+
+    def test_hands_and_wrist_cameras_are_axially_flipped(self):
+        expected_urdf_rpy = {
+            "left_hand_base_joint": "-1.57079632679 -1.57079632679 0",
+            "right_hand_base_joint": "-1.57079632679 1.57079632679 0",
+            "left_wrist_camera_reference_joint": "-1.57079632679 0 -1.57079632679",
+            "right_wrist_camera_reference_joint": "-1.57079632679 0 1.57079632679",
+        }
+        for joint_name, expected_rpy in expected_urdf_rpy.items():
+            with self.subTest(joint=joint_name):
+                self.assertEqual(self.joint(joint_name).find("origin").get("rpy"), expected_rpy)
+
+        expected_scene_quat = {
+            "left_hand_base_link": "0.5 -0.5 -0.5 -0.5",
+            "right_hand_base_link": "0.5 -0.5 0.5 0.5",
+            "left_wrist_camera_mount_frame": "0.5 -0.5 0.5 -0.5",
+            "right_wrist_camera_mount_frame": "0.5 -0.5 -0.5 0.5",
+        }
+        for body_name, expected_quat in expected_scene_quat.items():
+            with self.subTest(body=body_name):
+                self.assertEqual(self.scene_body(body_name).get("quat"), expected_quat)
+
+        self.assertEqual(
+            self.joint("head_camera_reference_joint").find("origin").get("rpy"),
+            "0 0 0",
+        )
 
 
 if __name__ == "__main__":
