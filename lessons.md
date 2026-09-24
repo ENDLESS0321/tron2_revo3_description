@@ -45,3 +45,12 @@
   attitudes were restored.
 - Rule: Restore both wrist-camera root positions and orientations exactly to
   the pre-1.2.0 values. Keep the hand-root rotations and head D455 unchanged.
+
+## 2026-09-24 — Verify the GitHub identity before pushing
+
+- Context: Publishing changes to `ENDLESS0321/tron2_revo3_description`.
+- Mistake: Pushed without explicitly confirming that the active GitHub
+  credential and Git commit identity were the user's requested account.
+- Rule: Before every push to this repository, verify the authenticated GitHub
+  account and local Git author/committer identity are `zengxiong111`; stop and
+  correct any mismatch before publishing.
