@@ -11,3 +11,26 @@
   rotation to the complete rigid transform: rotate both the orientation and
   the radial position vector about that axis, then verify the resulting world
   position visually and numerically.
+
+## 2026-09-24 — Keep wrist cameras at their original pose
+
+- Context: Separating the requested Revo3 hand rotation from the wrist-camera
+  mounting pose.
+- Mistake: Continued applying a 180-degree wrist-roll transform to both wrist
+  cameras after the user clarified that they must return to their original
+  positions and orientations.
+- Rule: Keep both wrist-camera root transforms at their pre-change values;
+  rotate only the left and right hands unless the user explicitly requests a
+  later camera-pose change.
+
+## 2026-09-24 — Separate wrist-camera orientation from orbital position
+
+- Supersedes the immediately preceding “Keep wrist cameras at their original
+  pose” rule after the user's fuller clarification.
+- Context: Final clarification of the wrist-camera placement request.
+- Mistake: Treated “return the wrist-roll X rotation” as restoring the entire
+  camera transform, including its position.
+- Rule: Use the original wrist-camera orientations, but place both camera roots
+  on the arm-axis opposite side (`z=+0.0753 m`). Do not pre-multiply the camera
+  orientation by the arm-axis orbit rotation; orientation and orbital position
+  are intentionally specified independently here.

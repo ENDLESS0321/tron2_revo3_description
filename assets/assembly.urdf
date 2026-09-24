@@ -2949,7 +2949,7 @@
   <joint name="left_wrist_camera_reference_joint" type="fixed">
     <parent link="wrist_roll_L_Link" />
     <child link="left_wrist_camera_mount_frame" />
-    <origin xyz="-0.0317 0 0.0753" rpy="-1.57079632679 0 -1.57079632679" />
+    <origin xyz="-0.0317 0 0.0753" rpy="1.57079632679 0 1.57079632679" />
   </joint>
   <link name="left_wrist_camera_rod_end_frame" />
   <joint name="left_wrist_camera_extension_joint" type="fixed">
@@ -3027,7 +3027,7 @@
   <joint name="right_wrist_camera_reference_joint" type="fixed">
     <parent link="wrist_roll_R_Link" />
     <child link="right_wrist_camera_mount_frame" />
-    <origin xyz="-0.0317 0 0.0753" rpy="-1.57079632679 0 1.57079632679" />
+    <origin xyz="-0.0317 0 0.0753" rpy="1.57079632679 2.22044604925e-16 -1.57079632679" />
   </joint>
   <link name="right_wrist_camera_rod_end_frame" />
   <joint name="right_wrist_camera_extension_joint" type="fixed">

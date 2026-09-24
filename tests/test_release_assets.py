@@ -87,12 +87,16 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(head["depth_fov_deg"], [87, 58])
         self.assertEqual(head["depth_range_m"], [0.6, 6.0])
 
-    def test_hands_and_wrist_cameras_are_axially_flipped(self):
+    def test_hands_and_camera_positions_are_flipped_but_camera_attitude_is_original(
+        self,
+    ):
         expected_urdf_rpy = {
             "left_hand_base_joint": "-1.57079632679 -1.57079632679 0",
             "right_hand_base_joint": "-1.57079632679 1.57079632679 0",
-            "left_wrist_camera_reference_joint": "-1.57079632679 0 -1.57079632679",
-            "right_wrist_camera_reference_joint": "-1.57079632679 0 1.57079632679",
+            "left_wrist_camera_reference_joint": "1.57079632679 0 1.57079632679",
+            "right_wrist_camera_reference_joint": (
+                "1.57079632679 2.22044604925e-16 -1.57079632679"
+            ),
         }
         for joint_name, expected_rpy in expected_urdf_rpy.items():
             with self.subTest(joint=joint_name):
@@ -111,8 +115,8 @@ class ReleaseAssetTests(unittest.TestCase):
         expected_scene_quat = {
             "left_hand_base_link": "0.5 -0.5 -0.5 -0.5",
             "right_hand_base_link": "0.5 -0.5 0.5 0.5",
-            "left_wrist_camera_mount_frame": "0.5 -0.5 0.5 -0.5",
-            "right_wrist_camera_mount_frame": "0.5 -0.5 -0.5 0.5",
+            "left_wrist_camera_mount_frame": "0.5 0.5 0.5 0.5",
+            "right_wrist_camera_mount_frame": "0.5 0.5 -0.5 -0.5",
         }
         for body_name, expected_quat in expected_scene_quat.items():
             with self.subTest(body=body_name):
@@ -125,9 +129,8 @@ class ReleaseAssetTests(unittest.TestCase):
             with self.subTest(body=body_name):
                 self.assertEqual(self.scene_body(body_name).get("pos"), "-0.0317 0 0.0753")
 
-        orbit_rotation = Rotation.from_euler("x", np.pi).as_matrix()
-        old_offset = np.array([-0.0317, 0.0, -0.0753])
-        old_camera_rpy = {
+        opposite_side_offset = np.array([-0.0317, 0.0, 0.0753])
+        original_camera_rpy = {
             "left": [np.pi / 2, 0.0, np.pi / 2],
             "right": [np.pi / 2, 0.0, -np.pi / 2],
         }
@@ -156,13 +159,14 @@ class ReleaseAssetTests(unittest.TestCase):
                 with self.subTest(model=model_path.name, side=side):
                     np.testing.assert_allclose(
                         relative_offset,
-                        orbit_rotation @ old_offset,
+                        opposite_side_offset,
                         atol=1e-9,
                     )
                     np.testing.assert_allclose(
                         relative_rotation,
-                        orbit_rotation
-                        @ Rotation.from_euler("xyz", old_camera_rpy[side]).as_matrix(),
+                        Rotation.from_euler(
+                            "xyz", original_camera_rpy[side]
+                        ).as_matrix(),
                         atol=1e-9,
                     )
 

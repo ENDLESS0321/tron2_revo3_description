@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.2.2] - 2026-09-24
+
+### Features
+
+- Restored both wrist-camera orientations to their original wrist-roll
+  attitudes while keeping their mounting positions on the arm-axis opposite
+  side.
+
+### Design Rationale
+
+- Camera attitude and orbital position are independent requirements: each
+  camera keeps its original attitude at the position reached by rotating its
+  radial offset 180 degrees around the mechanical-arm axis.
+
+### Notes & Caveats
+
+- Wrist-camera extrinsics combine the original orientation with the new
+  `z=+0.0753 m` root position and require fresh calibration.
+
 ## [1.2.1] - 2026-09-24
 
 ### Features
