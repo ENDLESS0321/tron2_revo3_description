@@ -87,14 +87,12 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(head["depth_fov_deg"], [87, 58])
         self.assertEqual(head["depth_range_m"], [0.6, 6.0])
 
-    def test_hands_are_flipped_and_wrist_cameras_are_original(self):
+    def test_hands_and_wrist_camera_brackets_are_flipped_about_finger_axis(self):
         expected_urdf_rpy = {
             "left_hand_base_joint": "-1.57079632679 -1.57079632679 0",
             "right_hand_base_joint": "-1.57079632679 1.57079632679 0",
-            "left_wrist_camera_reference_joint": "1.57079632679 0 1.57079632679",
-            "right_wrist_camera_reference_joint": (
-                "1.57079632679 2.22044604925e-16 -1.57079632679"
-            ),
+            "left_wrist_camera_reference_joint": "1.57079632679 0 -1.57079632679",
+            "right_wrist_camera_reference_joint": "1.57079632679 0 1.57079632679",
         }
         for joint_name, expected_rpy in expected_urdf_rpy.items():
             with self.subTest(joint=joint_name):
@@ -113,8 +111,8 @@ class ReleaseAssetTests(unittest.TestCase):
         expected_scene_quat = {
             "left_hand_base_link": "0.5 -0.5 -0.5 -0.5",
             "right_hand_base_link": "0.5 -0.5 0.5 0.5",
-            "left_wrist_camera_mount_frame": "0.5 0.5 0.5 0.5",
-            "right_wrist_camera_mount_frame": "0.5 0.5 -0.5 -0.5",
+            "left_wrist_camera_mount_frame": "0.5 0.5 -0.5 -0.5",
+            "right_wrist_camera_mount_frame": "0.5 0.5 0.5 0.5",
         }
         for body_name, expected_quat in expected_scene_quat.items():
             with self.subTest(body=body_name):
@@ -147,14 +145,31 @@ class ReleaseAssetTests(unittest.TestCase):
                     mujoco.mjtObj.mjOBJ_BODY,
                     f"{side}_wrist_camera_mount_frame",
                 )
+                hand_id = mujoco.mj_name2id(
+                    model,
+                    mujoco.mjtObj.mjOBJ_BODY,
+                    f"{side}_hand_base_link",
+                )
                 wrist_rotation = data.xmat[wrist_id].reshape(3, 3)
                 camera_rotation = data.xmat[camera_id].reshape(3, 3)
+                hand_rotation = data.xmat[hand_id].reshape(3, 3)
                 relative_offset = wrist_rotation.T @ (
                     data.xpos[camera_id] - data.xpos[wrist_id]
                 )
                 relative_rotation = wrist_rotation.T @ camera_rotation
+                finger_axis = (
+                    wrist_rotation.T @ hand_rotation @ np.array([0.0, 0.0, 1.0])
+                )
+                bracket_half_turn = Rotation.from_rotvec(
+                    np.pi * finger_axis
+                ).as_matrix()
 
                 with self.subTest(model=model_path.name, side=side):
+                    np.testing.assert_allclose(
+                        finger_axis,
+                        [0.0, 0.0, -1.0],
+                        atol=1e-9,
+                    )
                     np.testing.assert_allclose(
                         relative_offset,
                         original_offset,
@@ -162,7 +177,8 @@ class ReleaseAssetTests(unittest.TestCase):
                     )
                     np.testing.assert_allclose(
                         relative_rotation,
-                        Rotation.from_euler(
+                        bracket_half_turn
+                        @ Rotation.from_euler(
                             "xyz", original_camera_rpy[side]
                         ).as_matrix(),
                         atol=1e-9,

@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.0] - 2026-09-24
+
+### Features
+
+- Rotated both wrist-camera brackets by 180 degrees around the finger-pointing
+  axis while retaining their original mounting-hole center positions.
+
+### Design Rationale
+
+- The finger-pointing axis maps to the wrist-roll frame's Z axis. Rotating only
+  the bracket attitude around its fixed root keeps the bracket and arm screw
+  centers coincident while flipping the bracket to the opposite orientation.
+
+### Notes & Caveats
+
+- Wrist-camera extrinsics change even though the bracket root positions do
+  not; camera calibration and physical fastener clearance require validation.
+
 ## [1.2.3] - 2026-09-24
 
 ### Features
