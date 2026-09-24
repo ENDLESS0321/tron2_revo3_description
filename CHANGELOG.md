@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.3] - 2026-09-24
+
+### Features
+
+- Restored both wrist-camera assemblies to their complete original root
+  positions and orientations for baseline evaluation.
+
+### Design Rationale
+
+- Returning the camera transforms to a known baseline lets subsequent mounting
+  decisions be evaluated independently from the retained hand rotation.
+
+### Notes & Caveats
+
+- The left and right Revo3 hands remain rotated by 180 degrees; only the wrist
+  cameras return to their pre-1.2.0 transforms.
+
 ## [1.2.2] - 2026-09-24
 
 ### Features

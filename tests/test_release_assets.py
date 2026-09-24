@@ -87,9 +87,7 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(head["depth_fov_deg"], [87, 58])
         self.assertEqual(head["depth_range_m"], [0.6, 6.0])
 
-    def test_hands_and_camera_positions_are_flipped_but_camera_attitude_is_original(
-        self,
-    ):
+    def test_hands_are_flipped_and_wrist_cameras_are_original(self):
         expected_urdf_rpy = {
             "left_hand_base_joint": "-1.57079632679 -1.57079632679 0",
             "right_hand_base_joint": "-1.57079632679 1.57079632679 0",
@@ -109,7 +107,7 @@ class ReleaseAssetTests(unittest.TestCase):
             with self.subTest(joint=joint_name):
                 self.assertEqual(
                     self.joint(joint_name).find("origin").get("xyz"),
-                    "-0.0317 0 0.0753",
+                    "-0.0317 -1.31006316906e-18 -0.0753",
                 )
 
         expected_scene_quat = {
@@ -127,9 +125,9 @@ class ReleaseAssetTests(unittest.TestCase):
             "right_wrist_camera_mount_frame",
         ):
             with self.subTest(body=body_name):
-                self.assertEqual(self.scene_body(body_name).get("pos"), "-0.0317 0 0.0753")
+                self.assertEqual(self.scene_body(body_name).get("pos"), "-0.0317 0 -0.0753")
 
-        opposite_side_offset = np.array([-0.0317, 0.0, 0.0753])
+        original_offset = np.array([-0.0317, 0.0, -0.0753])
         original_camera_rpy = {
             "left": [np.pi / 2, 0.0, np.pi / 2],
             "right": [np.pi / 2, 0.0, -np.pi / 2],
@@ -159,7 +157,7 @@ class ReleaseAssetTests(unittest.TestCase):
                 with self.subTest(model=model_path.name, side=side):
                     np.testing.assert_allclose(
                         relative_offset,
-                        opposite_side_offset,
+                        original_offset,
                         atol=1e-9,
                     )
                     np.testing.assert_allclose(

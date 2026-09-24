@@ -34,3 +34,14 @@
   on the arm-axis opposite side (`z=+0.0753 m`). Do not pre-multiply the camera
   orientation by the arm-axis orbit rotation; orientation and orbital position
   are intentionally specified independently here.
+
+## 2026-09-24 — Restore the complete original wrist-camera transforms
+
+- Supersedes the earlier wrist-camera placement rules while the user evaluates
+  the model from a known baseline.
+- Context: The user wants both wrist cameras returned to their original state
+  before deciding on any further change.
+- Mistake: Kept the camera positions on the arm-axis opposite side after their
+  attitudes were restored.
+- Rule: Restore both wrist-camera root positions and orientations exactly to
+  the pre-1.2.0 values. Keep the hand-root rotations and head D455 unchanged.

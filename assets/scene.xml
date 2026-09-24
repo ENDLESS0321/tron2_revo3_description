@@ -589,7 +589,7 @@
                         </body>
                       </body>
                     </body>
-                    <body name="left_wrist_camera_mount_frame" pos="-0.0317 0 0.0753" quat="0.5 0.5 0.5 0.5">
+                    <body name="left_wrist_camera_mount_frame" pos="-0.0317 0 -0.0753" quat="0.5 0.5 0.5 0.5">
                       <inertial pos="-1.70091e-07 0.00106108 0.0505613" quat="0.707055 0.00860701 -0.00861671 0.707053" mass="0.0249423" diaginertia="1.22389e-05 9.43132e-06 3.1765e-06" />
                       <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.16 0.2 0.24 1" density="0" mesh="left_aligned_v3_m" />
                       <body name="left_wrist_camera_rod_end_frame">
@@ -872,7 +872,7 @@
                         </body>
                       </body>
                     </body>
-                    <body name="right_wrist_camera_mount_frame" pos="-0.0317 0 0.0753" quat="0.5 0.5 -0.5 -0.5">
+                    <body name="right_wrist_camera_mount_frame" pos="-0.0317 0 -0.0753" quat="0.5 0.5 -0.5 -0.5">
                       <inertial pos="-8.36021e-08 0.00106096 -0.050559" quat="0.707054 -0.00861292 0.00861729 0.707054" mass="0.0249394" diaginertia="1.22377e-05 9.43015e-06 3.17648e-06" />
                       <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.16 0.2 0.24 1" density="0" mesh="right_aligned_v3_m" />
                       <body name="right_wrist_camera_rod_end_frame">
