@@ -5,7 +5,9 @@ import unittest
 import xml.etree.ElementTree as ET
 
 import mujoco
+import numpy as np
 import trimesh
+from scipy.spatial.transform import Rotation
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,6 +98,16 @@ class ReleaseAssetTests(unittest.TestCase):
             with self.subTest(joint=joint_name):
                 self.assertEqual(self.joint(joint_name).find("origin").get("rpy"), expected_rpy)
 
+        for joint_name in (
+            "left_wrist_camera_reference_joint",
+            "right_wrist_camera_reference_joint",
+        ):
+            with self.subTest(joint=joint_name):
+                self.assertEqual(
+                    self.joint(joint_name).find("origin").get("xyz"),
+                    "-0.0317 0 0.0753",
+                )
+
         expected_scene_quat = {
             "left_hand_base_link": "0.5 -0.5 -0.5 -0.5",
             "right_hand_base_link": "0.5 -0.5 0.5 0.5",
@@ -105,6 +117,54 @@ class ReleaseAssetTests(unittest.TestCase):
         for body_name, expected_quat in expected_scene_quat.items():
             with self.subTest(body=body_name):
                 self.assertEqual(self.scene_body(body_name).get("quat"), expected_quat)
+
+        for body_name in (
+            "left_wrist_camera_mount_frame",
+            "right_wrist_camera_mount_frame",
+        ):
+            with self.subTest(body=body_name):
+                self.assertEqual(self.scene_body(body_name).get("pos"), "-0.0317 0 0.0753")
+
+        orbit_rotation = Rotation.from_euler("x", np.pi).as_matrix()
+        old_offset = np.array([-0.0317, 0.0, -0.0753])
+        old_camera_rpy = {
+            "left": [np.pi / 2, 0.0, np.pi / 2],
+            "right": [np.pi / 2, 0.0, -np.pi / 2],
+        }
+        for model_path in (ASSETS / "assembly.urdf", ASSETS / "scene.xml"):
+            model = mujoco.MjModel.from_xml_path(str(model_path))
+            data = mujoco.MjData(model)
+            mujoco.mj_forward(model, data)
+            for side, suffix in (("left", "L"), ("right", "R")):
+                wrist_id = mujoco.mj_name2id(
+                    model,
+                    mujoco.mjtObj.mjOBJ_BODY,
+                    f"wrist_roll_{suffix}_Link",
+                )
+                camera_id = mujoco.mj_name2id(
+                    model,
+                    mujoco.mjtObj.mjOBJ_BODY,
+                    f"{side}_wrist_camera_mount_frame",
+                )
+                wrist_rotation = data.xmat[wrist_id].reshape(3, 3)
+                camera_rotation = data.xmat[camera_id].reshape(3, 3)
+                relative_offset = wrist_rotation.T @ (
+                    data.xpos[camera_id] - data.xpos[wrist_id]
+                )
+                relative_rotation = wrist_rotation.T @ camera_rotation
+
+                with self.subTest(model=model_path.name, side=side):
+                    np.testing.assert_allclose(
+                        relative_offset,
+                        orbit_rotation @ old_offset,
+                        atol=1e-9,
+                    )
+                    np.testing.assert_allclose(
+                        relative_rotation,
+                        orbit_rotation
+                        @ Rotation.from_euler("xyz", old_camera_rpy[side]).as_matrix(),
+                        atol=1e-9,
+                    )
 
         self.assertEqual(
             self.joint("head_camera_reference_joint").find("origin").get("rpy"),

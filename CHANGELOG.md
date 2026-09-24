@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.1] - 2026-09-24
+
+### Features
+
+- Moved both wrist-camera assemblies to the opposite radial side of their arm
+  axes, completing the requested 180-degree orbit around each wrist roll.
+
+### Design Rationale
+
+- A rigid orbit requires rotating both the camera orientation and its radial
+  position vector; changing orientation alone only spins the assembly in place.
+
+### Notes & Caveats
+
+- The wrist-camera root offsets now use `z=+0.0753 m` instead of
+  `z=-0.0753 m`; camera calibration and hardware clearance must be revalidated.
+
 ## [1.2.0] - 2026-09-24
 
 ### Features
