@@ -127,6 +127,10 @@ The URDF includes the official RealSense D455 body mesh, nominal depth, color,
 infrared and IMU frames, and the D405 wrist-camera frames. RGB/depth rendering
 uses the camera definitions in `scene.xml`.
 
+The `base_Link` origin is at world `z=1.20 m` in both the URDF and MuJoCo
+scene. The scene's work-table top is at `z=0.75 m`, exactly `0.45 m` below
+that robot origin. The URDF itself does not include the table geometry.
+
 ```python
 import mujoco
 model = mujoco.MjModel.from_xml_path("assets/scene.xml")

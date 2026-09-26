@@ -271,7 +271,7 @@
     <material name="camera_scene_floor" texture="camera_scene_floor" texrepeat="8 8" />
   </asset>
   <worldbody>
-    <body name="base_Link" pos="0 0 1.20035">
+    <body name="base_Link" pos="0 0 1.2">
       <inertial pos="0.00385 -0.00011 0.11254" quat="0.685641 -0.173048 -0.174878 0.685105" mass="12.57" diaginertia="0.135813 0.118632 0.101515" />
       <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.15 0.16 0.17 1" density="0" mesh="base_Link" />
       <geom name="torso_cyan_status_strip" pos="0.04 0.109 0.13" size="0.045 0.003 0.065" type="box" contype="0" conaffinity="0" group="1" rgba="0 0.78 0.88 1" density="0" />

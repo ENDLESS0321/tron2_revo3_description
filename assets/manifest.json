@@ -1,6 +1,6 @@
 {
   "schema": "final_model_assets_v2",
-  "release": "1.3.0",
+  "release": "1.3.1",
   "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
   "geometry_changed_during_cleanup": false,
   "release_geometry_changed": true,
@@ -9,8 +9,8 @@
   "referenced_mesh_count": 265,
   "files": {
     "assets/assembly.urdf": {
-      "sha256": "96c1ea12e5084438704a30f1a95889db0ad63760faaa32f0db18232447a1aa14",
-      "bytes": 120076
+      "sha256": "1e61561e51384ccd48b1636fa7eefbc07cda685ad3f24929d99a1d06509617cd",
+      "bytes": 120072
     },
     "assets/cad/adapters/left.3mf": {
       "sha256": "6574f0fb8c4839b1c3fe1b60d73c44ec4e9b07ffbaf5f26c892ecad0ba0f6898",
@@ -1109,8 +1109,8 @@
       "bytes": 2877
     },
     "assets/scene.xml": {
-      "sha256": "1e43db758b4d4ce3cd0a5d8a580ca80d358c38610036aa65cbef20d1d49f7b16",
-      "bytes": 119393
+      "sha256": "65a4a3b4a811cf33477bbf0d8868019c0799ed4fdbab4503d13013e34d2b3a5d",
+      "bytes": 119389
     }
   },
   "upstream": {

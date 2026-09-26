@@ -42,6 +42,17 @@ class ReleaseAssetTests(unittest.TestCase):
         scene = mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml"))
         self.assertEqual((urdf.nq, scene.nq, scene.ncam), (58, 58, 6))
 
+    def test_table_top_is_45_cm_below_robot_origin(self):
+        urdf_origin = self.joint("world_to_base").find("origin")
+        urdf_base_z = float(urdf_origin.get("xyz").split()[2])
+        scene_base_z = float(self.scene_body("base_Link").get("pos").split()[2])
+        table = self.scene.find("./worldbody/geom[@name='work_table']")
+        table_center_z = float(table.get("pos").split()[2])
+        table_half_height = float(table.get("size").split()[2])
+        table_top_z = table_center_z + table_half_height
+        self.assertAlmostEqual(urdf_base_z, scene_base_z)
+        self.assertAlmostEqual(urdf_base_z - table_top_z, 0.45)
+
     def test_reference_palette_is_applied(self):
         self.assertEqual(self.color("base_Link"), "0.15 0.16 0.17 1")
         self.assertEqual(self.color("left_adapter_link"), "0.42 0.20 0.68 1")

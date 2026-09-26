@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.1] - 2026-09-26
+
+### Features
+
+- Set the work-table top to `base_Link` origin vertical separation to exactly
+  0.45 m in the URDF and MuJoCo scene.
+
+### Design Rationale
+
+- Align the two robot placements at world `z=1.20 m` while keeping the table
+  top at `z=0.75 m` and preserving all internal robot geometry.
+
+### Notes & Caveats
+
+- The URDF contains no table geometry; the table is defined in `scene.xml`.
+- Any trajectories using the previous `z=1.20035 m` placement need this
+  0.35 mm world-frame offset accounted for.
+
 ## [1.3.0] - 2026-09-24
 
 ### Features

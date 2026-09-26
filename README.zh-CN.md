@@ -101,6 +101,10 @@ licenses/                   # 上游许可、声明及许可状态依据
 URDF 包含 RealSense 官方 D455 机身网格，以及标称深度、彩色、红外和 IMU
 坐标系；RGB/深度渲染使用 `scene.xml` 中的相机定义。
 
+URDF 和 MuJoCo 场景中的 `base_Link` 原点均位于世界坐标 `z=1.20 m`；
+场景工作台上表面位于 `z=0.75 m`，与该机器人原点的垂直距离恰好为 `0.45 m`。
+URDF 本身不包含桌面几何体。
+
 ```python
 import mujoco
 model = mujoco.MjModel.from_xml_path("assets/scene.xml")
