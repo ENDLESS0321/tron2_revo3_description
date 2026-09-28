@@ -275,7 +275,12 @@
     </collision>
   </link>
   <link name="right_thumb_tip_Link">
-    </link>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0000000001" ixy="0" ixz="0" iyy="0.0000000001" iyz="0" izz="0.000000001" />
+    </inertial>
+  </link>
   <link name="right_thumb_PIP_Link">
     <inertial>
       <origin xyz="2.7246842255e-05 0.0196639755384 -0.000959024619273" rpy="0 0 0" />
@@ -877,15 +882,182 @@
         <color rgba="0.86 0.87 0.92 1" />
       </material>
     </visual>
-    <collision name="collision_right_hand_base_link_00">
-      <origin rpy="0 0 1.17362825354e-34" xyz="0 0 0" />
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="meshes/right_palm_single_convex.obj" />
+        <mesh filename="meshes/boundaryfix_exact/aa95c716f18d0fab1ae1f9a781b89c2d96f6007fe4a610376db873b87528f954.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/d18d32b23255065ce62f91fc9821a1d88a2010df89e081e3a4cbdf31cad1406b.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_14971ddfbc0a94b81049847ed53d463c2e43dcc369a4151542e070d92116f3da.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_79e380a6bafe5921182c26b15796574feb31298fd11f8fca628218bb561e8102.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_7d13cd44b03d03eeb957a712b883d5e70a1b63acc0a0a4453349f2d03d93f0ca.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_0d2b6f077da44bf4cd7febe1d551880eeea0f189a173c50f3652b48e828bfe64.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_30491a2a4ce7e44cfe1b5c8a50f83ca320a319b26a23ea4ae7dbac0c25a3d1f3.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/a8da7d01b52a7d7c1852e4f3ddec632b68d48a9777079f4a932914c56e76f507.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/c29105469e293ba509551f472e392f0a7694295a0bf17c2e5ba335fb03ad5e5f.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_21001219cd5f509eef0bfb6b64620f8416e69d7043035616117df1c1d5d7957d.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_48fd42bd2193cc1a2dd27ab54c6ed9e2c14ffdf7a003f6ee8547da13f5518e62.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/af43b5bc01b195601590b86a18460aeb8294e55a16bb1c378f83a9c37a98d5c9.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_95d5606d81fa48e64bdda917daeab877e34c581b2ce8af831183ec59800b2d26.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/c2b66b95159604f461ba7b24a04b5b123dfaa8664be8fef96c24475c2d4b42e6.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_76485870102706cd69517dcde7de8febb0e2b61536a1869d8ecc0e73e246ecff.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/fcc3593f6f4b0539c6fb426014b18be7c839f35800dbb8969bba06eca7dbf1aa.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_5a05bf5f69bcc91494eb8df09ed81d75313a1495a5581301e2db6049d9605d8f.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/e658910cac8d7ac7702ec98a829d051594f407f1ba209da4834406422daea716.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_071070e3cb42af4f3a93a689eeedb9fdd615fc9367b2bf42ab4f5869828dd195.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/b7d4eaabcc1c7241eb607af653cee31bee9a4f60fd7776f0ca8a5a487a2d599c.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_5545df7254257a4062deeed37a524d24f69221a74f2ad56b8c1782a8de8a7659.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_23f85ee427ab0736aad393b66ee615cd37fd1317fa7b5fa00d85a79e563577a9.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_08ef3fc09d4cb8ded7a6f2ed122308a30ecd148fc496a8b00665a422b378dfbb.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/a4023ceff84d9f0ad52b57589535087596d5a7aeeeb7007bb83c755168de4e7d.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/b8fe0503ee650285edb332427d0b555f8ef6564f415f4082abc8a22d285a5b30.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/b79d566987c9462a18d99af83ade330312ae21f7ff413831fa9094202ccbd7ac.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_978fe2fb964b6a1047709e0fcfabd2687e16f16fdf0020bb80eb0dbf7309b29b.obj" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/boundaryfix_exact/collision_660ee99544420f8523cf6cd8820af6bd308a889716b88823dac2ff8935897ee5.obj" />
       </geometry>
     </collision>
   </link>
   <link name="right_index_tip_Link">
-    </link>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0000000001" ixy="0" ixz="0" iyy="0.0000000001" iyz="0" izz="0.000000001" />
+    </inertial>
+  </link>
   <link name="right_little_MCP_Link">
     <inertial>
       <origin xyz="2.58235094345e-05 -0.00140652628093 0.0229088448634" rpy="0 0 0" />
@@ -1022,7 +1194,12 @@
     </collision>
   </link>
   <link name="right_ring_tip_Link">
-    </link>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0000000001" ixy="0" ixz="0" iyy="0.0000000001" iyz="0" izz="0.000000001" />
+    </inertial>
+  </link>
   <link name="proximal_pitch_R_Link">
     <inertial>
       <origin xyz="-0.00547 -0.07014 -0.00611" rpy="0 0 0" />
@@ -1046,7 +1223,12 @@
     </collision>
   </link>
   <link name="right_middle_tip_Link">
-    </link>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0000000001" ixy="0" ixz="0" iyy="0.0000000001" iyz="0" izz="0.000000001" />
+    </inertial>
+  </link>
   <link name="proximal_roll_R_Link">
     <inertial>
       <origin xyz="0.03124 -0.00035 -0.08414" rpy="0 0 0" />
@@ -1114,7 +1296,12 @@
     </collision>
   </link>
   <link name="right_little_tip_Link">
-    </link>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0.0000000001" ixy="0" ixz="0" iyy="0.0000000001" iyz="0" izz="0.000000001" />
+    </inertial>
+  </link>
   <joint name="world_to_base" type="fixed">
     <parent link="world" />
     <child link="base_Link" />

@@ -1,7 +1,7 @@
-# 28 自由度训练 URDF（1.7.0）
+# 28 自由度训练 URDF（1.7.1）
 
 `assets/assembly_rl_convex.urdf` 现为用户指定的
-`assembly_bilateral_axis180_reduced28.urdf` 的原样副本，逐字节一致。
+`assembly_bilateral_axis180_reduced28_physicsfix.urdf` 的原样副本，逐字节一致。
 沿用原训练路径，便于现有配置引用，但拓扑已改变：它不再是 1.5.0 的
 58 自由度、仅简化双侧法兰的模型。`assets/assembly.urdf` 仍保留完整的 58 自由度装配模型。
 
@@ -13,10 +13,9 @@
 | URDF joint 数量 | 37：28 个 revolute、9 个 fixed |
 | 可控制关节链 | 右臂 7 个关节＋右 Revo3 手 21 个关节 |
 | visual 几何数量 | 78 |
-| collision 元素数量 | 31，分布在 31 个 link 上 |
-| 引用网格数量 | 101，其中 31 个为仓库新增文件 |
-| 右法兰碰撞 | `right_adapter_link` 上一个凸碰撞网格 |
-| 右手掌碰撞 | `right_hand_base_link` 上一个凸碰撞网格 |
+| collision 元素数量 | 58，分布在 31 个 link 上 |
+| 引用网格数量 | 128 个唯一文件；新增 28 个手掌组件网格，移除旧的单一手掌凸包网格 |
+| 碰撞分布 | 基座和 7 个手臂 link：8；手掌组件：28；手指组件：21；法兰：1 |
 
 右臂从近端到末端的关节名依次为：`proximal_pitch_R_Joint`、`proximal_roll_R_Joint`、
 `proximal_yaw_R_Joint`、`elbow_R_Joint`、`wrist_yaw_R_Joint`、
@@ -43,13 +42,19 @@
 
 ## 碰撞资产与坐标
 
-指定文件使用 boundaryfix 碰撞网格、单个右法兰凸网格及单个右手掌凸网格。
-全部 101 个网格引用均相对 `assets/`，已随仓库提供，包括 31 个新增文件。
-网格内容直接复制，不重新导出或改名；URDF 内容和引用保持原样。
-法兰／手掌凸碰撞几何可能填平孔洞及凹陷，接触与间隙检查应以此模型的边界为准。
+physicsfix 模型恢复了 28 个手掌组件碰撞网格，同时保留单个法兰碰撞和手臂／手指的详细碰撞。
+128 个唯一网格引用均相对 `assets/`。相较 1.7.0，新增 28 个手掌网格并移除旧单一手掌凸包，
+因此碰撞几何发生变化，其物理行为不等同于旧训练模型或完整装配。为兼容既有配置仍保留
+`rl_convex` 文件名，但当前手掌由 28 个组件组成。
+
+五个指尖 link 恢复了惯量：各自质量 0.001 kg、质心为零，惯量对角项为
+`(1e-10, 1e-10, 1e-9) kg·m²`。手掌碰撞改动和这些惯量改动同时实施，尚未隔离各自的因果影响。
+`right_palm` 仍是没有 inertial 的占位 link，因此仍与完整装配基线不同。历史派生报告的质量守恒
+结论不适用于此 physicsfix 资产。
 
 `world_to_base` 仍为 `[0, 0, 1.20035]` m。默认场景桌面顶面为 0.75035 m，
-比基座原点低 0.45 m。训练 URDF 本身不含桌子或被操作物体。
+比基座原点低 0.45 m。当前训练布局使用基座 Z=0.957 m、桌面顶面 Z=0.507 m，同样相差 0.45 m。
+训练 URDF 本身不含桌子或被操作物体。
 默认 `scene.xml` 仍对应完整 58 自由度装配模型，不是此约简训练模型。
 训练时应导入本 URDF 并显式配置世界／基座／桌面布局，避免重复叠加文件的世界偏移。
 同为 45 cm 布局，不表示任意旧 IK sidecar 与本资产兼容。
@@ -59,45 +64,51 @@
 发布文件 SHA256：
 
 ```text
-56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313
+2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034
 ```
 
-`assets/training_reduced28.json` 记录指定文件名、替换前后哈希、各网格哈希及源派生报告。
-源报告追溯到 single-palm boundaryfix 前序模型，由 58 个活动关节约简为 28 个；
-报告中的质量守恒误差约为 1.28e-11 kg，全局惯量张量误差约为 6.38e-11，
-10 个右侧关节姿态的 FK 误差为零。这些是源派生结果，不是本次重新验证的 RL 成功结果。
+`assets/training_reduced28.json` 记录指定文件名、替换前后哈希、各网格哈希及派生来源。
+历史源派生指标针对更早的单掌模型，不能证明 physicsfix 模型的质量或惯量守恒。
+当前 physicsfix URDF 正用于 4090D 四卡训练；训练仍在进行，本次发布不宣称 reward、性能、抓取或
+物理任务成功，同时实施的碰撞与惯量改动也未隔离因果关系。
 
 发布测试独立检查文件哈希、网格引用、28 关节拓扑、保留的右侧关节定义、相对完整模型的
-右侧 FK，以及 MuJoCo 导入后右法兰和右手掌各一个碰撞 shape。
-MuJoCo 加载后有 28 个广义位置、28 个关节和 31 个碰撞 shape。
+右侧 FK，以及 MuJoCo 预览编译后的 58 个碰撞 shape。预览加载器在内存中平衡惯量以支持运动学展示；
+MuJoCo 会拒绝直接加载原始 URDF。
 其他引擎可能合并固定 link 或采用不同网格解释，需要核对其实际导入结果。
 
 ## 使用与迁移
 
 ```python
-import mujoco
-model = mujoco.MjModel.from_xml_path("assets/assembly_rl_convex.urdf")
+import sys
+sys.path.insert(0, "viewers")
+from _runtime import load_training_model
+model = load_training_model()
 assert model.nq == 28
 ```
+
+MuJoCo 直接加载原始 URDF 会因部分指尖惯量不满足惯量三角不等式而报错。预览加载器在内存中启用
+`balanceinertia` 后编译模型，以支持无物理步进的展示；它不修改磁盘上的 URDF，但编译时会调整惯量。
+因此该预览不能用于宣称 MuJoCo 动力学与 Isaac 训练相同。
 
 运行 `.venv/bin/python -m unittest discover -s tests -v` 验证发布资产。
 重新导入此前缓存了旧模型的仿真场景；按 28 关节拓扑更新 action 映射、body／frame 引用
 及机器人配置，并将 IK／H5／运行配置绑定到本 URDF 哈希。
-仅张量尺寸匹配不能证明 checkpoint 兼容。本次发布不启动训练，也不报告 reward、
-训练性能、抓取或物理操作成功结果。
+仅张量尺寸匹配不能证明 checkpoint 兼容。本次文档更新不启动训练，也不报告 reward、训练性能、抓取或物理操作成功结果。
 
 旧双侧法兰凸包生成器及其输出报告／网格已从当前目录移除，避免覆盖指定的约简模型；
 它们仍保留在 1.5.0 的 Git 历史中。本仓库以资产形式发布指定的约简模型，不声称能用已移除的
 法兰专用生成器重建其 boundaryfix 派生流程。
 
-## 仓库预览与完整性检查（1.7.0）
+## 仓库预览与完整性检查（1.7.1）
 
 ```bash
 ./viewers/view_assembly.sh --model training
 ./viewers/view_assembly.sh --model training --check --output outputs/check/training
 ```
 
-约简模型查看工具导入此原样 URDF，核对 28 自由度／零个渲染相机，仅设置配置中的右侧
+约简模型查看工具核对原样 URDF 的 28 自由度／零个渲染相机，并用内存中的惯量平衡仅编译模型，
+仅设置配置中的右侧
 展示关节。`0` 复位这 28 个关节；`1` 恢复展示姿态，头部及左侧的烘焙姿态始终固定。
 预览显示视觉几何，不含桌子或物体，不进行物理步进。
 `--check` 输出 `assembly_training_both_overview.png`。三相机和 CAD 零件查看工具仍使用

@@ -1,5 +1,40 @@
 # Changelog
 
+## [1.7.1] - 2026-09-28
+
+### Features
+
+- Replace `assets/assembly_rl_convex.urdf` byte-for-byte with the supplied
+  physicsfix reduced28 model (SHA256
+  `2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034`).
+- Restore 28 palm-component collision meshes and inertials on five fingertip
+  links; update the paired topology, provenance and migration documentation.
+- Keep the historical `rl_convex` filename for existing training configuration
+  compatibility, while documenting its current 28-component palm collision.
+
+### Design Rationale
+
+- Restore component collision boundaries for the palm and nonzero inertial
+  properties for five fingertips while preserving the supplied URDF bytes.
+- Keep this reduced training path distinct from the unchanged full assembly and
+  default MuJoCo scene.
+
+### Notes & Caveats
+
+- The physicsfix model has 58 collision elements and references 128 unique mesh
+  files. Compared with 1.7.0, 28 palm meshes were added and the former single
+  palm convex mesh was removed.
+- Palm collision geometry and fingertip inertials changed together, so their
+  separate causal effects have not been isolated. `right_palm` remains a
+  placeholder without an inertial; historical mass-conservation figures do not
+  apply to this artifact.
+- MuJoCo direct URDF loading rejects the supplied fingertip inertias. The
+  kinematic preview enables `balanceinertia` only for in-memory compilation;
+  this adjusts compiled inertias and does not validate MuJoCo dynamics against
+  Isaac. The source URDF remains byte-for-byte unchanged.
+- The model is in an ongoing four-GPU 4090D training run. This release makes no
+  training-success or physical-task-success claim.
+
 ## [1.7.0] - 2026-09-28
 
 ### Features

@@ -52,10 +52,21 @@ def set_pose(model,data,pose):
     mujoco.mj_forward(model,data)
 
 
+def load_training_model():
+    """Compile the exact training URDF for kinematic preview only.
+
+    Historical fingertip inertias violate MuJoCo's triangle inequality.
+    Balance them in memory; never rewrite the Isaac training artifact.
+    """
+    spec=mujoco.MjSpec.from_file(str(ASSETS/'assembly_rl_convex.urdf'))
+    spec.compiler.balanceinertia=True
+    return spec.compile()
+
+
 def assembly(model_name='full'):
     cfg=config()
     spec=cfg['models'][model_name]
-    model=mujoco.MjModel.from_xml_path(str(ASSETS/spec['preview']))
+    model=load_training_model() if model_name=='training' else mujoco.MjModel.from_xml_path(str(ASSETS/spec['preview']))
     if model_name=='training':
         model.vis.headlight.ambient[:]=[0.8,0.8,0.8]
         model.vis.headlight.diffuse[:]=[0.8,0.8,0.8]

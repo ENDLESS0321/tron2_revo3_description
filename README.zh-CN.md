@@ -18,13 +18,15 @@
 整机及相机预览加载匹配的 `scene.xml`，
 训练预览加载约简 URDF。MuJoCo 场景同步更新，基座原点到桌面顶面的高度差保持 45 cm。
 
-## 训练模型与预览（1.7.0）
+## 训练模型与预览（1.7.1）
 
-`assets/assembly_rl_convex.urdf` 现为指定文件的原样 28 自由度版本：右臂 7 个关节＋右手
-21 个关节，头部及左侧冻结几何合入保留的 link，右法兰和右手掌各一个碰撞体。
-它替换旧的 58 自由度法兰简化版；完整装配模型和默认 MJCF 保持原样。
-复用 action 映射、body／frame 名称、IK 或 checkpoint 前，请阅读
-[训练拓扑与迁移说明](docs/training_reduced28.zh-CN.md)。
+`assets/assembly_rl_convex.urdf` 是 physicsfix 版约简模型
+（`assembly_bilateral_axis180_reduced28_physicsfix.urdf`）的原样副本：右臂 7 个关节＋右手
+21 个关节。58 个碰撞元素分布于基座、手臂、法兰、28 个手掌组件和 21 个手指组件。
+完整装配模型和默认 MJCF 保持原样。复用 action 映射、body／frame 名称、IK 或 checkpoint
+前，请阅读[训练拓扑与迁移说明](docs/training_reduced28.zh-CN.md)。当前正用于 4090D 四卡训练；
+本次发布不宣称训练成功。MuJoCo 训练预览仅在内存中平衡指尖惯量以供展示，不进行物理步进，
+也不修改发布的 URDF。
 
 ## 安装
 

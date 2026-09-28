@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 sys.path.insert(0, str(ROOT / "viewers"))
 
-from _runtime import assembly, set_pose, verify_assets  # noqa: E402
+from _runtime import assembly, load_training_model, set_pose, verify_assets  # noqa: E402
 
 
 class ReleaseAssetTests(unittest.TestCase):
@@ -59,7 +59,7 @@ class ReleaseAssetTests(unittest.TestCase):
                 self.assertAlmostEqual(data.qpos[model.jnt_qposadr[joint_id]], value)
             set_pose(model, data, {})
             np.testing.assert_allclose(data.qpos, model.qpos0)
-        self.assertEqual(verify_assets()["training_referenced_meshes"], 101)
+        self.assertEqual(verify_assets()["training_referenced_meshes"], 128)
 
     def test_training_camera_selection_is_rejected_before_render(self):
         import subprocess
@@ -130,7 +130,7 @@ class ReleaseAssetTests(unittest.TestCase):
 
         path = ASSETS / "assembly_rl_convex.urdf"
         self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
-                         "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313")
+                         "2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034")
         training = ET.parse(path).getroot()
         joints = training.findall("joint")
         links = training.findall("link")
@@ -149,29 +149,38 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(len(set(children)), len(children))
         self.assertEqual(set(children), {link.get("name") for link in links} - {"world"})
         meshes = {mesh.get("filename") for mesh in training.findall(".//mesh")}
-        self.assertEqual(len(meshes), 101)
+        self.assertEqual(len(meshes), 128)
         for filename in meshes:
             path = (ASSETS / filename).resolve()
             self.assertTrue(path.is_relative_to(ASSETS))
             self.assertTrue(path.is_file())
-        self.assertEqual(sum(len(link.findall("collision")) for link in links), 31)
-        for name in ("right_adapter_link", "right_hand_base_link"):
+        self.assertEqual(sum(len(link.findall("collision")) for link in links), 58)
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 28)):
             link = training.find(f"link[@name='{name}']")
-            self.assertEqual(len(link.findall("collision")), 1)
-            mesh = trimesh.load_mesh(ASSETS / link.find("collision/geometry/mesh").get("filename"), process=True)
-            self.assertTrue(mesh.is_convex)
-            self.assertTrue(mesh.is_watertight)
+            self.assertEqual(len(link.findall("collision")), count)
+            for collision in link.findall("collision"):
+                mesh = trimesh.load_mesh(ASSETS / collision.find("geometry/mesh").get("filename"), process=True)
+                self.assertTrue(mesh.is_convex)
+                self.assertTrue(mesh.is_watertight)
+        for finger in ("thumb", "index", "middle", "ring", "little"):
+            inertial = training.find(f"link[@name='right_{finger}_tip_Link']/inertial")
+            self.assertAlmostEqual(float(inertial.find("mass").get("value")), 0.001)
+            np.testing.assert_allclose(np.fromstring(inertial.find("origin").get("xyz"), sep=" "), [0, 0, 0])
+            inertia = inertial.find("inertia")
+            np.testing.assert_allclose([float(inertia.get(k)) for k in ("ixx", "iyy", "izz")],
+                                       [1e-10, 1e-10, 1e-9], rtol=1e-7, atol=0)
 
     def test_training_reduced28_import_and_right_chain_fk(self):
-        training = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly_rl_convex.urdf"))
+        training = load_training_model()
         assembly = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly.urdf"))
         self.assertEqual((training.nq, training.njnt), (28, 28))
         collision_mask = (training.geom_contype != 0) | (training.geom_conaffinity != 0)
-        self.assertEqual(int(collision_mask.sum()), 31)
-        for name in ("right_adapter_link", "right_hand_base_link"):
+        self.assertEqual(int(collision_mask.sum()), 58)
+        self.assertEqual(int(collision_mask.sum()), self.runtime["models"]["training"]["collision_shapes"])
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 28)):
             body_id = mujoco.mj_name2id(training, mujoco.mjtObj.mjOBJ_BODY, name)
             self.assertGreaterEqual(body_id, 0)
-            self.assertEqual(int(((training.geom_bodyid == body_id) & collision_mask).sum()), 1)
+            self.assertEqual(int(((training.geom_bodyid == body_id) & collision_mask).sum()), count)
         moving = [joint for joint in ET.parse(ASSETS / "assembly_rl_convex.urdf").findall("joint")
                   if joint.get("type") == "revolute"]
         states = [mujoco.MjData(model) for model in (training, assembly)]

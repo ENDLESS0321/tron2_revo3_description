@@ -64,7 +64,7 @@
   "cameras": [
     {
       "name": "head",
-      "label": "头部 D455",
+      "label": "\u5934\u90e8 D455",
       "model": "D455",
       "color_frame": "head_camera_color_optical_frame",
       "depth_frame": "head_camera_depth_optical_frame",
@@ -83,7 +83,7 @@
     },
     {
       "name": "left_wrist",
-      "label": "左腕 D405",
+      "label": "\u5de6\u8155 D405",
       "model": "D405",
       "color_frame": "left_wrist_camera_color_optical_frame",
       "depth_frame": "left_wrist_camera_depth_optical_frame",
@@ -102,7 +102,7 @@
     },
     {
       "name": "right_wrist",
-      "label": "右腕 D405",
+      "label": "\u53f3\u8155 D405",
       "model": "D405",
       "color_frame": "right_wrist_camera_color_optical_frame",
       "depth_frame": "right_wrist_camera_depth_optical_frame",
@@ -124,7 +124,7 @@
   "depth_convention": "Optical Z in meters; out-of-range pixels are NaN; raw depth is not color-registered",
   "kinematic_preview_only": true,
   "strength_certified": false,
-  "release": "1.7.0",
+  "release": "1.7.1",
   "models": {
     "full": {
       "urdf": "assembly.urdf",
@@ -150,7 +150,7 @@
       "expected_dof": 28,
       "expected_render_cameras": 0,
       "table_included": false,
-      "collision_shapes": 31,
+      "collision_shapes": 58,
       "provenance": "training_reduced28.json",
       "display_pose": {
         "proximal_pitch_R_Joint": -0.4,
@@ -171,7 +171,8 @@
           0.5453728186806424
         ],
         "left_hand_joints": "all zero"
-      }
+      },
+      "preview_inertia_policy": "balanceinertia_in_memory_for_kinematic_preview_only"
     }
   }
 }

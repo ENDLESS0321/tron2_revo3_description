@@ -25,14 +25,18 @@ Full-assembly URDF imports use this canonical path; the full preview and cameras
 load its matching `scene.xml`. Training preview loads the reduced URDF.
 The MuJoCo scene is synchronized, retaining the 45 cm base-to-table-top gap.
 
-## Training model and preview (1.7.0)
+## Training model and preview (1.7.1)
 
-`assets/assembly_rl_convex.urdf` is now the exact supplied reduced 28-DoF model:
-7 right-arm plus 21 right-hand joints. Frozen head/left geometry is baked into
-retained links. The right flange and palm each have one collision shape.
-It replaces the 58-DoF flange-only variant; the full assembly and default MJCF
-remain unchanged. Read [training topology and migration](docs/training_reduced28.md)
-before reusing action mappings, body/frame names, IK or checkpoints.
+`assets/assembly_rl_convex.urdf` is an exact copy of the physicsfix reduced
+28-DoF model (`assembly_bilateral_axis180_reduced28_physicsfix.urdf`): 7
+right-arm plus 21 right-hand joints. Its 58 collision elements cover the base,
+arm, flange, 28 palm components and 21 finger components. The full assembly
+and default MJCF remain unchanged. Read
+[training topology and migration](docs/training_reduced28.md) before reusing
+action mappings, body/frame names, IK or checkpoints. The model is being used
+in a four-GPU 4090D training run; this release does not claim training success.
+MuJoCo's training preview balances the supplied fingertip inertias in memory
+for display; it does not step physics or change the published URDF.
 
 ## Installation
 

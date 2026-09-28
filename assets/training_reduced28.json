@@ -1,12 +1,12 @@
 {
-  "release": "1.7.0",
+  "release": "1.7.1",
   "published_urdf": "assets/assembly_rl_convex.urdf",
-  "supplied_filename": "assembly_bilateral_axis180_reduced28.urdf",
-  "urdf_sha256": "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313",
-  "replaced_urdf_sha256": "c6a7759e1804aafd9e9035f1f9157dcad30e8b4736974e2c9716d44468f1dcdb",
+  "supplied_filename": "assembly_bilateral_axis180_reduced28_physicsfix.urdf",
+  "urdf_sha256": "2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034",
+  "replaced_urdf_sha256": "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313",
   "byte_for_byte_copy": true,
-  "referenced_mesh_count": 101,
-  "new_mesh_count": 31,
+  "referenced_mesh_count": 128,
+  "new_mesh_count": 28,
   "mesh_files": {
     "meshes/adapter_v2/left/adapter_left_v2_visual.stl": {
       "sha256": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
@@ -16,9 +16,45 @@
       "sha256": "19de2108c88c78564837f50ebc8e52e297425cdf45e346c6a2f91a87e27c4383",
       "bytes": 8282184
     },
+    "meshes/boundaryfix_exact/a4023ceff84d9f0ad52b57589535087596d5a7aeeeb7007bb83c755168de4e7d.obj": {
+      "sha256": "a4023ceff84d9f0ad52b57589535087596d5a7aeeeb7007bb83c755168de4e7d",
+      "bytes": 27122
+    },
+    "meshes/boundaryfix_exact/a8da7d01b52a7d7c1852e4f3ddec632b68d48a9777079f4a932914c56e76f507.obj": {
+      "sha256": "a8da7d01b52a7d7c1852e4f3ddec632b68d48a9777079f4a932914c56e76f507",
+      "bytes": 7704
+    },
+    "meshes/boundaryfix_exact/aa95c716f18d0fab1ae1f9a781b89c2d96f6007fe4a610376db873b87528f954.obj": {
+      "sha256": "aa95c716f18d0fab1ae1f9a781b89c2d96f6007fe4a610376db873b87528f954",
+      "bytes": 45739
+    },
     "meshes/boundaryfix_exact/ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e.stl": {
       "sha256": "ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e",
       "bytes": 1934384
+    },
+    "meshes/boundaryfix_exact/af43b5bc01b195601590b86a18460aeb8294e55a16bb1c378f83a9c37a98d5c9.obj": {
+      "sha256": "af43b5bc01b195601590b86a18460aeb8294e55a16bb1c378f83a9c37a98d5c9",
+      "bytes": 7413
+    },
+    "meshes/boundaryfix_exact/b79d566987c9462a18d99af83ade330312ae21f7ff413831fa9094202ccbd7ac.obj": {
+      "sha256": "b79d566987c9462a18d99af83ade330312ae21f7ff413831fa9094202ccbd7ac",
+      "bytes": 17647
+    },
+    "meshes/boundaryfix_exact/b7d4eaabcc1c7241eb607af653cee31bee9a4f60fd7776f0ca8a5a487a2d599c.obj": {
+      "sha256": "b7d4eaabcc1c7241eb607af653cee31bee9a4f60fd7776f0ca8a5a487a2d599c",
+      "bytes": 14467
+    },
+    "meshes/boundaryfix_exact/b8fe0503ee650285edb332427d0b555f8ef6564f415f4082abc8a22d285a5b30.obj": {
+      "sha256": "b8fe0503ee650285edb332427d0b555f8ef6564f415f4082abc8a22d285a5b30",
+      "bytes": 3973
+    },
+    "meshes/boundaryfix_exact/c29105469e293ba509551f472e392f0a7694295a0bf17c2e5ba335fb03ad5e5f.obj": {
+      "sha256": "c29105469e293ba509551f472e392f0a7694295a0bf17c2e5ba335fb03ad5e5f",
+      "bytes": 30589
+    },
+    "meshes/boundaryfix_exact/c2b66b95159604f461ba7b24a04b5b123dfaa8664be8fef96c24475c2d4b42e6.obj": {
+      "sha256": "c2b66b95159604f461ba7b24a04b5b123dfaa8664be8fef96c24475c2d4b42e6",
+      "bytes": 39945
     },
     "meshes/boundaryfix_exact/c61f048e7e643dc2eadfc6b32a4c19f0dd18929392530c7ce8f3244ec19abfc6.stl": {
       "sha256": "c61f048e7e643dc2eadfc6b32a4c19f0dd18929392530c7ce8f3244ec19abfc6",
@@ -36,17 +72,45 @@
       "sha256": "01c7f36fb939a05d47f7330d73a4fe9eb7aa26603d3517cc8e49fc334d105ea1",
       "bytes": 631584
     },
+    "meshes/boundaryfix_exact/collision_071070e3cb42af4f3a93a689eeedb9fdd615fc9367b2bf42ab4f5869828dd195.obj": {
+      "sha256": "071070e3cb42af4f3a93a689eeedb9fdd615fc9367b2bf42ab4f5869828dd195",
+      "bytes": 53659
+    },
+    "meshes/boundaryfix_exact/collision_08ef3fc09d4cb8ded7a6f2ed122308a30ecd148fc496a8b00665a422b378dfbb.obj": {
+      "sha256": "08ef3fc09d4cb8ded7a6f2ed122308a30ecd148fc496a8b00665a422b378dfbb",
+      "bytes": 30641
+    },
     "meshes/boundaryfix_exact/collision_0b9fcebfd5221679b661496783c56910975d52952e1b1d13be5d2847e3ebc800.stl": {
       "sha256": "0b9fcebfd5221679b661496783c56910975d52952e1b1d13be5d2847e3ebc800",
       "bytes": 631584
+    },
+    "meshes/boundaryfix_exact/collision_0d2b6f077da44bf4cd7febe1d551880eeea0f189a173c50f3652b48e828bfe64.obj": {
+      "sha256": "0d2b6f077da44bf4cd7febe1d551880eeea0f189a173c50f3652b48e828bfe64",
+      "bytes": 60496
+    },
+    "meshes/boundaryfix_exact/collision_14971ddfbc0a94b81049847ed53d463c2e43dcc369a4151542e070d92116f3da.obj": {
+      "sha256": "14971ddfbc0a94b81049847ed53d463c2e43dcc369a4151542e070d92116f3da",
+      "bytes": 25637
     },
     "meshes/boundaryfix_exact/collision_18d038d6ab285f6ed9caa84cc30575b0289e9da5f99aef2f4be44f96a1d6b501.stl": {
       "sha256": "18d038d6ab285f6ed9caa84cc30575b0289e9da5f99aef2f4be44f96a1d6b501",
       "bytes": 1417034
     },
+    "meshes/boundaryfix_exact/collision_21001219cd5f509eef0bfb6b64620f8416e69d7043035616117df1c1d5d7957d.obj": {
+      "sha256": "21001219cd5f509eef0bfb6b64620f8416e69d7043035616117df1c1d5d7957d",
+      "bytes": 16946
+    },
     "meshes/boundaryfix_exact/collision_2352ac2b3de24d8b94aa3985a6315fdf8dba9ee7f21bc4a29fb077451b19b67b.stl": {
       "sha256": "2352ac2b3de24d8b94aa3985a6315fdf8dba9ee7f21bc4a29fb077451b19b67b",
       "bytes": 5000084
+    },
+    "meshes/boundaryfix_exact/collision_23f85ee427ab0736aad393b66ee615cd37fd1317fa7b5fa00d85a79e563577a9.obj": {
+      "sha256": "23f85ee427ab0736aad393b66ee615cd37fd1317fa7b5fa00d85a79e563577a9",
+      "bytes": 7785
+    },
+    "meshes/boundaryfix_exact/collision_30491a2a4ce7e44cfe1b5c8a50f83ca320a319b26a23ea4ae7dbac0c25a3d1f3.obj": {
+      "sha256": "30491a2a4ce7e44cfe1b5c8a50f83ca320a319b26a23ea4ae7dbac0c25a3d1f3",
+      "bytes": 13616
     },
     "meshes/boundaryfix_exact/collision_399f3fcd0e8392e9d1ef8366df32ad1d2dc5a8e3796a0911298335e88ca9b295.stl": {
       "sha256": "399f3fcd0e8392e9d1ef8366df32ad1d2dc5a8e3796a0911298335e88ca9b295",
@@ -64,6 +128,10 @@
       "sha256": "48f25a0c8992909af1db838517a1fe5604a5c1068dfbadeaf4afa7b9c6c212fa",
       "bytes": 356484
     },
+    "meshes/boundaryfix_exact/collision_48fd42bd2193cc1a2dd27ab54c6ed9e2c14ffdf7a003f6ee8547da13f5518e62.obj": {
+      "sha256": "48fd42bd2193cc1a2dd27ab54c6ed9e2c14ffdf7a003f6ee8547da13f5518e62",
+      "bytes": 24745
+    },
     "meshes/boundaryfix_exact/collision_4eab982141d3f32b09b16a74fea51e9838c9920235fa9d1bc95a30c84430e104.stl": {
       "sha256": "4eab982141d3f32b09b16a74fea51e9838c9920235fa9d1bc95a30c84430e104",
       "bytes": 520384
@@ -72,9 +140,21 @@
       "sha256": "4ecfdad5c0c16b4baa803d123f8486591c85cdd1ca8738c9a7b4e674c1141bb2",
       "bytes": 631584
     },
+    "meshes/boundaryfix_exact/collision_5545df7254257a4062deeed37a524d24f69221a74f2ad56b8c1782a8de8a7659.obj": {
+      "sha256": "5545df7254257a4062deeed37a524d24f69221a74f2ad56b8c1782a8de8a7659",
+      "bytes": 2845
+    },
+    "meshes/boundaryfix_exact/collision_5a05bf5f69bcc91494eb8df09ed81d75313a1495a5581301e2db6049d9605d8f.obj": {
+      "sha256": "5a05bf5f69bcc91494eb8df09ed81d75313a1495a5581301e2db6049d9605d8f",
+      "bytes": 9348
+    },
     "meshes/boundaryfix_exact/collision_5f337ce59f54aad60fc17839fcfb3446b3448396600584da3ead38e9677c05a8.stl": {
       "sha256": "5f337ce59f54aad60fc17839fcfb3446b3448396600584da3ead38e9677c05a8",
       "bytes": 177784
+    },
+    "meshes/boundaryfix_exact/collision_660ee99544420f8523cf6cd8820af6bd308a889716b88823dac2ff8935897ee5.obj": {
+      "sha256": "660ee99544420f8523cf6cd8820af6bd308a889716b88823dac2ff8935897ee5",
+      "bytes": 8844
     },
     "meshes/boundaryfix_exact/collision_68413dc1bf233abbacc1bbd36a4dbb47dc51e49d9735cf6d4eb0e77d7ef3355d.stl": {
       "sha256": "68413dc1bf233abbacc1bbd36a4dbb47dc51e49d9735cf6d4eb0e77d7ef3355d",
@@ -88,9 +168,21 @@
       "sha256": "6d5130521d5db18a9b323fde545d29741adaeba0fe409485e87062fba552cdd5",
       "bytes": 516184
     },
+    "meshes/boundaryfix_exact/collision_76485870102706cd69517dcde7de8febb0e2b61536a1869d8ecc0e73e246ecff.obj": {
+      "sha256": "76485870102706cd69517dcde7de8febb0e2b61536a1869d8ecc0e73e246ecff",
+      "bytes": 42160
+    },
     "meshes/boundaryfix_exact/collision_779f45b6eaa9078ee49cd6418a847bd4d70a87b3228b4c1a47e50f29cce91191.stl": {
       "sha256": "779f45b6eaa9078ee49cd6418a847bd4d70a87b3228b4c1a47e50f29cce91191",
       "bytes": 516184
+    },
+    "meshes/boundaryfix_exact/collision_79e380a6bafe5921182c26b15796574feb31298fd11f8fca628218bb561e8102.obj": {
+      "sha256": "79e380a6bafe5921182c26b15796574feb31298fd11f8fca628218bb561e8102",
+      "bytes": 11609
+    },
+    "meshes/boundaryfix_exact/collision_7d13cd44b03d03eeb957a712b883d5e70a1b63acc0a0a4453349f2d03d93f0ca.obj": {
+      "sha256": "7d13cd44b03d03eeb957a712b883d5e70a1b63acc0a0a4453349f2d03d93f0ca",
+      "bytes": 32995
     },
     "meshes/boundaryfix_exact/collision_7f750db7fdcfd687d40766759c4d5e9702289d1e05fe6000cf7f286a99ea5661.stl": {
       "sha256": "7f750db7fdcfd687d40766759c4d5e9702289d1e05fe6000cf7f286a99ea5661",
@@ -104,6 +196,14 @@
       "sha256": "8b8a22e190e5ed119e8597260958e613618a87fb9ce2ff7b039a26497e58d75a",
       "bytes": 422684
     },
+    "meshes/boundaryfix_exact/collision_95d5606d81fa48e64bdda917daeab877e34c581b2ce8af831183ec59800b2d26.obj": {
+      "sha256": "95d5606d81fa48e64bdda917daeab877e34c581b2ce8af831183ec59800b2d26",
+      "bytes": 12273
+    },
+    "meshes/boundaryfix_exact/collision_978fe2fb964b6a1047709e0fcfabd2687e16f16fdf0020bb80eb0dbf7309b29b.obj": {
+      "sha256": "978fe2fb964b6a1047709e0fcfabd2687e16f16fdf0020bb80eb0dbf7309b29b",
+      "bytes": 11852
+    },
     "meshes/boundaryfix_exact/collision_9a43ecc1054746888f535f49738bb0c92c7dcc2a75c400b5ab0fb2dd31d8fa3d.stl": {
       "sha256": "9a43ecc1054746888f535f49738bb0c92c7dcc2a75c400b5ab0fb2dd31d8fa3d",
       "bytes": 814484
@@ -112,9 +212,17 @@
       "sha256": "9c29beced59e6cbdc686a68c968d905d8abaf3120ab953fb6a3f1bb492100b73",
       "bytes": 351484
     },
+    "meshes/boundaryfix_exact/d18d32b23255065ce62f91fc9821a1d88a2010df89e081e3a4cbdf31cad1406b.obj": {
+      "sha256": "d18d32b23255065ce62f91fc9821a1d88a2010df89e081e3a4cbdf31cad1406b",
+      "bytes": 11073
+    },
     "meshes/boundaryfix_exact/dd474f932d933c7f19b1427ab848dba39ddd5944d06882e0996f5907a1c3a84e.stl": {
       "sha256": "dd474f932d933c7f19b1427ab848dba39ddd5944d06882e0996f5907a1c3a84e",
       "bytes": 516184
+    },
+    "meshes/boundaryfix_exact/e658910cac8d7ac7702ec98a829d051594f407f1ba209da4834406422daea716.obj": {
+      "sha256": "e658910cac8d7ac7702ec98a829d051594f407f1ba209da4834406422daea716",
+      "bytes": 27598
     },
     "meshes/boundaryfix_exact/eac2fb6f67be2bf45c8847b7b228a01147df5275cd2769f08f4be18798eacd70.stl": {
       "sha256": "eac2fb6f67be2bf45c8847b7b228a01147df5275cd2769f08f4be18798eacd70",
@@ -131,6 +239,10 @@
     "meshes/boundaryfix_exact/f0f14494856f0b384b36ee3961d8f0e1a668a7a36c7958f69dcbba8d4830d803.stl": {
       "sha256": "f0f14494856f0b384b36ee3961d8f0e1a668a7a36c7958f69dcbba8d4830d803",
       "bytes": 516184
+    },
+    "meshes/boundaryfix_exact/fcc3593f6f4b0539c6fb426014b18be7c839f35800dbb8969bba06eca7dbf1aa.obj": {
+      "sha256": "fcc3593f6f4b0539c6fb426014b18be7c839f35800dbb8969bba06eca7dbf1aa",
+      "bytes": 13996
     },
     "meshes/cameras/d405_visual_m.stl": {
       "sha256": "d66438baed3467276573a5a7ad13b7f1c88f2c70d845da695ce7f715821ba863",
@@ -319,10 +431,6 @@
     "meshes/right_adapter_single_convex.obj": {
       "sha256": "63848d3fe80b3e7cdd512f71ea278d85464612bdbaef983e1bde4f0cbfdbe188",
       "bytes": 187341
-    },
-    "meshes/right_palm_single_convex.obj": {
-      "sha256": "71715d41bd8419639a3ab1903ce809ed25c121daae0eb31f59d0c112d294c887",
-      "bytes": 373549
     },
     "meshes/tron2/base_2_Link.STL": {
       "sha256": "0949b4cc8fe9908e42cadbd700b20248b813e216e37c36b4c5ed3c05f2132659",
@@ -583,21 +691,57 @@
       "composite_inertia_parallel_axis": true
     }
   },
-  "verification_scope": "Asset publication, structural and MuJoCo import checks; no training or policy execution in this release.",
+  "verification_scope": "Exact current physicsfix training asset publication; topology, inertial, mesh and importer checks. No policy success claim.",
   "publication_verification": {
     "urdf_link_count": 38,
     "urdf_joint_count": 37,
     "urdf_revolute_count": 28,
     "urdf_fixed_count": 9,
-    "urdf_collision_elements": 31,
+    "urdf_collision_elements": 58,
     "mujoco_nq": 28,
     "mujoco_njnt": 28,
-    "mujoco_collision_shape_count": 31,
+    "mujoco_collision_shape_count": 58,
     "right_flange_collision_shapes": 1,
-    "right_palm_collision_shapes": 1,
+    "right_palm_collision_shapes": 28,
     "right_fk_comparison_poses": 10,
     "right_fk_comparison_tolerance": 1e-09,
-    "physics_stepped": false
+    "physics_stepped": false,
+    "collision_count": 58,
+    "mujoco_preview_inertia_balancing": true,
+    "mujoco_ngeom": 136,
+    "mujoco_collision_geoms": 58
   },
-  "asset_introduced_release": "1.6.0"
+  "asset_introduced_release": "1.6.0",
+  "physicsfix": {
+    "patched_fingertip_links": [
+      "right_thumb_tip_Link",
+      "right_index_tip_Link",
+      "right_middle_tip_Link",
+      "right_ring_tip_Link",
+      "right_little_tip_Link"
+    ],
+    "fingertip_mass_kg": 0.001,
+    "fingertip_diagonal_inertia_kg_m2": [
+      1e-10,
+      1e-10,
+      1e-09
+    ],
+    "palm_collision_elements": 28,
+    "flange_collision_elements": 1,
+    "moving_joints": 28,
+    "joint_definitions_unchanged": true,
+    "historical_derivation_report_scope": "Pre-physicsfix reduction report, does not include the additional 0.005 kg fingertip mass or restored palm collisions",
+    "remaining_right_palm_inertial": "No inertial block, exactly as in current training asset",
+    "training_lineage": {
+      "reference_sha256": "4e11e119a13a751961607273916eda664f2dc8d3a5f91444262bc30e6030ded1",
+      "arm_ik_sha256": "fd239c81643b201109ce33b9779cda7d2b55aee42f5d77e1cb4e38faf4964017",
+      "base_pos_m": [
+        -0.22,
+        0.60231100353792,
+        0.957
+      ],
+      "table_top_z_m": 0.507,
+      "base_table_gap_m": 0.45
+    }
+  }
 }

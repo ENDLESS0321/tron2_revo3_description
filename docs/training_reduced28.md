@@ -1,7 +1,7 @@
-# Reduced 28-DoF training URDF (1.7.0)
+# Reduced 28-DoF training URDF (1.7.1)
 
-`assets/assembly_rl_convex.urdf` is now an exact, byte-for-byte copy of the
-supplied `assembly_bilateral_axis180_reduced28.urdf`. The path is retained for
+`assets/assembly_rl_convex.urdf` is an exact, byte-for-byte copy of the supplied
+`assembly_bilateral_axis180_reduced28_physicsfix.urdf`. The path is retained for
 existing training configurations, but its topology has changed: it is no
 longer the 58-DoF, bilateral flange-only simplification shipped in 1.5.0.
 The unchanged `assets/assembly.urdf` remains the full 58-DoF assembly model.
@@ -14,10 +14,9 @@ The unchanged `assets/assembly.urdf` remains the full 58-DoF assembly model.
 | URDF joints | 37: 28 revolute and 9 fixed |
 | Controlled chain | Right arm: 7 joints; right Revo3 hand: 21 joints |
 | Visual geometries | 78 |
-| Collision elements | 31, on 31 links |
-| Referenced mesh files | 101; 31 newly added to this repository |
-| Right flange collision | One convex mesh on `right_adapter_link` |
-| Right palm collision | One convex mesh on `right_hand_base_link` |
+| Collision elements | 58, on 31 links |
+| Referenced mesh files | 128 unique files; 28 palm-component meshes added and the former single palm convex mesh removed |
+| Collision distribution | Base and 7 arm links: 8; palm components: 28; finger components: 21; flange: 1 |
 
 The seven right-arm joint names, in proximal-to-distal order, are
 `proximal_pitch_R_Joint`, `proximal_roll_R_Joint`, `proximal_yaw_R_Joint`,
@@ -49,17 +48,27 @@ camera frames or its MJCF camera setup exist in this URDF.
 
 ## Collision assets and coordinates
 
-The supplied model uses boundaryfix collision meshes, a single right-flange
-convex mesh, and a single right-palm convex mesh. All 101 mesh references are
-relative to `assets/` and are shipped in the repository, including the 31 new
-files. Mesh bytes are copied without re-export or renaming. The original
-URDF bytes and their references are preserved exactly. Convex flange/palm
-geometry may fill holes and concavities; use this model's collision boundaries
-when checking contacts and clearance.
+The physicsfix model restores 28 palm-component collision meshes alongside the
+single flange collision and detailed arm/finger collisions. Its 128 unique mesh
+references are relative to `assets/`; compared with 1.7.0, 28 palm meshes were
+added and the one single-palm convex mesh was removed. This changes collision
+geometry, so physics behavior is not identical to the previous training model
+or the full assembly. The historical `rl_convex` filename is retained for
+configuration compatibility even though the palm now uses 28 components.
+
+Five fingertip links have recovered inertials: each has mass 0.001 kg, zero COM,
+and diagonal inertia `(1e-10, 1e-10, 1e-9) kg·m²`. The palm collision change and
+these inertial changes were made together; their separate causal effects have
+not been isolated. `right_palm` remains a placeholder without an inertial and
+therefore still differs from the full-assembly baseline. Do not interpret the
+historical derivation report's mass-conservation result as applying to this
+physicsfix artifact.
 
 `world_to_base` stays at `[0, 0, 1.20035]` m. The default scene table top is
-0.75035 m, so its separation from the base origin is 0.45 m. The training URDF
-contains no table or manipulated object. The default `scene.xml` continues to
+0.75035 m, so its separation from the base origin is 0.45 m. The current
+training setup uses a base Z of 0.957 m and table top of 0.507 m, also separated
+by 0.45 m. The training URDF contains no table or manipulated object. The default
+`scene.xml` continues to
 represent the detailed 58-DoF assembly, not this reduced training articulation.
 For training, import this URDF and explicitly configure the world/base/table
 layout; avoid applying the URDF's world offset a second time. Reuse of a 45 cm
@@ -70,37 +79,48 @@ layout does not establish that an arbitrary old IK sidecar matches this asset.
 Published URDF SHA256:
 
 ```text
-56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313
+2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034
 ```
 
 `assets/training_reduced28.json` records the supplied filename, replacement hash,
-per-mesh hashes and the supplied derivation report. That report traces this
-model to the single-palm boundaryfix predecessor, with 58 moving joints reduced
-to 28. It reports mass conservation error of about 1.28e-11 kg, global inertia
-tensor error about 6.38e-11, and zero right-chain FK error over ten tested poses.
-These are source-derivation results, not a new RL success evaluation.
+per-mesh hashes and derivation provenance. Historical source-derivation metrics
+describe an earlier single-palm predecessor; they do not establish mass or
+inertia conservation for this physicsfix model. The published physicsfix URDF
+is currently being used by a four-GPU 4090D training run. Training is ongoing;
+this publication does not claim reward, performance, grasp or physical-task
+success, and the simultaneous collision/inertial edits do not isolate causality.
 
 Release tests independently verify the exact published hash, referenced meshes,
 28-joint topology, retained right-joint definitions and right-chain FK relative
-to the full assembly, and MuJoCo import with one collision shape on the right
-flange and palm. MuJoCo loads 28 generalized positions, 28 joints and 31 collision
-shapes. Other engines may fuse fixed links or interpret collision meshes
-differently and need their own import inspection.
+to the full assembly, and MuJoCo preview compilation with 58 collision shapes.
+The preview loader balances inertia in memory to allow a kinematic display; raw
+URDF loading is rejected by MuJoCo. Other engines may fuse fixed links or
+interpret collision meshes differently and need their own import inspection.
 
 ## Use and migration
 
 ```python
-import mujoco
-model = mujoco.MjModel.from_xml_path("assets/assembly_rl_convex.urdf")
+import sys
+sys.path.insert(0, "viewers")
+from _runtime import load_training_model
+model = load_training_model()
 assert model.nq == 28
 ```
+
+MuJoCo cannot load the raw URDF directly because the supplied fingertip inertias
+do not satisfy its inertia triangle check. The preview loader enables
+`balanceinertia` on an in-memory `MjSpec` before compiling, so it can display the
+model without changing the on-disk URDF or stepping physics. Compilation adjusts
+inertias; this preview therefore does not establish that MuJoCo dynamics match
+the Isaac training model.
 
 Run release verification with `.venv/bin/python -m unittest discover -s tests -v`.
 Close/reimport any simulator that cached the older model. Update action mappings,
 body/frame references and robot configuration for this 28-joint topology; bind
 IK/H5/runtime configuration to this URDF hash. Matching tensor sizes alone does
-not establish checkpoint compatibility. This publication launches no training
-and establishes no reward, performance, grasp or physical-success result.
+not establish checkpoint compatibility. The model is in an ongoing four-GPU
+4090D training run; this publication makes no claim of reward, performance,
+grasp or physical-task success.
 
 The older bilateral convex builder and its old output report/meshes were removed
 from the current tree to prevent it overwriting this supplied reduced model.
@@ -108,7 +128,7 @@ They remain available in the 1.5.0 Git history. The supplied reduced model is
 published as an artifact; this repository does not claim to regenerate its
 boundaryfix derivation with the removed flange-only builder.
 
-## Repository preview and integrity checks (1.7.0)
+## Repository preview and integrity checks (1.7.1)
 
 ```bash
 ./viewers/view_assembly.sh --model training
