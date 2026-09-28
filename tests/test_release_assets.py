@@ -53,6 +53,42 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertAlmostEqual(urdf_base_z, scene_base_z)
         self.assertAlmostEqual(urdf_base_z - table_top_z, 0.45)
 
+    def test_exact_variant_and_default_only_differ_in_world_height(self):
+        variant = ET.parse(ASSETS / "assembly_bilateral_axis180.urdf").getroot()
+        self.assertAlmostEqual(float(variant.find("joint[@name='world_to_base']/origin").get("xyz").split()[2]), 1.20035)
+        variant.find("joint[@name='world_to_base']/origin").set("xyz", self.joint("world_to_base").find("origin").get("xyz"))
+        self.assertEqual(ET.tostring(variant), ET.tostring(self.urdf))
+
+    def test_bilateral_mounts_preserve_finger_axis_and_mating_positions(self):
+        for side, expected_palm in (("left", [1, 0, 0]), ("right", [1, 0, 0])):
+            adapter = self.joint(f"{side}_adapter_mount").find("origin")
+            hand = self.joint(f"{side}_hand_base_joint").find("origin")
+            np.testing.assert_allclose(np.fromstring(adapter.get("xyz"), sep=" "), [-0.0317, 0, -0.0812])
+            combined = Rotation.from_euler("xyz", np.fromstring(adapter.get("rpy"), sep=" ")).as_matrix() @ Rotation.from_euler("xyz", np.fromstring(hand.get("rpy"), sep=" ")).as_matrix()
+            np.testing.assert_allclose(combined[:, 2], [0, 0, -1], atol=1e-10)
+            np.testing.assert_allclose(combined[:, 0], expected_palm, atol=1e-10)
+
+    def test_urdf_and_scene_mount_poses_match(self):
+        models = [mujoco.MjModel.from_xml_path(str(ASSETS / filename))
+                  for filename in ("assembly.urdf", "scene.xml")]
+        states = [mujoco.MjData(model) for model in models]
+        # Exercise both zero and nonzero arm poses using joint names, not ordering.
+        for angle in (0.0, 0.2):
+            for model, data in zip(models, states):
+                for joint_id in range(model.njnt):
+                    name = mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_JOINT, joint_id)
+                    if name and any(part in name for part in ("shoulder", "elbow", "wrist")):
+                        data.qpos[model.jnt_qposadr[joint_id]] = angle
+                mujoco.mj_forward(model, data)
+            for side in ("left", "right"):
+                for suffix in ("adapter_link", "hand_base_link", "wrist_camera_mount_frame"):
+                    name = f"{side}_{suffix}"
+                    ids = [mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, name)
+                           for model in models]
+                    self.assertTrue(all(body_id >= 0 for body_id in ids))
+                    np.testing.assert_allclose(states[0].xpos[ids[0]], states[1].xpos[ids[1]], atol=1e-9)
+                    np.testing.assert_allclose(states[0].xmat[ids[0]], states[1].xmat[ids[1]], atol=1e-9)
+
     def test_reference_palette_is_applied(self):
         self.assertEqual(self.color("base_Link"), "0.15 0.16 0.17 1")
         self.assertEqual(self.color("left_adapter_link"), "0.42 0.20 0.68 1")
@@ -102,8 +138,8 @@ class ReleaseAssetTests(unittest.TestCase):
         expected_urdf_rpy = {
             "left_hand_base_joint": "-1.57079632679 -1.57079632679 0",
             "right_hand_base_joint": "-1.57079632679 1.57079632679 0",
-            "left_wrist_camera_reference_joint": "1.57079632679 0 -1.57079632679",
-            "right_wrist_camera_reference_joint": "1.57079632679 0 1.57079632679",
+            "left_wrist_camera_reference_joint": "1.57079632679 0 1.57079632679979",
+            "right_wrist_camera_reference_joint": "1.57079632679 0 -1.57079632679979",
         }
         for joint_name, expected_rpy in expected_urdf_rpy.items():
             with self.subTest(joint=joint_name):
@@ -122,12 +158,14 @@ class ReleaseAssetTests(unittest.TestCase):
         expected_scene_quat = {
             "left_hand_base_link": "0.5 -0.5 -0.5 -0.5",
             "right_hand_base_link": "0.5 -0.5 0.5 0.5",
-            "left_wrist_camera_mount_frame": "0.5 0.5 -0.5 -0.5",
-            "right_wrist_camera_mount_frame": "0.5 0.5 0.5 0.5",
+            "left_wrist_camera_mount_frame": "0.5 0.5 0.5 0.5",
+            "right_wrist_camera_mount_frame": "0.5 0.5 -0.5 -0.5",
         }
         for body_name, expected_quat in expected_scene_quat.items():
             with self.subTest(body=body_name):
-                self.assertEqual(self.scene_body(body_name).get("quat"), expected_quat)
+                actual = np.fromstring(self.scene_body(body_name).get("quat"), sep=" ")
+                expected = np.fromstring(expected_quat, sep=" ")
+                np.testing.assert_allclose(actual, expected, atol=1e-10)
 
         for body_name in (
             "left_wrist_camera_mount_frame",
@@ -138,8 +176,8 @@ class ReleaseAssetTests(unittest.TestCase):
 
         original_offset = np.array([-0.0317, 0.0, -0.0753])
         original_camera_rpy = {
-            "left": [np.pi / 2, 0.0, np.pi / 2],
-            "right": [np.pi / 2, 0.0, -np.pi / 2],
+            "left": [np.pi / 2, 0.0, -np.pi / 2],
+            "right": [np.pi / 2, 0.0, np.pi / 2],
         }
         for model_path in (ASSETS / "assembly.urdf", ASSETS / "scene.xml"):
             model = mujoco.MjModel.from_xml_path(str(model_path))

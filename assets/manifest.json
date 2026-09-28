@@ -1,16 +1,16 @@
 {
   "schema": "final_model_assets_v2",
-  "release": "1.3.1",
+  "release": "1.4.0",
   "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
   "geometry_changed_during_cleanup": false,
   "release_geometry_changed": true,
-  "source_urdf_sha256": "ce0cd7f00d6f9add64f803cb617ea1b0b68e557ac33ca383e119980f4f8abc85",
-  "source_scene_sha256": "107eca40ce609a83618c1ff3c48f3be4a2363da535b8da6d7312391806481730",
+  "source_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
+  "source_scene_sha256": "65a4a3b4a811cf33477bbf0d8868019c0799ed4fdbab4503d13013e34d2b3a5d",
   "referenced_mesh_count": 265,
   "files": {
     "assets/assembly.urdf": {
-      "sha256": "1e61561e51384ccd48b1636fa7eefbc07cda685ad3f24929d99a1d06509617cd",
-      "bytes": 120072
+      "sha256": "9e89d7b689b54be6c30b8b1d64384b400d8b11ae266077872b5ce4de66539ab2",
+      "bytes": 120084
     },
     "assets/cad/adapters/left.3mf": {
       "sha256": "6574f0fb8c4839b1c3fe1b60d73c44ec4e9b07ffbaf5f26c892ecad0ba0f6898",
@@ -1109,8 +1109,16 @@
       "bytes": 2877
     },
     "assets/scene.xml": {
-      "sha256": "65a4a3b4a811cf33477bbf0d8868019c0799ed4fdbab4503d13013e34d2b3a5d",
-      "bytes": 119389
+      "sha256": "d8ccf7ad8227a3ef9bd613ced7c9520ac371947c559b3875cfab596af8d9dc88",
+      "bytes": 119613
+    },
+    "assets/assembly_bilateral_axis180.urdf": {
+      "sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
+      "bytes": 120088
+    },
+    "assets/mount_rotation.json": {
+      "sha256": "89a1eb216e1305c7ee69591bc6cd9d272b6e0e50d4f7e936ee57fb9c2c637321",
+      "bytes": 3178
     }
   },
   "upstream": {
@@ -1125,6 +1133,11 @@
     "source_path": "realsense2_description/meshes/d455.stl",
     "source_sha256": "47e8321db7cb42291810c69329ab10b601108d651dfcac28bfc12469fa142fa6",
     "source_units": "millimeter",
-    "urdf_scale": [0.001, 0.001, 0.001]
-  }
+    "urdf_scale": [
+      0.001,
+      0.001,
+      0.001
+    ]
+  },
+  "mount_rotation_provenance": "assets/mount_rotation.json"
 }

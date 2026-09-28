@@ -1,0 +1,121 @@
+{
+  "release": "1.4.0",
+  "rotation_angle_deg": 180,
+  "rotation_axis_in_each_wrist_roll_link": [
+    0,
+    0,
+    1
+  ],
+  "longitudinal_axis_line_point_m": [
+    -0.0317,
+    0,
+    0
+  ],
+  "mount_root_positions_preserved": true,
+  "hand_flange_connections_preserved": true,
+  "actuated_limits_preserved": true,
+  "reference_urdf_sha256": "1e61561e51384ccd48b1636fa7eefbc07cda685ad3f24929d99a1d06509617cd",
+  "exact_user_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
+  "default_urdf_sha256": "9e89d7b689b54be6c30b8b1d64384b400d8b11ae266077872b5ce4de66539ab2",
+  "exact_variant_world_to_base_z_m": 1.20035,
+  "default_world_to_base_z_m": 1.2,
+  "changes": [
+    {
+      "joint": "left_adapter_mount",
+      "parent": "wrist_roll_L_Link",
+      "child": "left_adapter_link",
+      "xyz_unchanged_m": [
+        -0.0317,
+        0.0,
+        -0.0812
+      ],
+      "previous_rpy_rad": [
+        -1.57079632679,
+        0.0,
+        1.57079632679
+      ],
+      "new_rpy_rad": [
+        -1.57079632679,
+        0.0,
+        -1.57079632679979
+      ]
+    },
+    {
+      "joint": "right_adapter_mount",
+      "parent": "wrist_roll_R_Link",
+      "child": "right_adapter_link",
+      "xyz_unchanged_m": [
+        -0.0317,
+        0.0,
+        -0.0812
+      ],
+      "previous_rpy_rad": [
+        -1.57079632679,
+        0.0,
+        -1.57079632679
+      ],
+      "new_rpy_rad": [
+        -1.57079632679,
+        0.0,
+        1.57079632679979
+      ]
+    },
+    {
+      "joint": "left_wrist_camera_reference_joint",
+      "parent": "wrist_roll_L_Link",
+      "child": "left_wrist_camera_mount_frame",
+      "xyz_unchanged_m": [
+        -0.0317,
+        -1.31006316906e-18,
+        -0.0753
+      ],
+      "previous_rpy_rad": [
+        1.57079632679,
+        0.0,
+        -1.57079632679
+      ],
+      "new_rpy_rad": [
+        1.57079632679,
+        0.0,
+        1.57079632679979
+      ]
+    },
+    {
+      "joint": "right_wrist_camera_reference_joint",
+      "parent": "wrist_roll_R_Link",
+      "child": "right_wrist_camera_mount_frame",
+      "xyz_unchanged_m": [
+        -0.0317,
+        -1.31006316906e-18,
+        -0.0753
+      ],
+      "previous_rpy_rad": [
+        1.57079632679,
+        0.0,
+        1.57079632679
+      ],
+      "new_rpy_rad": [
+        1.57079632679,
+        0.0,
+        -1.57079632679979
+      ]
+    }
+  ],
+  "zero_pose_checks": {
+    "left": {
+      "hand_base_position_difference_m": 2.335976784920027e-13,
+      "finger_axis_difference": 1.3849644750803001e-11,
+      "palm_normals_dot": -1.0000000000000002,
+      "camera_relative_to_hand_transform_difference": 6.480926906249351e-15
+    },
+    "right": {
+      "hand_base_position_difference_m": 2.3358799578017635e-13,
+      "finger_axis_difference": 1.3849644750803001e-11,
+      "palm_normals_dot": -1.0000000000000002,
+      "camera_relative_to_hand_transform_difference": 6.467049118441537e-15
+    }
+  },
+  "design_rationale": "Seek greater joint-limit headroom for the intended tabletop palm-down, fingers-forward posture; physical joint limits are unchanged.",
+  "joint_limit_margin_comparison": "not evaluated in this release",
+  "physics_stepped": false
+}

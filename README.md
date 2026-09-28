@@ -13,6 +13,15 @@ design iterations, previous versions, reports, and original CAD are preserved
 on `dev`. Running the viewers does not require CAD software, ROS, development
 directories, or additional model downloads.
 
+## Mount update (1.4.0)
+
+Both hand/flange assemblies and both wrist cameras now turn 180° around the
+forearm longitudinal centerline. The aim is greater joint-limit headroom for
+tabletop palm-down, fingers-forward operation; physical limits stay unchanged.
+See [rotation details, model provenance and previews](docs/mount_rotation_1.4.0.md).
+The default URDF and MuJoCo scene are updated together; the exact generated
+URDF is also supplied as `assets/assembly_bilateral_axis180.urdf`.
+
 ## Installation
 
 Tested on Ubuntu 22.04 with Python 3.10. Run these commands from the repository

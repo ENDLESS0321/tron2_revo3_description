@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.4.0] - 2026-09-28
+
+### Features
+
+- Rotate both hand/flange and wrist-camera root orientations 180 degrees around
+  each forearm longitudinal centerline; synchronize the default URDF and MJCF.
+- Include the exact approved URDF, rotation provenance and paired English/Chinese
+  documentation with zero-pose and forward-table previews.
+
+### Design Rationale
+
+- Seek greater joint-limit headroom for palm-down, fingers-forward tabletop
+  operation while preserving hand-to-flange connections and physical limits.
+- Keep the default base placement and its 45 cm table-top separation consistent
+  with 1.3.1; retain the exact generated URDF separately for provenance.
+
+### Notes & Caveats
+
+- The exact variant inherits a 0.35 mm higher world placement than the default.
+- Larger joint-limit margin and feasible workspace have not been quantitatively
+  evaluated for this installation. Recompute IK and dependent calibration.
+- Previews show kinematics, without physics stepping.
+
 ## [1.3.1] - 2026-09-26
 
 ### Features
