@@ -1,6 +1,6 @@
 {
   "schema": "final_model_assets_v2",
-  "release": "1.4.1",
+  "release": "1.5.0",
   "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
   "geometry_changed_during_cleanup": false,
   "release_geometry_changed": true,
@@ -1115,6 +1115,22 @@
     "assets/mount_rotation.json": {
       "sha256": "11c284301e1a22fd9c046e672cdc1f34c640a415a72740be50427cffdc1c9714",
       "bytes": 3303
+    },
+    "assets/assembly_rl_convex.urdf": {
+      "sha256": "c6a7759e1804aafd9e9035f1f9157dcad30e8b4736974e2c9716d44468f1dcdb",
+      "bytes": 101743
+    },
+    "assets/flange_convex.json": {
+      "sha256": "678bedc9157c28b0bdbcc9b6541f4821431fee3734e07fbcd4d02997fe21e424",
+      "bytes": 1874
+    },
+    "assets/meshes/adapter_rl/left_flange_convex.stl": {
+      "sha256": "06cb3740a680cc58ad00b44ebd37831af11fddf183b66d4ec0d94a33e560f567",
+      "bytes": 277184
+    },
+    "assets/meshes/adapter_rl/right_flange_convex.stl": {
+      "sha256": "86f790d04878886e6f9c199461dd2ce5c4f40da0f86faab848ea3841b95ce97b",
+      "bytes": 276684
     }
   },
   "upstream": {
@@ -1135,5 +1151,7 @@
       0.001
     ]
   },
-  "mount_rotation_provenance": "assets/mount_rotation.json"
+  "mount_rotation_provenance": "assets/mount_rotation.json",
+  "training_urdf": "assets/assembly_rl_convex.urdf",
+  "training_collision_provenance": "assets/flange_convex.json"
 }

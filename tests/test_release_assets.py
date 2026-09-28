@@ -97,6 +97,37 @@ class ReleaseAssetTests(unittest.TestCase):
                     np.testing.assert_allclose(states[0].xpos[ids[0]], states[1].xpos[ids[1]], atol=1e-9)
                     np.testing.assert_allclose(states[0].xmat[ids[0]], states[1].xmat[ids[1]], atol=1e-9)
 
+    def test_training_urdf_changes_only_flange_collision_geometry(self):
+        training = ET.parse(ASSETS / "assembly_rl_convex.urdf").getroot()
+        assembly = ET.parse(ASSETS / "assembly.urdf").getroot()
+        for side in ("left", "right"):
+            original = assembly.find(f"link[@name='{side}_adapter_link']")
+            simplified = training.find(f"link[@name='{side}_adapter_link']")
+            self.assertEqual(len(original.findall("collision")), 48)
+            self.assertEqual(len(simplified.findall("collision")), 1)
+            mesh_node = simplified.find("collision/geometry/mesh")
+            mesh = trimesh.load_mesh(ASSETS / mesh_node.get("filename"), process=True)
+            self.assertTrue(mesh.is_convex)
+            self.assertTrue(mesh.is_watertight)
+            for link in (original, simplified):
+                for collision in link.findall("collision"):
+                    link.remove(collision)
+        def structure(node):
+            return (node.tag, node.attrib, (node.text or "").strip(),
+                    [structure(child) for child in node])
+        self.assertEqual(structure(assembly), structure(training))
+        for mesh in training.findall(".//mesh"):
+            self.assertTrue((ASSETS / mesh.get("filename")).is_file())
+
+    def test_training_import_has_one_collision_shape_per_flange(self):
+        model = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly_rl_convex.urdf"))
+        self.assertEqual(model.nq, 58)
+        for side in ("left", "right"):
+            body_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, f"{side}_adapter_link")
+            self.assertGreaterEqual(body_id, 0)
+            collisions = (model.geom_bodyid == body_id) & ((model.geom_contype != 0) | (model.geom_conaffinity != 0))
+            self.assertEqual(int(collisions.sum()), 1)
+
     def test_reference_palette_is_applied(self):
         self.assertEqual(self.color("base_Link"), "0.15 0.16 0.17 1")
         self.assertEqual(self.color("left_adapter_link"), "0.42 0.20 0.68 1")

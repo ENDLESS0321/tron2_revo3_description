@@ -1,4 +1,4 @@
-# Bilateral hand and wrist-camera mount rotation (1.4.1)
+# Bilateral hand and wrist-camera mount rotation (1.5.0)
 
 Both hand/flange assemblies and both wrist-camera assemblies are rotated 180°
 from the previous model around the forearm longitudinal centerline. In each
@@ -22,8 +22,8 @@ Previous evaluations using different mount directions do not validate this relea
 ## Files and coordinates
 
 - `assets/assembly.urdf`: the approved `assembly_bilateral_axis180.urdf`
-  directly replaces the canonical model byte-for-byte. This is the only robot
-  URDF shipped by this release; all existing viewers keep using this path.
+  directly replaces the canonical model byte-for-byte. This is the default
+  assembly URDF; all existing viewers keep using this path.
   SHA256 `537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44`.
 - `assets/scene.xml`: matching MuJoCo mount orientations and base Z = 1.20035 m.
   The work-table center is at `[0.72, 0, 0.72535]` m and its half-height is
@@ -106,16 +106,17 @@ recomputation for the changed mount, while internal camera frames stay intact.
 
 For RL and simulation training, simplify **each flange to one rigid link and
 one collision shape**: one for the left flange and one for the right flange.
-This is a requirement for the training asset, not a claim that the current
-assembly model has already been simplified. The published assembly currently
+The derived `assets/assembly_rl_convex.urdf` now satisfies this requirement;
+the default assembly keeps its detailed collision geometry. The published assembly currently
 has one `left_adapter_link` and one `right_adapter_link`, but each contains
-48 URDF collision elements. Thus the collision-count requirement remains to
-be implemented in a derived training asset.
+48 URDF collision elements. The derived training URDF replaces those 48 elements with one convex mesh
+per flange.
 
 Keep each flange's parent mounting transform and hand-to-flange fixed transform
 exactly as defined here. Consolidate only fixed flange parts, preserving the
-external occupied envelope, units, total mass, center of mass and equivalent
-inertia; retain the original visual mesh if desired. Do not merge across
+original collision geometry inside the new convex envelope, as well as units,
+total mass, center of mass and equivalent inertia; the convex envelope may fill
+holes and concavities. Retain the original visual mesh if desired. Do not merge across
 actuated arm or finger joints. A single convex collision mesh or conservative
 primitive is preferable for this single-shape requirement, subject to clearance
 checks. Merely concatenating meshes or enabling fixed-joint merging does not
@@ -129,5 +130,47 @@ contacts with the assembly reference. A coarse convex approximation may fill
 holes or concavities and change clearance, so it must not silently become the
 reference for a larger feasible-workspace claim. Bind the derived training
 URDF and collision asset hashes to the training configuration, and regenerate
-IK/collision checks for that asset. The current assembly remains the detailed
-geometry reference; this release does not include the simplified training model.
+IK/collision checks for that asset. The default assembly remains the detailed geometry reference. The new training
+URDF is included; MuJoCo import confirms one collision shape on each flange,
+while other simulation engines require their own importer check.
+
+## Included single-convex training model (1.5.0)
+
+Load `assets/assembly_rl_convex.urdf` for the flange-simplified model. Its source
+is the exact canonical `assets/assembly.urdf`; the original assembly stays
+byte-for-byte unchanged. Each flange already has one rigid link, so only its
+48 collision elements are replaced by one element. No links or joints are
+removed, and visual geometry, mass, center of mass, inertia, installation
+transforms, world origin and joint limits are preserved.
+
+The two new meshes are `assets/meshes/adapter_rl/left_flange_convex.stl` and
+`assets/meshes/adapter_rl/right_flange_convex.stl`, in meters. The builder reads
+all 48 meshes on each flange, applies any mesh scale and collision origin, then
+computes the convex hull of their combined vertices in that flange's link frame.
+It replaces the collision origins with identity because the vertices are already
+in link coordinates. These are separate left/right hulls, not one hull combining
+the two arms. Each output is a closed convex surface enclosing all source
+collision vertices (maximum outside-plane error below 1e-8 m).
+
+Rebuild from the repository root with the installed requirements:
+
+```bash
+.venv/bin/python tools/build_flange_convex.py
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+`assets/flange_convex.json` records source/output hashes, mesh hashes, collision
+counts, bounds, hull volume and geometry validation. MuJoCo loads the model with
+58 generalized positions and one collision shape per flange. Structural tests
+verify that changes are confined to the flange collision geometry; the default
+assembly hash remains the approved hash. The rebuild script regenerates the
+training files and report; intentional geometry changes also require refreshing
+`assets/manifest.json` checksums before the viewer integrity check can pass.
+
+The convex envelope fills flange holes and concavities. It therefore reduces
+collision-shape count but can increase the occupied collision region. It does
+not prove faster training, larger workspace, successful grasping or physical
+stability. Collision clearance and task-specific contact evaluation must be
+redone with this exact training asset. The default `scene.xml` still represents
+the detailed assembly; importing the training URDF is required to use the new
+hulls. No simplified MJCF scene is supplied in this release.

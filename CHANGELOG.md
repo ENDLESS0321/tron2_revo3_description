@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.5.0] - 2026-09-28
+
+### Features
+
+- Add `assets/assembly_rl_convex.urdf`, derived from the exact approved assembly,
+  with one closed convex collision mesh per flange instead of 48 shapes.
+- Include left/right hull meshes, a reproducible builder, collision provenance
+  and structural/import checks with paired documentation.
+
+### Design Rationale
+
+- Reduce flange collision-shape count for RL and simulation while preserving
+  visual geometry, inertials, all joints and mounting transforms.
+- Retain the approved model as the canonical detailed assembly.
+
+### Notes & Caveats
+
+- Convex envelopes fill holes/concavities and may reduce collision clearance.
+- MuJoCo import is verified; other simulators need their own shape-count check.
+- The default MJCF uses the detailed geometry. No training-speed or task-success
+  benchmark is claimed.
+
 ## [1.4.1] - 2026-09-28
 
 ### Features

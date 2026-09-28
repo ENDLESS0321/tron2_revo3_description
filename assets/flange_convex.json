@@ -1,0 +1,60 @@
+{
+  "source_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
+  "units": "meters",
+  "method": "convex hull of all flange collision vertices in each flange link frame",
+  "inertials_preserved": true,
+  "visuals_preserved": true,
+  "joints_preserved": true,
+  "physics_stepped": false,
+  "flanges": {
+    "left": {
+      "link": "left_adapter_link",
+      "source_collision_count": 48,
+      "output_collision_count": 1,
+      "mesh": "meshes/adapter_rl/left_flange_convex.stl",
+      "mesh_sha256": "06cb3740a680cc58ad00b44ebd37831af11fddf183b66d4ec0d94a33e560f567",
+      "bounds_m": [
+        [
+          -0.041860707104206085,
+          -0.010813509114086628,
+          -0.028659777715802193
+        ],
+        [
+          0.04186108335852623,
+          0.03631050884723663,
+          0.028659777715802193
+        ]
+      ],
+      "hull_volume_m3": 0.0001717406757592931,
+      "hull_faces": 5542,
+      "watertight": true,
+      "convex": true,
+      "max_source_vertex_outside_hull_m": 1.3877787807814457e-17
+    },
+    "right": {
+      "link": "right_adapter_link",
+      "source_collision_count": 48,
+      "output_collision_count": 1,
+      "mesh": "meshes/adapter_rl/right_flange_convex.stl",
+      "mesh_sha256": "86f790d04878886e6f9c199461dd2ce5c4f40da0f86faab848ea3841b95ce97b",
+      "bounds_m": [
+        [
+          -0.041860707104206085,
+          -0.010813509114086628,
+          -0.028659777715802193
+        ],
+        [
+          0.04186108335852623,
+          0.03631050884723663,
+          0.028659777715802193
+        ]
+      ],
+      "hull_volume_m3": 0.0001717401407038359,
+      "hull_faces": 5532,
+      "watertight": true,
+      "convex": true,
+      "max_source_vertex_outside_hull_m": 1.3877787807814457e-17
+    }
+  },
+  "output_urdf_sha256": "c6a7759e1804aafd9e9035f1f9157dcad30e8b4736974e2c9716d44468f1dcdb"
+}
