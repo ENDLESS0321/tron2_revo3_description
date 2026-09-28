@@ -8,22 +8,24 @@ and silver Revo3 references, with red/cyan accents and purple hand flanges. The
 three-camera viewer renders RGB and metric depth from a head-mounted D455 and two
 wrist-mounted D405 cameras.
 
-`main` contains the final model assets and viewing tools. Development scripts,
-design iterations, previous versions, reports, and original CAD are preserved
-on `dev`. Running the viewers does not require CAD software, ROS, development
+`main` contains the full assembly, reduced training asset, viewing tools and
+provenance metadata. `dev` preserves the earlier development snapshot and CAD
+inputs; released revisions remain available in Git history.
+Running the viewers does not require CAD software, ROS, development
 directories, or additional model downloads.
 
-## Mount update (1.5.0)
+## Mount configuration (1.7.0)
 
 Both hand/flange assemblies and both wrist cameras now turn 180° around the
 forearm longitudinal centerline. The aim is greater joint-limit headroom for
 tabletop palm-down, fingers-forward operation; physical limits stay unchanged.
 See [rotation details, model provenance and previews](docs/mount_rotation.md).
 The approved generated URDF directly replaces `assets/assembly.urdf` byte-for-byte.
-All viewers use it by default; the redundant variant file has been removed.
+Full-assembly URDF imports use this canonical path; the full preview and cameras
+load its matching `scene.xml`. Training preview loads the reduced URDF.
 The MuJoCo scene is synchronized, retaining the 45 cm base-to-table-top gap.
 
-## Training model update (1.6.0)
+## Training model and preview (1.7.0)
 
 `assets/assembly_rl_convex.urdf` is now the exact supplied reduced 28-DoF model:
 7 right-arm plus 21 right-hand joints. Frozen head/left geometry is baked into
@@ -77,7 +79,15 @@ and use the scroll wheel to zoom. Close the window to exit.
 - Assembly window: `0` selects the zero pose, `1` the display pose, and `R`
   resets the view. This is a forward-kinematics preview, not free dynamics.
 
+The assembly entry accepts `--model full` (default, 58 DoF and table) or
+`--model training` (28 DoF, no table). In training mode, `0` resets only the
+28 retained joints; the baked head/left pose stays fixed. `1` applies the
+right-side display pose from `runtime.json`. Parts and camera viewers use the
+full assets; they reject the training selection because its camera frames are
+baked away. All previews use forward kinematics without physics stepping.
+
 ```bash
+./viewers/view_assembly.sh --model training
 ./viewers/view_adapters.sh --side left
 ./viewers/view_camera_brackets.sh --side right
 ```
@@ -112,7 +122,8 @@ viewpoints.
 ```bash
 ./viewers/view_adapters.sh --check --output outputs/check/adapters
 ./viewers/view_camera_brackets.sh --check --output outputs/check/brackets
-./viewers/view_assembly.sh --check --output outputs/check/assembly
+./viewers/view_assembly.sh --model full --check --output outputs/check/assembly
+./viewers/view_assembly.sh --model training --check --output outputs/check/training
 ./viewers/view_cameras.sh --check --output outputs/check/cameras
 ```
 
@@ -124,9 +135,12 @@ relevant asset from a trusted commit, and try again.
 
 ```text
 assets/
+├── assembly_rl_convex.urdf  # Reduced right-arm/hand training model, 28 DoF
+├── training_reduced28.json  # Source/topology/mesh hashes and verification
+├── mount_rotation.json     # Full-assembly installation provenance
 ├── assembly.urdf           # Complete assembly; meters/radians, 58 robot DOFs
 ├── scene.xml               # MuJoCo scene with six RGB/depth rendering viewpoints
-├── runtime.json            # Display pose, camera parameters, part-view settings
+├── runtime.json            # Full/training selection, poses, cameras and parts
 ├── manifest.json           # File checksums and upstream revisions
 ├── meshes/                 # Referenced final meshes, including collision meshes
 └── cad/
@@ -142,7 +156,7 @@ Use the 3MF/STL files in `assets/cad/adapters/` for the hand adapters. CAD STL
 files use millimeters; simulation meshes use meters. Camera bodies are not
 included in the bracket manufacturing files.
 
-The URDF includes the official RealSense D455 body mesh, nominal depth, color,
+The full assembly URDF includes the official RealSense D455 body mesh, nominal depth, color,
 infrared and IMU frames, and the D405 wrist-camera frames. RGB/depth rendering
 uses the camera definitions in `scene.xml`.
 

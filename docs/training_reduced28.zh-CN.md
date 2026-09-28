@@ -1,4 +1,4 @@
-# 28 自由度训练 URDF（1.6.0）
+# 28 自由度训练 URDF（1.7.0）
 
 `assets/assembly_rl_convex.urdf` 现为用户指定的
 `assembly_bilateral_axis180_reduced28.urdf` 的原样副本，逐字节一致。
@@ -89,3 +89,19 @@ assert model.nq == 28
 旧双侧法兰凸包生成器及其输出报告／网格已从当前目录移除，避免覆盖指定的约简模型；
 它们仍保留在 1.5.0 的 Git 历史中。本仓库以资产形式发布指定的约简模型，不声称能用已移除的
 法兰专用生成器重建其 boundaryfix 派生流程。
+
+## 仓库预览与完整性检查（1.7.0）
+
+```bash
+./viewers/view_assembly.sh --model training
+./viewers/view_assembly.sh --model training --check --output outputs/check/training
+```
+
+约简模型查看工具导入此原样 URDF，核对 28 自由度／零个渲染相机，仅设置配置中的右侧
+展示关节。`0` 复位这 28 个关节；`1` 恢复展示姿态，头部及左侧的烘焙姿态始终固定。
+预览显示视觉几何，不含桌子或物体，不进行物理步进。
+`--check` 输出 `assembly_training_both_overview.png`。三相机和 CAD 零件查看工具仍使用
+完整模型，指定训练选项会明确报错。`runtime.json` 声明两种模型路径、预期拓扑、展示姿态及
+桌面／相机可用性。完整性检查会核对完整与训练模型的网格清单、manifest 和来源记录。
+
+![28 自由度模型展示姿态：正向运动学预览，未进行物理步进](images/training_reduced28_preview.png)

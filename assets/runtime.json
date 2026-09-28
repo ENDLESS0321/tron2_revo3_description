@@ -123,5 +123,55 @@
   "camera_status": "D405 wrists and D455 head are simulation selections using nominal fields of view and D455 frame offsets, not serial-specific hardware/calibration verification",
   "depth_convention": "Optical Z in meters; out-of-range pixels are NaN; raw depth is not color-registered",
   "kinematic_preview_only": true,
-  "strength_certified": false
+  "strength_certified": false,
+  "release": "1.7.0",
+  "models": {
+    "full": {
+      "urdf": "assembly.urdf",
+      "preview": "scene.xml",
+      "expected_dof": 58,
+      "expected_render_cameras": 6,
+      "table_included": true,
+      "display_pose": {
+        "head_pitch_Joint": 0.75,
+        "proximal_pitch_L_Joint": -0.4,
+        "proximal_pitch_R_Joint": -0.4,
+        "proximal_roll_L_Joint": 0.12,
+        "proximal_roll_R_Joint": -0.12,
+        "elbow_L_Joint": -1.0,
+        "elbow_R_Joint": -1.0,
+        "wrist_pitch_L_Joint": -0.15,
+        "wrist_pitch_R_Joint": -0.15
+      }
+    },
+    "training": {
+      "urdf": "assembly_rl_convex.urdf",
+      "preview": "assembly_rl_convex.urdf",
+      "expected_dof": 28,
+      "expected_render_cameras": 0,
+      "table_included": false,
+      "collision_shapes": 31,
+      "provenance": "training_reduced28.json",
+      "display_pose": {
+        "proximal_pitch_R_Joint": -0.4,
+        "proximal_roll_R_Joint": -0.12,
+        "elbow_R_Joint": -1.0,
+        "wrist_pitch_R_Joint": -0.15
+      },
+      "frozen_pose": {
+        "head_yaw": 0,
+        "head_pitch": 0.35,
+        "left_arm": [
+          1.2395190538964451,
+          0.0050965579201923406,
+          0.0706739400409262,
+          -0.10075078688932715,
+          -0.33794336457190877,
+          -0.6172884125393175,
+          0.5453728186806424
+        ],
+        "left_hand_joints": "all zero"
+      }
+    }
+  }
 }

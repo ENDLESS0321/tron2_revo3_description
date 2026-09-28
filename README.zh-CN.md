@@ -6,18 +6,19 @@
 外观配色按参考图更新为 TRON2 深灰黑主体、红/青点缀、Revo3 银灰手部和紫色法兰。
 三相机预览包含头部 D455、左右腕 D405 的 RGB 与米制深度。
 
-`main` 只提供最终模型和查看工具；开发脚本、设计过程、旧版本、报告和原始 CAD
-完整保存在 `dev`。运行不依赖 CAD 软件、开发目录、ROS 或在线下载模型。
+`main` 提供完整装配、约简训练模型、查看工具和来源记录；`dev` 保留早期开发快照及 CAD
+输入，已发布版本可从 Git 历史获取。运行不依赖 CAD 软件、开发目录、ROS 或在线下载模型。
 
-## 安装方向更新（1.5.0）
+## 安装方向配置（1.7.0）
 
 左右手／法兰组件及左右腕部相机均沿前臂纵向中心轴旋转 180°。更新目的是在桌面操作的
 掌心朝下、手指朝前姿态下获得更大的关节限位余量，物理限位不变。
 详见[旋转说明、模型来源及预览](docs/mount_rotation.zh-CN.md)。
-已将确认的新 URDF 原样覆盖到 `assets/assembly.urdf`，所有查看工具默认加载此文件，
-不再保留重复的独立版本。MuJoCo 场景同步更新，基座原点到桌面顶面的高度差保持 45 cm。
+已将确认的新 URDF 原样覆盖到 `assets/assembly.urdf`，完整装配 URDF 使用此默认路径；
+整机及相机预览加载匹配的 `scene.xml`，
+训练预览加载约简 URDF。MuJoCo 场景同步更新，基座原点到桌面顶面的高度差保持 45 cm。
 
-## 训练模型更新（1.6.0）
+## 训练模型与预览（1.7.0）
 
 `assets/assembly_rl_convex.urdf` 现为指定文件的原样 28 自由度版本：右臂 7 个关节＋右手
 21 个关节，头部及左侧冻结几何合入保留的 link，右法兰和右手掌各一个碰撞体。
@@ -60,7 +61,13 @@ EGL 不可用时，可在安装相应图形库后尝试 `MUJOCO_GL=osmesa`。
 - 零件窗口支持 `--side left`、`--side right`、`--side both`；左件橙色，右件蓝色。
 - 整机窗口：`0` 零位、`1` 展示姿态、`R` 复位视角。只做正向运动学预览，不运行自由动力学。
 
+整机入口支持 `--model full`（默认，58 自由度、含桌子）和 `--model training`
+（28 自由度、不含桌子）。训练模式的 `0` 只复位保留的 28 个关节，已烘焙的头部和左侧
+姿态保持固定；`1` 使用 `runtime.json` 中的右侧展示姿态。零件和相机查看工具使用完整资产，
+不接受训练模型选项，因为其独立相机 frame 已被合并。所有预览均不进行物理步进。
+
 ```bash
+./viewers/view_assembly.sh --model training
 ./viewers/view_adapters.sh --side left
 ./viewers/view_camera_brackets.sh --side right
 ```
@@ -87,7 +94,8 @@ EGL 不可用时，可在安装相应图形库后尝试 `MUJOCO_GL=osmesa`。
 ```bash
 ./viewers/view_adapters.sh --check --output outputs/check/adapters
 ./viewers/view_camera_brackets.sh --check --output outputs/check/brackets
-./viewers/view_assembly.sh --check --output outputs/check/assembly
+./viewers/view_assembly.sh --model full --check --output outputs/check/assembly
+./viewers/view_assembly.sh --model training --check --output outputs/check/training
 ./viewers/view_cameras.sh --check --output outputs/check/cameras
 ```
 
@@ -98,9 +106,12 @@ EGL 不可用时，可在安装相应图形库后尝试 `MUJOCO_GL=osmesa`。
 
 ```text
 assets/
+├── assembly_rl_convex.urdf  # 右臂＋右手训练模型，28 自由度
+├── training_reduced28.json  # 来源、拓扑、网格哈希及验证
+├── mount_rotation.json     # 完整装配安装方向来源
 ├── assembly.urdf           # 完整装配；米/弧度，58 个机器人自由度
 ├── scene.xml               # MuJoCo 场景，含六个 RGB/深度渲染视点
-├── runtime.json            # 展示姿态、相机参数、零件显示配置
+├── runtime.json            # 完整／训练模型选择、姿态、相机及零件配置
 ├── manifest.json           # 文件摘要与上游版本
 ├── meshes/                 # 实际引用的最终网格，含必要碰撞网格
 └── cad/
@@ -114,7 +125,7 @@ licenses/                   # 上游许可、声明及许可状态依据
 手转接件使用 `assets/cad/adapters/` 的 3MF/STL。CAD STL 单位为毫米，仿真网格为米。
 相机机身不在支架制造文件中。
 
-URDF 包含 RealSense 官方 D455 机身网格，以及标称深度、彩色、红外和 IMU
+完整装配 URDF 包含 RealSense 官方 D455 机身网格，以及标称深度、彩色、红外和 IMU
 坐标系；RGB/深度渲染使用 `scene.xml` 中的相机定义。
 
 URDF 和 MuJoCo 场景中的 `base_Link` 原点均位于世界坐标 `z=1.20035 m`；

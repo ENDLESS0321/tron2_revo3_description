@@ -1,5 +1,5 @@
 {
-  "release": "1.6.0",
+  "release": "1.7.0",
   "published_urdf": "assets/assembly_rl_convex.urdf",
   "supplied_filename": "assembly_bilateral_axis180_reduced28.urdf",
   "urdf_sha256": "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313",
@@ -598,5 +598,6 @@
     "right_fk_comparison_poses": 10,
     "right_fk_comparison_tolerance": 1e-09,
     "physics_stepped": false
-  }
+  },
+  "asset_introduced_release": "1.6.0"
 }

@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.7.0] - 2026-09-28
+
+### Features
+
+- Synchronize runtime metadata, asset verification, viewer model selection,
+  tests and paired documentation for the supplied reduced28 training model.
+- Add `view_assembly.sh --model training` and offscreen checks while retaining
+  the full 58-DoF assembly/table/camera preview as the default.
+
+### Design Rationale
+
+- Keep full and training topology contracts separate; use model-specific display
+  joints and verify both mesh inventories against provenance.
+
+### Notes & Caveats
+
+- Training preview has baked head/left geometry and no table or render cameras.
+- Parts/camera modes reject training selection; previews perform no physics steps.
+- Both approved URDFs are unchanged in this synchronization release.
+
 ## [1.6.0] - 2026-09-28
 
 ### Features

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 sys.path.insert(0, str(ROOT / "viewers"))
 
-from _runtime import verify_assets  # noqa: E402
+from _runtime import assembly, set_pose, verify_assets  # noqa: E402
 
 
 class ReleaseAssetTests(unittest.TestCase):
@@ -41,6 +41,34 @@ class ReleaseAssetTests(unittest.TestCase):
         urdf = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly.urdf"))
         scene = mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml"))
         self.assertEqual((urdf.nq, scene.nq, scene.ncam), (58, 58, 6))
+
+    def test_runtime_models_and_release_metadata_are_synchronized(self):
+        manifest = json.loads((ASSETS / "manifest.json").read_text())
+        self.assertEqual(self.runtime["release"], manifest["release"])
+        self.assertEqual(self.runtime["pose"], self.runtime["models"]["full"]["display_pose"])
+        for filename in ("mount_rotation.json", "training_reduced28.json"):
+            self.assertEqual(json.loads((ASSETS / filename).read_text())["release"], manifest["release"])
+        for name, expected in (("full", (58, 6)), ("training", (28, 0))):
+            model, data, cfg = assembly(name)
+            self.assertEqual((model.nq, model.ncam), expected)
+            self.assertEqual(len(cfg["cameras"]), 3 if name == "full" else 0)
+            self.assertEqual(cfg["selected_asset"], self.runtime["models"][name]["preview"])
+            for joint_name, value in cfg["pose"].items():
+                joint_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, joint_name)
+                self.assertGreaterEqual(joint_id, 0)
+                self.assertAlmostEqual(data.qpos[model.jnt_qposadr[joint_id]], value)
+            set_pose(model, data, {})
+            np.testing.assert_allclose(data.qpos, model.qpos0)
+        self.assertEqual(verify_assets()["training_referenced_meshes"], 101)
+
+    def test_training_camera_selection_is_rejected_before_render(self):
+        import subprocess
+
+        result = subprocess.run([sys.executable, str(ROOT / "viewers/_viewer.py"),
+                                 "--mode", "cameras", "--model", "training", "--check"],
+                                capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("supported only for assembly preview", result.stderr)
 
     def test_table_top_is_45_cm_below_robot_origin(self):
         urdf_origin = self.joint("world_to_base").find("origin")

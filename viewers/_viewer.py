@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Four public viewers share this final-model-only implementation."""
+"""Public viewers for the full assembly, reduced training model, parts and cameras."""
 import argparse
 from datetime import datetime
 import json
@@ -110,20 +110,25 @@ def scene_view(args):
     from _runtime import assembly,parts,set_pose
     is_parts=args.mode!='assembly'
     if is_parts:model,data,info=parts(args.mode.replace('-','_'))
-    else:model,data,cfg=assembly();info=None
+    else:model,data,cfg=assembly(args.model);info=None
     state={'side':args.side,'view':'front','dirty':True,'pose':None};lock=threading.Lock()
+    def geom_groups(side):
+        if is_parts:return [0,side in ('left','both'),side in ('right','both'),0,0,0]
+        return [args.model!='training',1,0,0,0,0]
     def settings(cam,opt,side,view):
+        opt.geomgroup[:]=geom_groups(side)
         if is_parts:
-            opt.geomgroup[:]=[0,side in ('left','both'),side in ('right','both'),0,0,0]
             cam.lookat[:]=[0,0,info['left']['center'][2]] if side=='both' else info[side]['center']
             cam.distance=.36 if side=='both' else .20;cam.azimuth,cam.elevation=VIEWS[view]
         else:
-            opt.geomgroup[:]=[1,1,0,0,0,0];cam.lookat[:]=[.25,0,1.0]
+            cam.lookat[:]=[.25,0,1.0]
             cam.distance=2.35;cam.azimuth=135;cam.elevation=-15
     if args.check:
         args.output.mkdir(parents=True,exist_ok=True)
         cam=mujoco.MjvCamera();mujoco.mjv_defaultCamera(cam);opt=mujoco.MjvOption();mujoco.mjv_defaultOption(opt)
         combinations=[(s,v) for s in ['left','right','both'] for v in VIEWS] if is_parts else [('both','overview')]
+        model.vis.global_.offwidth=max(model.vis.global_.offwidth,1100)
+        model.vis.global_.offheight=max(model.vis.global_.offheight,800)
         with mujoco.Renderer(model,width=1100,height=800) as renderer:
             for side,view in combinations:
                 settings(cam,opt,side,view);renderer.update_scene(data,camera=cam,scene_option=opt)
@@ -133,8 +138,9 @@ def scene_view(args):
                     visible={int(g.objid) for g in renderer.scene.geoms[:renderer.scene.ngeom] if g.objtype==mujoco.mjtObj.mjOBJ_GEOM}
                     expected={'both':{0,1},'left':{0},'right':{1}}[side]
                     if visible!=expected:raise ValueError('Wrong visible parts')
-                Image.fromarray(pixels).save(args.output/(args.mode+'_'+side+'_'+view+'.png'))
-        print(json.dumps({'mode':args.mode,'checks':len(combinations),'nq':model.nq,'ngeom':model.ngeom,'status':'pass'}));return
+                prefix=args.mode+('_training' if args.model=='training' else '')
+                Image.fromarray(pixels).save(args.output/(prefix+'_'+side+'_'+view+'.png'))
+        print(json.dumps({'mode':args.mode,'model':args.model,'checks':len(combinations),'nq':model.nq,'ngeom':model.ngeom,'status':'pass'}));return
     import mujoco.viewer
     def key(k):
         with lock:
@@ -145,7 +151,7 @@ def scene_view(args):
             else:return
             state['dirty']=True
     with mujoco.viewer.launch_passive(model,data,key_callback=key,show_left_ui=False,show_right_ui=False) as viewer:
-        viewer.set_texts((None,None,'Final model | '+args.mode+'\nMouse: rotate / pan / zoom',
+        viewer.set_texts((None,None,'Model: '+args.model+' | '+args.mode+'\nMouse: rotate / pan / zoom',
             '1 left | 2 right | 3 both | F/B/T/U views | R reset' if is_parts else '0 zero pose | 1 display pose | R reset view | kinematic only'))
         while viewer.is_running():
             with lock:current=dict(state);state['dirty']=False;state['pose']=None
@@ -153,8 +159,7 @@ def scene_view(args):
                 if current['pose'] is not None:set_pose(model,data,{} if current['pose']=='zero' else cfg['pose'])
                 if current['dirty']:
                     mujoco.mjv_defaultOption(viewer.opt);settings(viewer.cam,viewer.opt,current['side'],current['view'])
-                if is_parts:viewer.opt.geomgroup[:]=[0,current['side'] in ('left','both'),current['side'] in ('right','both'),0,0,0]
-                else:viewer.opt.geomgroup[:]=[1,1,0,0,0,0]
+                viewer.opt.geomgroup[:]=geom_groups(current['side'])
                 mujoco.mj_forward(model,data)
             viewer.sync();time.sleep(.02)
 
@@ -162,12 +167,14 @@ def scene_view(args):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--mode',required=True,choices=['adapters','camera-brackets','assembly','cameras'])
+    p.add_argument('--model',choices=['full','training'],default='full',help='Assembly preview: full 58-DoF scene or reduced 28-DoF training URDF')
     p.add_argument('--side',choices=['left','right','both'],default='both')
     p.add_argument('--check',action='store_true',help='Validate assets and render without opening a window')
     p.add_argument('--output',type=Path,default=ROOT/'outputs')
     p.add_argument('--width',type=int,default=320);p.add_argument('--height',type=int,default=240)
     p.add_argument('--rate',type=float,default=8)
     args=p.parse_args()
+    if args.model=='training' and args.mode!='assembly':p.error('--model training is supported only for assembly preview; training camera frames are baked away')
     if not (64<=args.width<=1280 and 64<=args.height<=960 and 0<args.rate<=60):p.error('Invalid resolution/rate')
     if not args.check and not (os.environ.get('DISPLAY') or os.environ.get('WAYLAND_DISPLAY')):p.error('No desktop display; use --check for offscreen images')
     os.environ.setdefault('MUJOCO_GL','egl' if args.check or args.mode=='cameras' else 'glfw')

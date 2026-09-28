@@ -1,4 +1,4 @@
-"""Shared, read-only runtime for the final assets. No CAD or legacy build dependency."""
+"""Shared, read-only runtime for full assembly and reduced training assets. No CAD or legacy build dependency."""
 import hashlib
 import json
 from pathlib import Path
@@ -28,7 +28,18 @@ def verify_assets():
     b={e.get('file') for e in scene.findall('asset/mesh')}
     if a!=b or len(a)!=manifest['referenced_mesh_count']:raise ValueError('URDF/MJCF mesh sets disagree')
     if any(Path(p).is_absolute() or not (ASSETS/p).resolve().is_relative_to(ASSETS) for p in a):raise ValueError('Nonportable mesh reference')
-    return {'verified_files':len(manifest['files']),'referenced_meshes':len(a)}
+    training_path=ASSETS/'assembly_rl_convex.urdf'
+    training=ET.parse(training_path)
+    meshes={node.get('filename') for node in training.findall('.//mesh')}
+    provenance=json.loads((ASSETS/'training_reduced28.json').read_text())
+    if meshes!=set(provenance['mesh_files']):raise ValueError('Training mesh inventory disagrees')
+    if hashlib.sha256(training_path.read_bytes()).hexdigest()!=provenance['urdf_sha256']:raise ValueError('Training provenance hash disagrees')
+    for name in meshes:
+        path=(ASSETS/name).resolve()
+        if Path(name).is_absolute() or not path.is_relative_to(ASSETS) or not path.is_file():raise ValueError('Nonportable training mesh: '+name)
+        record=manifest['files'].get('assets/'+name)
+        if record!=provenance['mesh_files'][name]:raise ValueError('Training mesh provenance disagrees: '+name)
+    return {'verified_files':len(manifest['files']),'referenced_meshes':len(a),'training_referenced_meshes':len(meshes)}
 
 
 def set_pose(model,data,pose):
@@ -41,11 +52,18 @@ def set_pose(model,data,pose):
     mujoco.mj_forward(model,data)
 
 
-def assembly():
-    cfg=config();model=mujoco.MjModel.from_xml_path(str(ASSETS/'scene.xml'));data=mujoco.MjData(model)
-    if model.nq!=58 or model.ncam!=6:raise ValueError('Expected 58 robot joints and six render cameras')
-    set_pose(model,data,cfg['pose'])
-    return model,data,cfg
+def assembly(model_name='full'):
+    cfg=config()
+    spec=cfg['models'][model_name]
+    model=mujoco.MjModel.from_xml_path(str(ASSETS/spec['preview']))
+    if model_name=='training':
+        model.vis.headlight.ambient[:]=[0.8,0.8,0.8]
+        model.vis.headlight.diffuse[:]=[0.8,0.8,0.8]
+    data=mujoco.MjData(model)
+    if model.nq!=spec['expected_dof'] or model.ncam!=spec['expected_render_cameras']:
+        raise ValueError('Model topology disagrees with runtime configuration: '+model_name)
+    set_pose(model,data,spec['display_pose'])
+    return model,data,{**cfg,'pose':spec['display_pose'],'cameras':cfg['cameras'] if model_name=='full' else [],'selected_model':model_name,'selected_asset':spec['preview']}
 
 
 def parts(kind):

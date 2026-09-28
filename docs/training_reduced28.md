@@ -1,4 +1,4 @@
-# Reduced 28-DoF training URDF (1.6.0)
+# Reduced 28-DoF training URDF (1.7.0)
 
 `assets/assembly_rl_convex.urdf` is now an exact, byte-for-byte copy of the
 supplied `assembly_bilateral_axis180_reduced28.urdf`. The path is retained for
@@ -107,3 +107,22 @@ from the current tree to prevent it overwriting this supplied reduced model.
 They remain available in the 1.5.0 Git history. The supplied reduced model is
 published as an artifact; this repository does not claim to regenerate its
 boundaryfix derivation with the removed flange-only builder.
+
+## Repository preview and integrity checks (1.7.0)
+
+```bash
+./viewers/view_assembly.sh --model training
+./viewers/view_assembly.sh --model training --check --output outputs/check/training
+```
+
+The reduced viewer imports this exact URDF, checks 28 DoF/zero render cameras,
+and applies only the configured right-side display joints. `0` resets those
+28 joints; `1` restores the display pose. Baked head/left geometry stays fixed.
+The preview shows visual geometry without a table or payload and does no
+physics stepping. `--check` writes `assembly_training_both_overview.png`.
+The three-camera and CAD-part viewers remain full-model tools; training selection
+there is rejected explicitly. `runtime.json` declares the two model paths,
+expected topology, display poses and table/camera availability. Asset verification
+checks both full and training mesh inventories against the manifest and provenance.
+
+![Reduced28 display pose; forward kinematics, no physics stepping](images/training_reduced28_preview.png)

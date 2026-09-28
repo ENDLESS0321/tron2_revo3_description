@@ -1,4 +1,4 @@
-# Bilateral hand and wrist-camera mount rotation (1.5.0)
+# Bilateral hand and wrist-camera mount rotation (1.7.0)
 
 Both hand/flange assemblies and both wrist-camera assemblies are rotated 180°
 from the previous model around the forearm longitudinal centerline. In each
@@ -23,7 +23,8 @@ Previous evaluations using different mount directions do not validate this relea
 
 - `assets/assembly.urdf`: the approved `assembly_bilateral_axis180.urdf`
   directly replaces the canonical model byte-for-byte. This is the default
-  assembly URDF; all existing viewers keep using this path.
+  assembly URDF. Full preview/cameras use its matching `scene.xml`;
+  training preview selects the reduced URDF.
   SHA256 `537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44`.
 - `assets/scene.xml`: matching MuJoCo mount orientations and base Z = 1.20035 m.
   The work-table center is at `[0.72, 0, 0.72535]` m and its half-height is
@@ -102,7 +103,7 @@ forward orientation, table/object geometry, joint bounds and collision rules
 for both models. Existing IK trajectories and world camera extrinsics need
 recomputation for the changed mount, while internal camera frames stay intact.
 
-## Current training model (1.6.0)
+## Current training model (1.7.0)
 
 The default full assembly described above remains unchanged. The training path
 `assets/assembly_rl_convex.urdf` now contains the supplied 28-DoF reduced model,

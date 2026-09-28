@@ -1,5 +1,5 @@
 {
-  "release": "1.4.1",
+  "release": "1.7.0",
   "rotation_angle_deg": 180,
   "rotation_axis_in_each_wrist_roll_link": [
     0,
@@ -120,5 +120,6 @@
   "canonical_urdf": "assets/assembly.urdf",
   "canonical_is_exact_approved_artifact": true,
   "scene_table_top_z_m": 0.75035,
-  "scene_base_to_table_top_gap_m": 0.45
+  "scene_base_to_table_top_gap_m": 0.45,
+  "asset_introduced_release": "1.4.1"
 }

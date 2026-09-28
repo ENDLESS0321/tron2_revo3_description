@@ -1,9 +1,9 @@
 {
   "schema": "final_model_assets_v2",
-  "release": "1.6.0",
+  "release": "1.7.0",
   "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
   "geometry_changed_during_cleanup": false,
-  "release_geometry_changed": true,
+  "release_geometry_changed": false,
   "source_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
   "source_scene_sha256": "65a4a3b4a811cf33477bbf0d8868019c0799ed4fdbab4503d13013e34d2b3a5d",
   "referenced_mesh_count": 265,
@@ -1105,24 +1105,24 @@
       "bytes": 513084
     },
     "assets/runtime.json": {
-      "sha256": "f83c6bc75fccf39fc822d6e1a662777cba3c8c54281a372194e20c5cd6b0f25e",
-      "bytes": 2877
+      "sha256": "309cac366a109e0a08bdb45354dc202e0624d469ac83ff8255f902f52b783785",
+      "bytes": 4285
     },
     "assets/scene.xml": {
       "sha256": "3587978ddb454cf77ced91c579b32277c6db7892ea9e571bef40ca3c8f00efd0",
       "bytes": 119625
     },
     "assets/mount_rotation.json": {
-      "sha256": "11c284301e1a22fd9c046e672cdc1f34c640a415a72740be50427cffdc1c9714",
-      "bytes": 3303
+      "sha256": "6649e9fee2da22847b361691e8d8ccdcafb6c2a471f117abee2191b37be44cc1",
+      "bytes": 3342
     },
     "assets/assembly_rl_convex.urdf": {
       "sha256": "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313",
       "bytes": 60274
     },
     "assets/training_reduced28.json": {
-      "sha256": "56f210ca6b6f4da21b2104591565adcba806ebae28194c45f5f201d87a4653f1",
-      "bytes": 26442
+      "sha256": "7c9cedf43acdc54ac5ade771cf68610d41a76cdc3a242588473cebb0cd9b2797",
+      "bytes": 26481
     },
     "assets/meshes/boundaryfix_exact/ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e.stl": {
       "sha256": "ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e",
@@ -1269,5 +1269,10 @@
   },
   "mount_rotation_provenance": "assets/mount_rotation.json",
   "training_urdf": "assets/assembly_rl_convex.urdf",
-  "training_collision_provenance": "assets/training_reduced28.json"
+  "training_collision_provenance": "assets/training_reduced28.json",
+  "runtime_models": {
+    "full": "assets/assembly.urdf",
+    "training": "assets/assembly_rl_convex.urdf"
+  },
+  "last_geometry_release": "1.6.0"
 }

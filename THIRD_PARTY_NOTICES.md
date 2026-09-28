@@ -26,3 +26,9 @@ certify this assembled model. Asset digests and source versions are recorded in
 are preserved on `dev`. Both branches and their shared history are published at
 [ENDLESS0321/tron2_revo3_description](https://github.com/ENDLESS0321/tron2_revo3_description).
 Publication does not resolve the license qualifications stated above.
+
+The reduced28 training asset and its `meshes/boundaryfix_exact/`,
+`right_adapter_single_convex.obj` and `right_palm_single_convex.obj` meshes are
+derived simulation assets, not new permission grants. Their supplied-file
+lineage and mesh hashes are recorded in `assets/training_reduced28.json`; the
+upstream qualifications above continue to apply.
