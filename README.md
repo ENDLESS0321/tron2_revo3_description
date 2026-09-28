@@ -23,10 +23,14 @@ The approved generated URDF directly replaces `assets/assembly.urdf` byte-for-by
 All viewers use it by default; the redundant variant file has been removed.
 The MuJoCo scene is synchronized, retaining the 45 cm base-to-table-top gap.
 
-For RL/simulation training, each flange must be reduced to one rigid link and one
-collision shape. The default assembly has 48 collision elements per flange;
-`assets/assembly_rl_convex.urdf` provides one convex shape per flange.
-See the detailed document for generation, import checks and limitations.
+## Training model update (1.6.0)
+
+`assets/assembly_rl_convex.urdf` is now the exact supplied reduced 28-DoF model:
+7 right-arm plus 21 right-hand joints. Frozen head/left geometry is baked into
+retained links. The right flange and palm each have one collision shape.
+It replaces the 58-DoF flange-only variant; the full assembly and default MJCF
+remain unchanged. Read [training topology and migration](docs/training_reduced28.md)
+before reusing action mappings, body/frame names, IK or checkpoints.
 
 ## Installation
 

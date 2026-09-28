@@ -17,9 +17,13 @@
 已将确认的新 URDF 原样覆盖到 `assets/assembly.urdf`，所有查看工具默认加载此文件，
 不再保留重复的独立版本。MuJoCo 场景同步更新，基座原点到桌面顶面的高度差保持 45 cm。
 
-用于 RL／仿真训练时，每侧法兰应简化为一个刚性 link、一个碰撞体。当前装配文件
-每侧有 48 个 collision 元素；`assets/assembly_rl_convex.urdf` 已提供每侧一个凸包的训练版本。
-生成方法、导入检查和适用限制见上述详细说明。
+## 训练模型更新（1.6.0）
+
+`assets/assembly_rl_convex.urdf` 现为指定文件的原样 28 自由度版本：右臂 7 个关节＋右手
+21 个关节，头部及左侧冻结几何合入保留的 link，右法兰和右手掌各一个碰撞体。
+它替换旧的 58 自由度法兰简化版；完整装配模型和默认 MJCF 保持原样。
+复用 action 映射、body／frame 名称、IK 或 checkpoint 前，请阅读
+[训练拓扑与迁移说明](docs/training_reduced28.zh-CN.md)。
 
 ## 安装
 

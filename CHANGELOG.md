@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.6.0] - 2026-09-28
+
+### Features
+
+- Replace `assets/assembly_rl_convex.urdf` byte-for-byte with the supplied
+  reduced28 artifact; include all 101 referenced meshes and provenance.
+- Publish paired topology, frozen-posture, collision and migration documentation.
+
+### Design Rationale
+
+- Match the supplied training articulation: 7 right-arm and 21 right-hand joints,
+  with inactive-chain geometry and inertials baked into retained ancestors.
+- Keep the full assembly and default MJCF intact; retire the obsolete bilateral
+  flange builder so it cannot overwrite the new training asset.
+
+### Notes & Caveats
+
+- This changes the training path from 58 to 28 DoF and removes inactive frame
+  identities. Update control/body mappings and IK/checkpoint lineage accordingly.
+- Import/geometry publication checks are not policy or task-success evaluation.
+
 ## [1.5.0] - 2026-09-28
 
 ### Features

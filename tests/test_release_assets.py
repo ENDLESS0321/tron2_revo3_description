@@ -97,36 +97,73 @@ class ReleaseAssetTests(unittest.TestCase):
                     np.testing.assert_allclose(states[0].xpos[ids[0]], states[1].xpos[ids[1]], atol=1e-9)
                     np.testing.assert_allclose(states[0].xmat[ids[0]], states[1].xmat[ids[1]], atol=1e-9)
 
-    def test_training_urdf_changes_only_flange_collision_geometry(self):
-        training = ET.parse(ASSETS / "assembly_rl_convex.urdf").getroot()
-        assembly = ET.parse(ASSETS / "assembly.urdf").getroot()
-        for side in ("left", "right"):
-            original = assembly.find(f"link[@name='{side}_adapter_link']")
-            simplified = training.find(f"link[@name='{side}_adapter_link']")
-            self.assertEqual(len(original.findall("collision")), 48)
-            self.assertEqual(len(simplified.findall("collision")), 1)
-            mesh_node = simplified.find("collision/geometry/mesh")
-            mesh = trimesh.load_mesh(ASSETS / mesh_node.get("filename"), process=True)
-            self.assertTrue(mesh.is_convex)
-            self.assertTrue(mesh.is_watertight)
-            for link in (original, simplified):
-                for collision in link.findall("collision"):
-                    link.remove(collision)
+    def test_training_reduced28_hash_topology_and_meshes(self):
+        import hashlib
+
+        path = ASSETS / "assembly_rl_convex.urdf"
+        self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
+                         "56fdcc40198d38f075dd307f256d7b961ea7197958b617c550ad6bb8a9a3c313")
+        training = ET.parse(path).getroot()
+        joints = training.findall("joint")
+        links = training.findall("link")
+        self.assertEqual((len(links), len(joints)), (38, 37))
+        moving = [joint for joint in joints if joint.get("type") != "fixed"]
+        self.assertEqual(len(moving), 28)
+        self.assertTrue(all(joint.get("type") == "revolute" for joint in moving))
+        self.assertEqual(sum("_R_" in joint.get("name") for joint in moving), 7)
+        self.assertEqual(sum(joint.get("name").startswith("right_") for joint in moving), 21)
         def structure(node):
             return (node.tag, node.attrib, (node.text or "").strip(),
                     [structure(child) for child in node])
-        self.assertEqual(structure(assembly), structure(training))
-        for mesh in training.findall(".//mesh"):
-            self.assertTrue((ASSETS / mesh.get("filename")).is_file())
+        for joint in moving:
+            self.assertEqual(structure(joint), structure(self.joint(joint.get("name"))))
+        children = [joint.find("child").get("link") for joint in joints]
+        self.assertEqual(len(set(children)), len(children))
+        self.assertEqual(set(children), {link.get("name") for link in links} - {"world"})
+        meshes = {mesh.get("filename") for mesh in training.findall(".//mesh")}
+        self.assertEqual(len(meshes), 101)
+        for filename in meshes:
+            path = (ASSETS / filename).resolve()
+            self.assertTrue(path.is_relative_to(ASSETS))
+            self.assertTrue(path.is_file())
+        self.assertEqual(sum(len(link.findall("collision")) for link in links), 31)
+        for name in ("right_adapter_link", "right_hand_base_link"):
+            link = training.find(f"link[@name='{name}']")
+            self.assertEqual(len(link.findall("collision")), 1)
+            mesh = trimesh.load_mesh(ASSETS / link.find("collision/geometry/mesh").get("filename"), process=True)
+            self.assertTrue(mesh.is_convex)
+            self.assertTrue(mesh.is_watertight)
 
-    def test_training_import_has_one_collision_shape_per_flange(self):
-        model = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly_rl_convex.urdf"))
-        self.assertEqual(model.nq, 58)
-        for side in ("left", "right"):
-            body_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, f"{side}_adapter_link")
+    def test_training_reduced28_import_and_right_chain_fk(self):
+        training = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly_rl_convex.urdf"))
+        assembly = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly.urdf"))
+        self.assertEqual((training.nq, training.njnt), (28, 28))
+        collision_mask = (training.geom_contype != 0) | (training.geom_conaffinity != 0)
+        self.assertEqual(int(collision_mask.sum()), 31)
+        for name in ("right_adapter_link", "right_hand_base_link"):
+            body_id = mujoco.mj_name2id(training, mujoco.mjtObj.mjOBJ_BODY, name)
             self.assertGreaterEqual(body_id, 0)
-            collisions = (model.geom_bodyid == body_id) & ((model.geom_contype != 0) | (model.geom_conaffinity != 0))
-            self.assertEqual(int(collisions.sum()), 1)
+            self.assertEqual(int(((training.geom_bodyid == body_id) & collision_mask).sum()), 1)
+        moving = [joint for joint in ET.parse(ASSETS / "assembly_rl_convex.urdf").findall("joint")
+                  if joint.get("type") == "revolute"]
+        states = [mujoco.MjData(model) for model in (training, assembly)]
+        rng = np.random.default_rng(20260928)
+        bodies = [joint.find("child").get("link") for joint in moving] + ["right_adapter_link", "right_hand_base_link", "right_palm"]
+        for _ in range(10):
+            for joint in moving:
+                limit = joint.find("limit")
+                value = float(rng.uniform(float(limit.get("lower")), float(limit.get("upper"))))
+                for model, data in zip((training, assembly), states):
+                    joint_id = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, joint.get("name"))
+                    self.assertGreaterEqual(joint_id, 0)
+                    data.qpos[model.jnt_qposadr[joint_id]] = value
+            for model, data in zip((training, assembly), states):
+                mujoco.mj_forward(model, data)
+            for name in bodies:
+                ids = [mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, name) for model in (training, assembly)]
+                self.assertTrue(all(body_id >= 0 for body_id in ids))
+                np.testing.assert_allclose(states[0].xpos[ids[0]], states[1].xpos[ids[1]], atol=1e-9)
+                np.testing.assert_allclose(states[0].xmat[ids[0]], states[1].xmat[ids[1]], atol=1e-9)
 
     def test_reference_palette_is_applied(self):
         self.assertEqual(self.color("base_Link"), "0.15 0.16 0.17 1")
