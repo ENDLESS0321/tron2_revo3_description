@@ -151,7 +151,7 @@
       "expected_render_cameras": 0,
       "table_included": false,
       "collision_shapes": 58,
-      "provenance": "training_reduced28.json",
+      "provenance": "manifest.json",
       "display_pose": {
         "proximal_pitch_R_Joint": -0.4,
         "proximal_roll_R_Joint": -0.12,

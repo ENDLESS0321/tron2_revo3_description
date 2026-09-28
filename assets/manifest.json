@@ -1,9 +1,6 @@
 {
   "schema": "final_model_assets_v2",
   "release": "1.7.1",
-  "development_commit": "56e4a7d96c8e00841c14fa762d7597ef93a0332d",
-  "geometry_changed_during_cleanup": false,
-  "release_geometry_changed": true,
   "source_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
   "source_scene_sha256": "65a4a3b4a811cf33477bbf0d8868019c0799ed4fdbab4503d13013e34d2b3a5d",
   "referenced_mesh_count": 265,
@@ -1105,24 +1102,16 @@
       "bytes": 513084
     },
     "assets/runtime.json": {
-      "sha256": "07d26ac4404b72fc4587e02dec658b97897c54a2b66094ff59879a69ea73fd25",
-      "bytes": 4390
+      "sha256": "27b189defa0b218436fe5913939a8767a426c62983640cb04cd103379f8814e4",
+      "bytes": 4380
     },
     "assets/scene.xml": {
       "sha256": "3587978ddb454cf77ced91c579b32277c6db7892ea9e571bef40ca3c8f00efd0",
       "bytes": 119625
     },
-    "assets/mount_rotation.json": {
-      "sha256": "4cd55d8a11bd880cdbe5b6b9b7750eab9b1fc76c8628084cf7186767bfc53bf3",
-      "bytes": 3342
-    },
     "assets/assembly_rl_convex.urdf": {
       "sha256": "2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034",
       "bytes": 67657
-    },
-    "assets/training_reduced28.json": {
-      "sha256": "6b19bffba9a5d6a22eaafeaa9d55de454efd8fa0b1671899633167339031a678",
-      "bytes": 33750
     },
     "assets/meshes/boundaryfix_exact/ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e.stl": {
       "sha256": "ae4e19d5bdef3680d3e0ea14c38aaf667e767c57def5be7f85cfbc4f9c4e1a3e",
@@ -1375,15 +1364,12 @@
       0.001
     ]
   },
-  "mount_rotation_provenance": "assets/mount_rotation.json",
   "training_urdf": "assets/assembly_rl_convex.urdf",
-  "training_collision_provenance": "assets/training_reduced28.json",
   "runtime_models": {
     "full": "assets/assembly.urdf",
     "training": "assets/assembly_rl_convex.urdf"
   },
-  "last_geometry_release": "1.7.1",
   "training_referenced_mesh_count": 128,
-  "full_assembly_geometry_changed": false,
-  "training_physics_changed": true
+  "training_source_urdf": "assembly_bilateral_axis180_reduced28_physicsfix.urdf",
+  "training_source_urdf_sha256": "2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034"
 }

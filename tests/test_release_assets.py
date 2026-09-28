@@ -46,8 +46,6 @@ class ReleaseAssetTests(unittest.TestCase):
         manifest = json.loads((ASSETS / "manifest.json").read_text())
         self.assertEqual(self.runtime["release"], manifest["release"])
         self.assertEqual(self.runtime["pose"], self.runtime["models"]["full"]["display_pose"])
-        for filename in ("mount_rotation.json", "training_reduced28.json"):
-            self.assertEqual(json.loads((ASSETS / filename).read_text())["release"], manifest["release"])
         for name, expected in (("full", (58, 6)), ("training", (28, 0))):
             model, data, cfg = assembly(name)
             self.assertEqual((model.nq, model.ncam), expected)

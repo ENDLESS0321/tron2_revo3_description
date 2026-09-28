@@ -2,46 +2,80 @@
 
 English | [简体中文](README.zh-CN.md)
 
-Visualize the DACH_TRON2A dual-arm robot, two BrainCo Revo3 hands, the final hand
-adapters, and the V3 camera brackets. The appearance follows the graphite TRON2
-and silver Revo3 references, with red/cyan accents and purple hand flanges. The
-three-camera viewer renders RGB and metric depth from a head-mounted D455 and two
-wrist-mounted D405 cameras.
+Models, manufacturing CAD and kinematic viewers for a DACH_TRON2A dual-arm robot
+with BrainCo Revo3 hands, hand adapters, V3 wrist-camera brackets, a head D455
+and two wrist D405 cameras. Release 1.7.1 includes the exact physicsfix training
+URDF. All model meshes are bundled; CAD software, ROS and additional downloads
+are unnecessary for the viewers.
 
-`main` contains the full assembly, reduced training asset, viewing tools and
-provenance metadata. `dev` preserves the earlier development snapshot and CAD
-inputs; released revisions remain available in Git history.
-Running the viewers does not require CAD software, ROS, development
-directories, or additional model downloads.
+## Choose a model
 
-## Mount configuration (1.7.0)
+| Asset | Purpose | Moving joints | Table / rendering cameras |
+| --- | --- | --- | --- |
+| [`assets/assembly.urdf`](assets/assembly.urdf) | Complete bilateral assembly | 58 | Neither included in the URDF |
+| [`assets/scene.xml`](assets/scene.xml) | Matching full MuJoCo preview | 58 | Table and 6 RGB/depth viewpoints |
+| [`assets/assembly_rl_convex.urdf`](assets/assembly_rl_convex.urdf) | Physicsfix right-arm/hand training articulation | 28 | Neither included |
 
-Both hand/flange assemblies and both wrist cameras now turn 180° around the
-forearm longitudinal centerline. The aim is greater joint-limit headroom for
-tabletop palm-down, fingers-forward operation; physical limits stay unchanged.
-See [rotation details, model provenance and previews](docs/mount_rotation.md).
-The approved generated URDF directly replaces `assets/assembly.urdf` byte-for-byte.
-Full-assembly URDF imports use this canonical path; the full preview and cameras
-load its matching `scene.xml`. Training preview loads the reduced URDF.
-The MuJoCo scene is synchronized, retaining the 45 cm base-to-table-top gap.
+Both hand/flange assemblies and wrist cameras use the axis-180 installation:
+180° around the parent wrist link's local Z centerline through `[-0.0317, 0, 0]`
+m. This installation axis differs from the actuated wrist-roll axis. Mount
+translations and physical joint limits are retained; the head camera is unchanged.
+The hand-to-flange translation is `[0, 0.023855, 0]` m, with left RPY
+`[-π/2, -π/2, 0]` and right RPY `[-π/2, +π/2, 0]`.
 
-## Training model and preview (1.7.1)
+![Full assembly and table: kinematic preview](docs/images/new_urdf_front_table.png)
 
-`assets/assembly_rl_convex.urdf` is an exact copy of the physicsfix reduced
-28-DoF model (`assembly_bilateral_axis180_reduced28_physicsfix.urdf`): 7
-right-arm plus 21 right-hand joints. Its 58 collision elements cover the base,
-arm, flange, 28 palm components and 21 finger components. The full assembly
-and default MJCF remain unchanged. Read
-[training topology and migration](docs/training_reduced28.md) before reusing
-action mappings, body/frame names, IK or checkpoints. The model is being used
-in a four-GPU 4090D training run; this release does not claim training success.
-MuJoCo's training preview balances the supplied fingertip inertias in memory
-for display; it does not step physics or change the published URDF.
+## Training topology, collisions and coordinates
 
-## Installation
+The training URDF is the supplied
+`assembly_bilateral_axis180_reduced28_physicsfix.urdf`, copied byte-for-byte.
+It has 38 links, 37 joints (28 revolute + 9 fixed), 78 visual geometries,
+58 collision elements on 31 links, and 128 unique mesh references. The retained
+`rl_convex` filename supports existing configuration paths; the palm uses
+28 component collisions.
 
-Tested on Ubuntu 22.04 with Python 3.10. Run these commands from the repository
-root. If the local `.venv` is already set up, skip to the launch commands.
+| Collision group | Elements |
+| --- | ---: |
+| Base and seven right-arm links | 8 |
+| Right hand base / palm components | 28 |
+| Right finger components | 21 |
+| Right adapter / flange | 1 |
+| Total | 58 |
+
+The seven arm joints, in proximal-to-distal order, are
+`proximal_pitch_R_Joint`, `proximal_roll_R_Joint`, `proximal_yaw_R_Joint`,
+`elbow_R_Joint`, `wrist_yaw_R_Joint`, `wrist_pitch_R_Joint`, and
+`wrist_roll_R_Joint`. The hand has five thumb joints and four joints on each
+other finger. Map controls by joint name and bind IK/H5/runtime configurations
+to the URDF hash. Old 58-element mappings and matching checkpoint tensor sizes
+do not establish compatibility with this 28-joint model.
+
+Head and left-side geometry is baked into retained ancestors, with inertials
+combined during reduction. Their independent joints and link/frame identities
+are removed. The frozen pose, in radians, is:
+
+- Head yaw `0`, head pitch `0.35`; left hand joints all zero.
+- Left arm, ordered pitch/roll/yaw/elbow/wrist-yaw/wrist-pitch/wrist-roll:
+  `1.2395190538964451 0.0050965579201923406 0.0706739400409262 -0.10075078688932715 -0.33794336457190877 -0.6172884125393175 0.5453728186806424`.
+
+Each of the five fingertips has mass `0.001 kg`, zero COM and diagonal inertia
+`(1e-10, 1e-10, 1e-9) kg·m²`, with zero off-diagonal terms. `right_palm` remains
+a placeholder without an inertial. This artifact combines the fingertip
+inertial repair and palm collision restoration; their separate effects on
+training have not been isolated.
+
+Both URDFs set `world_to_base` to `[0, 0, 1.20035]` m. The full scene table top
+is `0.75035 m`, exactly `0.45 m` below the robot origin. The physicsfix training
+layout uses base Z `0.957 m` and table top `0.507 m`, also a `0.45 m` gap.
+Configure world/base/table placement explicitly when importing the training
+URDF, avoiding a second application of its world offset. It contains no table
+or manipulated object, and `scene.xml` describes the full articulation.
+
+![Reduced training articulation: kinematic preview](docs/images/training_reduced28_preview.png)
+
+## Install and launch
+
+Tested on Ubuntu 22.04 with Python 3.10. From the repository root:
 
 ```bash
 sudo apt install python3-venv python3-tk libgl1 libegl1 libglfw3
@@ -49,81 +83,58 @@ python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 ```
 
-The 3D windows use GLFW. The camera window uses Tk, with EGL for offscreen
-rendering. Use `--check` when no desktop display is available. If EGL is
-unavailable, you can try `MUJOCO_GL=osmesa` after installing the corresponding
-graphics libraries.
-
-## Four Launch Commands
-
-All entry points are in `viewers/`. The duplicate launch scripts previously
-located at the repository root have been removed.
-
-| Command | What it shows |
+| Command | View |
 | --- | --- |
-| `./viewers/view_adapters.sh` | Left and right hand adapters only |
-| `./viewers/view_camera_brackets.sh` | Left and right camera brackets only, without camera bodies |
-| `./viewers/view_assembly.sh` | Complete robot, hands, adapters, brackets, and cameras |
-| `./viewers/view_cameras.sh` | Three RGB views and three depth views in one window |
-
-You can also launch these scripts using absolute paths from another directory.
-They locate this repository's environment and assets automatically. Preserve
-the complete directory structure when distributing the project; do not copy
-only a script or a URDF file.
-
-### Part and Assembly Controls
-
-Drag with the left mouse button to rotate, drag with the right button to pan,
-and use the scroll wheel to zoom. Close the window to exit.
-
-- Part windows: `1` selects the left part, `2` the right part, and `3` both.
-  `F/B/T/U` select front/back/top/wrist-side views; `R` resets the view.
-- Part windows also accept `--side left`, `--side right`, or `--side both`.
-  The left part is orange and the right part is blue.
-- Assembly window: `0` selects the zero pose, `1` the display pose, and `R`
-  resets the view. This is a forward-kinematics preview, not free dynamics.
-
-The assembly entry accepts `--model full` (default, 58 DoF and table) or
-`--model training` (28 DoF, no table). In training mode, `0` resets only the
-28 retained joints; the baked head/left pose stays fixed. `1` applies the
-right-side display pose from `runtime.json`. Parts and camera viewers use the
-full assets; they reject the training selection because its camera frames are
-baked away. All previews use forward kinematics without physics stepping.
+| `./viewers/view_adapters.sh` | Left/right hand adapters |
+| `./viewers/view_camera_brackets.sh` | Left/right brackets, excluding camera bodies |
+| `./viewers/view_assembly.sh` | Full assembly and table |
+| `./viewers/view_cameras.sh` | Three RGB and three depth views |
 
 ```bash
 ./viewers/view_assembly.sh --model training
 ./viewers/view_adapters.sh --side left
 ./viewers/view_camera_brackets.sh --side right
-```
-
-### Camera Views and Saving Data
-
-```bash
 ./viewers/view_cameras.sh --width 640 --height 480 --rate 8
 ```
 
-Click **保存当前图像与深度** (Save current images and depth) to save a snapshot
-under `outputs/<timestamp>/`. Use `--output` to choose another directory.
-Each camera saves an RGB PNG, a false-color depth PNG, and a raw depth
-`_depth_m.npy` file. The accompanying `capture.json` contains camera intrinsics,
-optical frame names, a timestamp, and valid-pixel statistics.
+Launch scripts locate the repository environment and assets automatically,
+including when invoked by absolute path. Preserve the directory structure.
+GLFW supplies 3D windows; Tk and EGL supply the camera window. Use `--check`
+without a desktop; `MUJOCO_GL=osmesa` is an alternative if the corresponding
+libraries are installed.
 
-- Raw depth is `float32`, in meters, and measures optical-frame Z distance.
-  Invalid values are `NaN` and appear black in the depth visualization.
-- The D455 head depth preview uses its nominal 0.6–6 m ideal range; the wrist
-  range is 0.07–0.5 m.
-- Raw depth is not registered to the color image. In particular, the D455
-  color and depth streams have different optical origins and fields of view.
-- These are ideal pinhole simulations, not live hardware streams. The fixed
-  model has no length/tilt sliders that could detach cameras from their mounts.
+Mouse: left-drag rotates, right-drag pans, scroll zooms. Parts: `1/2/3` selects
+left/right/both, `F/B/T/U` selects front/back/top/wrist-side, `R` resets.
+Assembly: `0` selects zero pose, `1` display pose, `R` resets the view. Training
+mode changes only the 28 retained joints; baked geometry stays fixed. Parts and
+camera viewers support the full model only.
 
-## Headless Checks
+All viewers use forward kinematics without physics stepping. MuJoCo rejects
+the raw training URDF because its supplied fingertip inertias violate the
+inertia triangle check. The training preview enables `balanceinertia` in an
+in-memory `MjSpec`; it preserves the published URDF bytes and does not establish
+MuJoCo/Isaac dynamics equivalence. For a programmatic kinematic preview:
 
-These commands verify asset integrity, load the models, and render images
-without opening a desktop window. Part checks cover both sides and multiple
-viewpoints.
+```python
+import sys
+sys.path.insert(0, "viewers")
+from _runtime import load_training_model
+model = load_training_model()
+assert model.nq == 28
+```
+
+The camera window's **保存当前图像与深度** button saves RGB PNGs, depth PNGs,
+raw `_depth_m.npy` and `capture.json` (intrinsics, frames, time and valid-pixel
+statistics) in `outputs/<timestamp>/`; `--output` chooses another directory.
+Raw depth is optical Z in meters, `float32`, with invalid pixels as `NaN`.
+Depth is not registered to color. Nominal depth ranges are D455 `0.6–6 m` and
+D405 `0.07–0.5 m`. Cameras are ideal pinhole simulations with nominal fields
+of view, rather than calibrated hardware streams.
+
+## Verification and asset identity
 
 ```bash
+.venv/bin/python -m unittest discover -s tests -v
 ./viewers/view_adapters.sh --check --output outputs/check/adapters
 ./viewers/view_camera_brackets.sh --check --output outputs/check/brackets
 ./viewers/view_assembly.sh --model full --check --output outputs/check/assembly
@@ -131,69 +142,44 @@ viewpoints.
 ./viewers/view_cameras.sh --check --output outputs/check/cameras
 ```
 
-If an asset checksum does not match, the viewer will not automatically rebuild
-or replace the model. Inspect local changes with `git status`, restore the
-relevant asset from a trusted commit, and try again.
-
-## Model and CAD Files
+[`assets/manifest.json`](assets/manifest.json) records per-file SHA256, byte
+counts and upstream revisions. Viewers check integrity before loading; they
+never silently regenerate a changed asset. [`assets/runtime.json`](assets/runtime.json)
+selects models, topology, poses, parts and camera settings. Exact URDF SHA256:
 
 ```text
-assets/
-├── assembly_rl_convex.urdf  # Reduced right-arm/hand training model, 28 DoF
-├── training_reduced28.json  # Source/topology/mesh hashes and verification
-├── mount_rotation.json     # Full-assembly installation provenance
-├── assembly.urdf           # Complete assembly; meters/radians, 58 robot DOFs
-├── scene.xml               # MuJoCo scene with six RGB/depth rendering viewpoints
-├── runtime.json            # Full/training selection, poses, cameras and parts
-├── manifest.json           # File checksums and upstream revisions
-├── meshes/                 # Referenced final meshes, including collision meshes
-└── cad/
-    ├── adapters/           # left/right.3mf and left/right_print_mm.stl
-    └── camera_brackets/    # left/right.step and left/right_mm.stl
-viewers/                    # Four entry points and their shared implementation
-licenses/                   # Upstream licenses, notices, and licensing evidence
+assembly.urdf
+537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44
+assembly_rl_convex.urdf
+2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034
 ```
 
-For mechanical engineering handoff, prefer
-`assets/cad/camera_brackets/left.step` and `right.step` for the camera brackets.
-Use the 3MF/STL files in `assets/cad/adapters/` for the hand adapters. CAD STL
-files use millimeters; simulation meshes use meters. Camera bodies are not
-included in the bracket manufacturing files.
+Tests cover integrity, topology, joint definitions, right-chain FK, mounting,
+table height and preview loading. Compilation and kinematic images do not
+establish physical grasp success or policy compatibility. Reimport simulators
+that cached an older asset.
 
-The full assembly URDF includes the official RealSense D455 body mesh, nominal depth, color,
-infrared and IMU frames, and the D405 wrist-camera frames. RGB/depth rendering
-uses the camera definitions in `scene.xml`.
+## Repository contents and CAD
 
-The `base_Link` origin is at world `z=1.20035 m` in both the URDF and MuJoCo
-scene. The scene's work-table top is at `z=0.75035 m`, exactly `0.45 m` below
-that robot origin. The URDF itself does not include the table geometry.
-
-```python
-import mujoco
-model = mujoco.MjModel.from_xml_path("assets/scene.xml")
+```text
+assets/       URDFs, MuJoCo scene, runtime configuration and integrity manifest
+  meshes/     Referenced visual and collision meshes
+  cad/
+    adapters/        left/right.3mf and left/right_print_mm.stl
+    camera_brackets/ left/right.step and left/right_mm.stl
+viewers/      Four launch scripts and shared implementation
+tests/        Release asset verification
+docs/images/  Full and training preview images linked above
+licenses/     Upstream licenses, notices and licensing evidence
 ```
 
-## Branches and Limitations
+For manufacturing, use the bracket STEP files and adapter 3MF/STL files.
+CAD STLs use millimeters; simulation meshes use meters. Bracket manufacturing
+files exclude camera bodies. Mechanical strength, fatigue, cable/tool clearance
+and hardware calibration have not been certified. The viewers send no hardware
+commands.
 
-- `dev`: the complete development snapshot, excluding local virtual
-  environments and interpreter caches. It includes original STP/3MF files and
-  local Git metadata for the three vendor repositories.
-- `main`: the final models and four viewing functions. Close running windows
-  and save local changes before switching branches. Restore an individual file
-  with `git restore --source dev -- <path>`, or use `git switch dev` for the
-  complete development version.
-- Public repository:
-  [ENDLESS0321/tron2_revo3_description](https://github.com/ENDLESS0321/tron2_revo3_description).
-  Both `main` and `dev` are published, including the development snapshot and
-  original CAD in their shared history. Removing a file from the `main` working
-  tree does not make its historical contents private. The adjacent glove
-  application, delivery bundle, and skill handoff are not part of this repository.
-- Camera models and intrinsics are simulation selections and nominal values,
-  not hardware calibration. Physical assembly, cable/tool clearance, the full
-  motion range, structural strength, and fatigue have not been certified.
-  Tolerances at original mating surfaces still require mechanical review.
-- The viewers do not connect to hardware or send control commands. Additional
-  validation is required before manufacturing or physical grasping.
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for licensing information,
-including BrainCo's unresolved license status.
+Generated captures, logs, environments and interpreter caches are ignored.
+Usage and model notes are kept in these paired READMEs; earlier development
+reports remain in Git history. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+for source and licensing qualifications, including BrainCo's unresolved license.
