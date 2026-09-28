@@ -18,7 +18,9 @@
 
 ## 训练拓扑、碰撞体与坐标
 
-训练 URDF 是提供的 `assembly_bilateral_axis180_reduced28_physicsfix.urdf` 的逐字节副本。包含 38 个 link、37 个 joint（28 个 revolute + 9 个 fixed）、78 个 visual、31 个 link 上的 58 个 collision，以及 128 个不同的 mesh 引用。保留 `rl_convex` 文件名以兼容已有配置路径，右掌实际使用 28 个分块碰撞体。
+仓库中的训练模型文件是 [`assets/assembly_rl_convex.urdf`](assets/assembly_rl_convex.urdf)，它是所提供源文件 `assembly_bilateral_axis180_reduced28_physicsfix.urdf` 的逐字节副本。后者仅用于记录来源，不是仓库中的另一个文件；加载模型或配置训练路径时，请使用 `assets/assembly_rl_convex.urdf`。
+
+包含 38 个 link、37 个 joint（28 个 revolute + 9 个 fixed）、78 个 visual、31 个 link 上的 58 个 collision，以及 128 个不同的 mesh 引用。保留 `rl_convex` 文件名以兼容已有配置路径，右掌实际使用 28 个分块碰撞体。
 
 | 碰撞体组 | 元素数 |
 | --- | ---: |
@@ -95,9 +97,9 @@ assert model.nq == 28
 [`assets/manifest.json`](assets/manifest.json) 保存每个资产的 SHA256、字节数与上游版本。预览先检查完整性，不会静默重建被修改的模型。[`assets/runtime.json`](assets/runtime.json) 保存模型选择、拓扑、姿态、零件与相机设置。URDF 的精确 SHA256：
 
 ```text
-assembly.urdf
+assets/assembly.urdf
 537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44
-assembly_rl_convex.urdf
+assets/assembly_rl_convex.urdf
 2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034
 ```
 
@@ -107,6 +109,11 @@ assembly_rl_convex.urdf
 
 ```text
 assets/       URDF、MuJoCo 场景、运行配置和完整性清单
+  assembly.urdf           完整双侧装配（58 个可动关节）
+  assembly_rl_convex.urdf  physicsfix 训练模型（28 个可动关节）
+  scene.xml               完整模型的 MuJoCo 场景
+  runtime.json            模型选择与预览设置
+  manifest.json           资产 hash 与来源记录
   meshes/     模型引用的视觉和碰撞网格
   cad/
     adapters/        left/right.3mf 与 left/right_print_mm.stl

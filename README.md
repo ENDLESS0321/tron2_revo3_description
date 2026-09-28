@@ -27,8 +27,12 @@ The hand-to-flange translation is `[0, 0.023855, 0]` m, with left RPY
 
 ## Training topology, collisions and coordinates
 
-The training URDF is the supplied
-`assembly_bilateral_axis180_reduced28_physicsfix.urdf`, copied byte-for-byte.
+The training model in this repository is
+[`assets/assembly_rl_convex.urdf`](assets/assembly_rl_convex.urdf). It is a
+byte-for-byte copy of the supplied source file
+`assembly_bilateral_axis180_reduced28_physicsfix.urdf`; that source filename
+is provenance metadata, not an additional file in this repository. Use
+`assets/assembly_rl_convex.urdf` when loading or configuring the training model.
 It has 38 links, 37 joints (28 revolute + 9 fixed), 78 visual geometries,
 58 collision elements on 31 links, and 128 unique mesh references. The retained
 `rl_convex` filename supports existing configuration paths; the palm uses
@@ -148,9 +152,9 @@ never silently regenerate a changed asset. [`assets/runtime.json`](assets/runtim
 selects models, topology, poses, parts and camera settings. Exact URDF SHA256:
 
 ```text
-assembly.urdf
+assets/assembly.urdf
 537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44
-assembly_rl_convex.urdf
+assets/assembly_rl_convex.urdf
 2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034
 ```
 
@@ -163,6 +167,11 @@ that cached an older asset.
 
 ```text
 assets/       URDFs, MuJoCo scene, runtime configuration and integrity manifest
+  assembly.urdf           Full bilateral assembly (58 moving joints)
+  assembly_rl_convex.urdf  Physicsfix training model (28 moving joints)
+  scene.xml               Full-model MuJoCo scene
+  runtime.json            Model selection and viewer settings
+  manifest.json           Asset hashes and source provenance
   meshes/     Referenced visual and collision meshes
   cad/
     adapters/        left/right.3mf and left/right_print_mm.stl
