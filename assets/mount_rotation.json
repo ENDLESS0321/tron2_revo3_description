@@ -1,5 +1,5 @@
 {
-  "release": "1.4.0",
+  "release": "1.4.1",
   "rotation_angle_deg": 180,
   "rotation_axis_in_each_wrist_roll_link": [
     0,
@@ -16,9 +16,8 @@
   "actuated_limits_preserved": true,
   "reference_urdf_sha256": "1e61561e51384ccd48b1636fa7eefbc07cda685ad3f24929d99a1d06509617cd",
   "exact_user_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
-  "default_urdf_sha256": "9e89d7b689b54be6c30b8b1d64384b400d8b11ae266077872b5ce4de66539ab2",
-  "exact_variant_world_to_base_z_m": 1.20035,
-  "default_world_to_base_z_m": 1.2,
+  "default_urdf_sha256": "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44",
+  "default_world_to_base_z_m": 1.20035,
   "changes": [
     {
       "joint": "left_adapter_mount",
@@ -117,5 +116,9 @@
   },
   "design_rationale": "Seek greater joint-limit headroom for the intended tabletop palm-down, fingers-forward posture; physical joint limits are unchanged.",
   "joint_limit_margin_comparison": "not evaluated in this release",
-  "physics_stepped": false
+  "physics_stepped": false,
+  "canonical_urdf": "assets/assembly.urdf",
+  "canonical_is_exact_approved_artifact": true,
+  "scene_table_top_z_m": 0.75035,
+  "scene_base_to_table_top_gap_m": 0.45
 }

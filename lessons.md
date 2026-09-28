@@ -54,3 +54,9 @@
 - Rule: Before every push to this repository, verify the authenticated GitHub
   account and local Git author/committer identity are `zengxiong111`; stop and
   correct any mismatch before publishing.
+
+## 2026-09-28 — Replace the canonical URDF with the approved artifact
+
+- Context: Publishing the approved bilateral hand and wrist-camera axis-180 model.
+- Mistake: Kept a normalized canonical URDF and published the approved file as a separate variant.
+- Rule: When the user requests replacement, copy the approved URDF byte-for-byte to `assets/assembly.urdf`, remove the redundant variant, and synchronize scene placement, hashes, tests and documentation. Preserve the requested 45 cm base-origin-to-table-top separation by moving scene geometry, not editing the approved URDF.

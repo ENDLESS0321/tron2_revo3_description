@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.4.1] - 2026-09-28
+
+### Features
+
+- Replace `assets/assembly.urdf` byte-for-byte with the approved bilateral
+  axis-180 artifact and remove the redundant variant URDF.
+- Expand paired documentation with before/after joint transforms, rotation
+  convention, joint-limit headroom motivation and model migration details.
+- Document the RL training requirement of one rigid link and one collision
+  shape per flange; the detailed assembly remains unchanged.
+
+### Design Rationale
+
+- Make the approved model the single default for all existing viewers and imports.
+- Preserve its world base height at 1.20035 m; synchronize the MJCF base and move
+  the table top to 0.75035 m to retain the requested 0.45 m separation.
+
+### Notes & Caveats
+
+- Users of the removed variant should load `assets/assembly.urdf`.
+- Geometry is the same as the approved artifact; this patch adds no new workspace
+  or quantitative joint-limit-margin result.
+
 ## [1.4.0] - 2026-09-28
 
 ### Features

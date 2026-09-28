@@ -52,12 +52,20 @@ class ReleaseAssetTests(unittest.TestCase):
         table_top_z = table_center_z + table_half_height
         self.assertAlmostEqual(urdf_base_z, scene_base_z)
         self.assertAlmostEqual(urdf_base_z - table_top_z, 0.45)
+        for cube in self.scene.findall("./worldbody/geom"):
+            if cube.get("name", "").startswith("test_cube_"):
+                bottom_z = float(cube.get("pos").split()[2]) - float(cube.get("size").split()[2])
+                self.assertAlmostEqual(bottom_z, table_top_z)
 
-    def test_exact_variant_and_default_only_differ_in_world_height(self):
-        variant = ET.parse(ASSETS / "assembly_bilateral_axis180.urdf").getroot()
-        self.assertAlmostEqual(float(variant.find("joint[@name='world_to_base']/origin").get("xyz").split()[2]), 1.20035)
-        variant.find("joint[@name='world_to_base']/origin").set("xyz", self.joint("world_to_base").find("origin").get("xyz"))
-        self.assertEqual(ET.tostring(variant), ET.tostring(self.urdf))
+
+    def test_default_urdf_is_exact_approved_artifact(self):
+        import hashlib
+
+        expected = "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44"
+        self.assertEqual(hashlib.sha256((ASSETS / "assembly.urdf").read_bytes()).hexdigest(), expected)
+        self.assertFalse((ASSETS / "assembly_bilateral_axis180.urdf").exists())
+        origin = self.joint("world_to_base").find("origin")
+        self.assertAlmostEqual(float(origin.get("xyz").split()[2]), 1.20035)
 
     def test_bilateral_mounts_preserve_finger_axis_and_mating_positions(self):
         for side, expected_palm in (("left", [1, 0, 0]), ("right", [1, 0, 0])):

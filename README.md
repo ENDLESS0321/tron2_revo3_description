@@ -13,14 +13,19 @@ design iterations, previous versions, reports, and original CAD are preserved
 on `dev`. Running the viewers does not require CAD software, ROS, development
 directories, or additional model downloads.
 
-## Mount update (1.4.0)
+## Mount update (1.4.1)
 
 Both hand/flange assemblies and both wrist cameras now turn 180° around the
 forearm longitudinal centerline. The aim is greater joint-limit headroom for
 tabletop palm-down, fingers-forward operation; physical limits stay unchanged.
-See [rotation details, model provenance and previews](docs/mount_rotation_1.4.0.md).
-The default URDF and MuJoCo scene are updated together; the exact generated
-URDF is also supplied as `assets/assembly_bilateral_axis180.urdf`.
+See [rotation details, model provenance and previews](docs/mount_rotation.md).
+The approved generated URDF directly replaces `assets/assembly.urdf` byte-for-byte.
+All viewers use it by default; the redundant variant file has been removed.
+The MuJoCo scene is synchronized, retaining the 45 cm base-to-table-top gap.
+
+For RL/simulation training, each flange must be reduced to one rigid link and one
+collision shape. The assembly currently has 48 collision elements per flange;
+see the detailed document for the training-asset requirement.
 
 ## Installation
 
@@ -136,8 +141,8 @@ The URDF includes the official RealSense D455 body mesh, nominal depth, color,
 infrared and IMU frames, and the D405 wrist-camera frames. RGB/depth rendering
 uses the camera definitions in `scene.xml`.
 
-The `base_Link` origin is at world `z=1.20 m` in both the URDF and MuJoCo
-scene. The scene's work-table top is at `z=0.75 m`, exactly `0.45 m` below
+The `base_Link` origin is at world `z=1.20035 m` in both the URDF and MuJoCo
+scene. The scene's work-table top is at `z=0.75035 m`, exactly `0.45 m` below
 that robot origin. The URDF itself does not include the table geometry.
 
 ```python
