@@ -25,7 +25,7 @@ graph TD
   BT[Training-layout base z 0.957 m] -. 0.45 m above table top z 0.507 m .-> TT[Training-layout table]
 ```
 
-Both hands and wrist-camera mounts use an axis-180 installation about the parent wrist link's local Z centerline, through `[-0.0317, 0, 0] m`; this is a mounting transform, not the actuated wrist-roll axis. Hand-to-flange translation is `[0, 0.023855, 0] m`; mount RPY is left `[-π/2, -π/2, 0]`, right `[-π/2, +π/2, 0]`.
+Both hands and wrist-camera mounts use an axis-180 installation about the parent wrist link's local Z centerline, through `[-0.0317, 0, 0] m`; this is a mounting transform, not the actuated wrist-roll axis. Mount translations and physical joint limits are retained relative to the pre-rotation installation; the head camera is unchanged. Hand-to-flange translation is `[0, 0.023855, 0] m`; mount RPY is left `[-π/2, -π/2, 0]`, right `[-π/2, +π/2, 0]`.
 
 ## Mesh paths and integrity
 
