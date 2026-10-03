@@ -2,6 +2,14 @@
 
 English | [简体中文](training_model.zh-CN.md)
 
+## Contents
+
+- [Artifact and scope](#artifact-and-scope)
+- [The 28 moving joints](#the-28-moving-joints)
+- [Frozen pose and retained inertials](#frozen-pose-and-retained-inertials)
+- [Collision inventory](#collision-inventory)
+- [Coordinate placement](#coordinate-placement)
+
 ## Artifact and scope
 
 Use [`assets/assembly_rl_convex.urdf`](../assets/assembly_rl_convex.urdf) as the repository training-model path. It is a byte-for-byte supplied source artifact named `assembly_bilateral_axis180_reduced28_physicsfix.urdf`; that original filename is provenance metadata, not another checked-in file. [`assets/manifest.json`](../assets/manifest.json) records the SHA256 as `2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034`, plus the per-file hashes and source revisions. The full URDF hash is `537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44`.
@@ -47,7 +55,7 @@ The retained `rl_convex` filename does not mean that all collision geometry is a
 
 ## Coordinate placement
 
-Distances below are meters; angles above are radians. The full and training URDFs retain the fixed `world_to_base` translation `[0, 0, 1.20035]`. In the full MuJoCo scene, the table top is `z = 0.75035 m`, 0.45 m below the robot origin. A separate physicsfix training layout uses base `z = 0.957 m` and tabletop `z = 0.507 m`, also 0.45 m apart. The training URDF itself has no table or manipulated object. Treat the URDF world offset, simulator base placement and environment table placement as separate configuration inputs; applying the full-scene offset on top of a training layout can double the translation.
+Distances are meters; angles are radians. Both robot URDFs retain `world_to_base = [0, 0, 1.20035]`. Release 1.8.0 aligns the full MuJoCo scene with the physicsfix training layout: physical base Z `0.957`, tabletop Z `0.507`, gap `0.45`. Table full size is `[0.7, 0.7, 0.4]`, center `[0.2764393782702718, 0.39253473731213084, 0.307]`; the scene base position and quaternion match dex-retarget/dex-rl. The URDF contains no table or object. Apply the explicit import root transform once; see [frames and placement](../assets/README.md#frames-and-placement).
 
 The full scene XML describes the complete 58-DOF articulation. The reduced28 URDF is the training topology. The release viewer uses the reduced URDF only for a kinematic preview: it compiles an in-memory MuJoCo `MjSpec` with `balanceinertia` enabled because the supplied fingertip inertias violate MuJoCo's inertia triangle check. The published URDF bytes are not altered. This correction is a preview import accommodation and does not demonstrate MuJoCo/Isaac dynamics equivalence, training completion, hardware operation, or task success.
 

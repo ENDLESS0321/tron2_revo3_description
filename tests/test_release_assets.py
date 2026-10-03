@@ -76,8 +76,14 @@ class ReleaseAssetTests(unittest.TestCase):
         table_center_z = float(table.get("pos").split()[2])
         table_half_height = float(table.get("size").split()[2])
         table_top_z = table_center_z + table_half_height
-        self.assertAlmostEqual(urdf_base_z, scene_base_z)
-        self.assertAlmostEqual(urdf_base_z - table_top_z, 0.45)
+        self.assertAlmostEqual(urdf_base_z, 1.20035)
+        self.assertAlmostEqual(scene_base_z - table_top_z, 0.45)
+        layout = self.runtime["world_layout"]
+        np.testing.assert_allclose(np.fromstring(table.get("size"), sep=" ") * 2, layout["table_size"])
+        np.testing.assert_allclose(np.fromstring(table.get("pos"), sep=" "), layout["table_center"])
+        np.testing.assert_allclose(np.fromstring(self.scene_body("base_Link").get("pos"), sep=" "), layout["base_pos"])
+        np.testing.assert_allclose(np.fromstring(self.scene_body("base_Link").get("quat"), sep=" "), layout["base_quat_wxyz"])
+        self.assertAlmostEqual(table_top_z, 0.507)
         for cube in self.scene.findall("./worldbody/geom"):
             if cube.get("name", "").startswith("test_cube_"):
                 bottom_z = float(cube.get("pos").split()[2]) - float(cube.get("size").split()[2])
@@ -120,8 +126,13 @@ class ReleaseAssetTests(unittest.TestCase):
                     ids = [mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, name)
                            for model in models]
                     self.assertTrue(all(body_id >= 0 for body_id in ids))
-                    np.testing.assert_allclose(states[0].xpos[ids[0]], states[1].xpos[ids[1]], atol=1e-9)
-                    np.testing.assert_allclose(states[0].xmat[ids[0]], states[1].xmat[ids[1]], atol=1e-9)
+                    layout = self.runtime["world_layout"]
+                    wxyz = layout["base_quat_wxyz"]
+                    rotation = Rotation.from_quat([*wxyz[1:], wxyz[0]]).as_matrix()
+                    expected_pos = rotation @ (states[0].xpos[ids[0]] - [0, 0, 1.20035]) + layout["base_pos"]
+                    expected_rotation = rotation @ states[0].xmat[ids[0]].reshape(3, 3)
+                    np.testing.assert_allclose(expected_pos, states[1].xpos[ids[1]], atol=1e-9)
+                    np.testing.assert_allclose(expected_rotation, states[1].xmat[ids[1]].reshape(3, 3), atol=1e-9)
 
     def test_training_reduced28_hash_topology_and_meshes(self):
         import hashlib

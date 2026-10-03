@@ -2,6 +2,14 @@
 
 [English](training_model.md) | 简体中文
 
+## 目录
+
+- [资产与范围](#资产与范围)
+- [28 个可动关节](#28-个可动关节)
+- [固定姿态与保留惯性](#固定姿态与保留惯性)
+- [碰撞体清单](#碰撞体清单)
+- [坐标摆放](#坐标摆放)
+
 ## 资产与范围
 
 仓库中的训练模型路径为[`assets/assembly_rl_convex.urdf`](../assets/assembly_rl_convex.urdf)。该文件是提供的源资产 `assembly_bilateral_axis180_reduced28_physicsfix.urdf` 的逐字节副本；原源文件名仅记录来源，并非另一个仓库文件。[`assets/manifest.json`](../assets/manifest.json) 记录其 SHA256：`2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034`，以及逐文件 hash 和上游版本。完整 URDF 的 SHA256 为 `537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44`。
@@ -47,7 +55,7 @@
 
 ## 坐标摆放
 
-下述距离单位为米。完整模型和训练 URDF 均保留了平移为 `[0, 0, 1.20035]` 的 `world_to_base` 固定关节。完整 MuJoCo 场景中的桌面顶面为 `z = 0.75035 m`，比机器人原点低 `0.45 m`。另一个 physicsfix 训练布局使用基座 `z = 0.957 m`、桌面 `z = 0.507 m`，二者同样相差 `0.45 m`。训练 URDF 本身不含桌面或操作物体。配置时应区分 URDF 世界偏移、模拟器基座位置和环境桌面位置；将完整场景的偏移叠加到训练布局上会导致重复平移。
+距离单位为米，角度为弧度。两个机器人 URDF 保留 `world_to_base = [0, 0, 1.20035]`。版本 1.8.0 将完整 MuJoCo 场景对齐到 physicsfix 训练布局：物理 base Z `0.957`、桌面 Z `0.507`、高度差 `0.45`。桌面完整尺寸为 `[0.7, 0.7, 0.4]`，中心为 `[0.2764393782702718, 0.39253473731213084, 0.307]`；场景 base 位置和四元数与 dex-retarget/dex-rl 一致。URDF 不包含桌面或物体。只应用一次显式导入 root 变换，详见[坐标系与摆放](../assets/README.zh-CN.md#坐标系与摆放)。
 
 完整场景 XML 描述 58 自由度的完整 articulation。降阶28 URDF 对应训练拓扑。发布仓库中的预览工具只将降阶 URDF 用于运动学预览：由于提供的指尖惯量不满足 MuJoCo 的惯量三角检查，预览在内存中的 MuJoCo `MjSpec` 启用 `balanceinertia`。发布版 URDF 字节不会改变。该导入适配只是预览处理，不能证明 MuJoCo／Isaac 动力学等价、训练完成、硬件操作或任务成功。
 

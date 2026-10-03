@@ -4,6 +4,8 @@ English | [简体中文](README.zh-CN.md)
 
 Run from the repository root after following the [installation instructions](../README.md#quick-start).
 
+Release 1.8.0 checks the exact shared table dimensions and placement, physical base pose, 45 cm gap and cube support. URDF/MJCF mount poses are compared after applying the explicit scene world transform; both approved robot URDF hashes remain unchanged.
+
 ## Existing checks
 
 ```bash

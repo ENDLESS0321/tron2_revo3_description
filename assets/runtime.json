@@ -64,7 +64,7 @@
   "cameras": [
     {
       "name": "head",
-      "label": "\u5934\u90e8 D455",
+      "label": "头部 D455",
       "model": "D455",
       "color_frame": "head_camera_color_optical_frame",
       "depth_frame": "head_camera_depth_optical_frame",
@@ -83,7 +83,7 @@
     },
     {
       "name": "left_wrist",
-      "label": "\u5de6\u8155 D405",
+      "label": "左腕 D405",
       "model": "D405",
       "color_frame": "left_wrist_camera_color_optical_frame",
       "depth_frame": "left_wrist_camera_depth_optical_frame",
@@ -102,7 +102,7 @@
     },
     {
       "name": "right_wrist",
-      "label": "\u53f3\u8155 D405",
+      "label": "右腕 D405",
       "model": "D405",
       "color_frame": "right_wrist_camera_color_optical_frame",
       "depth_frame": "right_wrist_camera_depth_optical_frame",
@@ -124,7 +124,7 @@
   "depth_convention": "Optical Z in meters; out-of-range pixels are NaN; raw depth is not color-registered",
   "kinematic_preview_only": true,
   "strength_certified": false,
-  "release": "1.7.1",
+  "release": "1.8.0",
   "models": {
     "full": {
       "urdf": "assembly.urdf",
@@ -174,5 +174,32 @@
       },
       "preview_inertia_policy": "balanceinertia_in_memory_for_kinematic_preview_only"
     }
+  },
+  "world_layout": {
+    "base_pos": [
+      -0.22,
+      0.60231100353792,
+      0.957
+    ],
+    "base_quat_wxyz": [
+      0.999048221581858,
+      0.0,
+      0.0,
+      -0.043619387365336
+    ],
+    "table_center": [
+      0.2764393782702718,
+      0.39253473731213084,
+      0.307
+    ],
+    "table_size": [
+      0.7,
+      0.7,
+      0.4
+    ],
+    "table_top_z": 0.507,
+    "base_table_vertical_gap_m": 0.45,
+    "urdf_root_world_z": -0.24335,
+    "note": "Scene placement matches dex-retarget and dex-rl. Robot URDF world_to_base remains unchanged; apply the explicit root transform when importing."
   }
 }

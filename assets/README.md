@@ -2,6 +2,12 @@
 
 English | [简体中文](README.zh-CN.md)
 
+## Contents
+
+- [Select the model](#select-the-model)
+- [Frames and placement](#frames-and-placement)
+- [Mesh paths and integrity](#mesh-paths-and-integrity)
+
 ## Select the model
 
 | File | Use | DOF | Table and cameras |
@@ -14,15 +20,25 @@ The URDF training artifact is the file in this repository. Its source filename, 
 
 ## Frames and placement
 
-Lengths in the robot URDFs and simulation scene are meters; joint angles are radians. The URDF `world_to_base` fixed joint places the robot base at `[0, 0, 1.20035] m`. In the full scene the table top is `z = 0.75035 m`, 0.45 m below that base origin. A separate documented physicsfix training layout uses base `z = 0.957 m` and table top `z = 0.507 m`, also separated by 0.45 m. These are distinct world placements: the training URDF contains no table, and an importing simulator must choose its world/base/table placement once rather than applying the full-model offset twice.
+The robot URDF `world_to_base` stays at `[0, 0, 1.20035] m`. Release 1.8.0 places the full scene robot and table in the same world layout as dex-retarget/dex-rl; only the scene placement changes. Lengths are meters and angles are radians.
+
+| Parameter | Value |
+| --- | --- |
+| Physical base XYZ | `[-0.22, 0.60231100353792, 0.957]` |
+| Physical base quaternion WXYZ | `[0.999048221581858, 0, 0, -0.043619387365336]` |
+| Table center XYZ | `[0.2764393782702718, 0.39253473731213084, 0.307]` |
+| Table full size XYZ | `[0.7, 0.7, 0.4]` |
+| Table top Z / base-to-table gap | `0.507 / 0.45` |
+| URDF root world Z when importing | `-0.24335` |
+
+MuJoCo box `size` stores half extents, so the scene uses `[0.35, 0.35, 0.2]`. Test cubes rest on the revised tabletop. `runtime.json` records `world_layout`. When importing either robot URDF, apply the root position `[-0.22, 0.60231100353792, -0.24335]` and the base quaternion exactly once; the URDF contains no table.
 
 ```mermaid
 graph TD
-  W[World] -->|world_to_base: z 1.20035 m in URDF/full scene| B[TRON2 base]
+  W[World] -->|Explicit scene or import root transform| B[Physical TRON2 base: z 0.957 m]
   B --> L[Left arm and Revo3]
   B --> R[Right arm and Revo3]
-  T[Full-scene table top: z 0.75035 m] -. 0.45 m below base origin .-> B
-  BT[Training-layout base z 0.957 m] -. 0.45 m above table top z 0.507 m .-> TT[Training-layout table]
+  T[Table top: z 0.507 m] -. 0.45 m below base .-> B
 ```
 
 Both hands and wrist-camera mounts use an axis-180 installation about the parent wrist link's local Z centerline, through `[-0.0317, 0, 0] m`; this is a mounting transform, not the actuated wrist-roll axis. Mount translations and physical joint limits are retained relative to the pre-rotation installation; the head camera is unchanged. Hand-to-flange translation is `[0, 0.023855, 0] m`; mount RPY is left `[-π/2, -π/2, 0]`, right `[-π/2, +π/2, 0]`.

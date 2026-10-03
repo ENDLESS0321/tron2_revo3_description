@@ -2,9 +2,18 @@
 
 English | [简体中文](README.zh-CN.md)
 
-Models, manufacturing CAD and kinematic viewers for a DACH_TRON2A dual-arm robot with BrainCo Revo3 hands, hand adapters, V3 wrist-camera brackets, a head D455 and two wrist D405 cameras. Asset release 1.7.1 includes the physicsfix training URDF; all referenced meshes are bundled.
+Models, manufacturing CAD and kinematic viewers for a DACH_TRON2A dual-arm robot with BrainCo Revo3 hands, hand adapters, V3 wrist-camera brackets, a head D455 and two wrist D405 cameras. Asset release 1.8.0 includes the physicsfix training URDF; all referenced meshes are bundled.
 
 ![Full assembly and table: kinematic preview](docs/images/new_urdf_front_table.png)
+
+## Contents
+
+- [Quick start](#quick-start)
+- [Choose a model](#choose-a-model)
+- [Viewer entry points](#viewer-entry-points)
+- [Read by task](#read-by-task)
+- [Verification and asset identity](#verification-and-asset-identity)
+- [Repository contents and limits](#repository-contents-and-limits)
 
 ## Quick start
 
