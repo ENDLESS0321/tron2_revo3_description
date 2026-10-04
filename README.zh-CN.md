@@ -1,5 +1,8 @@
 # TRON2 + Revo3 装配模型
 
+固定桌面高度：[坐标系约束](TABLETOP_FRAME_CONTRACT.zh-CN.md) · [English](TABLETOP_FRAME_CONTRACT.md)
+
+
 [English](README.md) | 简体中文
 
 本仓库提供 DACH_TRON2A 双臂机器人、BrainCo Revo3 双手、手部法兰、V3 腕部相机支架、头部 D455 和两个腕部 D405 的模型、制造 CAD 与运动学预览工具。模型资产版本为 1.8.0，包含 physicsfix 训练 URDF；所需 mesh 均随仓库提供。

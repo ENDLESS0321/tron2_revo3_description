@@ -1,5 +1,8 @@
 # TRON2 + Revo3 Assembly Model
 
+Fixed tabletop height: [frame contract](TABLETOP_FRAME_CONTRACT.md) · [中文](TABLETOP_FRAME_CONTRACT.zh-CN.md)
+
+
 English | [简体中文](README.zh-CN.md)
 
 Models, manufacturing CAD and kinematic viewers for a DACH_TRON2A dual-arm robot with BrainCo Revo3 hands, hand adapters, V3 wrist-camera brackets, a head D455 and two wrist D405 cameras. Asset release 1.8.0 includes the physicsfix training URDF; all referenced meshes are bundled.
