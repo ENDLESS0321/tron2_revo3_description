@@ -1,8 +1,5 @@
 # DACH_TRON2A + 打印转接件 + 双 Revo3
 
-固定桌面高度：[坐标系约束](TABLETOP_FRAME_CONTRACT.zh-CN.md) · [English](TABLETOP_FRAME_CONTRACT.md)
-
-
 第一版目标是验证装配与运动学。已获得两家的官方模型，将用户的 3MF 转接件接到 TRON2 双腕，再安装对应的左、右 Revo3。未安装交接包里的 skill，未连接硬件。
 
 ## 快捷查看当前 v2
