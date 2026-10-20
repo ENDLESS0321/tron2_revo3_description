@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>tron2_revo3_description</name>
+  <version>1.7.1</version>
+  <description>URDF, MuJoCo scene and meshes for TRON2 with BrainCo Revo3 hands and cameras.</description>
+  <maintainer email="20225902@stu.neu.edu.cn">ENDLESS0321</maintainer>
+  <license>See licenses/</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
