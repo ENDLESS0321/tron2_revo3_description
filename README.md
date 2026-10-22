@@ -16,6 +16,7 @@ This repository provides models, manufacturing CAD, and kinematic viewers for a 
 | [Full assembly](assets/assembly.urdf) | Bilateral robot, official left/right hand kinematics and camera frames | 58 |
 | [MuJoCo scene](assets/scene.xml) | Full kinematic preview with table and six rendering cameras | 58 |
 | [Reduced training assembly](assets/assembly_rl_convex.urdf) | Existing reduced right-arm topology with official right-hand subtree | 28 |
+| [58-collision retargeting model](assets/assembly_retarget58.urdf) | Right arm + right hand; conservative collision derivative, see [details](docs/training_model.md#58-collision-retargeting-derivative) | 28 |
 
 The hand migration preserves each input assembly's arm, adapter, camera, non-hand transforms, and authored root-to-physical-base transform. Hand mount geometry is input-specific. Hand joints retain the official names and native order; mappings are recorded in the migration JSON. The table-to-physical-base gap remains 0.45 m under the [frame contract](TABLETOP_FRAME_CONTRACT.md).
 

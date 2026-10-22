@@ -16,6 +16,7 @@
 | [完整总成](assets/assembly.urdf) | 双臂机器人、官方左右手运动学和相机坐标系 | 58 |
 | [MuJoCo 场景](assets/scene.xml) | 含桌面及六个渲染相机的完整运动学预览 | 58 |
 | [降阶训练总成](assets/assembly_rl_convex.urdf) | 原降阶右臂拓扑及官方右手子树 | 28 |
+| [58 碰撞体重定向模型](assets/assembly_retarget58.urdf) | 右臂＋右手；保守碰撞派生模型，见[说明](docs/training_model.zh-CN.md#58-碰撞体重定向派生模型) | 28 |
 
 手部迁移保留每个输入总成中的机械臂、转接件、相机、非手部变换和已编写的 root 到物理 base 变换。手部安装几何随各自输入总成而异。手部关节保留官方名称和原生顺序，映射记录在迁移 JSON 中。桌面到物理 base 的高度差仍为 0.45 m，遵守[坐标系约定](TABLETOP_FRAME_CONTRACT.md)。
 

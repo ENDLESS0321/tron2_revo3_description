@@ -8,6 +8,7 @@ This guide defines the reduced training URDF, its relationship to the full assem
 - [Joint identity and order](#joint-identity-and-order)
 - [Collision geometry and builder](#collision-geometry-and-builder)
 - [Frozen geometry, placement, and limits](#frozen-geometry-placement-and-limits)
+- [58-collision retargeting derivative](#58-collision-retargeting-derivative)
 
 ## Model scope and comparison
 
@@ -41,3 +42,28 @@ The official migration builder is [`scripts/build_official_revo3_assembly.py`](.
 The training model keeps the existing root and right-hand mount. The tabletop-to-physical-base-origin gap is exactly `0.45 m`; see the [frame contract](../TABLETOP_FRAME_CONTRACT.md). The reduced URDF is not a table or object scene.
 
 Current verification checks URDF topology, mesh hashes, exact right-hand source nodes, and relative right-hand FK at tested poses. These checks do not establish PhysX runtime collision behavior, dynamics equivalence, policy compatibility, training completion, collision-free motion, grasp success, or hardware readiness. Existing trajectories and checkpoints need revalidation against the current training URDF.
+
+## 58-collision retargeting derivative
+
+`assets/assembly_retarget58.urdf` is an optional right-arm/right-hand collision derivative of the 91-collision official training model. It has exactly 58 collision elements (49 hand + 9 non-hand) and 28 moving joints. Select this URDF explicitly in the retargeter. The 91-collision source remains the official reference; the full bilateral assembly is unchanged. This asset does not change the frozen left-hand model or any active retargeting/training configuration.
+
+| Geometry | Source count | Derivative count |
+| --- | ---: | ---: |
+| Non-hand links | 9 | 9 |
+| Palm/base | 5 | 5 |
+| Four fingers MCP/PIP, combined | 24 | 8 |
+| Thumb CMR | 32 | 15 |
+| Remaining hand collisions, including all DIP tips and thumb MCP/PIP | 21 | 21 |
+| Total | 91 | 58 |
+
+Merging operates within a rigid link using convex hulls and a deterministic greedy volume heuristic. No joint, visual, inertial, mount, root transform or non-hand collision is changed. The physical-base/tabletop gap remains 0.45 m. Merged hulls enclose the original components but may fill gaps and enlarge contact envelopes; they are not dynamically equivalent replacements.
+
+From the repository root, with the existing viewer dependencies installed:
+
+```bash
+python3 scripts/build_retarget58.py
+python3 scripts/verify_retarget58.py
+python3 -m unittest discover -s tests -v
+```
+
+`assets/retarget58.json` binds source/output SHA-256, merge membership and verification. Verification checks exact non-collision XML equality, 91-to-58 counts, mesh closure, containment of every original component in one output convex hull, sampled expansion below 2.5 mm, and MuJoCo compilation with 28 moving joints. Surface samples comprise vertices and triangle centroids; this is not a continuous Hausdorff-distance bound. MuJoCo preview balances inertia in memory as before. No trajectory, self-collision, PhysX, dynamics, policy compatibility, speedup or hardware validation is established. Recheck trajectories against the selected collision asset before use.
