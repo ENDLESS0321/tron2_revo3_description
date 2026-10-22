@@ -2,13 +2,19 @@
 
 本说明介绍完整与降阶机器人资产，以及坐标系摆放约定。
 
+## 目录
+
+- [模型选择](#模型选择)
+- [坐标系与摆放](#坐标系与摆放)
+- [Mesh 闭包与来源](#mesh-闭包与来源)
+
 ## 模型选择
 
 | 文件 | 用途 | 自由度 |
 | --- | --- | ---: |
 | [`assembly.urdf`](assembly.urdf) | 完整双臂机器人和相机坐标系 | 58 |
 | [`scene.xml`](scene.xml) | 完整 MuJoCo 运动学场景、桌面和六个渲染相机 | 58 |
-| [`assembly_rl_convex.urdf`](assembly_rl_convex.urdf) | 降阶右臂拓扑及官方右侧 Revo3 手 | 28 |
+| [`assembly_rl_convex.urdf`](assembly_rl_convex.urdf) | 右臂拓扑、官方 Revo3 运动学；58 个碰撞元素 | 28 |
 
 ## 坐标系与摆放
 
@@ -18,6 +24,6 @@ URDF `world_to_base` 保持为 `[0, 0, 1.20035] m`。场景中物理 base 的 XY
 
 ## Mesh 闭包与来源
 
-URDF 和 MJCF 的 mesh 引用均相对于 `assets/`。`manifest.json` 包含发布文件清单及哈希校验。完整 URDF 引用 404 个唯一 mesh URI；降阶训练 URDF 引用 196 个。`scene.xml` 对两个 DAE 视觉网格使用派生的 MuJoCo STL 副本，源文件到派生文件的映射记录在 `manifest.json`。
+URDF 和 MJCF 的 mesh 引用均相对于 `assets/`。`manifest.json` 包含发布文件清单及哈希校验。完整 URDF 引用 404 个唯一 mesh URI；降阶训练 URDF 引用 163 个。`scene.xml` 对两个 DAE 视觉网格使用派生的 MuJoCo STL 副本，源文件到派生文件的映射记录在 `manifest.json`。
 
 桌面高度由[`../TABLETOP_FRAME_CONTRACT.md`](../TABLETOP_FRAME_CONTRACT.md)固定。官方手部源 commit、源与输出哈希、关节顺序、安装变换及引用 mesh 哈希记录在迁移 JSON 中。许可署名及尚未解决的再分发状态见[`../THIRD_PARTY_NOTICES.md`](../THIRD_PARTY_NOTICES.md)。

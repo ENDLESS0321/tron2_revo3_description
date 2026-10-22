@@ -4,7 +4,7 @@
   "source_urdf_sha256": "e2b84835786aa5ccf21dac63c64afa23e53d19113152067acbc7872692ffe07e",
   "source_scene_sha256": "f3b61e937a64b850b7de9e2d4e44c2e84b2826a8ecf694b65e01b6ec7bdebc18",
   "referenced_mesh_count": 404,
-  "training_referenced_mesh_count": 196,
+  "training_referenced_mesh_count": 163,
   "source_commits": {
     "official_revo3": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6"
   },
@@ -14,20 +14,20 @@
   },
   "files": {
     "assets/README.md": {
-      "sha256": "63edaf35029531a6a417d08a362788389f0d86d70184cc3edae2cb4f976c0a50",
-      "bytes": 2084
+      "sha256": "19d2317bbcb5315198b170dc5bd761ee171622257e8da378c1a94adb96233f24",
+      "bytes": 2260
     },
     "assets/README.zh-CN.md": {
-      "sha256": "1cbd1fb6fe477c930e4b60f5c79c44141069a05f618fc212c729e0457c09d736",
-      "bytes": 1933
+      "sha256": "ceb7921155f50e1de5febad89e12869d6b4ff69c57f333db5d5e6c79801a32ed",
+      "bytes": 2084
     },
     "assets/assembly.urdf": {
       "sha256": "e2b84835786aa5ccf21dac63c64afa23e53d19113152067acbc7872692ffe07e",
       "bytes": 149170
     },
     "assets/assembly_rl_convex.urdf": {
-      "sha256": "623be410f99dce037117fc7b08c888aaa690ae4796e1a5f187c27b120f9ad41f",
-      "bytes": 77177
+      "sha256": "49120fdadec38e67dd81a39f3197858a9a643f950f18b350c6239dee15afb8ea",
+      "bytes": 70814
     },
     "assets/cad/README.md": {
       "sha256": "a56cc0d378d7fa42364f2553e37408d8debcc59cb4da3a5c8a8a29714a37fc85",
@@ -68,6 +68,82 @@
     "assets/cad/camera_brackets/right_mm.stl": {
       "sha256": "eed7178fc54e71a3df8ffe17ccee01704e11c7061ce48f18fd3289d42962887b",
       "bytes": 513084
+    },
+    "assets/collision58_meshes/right_hand_base_link_01.obj": {
+      "sha256": "6f5d9517d3f2e610af8c95ea29fbc5d3c069e89228e54fd28ab638ff4361db4f",
+      "bytes": 55986
+    },
+    "assets/collision58_meshes/right_index_MCP_Link_01.obj": {
+      "sha256": "d6397fc423576828501f224e19cfd9927133489f49dda05d2c857b9f38b29d9f",
+      "bytes": 41034
+    },
+    "assets/collision58_meshes/right_index_PIP_Link_00.obj": {
+      "sha256": "1e1fdcfb108fec4e981033d8fac295bcf886a98a8cb7996f90722c01469b7c11",
+      "bytes": 94964
+    },
+    "assets/collision58_meshes/right_little_MCP_Link_00.obj": {
+      "sha256": "de801774375bccce134dd9d916b7d0be6037a20721782af397ce40b3f7157c51",
+      "bytes": 82897
+    },
+    "assets/collision58_meshes/right_little_PIP_Link_00.obj": {
+      "sha256": "a05c147dcf68c5b08abcae07502344067b108b2b346f8cefd3628eaa997097d5",
+      "bytes": 95131
+    },
+    "assets/collision58_meshes/right_middle_MCP_Link_01.obj": {
+      "sha256": "a747ccbca49c02a032e8ba4a0ce2ce2e5a48d62c9514301bb4c534ca5eaf10b1",
+      "bytes": 41120
+    },
+    "assets/collision58_meshes/right_middle_PIP_Link_00.obj": {
+      "sha256": "10e03f15160595eb01ebd21d47b1be5c396ab864442d2800545cbde5c9000763",
+      "bytes": 94983
+    },
+    "assets/collision58_meshes/right_ring_MCP_Link_00.obj": {
+      "sha256": "ad92df2a8f729e708e78326f4477b4a7e073c4226d971c79212d22c742fc7415",
+      "bytes": 82872
+    },
+    "assets/collision58_meshes/right_ring_PIP_Link_00.obj": {
+      "sha256": "54a96ee86b2952d8ececa89b6d8e4aa0fe4057dd7142cf1bfb767adc14edfc9b",
+      "bytes": 95047
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_02.obj": {
+      "sha256": "b66bbd67a122199d70c866998d17e0d149ccd022d52a9772ee0be688f00a95ff",
+      "bytes": 3070
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_03.obj": {
+      "sha256": "d7952a21bc2fe17a620addaec9462e7739f7f00066d678e9805a82de3cdebf12",
+      "bytes": 1822
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_07.obj": {
+      "sha256": "93302457ddb4af1288b281acd050954b32da5eddefe3eb06b56d85a7ae209ed0",
+      "bytes": 1137
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_11.obj": {
+      "sha256": "7d3898cabb0951cfb96570a41a3c56b43dc1d7d511e36c13339228ac92edbb15",
+      "bytes": 1006
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_12.obj": {
+      "sha256": "dc1f3357562a1f3ad7379d642e24ba4a9af6a713b5416f6bdf4a3bb298756109",
+      "bytes": 1357
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_13.obj": {
+      "sha256": "4ce9fa9f8cb0cfc07a7c2b6f5f424b04c763c8de6819db58ca20225e5eedebb3",
+      "bytes": 870
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_16.obj": {
+      "sha256": "87e2a0c1acfc3f146777ac2ac2d629b9f8824ecdad48ed108b3fc1a43dc33e04",
+      "bytes": 933
+    },
+    "assets/collision58_meshes/right_thumb_CMR_Link_17.obj": {
+      "sha256": "86597bfdd4b7f9d429779425839b44334a29ddd3f6067608242d70497f60d2b7",
+      "bytes": 9514
+    },
+    "assets/collision58_meshes/right_thumb_MCP_Link_00.obj": {
+      "sha256": "69e9bc8bcdd596eaa96b38e87b0c3b60801f9509ea3597a530bfbe4913c2a6de",
+      "bytes": 100536
+    },
+    "assets/collision58_meshes/right_thumb_PIP_Link_00.obj": {
+      "sha256": "03d504aa364e98d2ce7c135541179be2b1f47dd8619737093dd2d9e192df26c2",
+      "bytes": 90501
     },
     "assets/meshes/README.md": {
       "sha256": "8c0aafe00050a80621b408df4a730c4d8c6c1abdac8a9876e6a3faf3e52b0af9",
@@ -1830,16 +1906,20 @@
       "bytes": 513084
     },
     "assets/official_revo3_migration.json": {
-      "sha256": "37e195825495922101cb2665d49546df7e52674db567d79ab9400402018873d3",
-      "bytes": 65393
+      "sha256": "c53c8e56d9f9a0efd3ba9557c402f8be5977be84d10bf78c2e95ffcedaaa99db",
+      "bytes": 65868
     },
     "assets/runtime.json": {
-      "sha256": "13848197cbc6636fd5a754e0a9e8aa12d0e83295594b4fb0bd4d121d1900bcc8",
+      "sha256": "84fcbd0cfd0219a0d3923b758a2d4126321d84e8b5d7e7623aaa0b67979e5853",
       "bytes": 5136
     },
     "assets/scene.xml": {
       "sha256": "f3b61e937a64b850b7de9e2d4e44c2e84b2826a8ecf694b65e01b6ec7bdebc18",
       "bytes": 176778
+    },
+    "assets/training_collision_geometry.json": {
+      "sha256": "740e24dd003bfe5ee73acbb177cca95643023bd8360e0ce5e060e355a106ac46",
+      "bytes": 13869
     }
   }
 }

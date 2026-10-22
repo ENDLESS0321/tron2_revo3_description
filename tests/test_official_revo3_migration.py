@@ -81,6 +81,20 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
             with self.assertRaisesRegex(BuildError, "hash mismatch"):
                 verify_mesh_manifest(root, [record])
 
+    def test_collision_reducer_rejects_unpinned_input_before_writing_output(self):
+        import subprocess
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "must-not-be-created"
+            result = subprocess.run(
+                [sys.executable, str(ROOT / "scripts/build_collision58.py"),
+                 "--urdf", str(ASSETS / "assembly_rl_convex.urdf"), "--output", str(output)],
+                capture_output=True, text=True,
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("pinned official 91-collision", result.stderr)
+            self.assertFalse(output.exists())
+
     def test_scene_fk_matches_migrated_urdf_at_nonzero_joint_pose(self):
         models = (_load_urdf_model(ASSETS / "assembly.urdf"),
                   mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml")))
@@ -121,7 +135,7 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
             np.testing.assert_allclose(relative[0][0], relative[1][0], atol=5e-7, err_msg=name)
             np.testing.assert_allclose(relative[0][1], relative[1][1], atol=5e-7, err_msg=name)
 
-    def test_training_model_keeps_reduced_topology_and_official_collision_inventory(self):
+    def test_training_model_keeps_reduced_topology_and_contact_geometry(self):
         def count_moving(root):
             return sum(j.get("type") in {"revolute", "continuous", "prismatic"}
                        for j in root.findall("joint"))
@@ -129,9 +143,11 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
         self.assertEqual((len(self.full.findall("link")), count_moving(self.full),
                           len(self.full.findall(".//collision"))), (114, 58, 280))
         self.assertEqual((len(self.training.findall("link")), count_moving(self.training),
-                          len(self.training.findall(".//collision"))), (37, 28, 91))
+                          len(self.training.findall(".//collision"))), (37, 28, 58))
+        self.assertEqual(self.lineage["hand_geometry_counts"]["training_right"]["output_hand_collisions"], 49)
+        self.assertFalse(self.lineage["hand_geometry_counts"]["training_right"]["preserved"])
         # Training retains the old non-hand reduction and arm geometry while
-        # the active right-hand subtree is byte-equivalent at the XML-node level.
+        # the active hand keeps non-collision structure and exact DIP geometry.
         def signature(node):
             return [node.tag, sorted(node.attrib.items()), (node.text or "").strip(),
                     [signature(child) for child in node]]
@@ -163,10 +179,17 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
                 finger in name for finger in ("thumb", "index", "middle", "ring", "little"))
 
         for tag in ("link", "joint"):
-            full_nodes = {node.get("name"): ET.tostring(node, encoding="utf-8")
+            def comparable(node):
+                import copy
+                node = copy.deepcopy(node)
+                if tag == "link" and "_DIP_" not in node.get("name", ""):
+                    for collision in node.findall("collision"):
+                        node.remove(collision)
+                return signature(node)
+            full_nodes = {node.get("name"): comparable(node)
                           for node in self.full.findall(tag)
                           if is_active_hand_node(node, tag)}
-            training_nodes = {node.get("name"): ET.tostring(node, encoding="utf-8")
+            training_nodes = {node.get("name"): comparable(node)
                               for node in self.training.findall(tag)
                               if is_active_hand_node(node, tag)}
             self.assertEqual(training_nodes, full_nodes)

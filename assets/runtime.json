@@ -151,7 +151,7 @@
       "expected_dof": 28,
       "expected_render_cameras": 0,
       "table_included": false,
-      "collision_shapes": 91,
+      "collision_shapes": 58,
       "provenance": "manifest.json",
       "display_pose": {
         "proximal_pitch_R_Joint": -0.4,

@@ -61,7 +61,7 @@ class ReleaseAssetTests(unittest.TestCase):
                 self.assertAlmostEqual(data.qpos[model.jnt_qposadr[joint_id]], value)
             set_pose(model, data, {})
             np.testing.assert_allclose(data.qpos, model.qpos0)
-        self.assertEqual(verify_assets()["training_referenced_meshes"], 196)
+        self.assertEqual(verify_assets()["training_referenced_meshes"], 163)
 
     def test_training_camera_selection_is_rejected_before_render(self):
         import subprocess
@@ -143,7 +143,7 @@ class ReleaseAssetTests(unittest.TestCase):
 
         path = ASSETS / "assembly_rl_convex.urdf"
         self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
-                         "623be410f99dce037117fc7b08c888aaa690ae4796e1a5f187c27b120f9ad41f")
+                         "49120fdadec38e67dd81a39f3197858a9a643f950f18b350c6239dee15afb8ea")
         training = ET.parse(path).getroot()
         joints = training.findall("joint")
         links = training.findall("link")
@@ -162,13 +162,13 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(len(set(children)), len(children))
         self.assertEqual(set(children), {link.get("name") for link in links} - {"world"})
         meshes = {mesh.get("filename") for mesh in training.findall(".//mesh")}
-        self.assertEqual(len(meshes), 196)
+        self.assertEqual(len(meshes), 163)
         for filename in meshes:
             path = (ASSETS / filename).resolve()
             self.assertTrue(path.is_relative_to(ASSETS))
             self.assertTrue(path.is_file())
-        self.assertEqual(sum(len(link.findall("collision")) for link in links), 91)
-        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 5), ("right_thumb_CMR_Link", 32)):
+        self.assertEqual(sum(len(link.findall("collision")) for link in links), 58)
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 3), ("right_thumb_CMR_Link", 19)):
             link = training.find(f"link[@name='{name}']")
             self.assertEqual(len(link.findall("collision")), count)
             for collision in link.findall("collision"):
@@ -185,9 +185,9 @@ class ReleaseAssetTests(unittest.TestCase):
         assembly = _load_urdf_model(ASSETS / "assembly.urdf")
         self.assertEqual((training.nq, training.njnt), (28, 28))
         collision_mask = (training.geom_contype != 0) | (training.geom_conaffinity != 0)
-        self.assertEqual(int(collision_mask.sum()), 91)
+        self.assertEqual(int(collision_mask.sum()), 58)
         self.assertEqual(int(collision_mask.sum()), self.runtime["models"]["training"]["collision_shapes"])
-        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 5), ("right_thumb_CMR_Link", 32)):
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 3), ("right_thumb_CMR_Link", 19)):
             body_id = mujoco.mj_name2id(training, mujoco.mjtObj.mjOBJ_BODY, name)
             self.assertGreaterEqual(body_id, 0)
             self.assertEqual(int(((training.geom_bodyid == body_id) & collision_mask).sum()), count)

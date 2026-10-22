@@ -60,6 +60,9 @@ def _mujoco_urdf(path):
     temporary=tempfile.TemporaryDirectory(prefix='revo3-mujoco-urdf-')
     root=Path(temporary.name); mesh_root=root/'meshes'; source_mesh_root=ASSETS/'meshes'
     mesh_root.mkdir()
+    collision58=path.parent/'collision58_meshes'
+    if collision58.is_dir():
+        (root/'collision58_meshes').symlink_to(collision58.resolve(),target_is_directory=True)
     for child in source_mesh_root.iterdir():
         if child.name!='hands':
             (mesh_root/child.name).symlink_to(child.resolve(),target_is_directory=child.is_dir())

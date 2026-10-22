@@ -705,12 +705,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_hand_base_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -721,12 +715,6 @@
         <texture filename="meshes/hands/visual/textures/revo3_screen.png" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_palm_led_link.STL" />
-      </geometry>
-    </collision>
     <visual name="right_palm_link__revo3_white_pc">
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -741,12 +729,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_palm_backtrim_v2.obj" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -754,12 +736,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_palm_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -768,9 +744,21 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/hands/collision/right/right_hand_base_link.STL" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="collision58_meshes/right_hand_base_link_01.obj" />
+      </geometry>
+    </collision>
+    <collision>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_palm_touch_link.STL" />
+        <mesh filename="meshes/hands/collision/right/right_palm_backtrim_v2.obj" />
       </geometry>
     </collision>
   </link>
@@ -965,12 +953,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_MCP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -978,12 +960,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_MCP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -992,9 +968,15 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_MCP_touch_link.STL" />
+        <mesh filename="meshes/hands/collision/right/right_index_MCP_link.STL" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="collision58_meshes/right_index_MCP_Link_01.obj" />
       </geometry>
     </collision>
   </link>
@@ -1031,12 +1013,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_PIP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1044,12 +1020,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_PIP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1058,9 +1028,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_index_PIP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_index_PIP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1118,12 +1088,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_MCP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1131,12 +1095,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_MCP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1145,9 +1103,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_MCP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_little_MCP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1184,12 +1142,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_PIP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1197,12 +1149,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_PIP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1211,9 +1157,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_little_PIP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_little_PIP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1271,12 +1217,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_MCP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1284,12 +1224,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_MCP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1298,9 +1232,15 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_MCP_touch_link.STL" />
+        <mesh filename="meshes/hands/collision/right/right_middle_MCP_link.STL" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="collision58_meshes/right_middle_MCP_Link_01.obj" />
       </geometry>
     </collision>
   </link>
@@ -1337,12 +1277,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_PIP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1350,12 +1284,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_PIP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1364,9 +1292,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_middle_PIP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_middle_PIP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1424,12 +1352,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_MCP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1437,12 +1359,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_MCP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1451,9 +1367,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_MCP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_ring_MCP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1490,12 +1406,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_PIP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1503,12 +1413,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_PIP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1517,9 +1421,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_ring_PIP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_ring_PIP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1570,15 +1474,15 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_02.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_02.obj" />
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_03.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_03.obj" />
       </geometry>
     </collision>
     <collision>
@@ -1600,9 +1504,9 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_07.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_07.obj" />
       </geometry>
     </collision>
     <collision>
@@ -1624,21 +1528,21 @@
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_11.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_11.obj" />
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_12.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_12.obj" />
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_13.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_13.obj" />
       </geometry>
     </collision>
     <collision>
@@ -1650,103 +1554,25 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_15.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
         <mesh filename="meshes/hands/collision/right/cmr_v4_16.obj" />
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_17.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_16.obj" />
       </geometry>
     </collision>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_18.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_19.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_20.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_21.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_22.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_23.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_24.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_25.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_26.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_27.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_28.obj" />
+        <mesh filename="collision58_meshes/right_thumb_CMR_Link_17.obj" />
       </geometry>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
         <mesh filename="meshes/hands/collision/right/cmr_v4_29.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_30.obj" />
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/cmr_v4_31.obj" />
       </geometry>
     </collision>
   </link>
@@ -1803,12 +1629,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_MCP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1816,12 +1636,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_MCP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1830,9 +1644,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_MCP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_thumb_MCP_Link_00.obj" />
       </geometry>
     </collision>
   </link>
@@ -1849,12 +1663,6 @@
       </geometry>
       <material name="right_revo3_aluminum" />
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_PIP_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1862,12 +1670,6 @@
       </geometry>
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
-    <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
-      <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_PIP_rubber_link.STL" />
-      </geometry>
-    </collision>
     <visual>
       <origin rpy="0 -0 0" xyz="0 0 0" />
       <geometry>
@@ -1876,9 +1678,9 @@
       <material name="right_revo3_silicone_2162u_approx" />
     </visual>
     <collision>
-      <origin rpy="0 -0 0" xyz="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="meshes/hands/collision/right/right_thumb_PIP_touch_link.STL" />
+        <mesh filename="collision58_meshes/right_thumb_PIP_Link_00.obj" />
       </geometry>
     </collision>
   </link>

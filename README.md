@@ -15,7 +15,7 @@ This repository provides models, manufacturing CAD, and kinematic viewers for a 
 | --- | --- | ---: |
 | [Full assembly](assets/assembly.urdf) | Bilateral robot, official left/right hand kinematics and camera frames | 58 |
 | [MuJoCo scene](assets/scene.xml) | Full kinematic preview with table and six rendering cameras | 58 |
-| [Reduced training assembly](assets/assembly_rl_convex.urdf) | Existing reduced right-arm topology with official right-hand subtree | 28 |
+| [Reduced training assembly](assets/assembly_rl_convex.urdf) | 28-DOF right-arm topology, official hand kinematics, 58 collision elements | 28 |
 
 The hand migration preserves each input assembly's arm, adapter, camera, non-hand transforms, and authored root-to-physical-base transform. Hand mount geometry is input-specific. Hand joints retain the official names and native order; mappings are recorded in the migration JSON. The table-to-physical-base gap remains 0.45 m under the [frame contract](TABLETOP_FRAME_CONTRACT.md).
 
@@ -43,4 +43,4 @@ The full and reduced model preview commands are `./viewers/view_assembly.sh --mo
 
 ## Limits
 
-This is an asset and kinematic-preview update. It does not validate dynamics, collision-free trajectories, training compatibility, task success, hardware operation, or hardware limits. RL training is deferred. The official vendor tree did not include an applicable license file in the inspected source; attribution is provided, but redistribution permission remains unresolved. See [third-party notices](THIRD_PARTY_NOTICES.md).
+This is an asset and kinematic-preview update. It does not validate dynamics, collision-free trajectories, training compatibility, task success, hardware operation, or hardware limits. Policies require separate validation against the exact simplified asset. The official vendor tree did not include an applicable license file in the inspected source; attribution is provided, but redistribution permission remains unresolved. See [third-party notices](THIRD_PARTY_NOTICES.md).
