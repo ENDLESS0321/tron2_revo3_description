@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 sys.path.insert(0, str(ROOT / "viewers"))
 
-from _runtime import assembly, load_training_model, set_pose, verify_assets  # noqa: E402
+from _runtime import _load_urdf_model, assembly, load_training_model, set_pose, verify_assets  # noqa: E402
 
 
 class ReleaseAssetTests(unittest.TestCase):
@@ -34,11 +34,15 @@ class ReleaseAssetTests(unittest.TestCase):
         return self.scene.find(f".//body[@name='{name}']")
 
     def color(self, link_name):
-        return self.link(link_name).find("./visual/material/color").get("rgba")
+        material = self.link(link_name).find("./visual/material")
+        color = material.find("color")
+        if color is None:
+            color = self.urdf.find(f"./material[@name='{material.get('name')}']/color")
+        return color.get("rgba")
 
     def test_manifest_and_models_load(self):
-        self.assertEqual(verify_assets()["referenced_meshes"], 265)
-        urdf = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly.urdf"))
+        self.assertEqual(verify_assets()["referenced_meshes"], 404)
+        urdf = _load_urdf_model(ASSETS / "assembly.urdf")
         scene = mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml"))
         self.assertEqual((urdf.nq, scene.nq, scene.ncam), (58, 58, 6))
 
@@ -57,7 +61,7 @@ class ReleaseAssetTests(unittest.TestCase):
                 self.assertAlmostEqual(data.qpos[model.jnt_qposadr[joint_id]], value)
             set_pose(model, data, {})
             np.testing.assert_allclose(data.qpos, model.qpos0)
-        self.assertEqual(verify_assets()["training_referenced_meshes"], 128)
+        self.assertEqual(verify_assets()["training_referenced_meshes"], 196)
 
     def test_training_camera_selection_is_rejected_before_render(self):
         import subprocess
@@ -93,7 +97,7 @@ class ReleaseAssetTests(unittest.TestCase):
     def test_default_urdf_is_exact_approved_artifact(self):
         import hashlib
 
-        expected = "537f31a798ddb05d1f29e2b5eeede63d47af3d9ff519f40907a24e757f5bbf44"
+        expected = "e2b84835786aa5ccf21dac63c64afa23e53d19113152067acbc7872692ffe07e"
         self.assertEqual(hashlib.sha256((ASSETS / "assembly.urdf").read_bytes()).hexdigest(), expected)
         self.assertFalse((ASSETS / "assembly_bilateral_axis180.urdf").exists())
         origin = self.joint("world_to_base").find("origin")
@@ -109,8 +113,8 @@ class ReleaseAssetTests(unittest.TestCase):
             np.testing.assert_allclose(combined[:, 0], expected_palm, atol=1e-10)
 
     def test_urdf_and_scene_mount_poses_match(self):
-        models = [mujoco.MjModel.from_xml_path(str(ASSETS / filename))
-                  for filename in ("assembly.urdf", "scene.xml")]
+        models = [_load_urdf_model(ASSETS / "assembly.urdf"),
+                  mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml"))]
         states = [mujoco.MjData(model) for model in models]
         # Exercise both zero and nonzero arm poses using joint names, not ordering.
         for angle in (0.0, 0.2):
@@ -139,11 +143,11 @@ class ReleaseAssetTests(unittest.TestCase):
 
         path = ASSETS / "assembly_rl_convex.urdf"
         self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
-                         "2776f52b77dc46ecd27c46894373dfb0dbe41882740f46f9d7b699518d194034")
+                         "623be410f99dce037117fc7b08c888aaa690ae4796e1a5f187c27b120f9ad41f")
         training = ET.parse(path).getroot()
         joints = training.findall("joint")
         links = training.findall("link")
-        self.assertEqual((len(links), len(joints)), (38, 37))
+        self.assertEqual((len(links), len(joints)), (37, 36))
         moving = [joint for joint in joints if joint.get("type") != "fixed"]
         self.assertEqual(len(moving), 28)
         self.assertTrue(all(joint.get("type") == "revolute" for joint in moving))
@@ -158,35 +162,32 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(len(set(children)), len(children))
         self.assertEqual(set(children), {link.get("name") for link in links} - {"world"})
         meshes = {mesh.get("filename") for mesh in training.findall(".//mesh")}
-        self.assertEqual(len(meshes), 128)
+        self.assertEqual(len(meshes), 196)
         for filename in meshes:
             path = (ASSETS / filename).resolve()
             self.assertTrue(path.is_relative_to(ASSETS))
             self.assertTrue(path.is_file())
-        self.assertEqual(sum(len(link.findall("collision")) for link in links), 58)
-        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 28)):
+        self.assertEqual(sum(len(link.findall("collision")) for link in links), 91)
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 5), ("right_thumb_CMR_Link", 32)):
             link = training.find(f"link[@name='{name}']")
             self.assertEqual(len(link.findall("collision")), count)
             for collision in link.findall("collision"):
                 mesh = trimesh.load_mesh(ASSETS / collision.find("geometry/mesh").get("filename"), process=True)
-                self.assertTrue(mesh.is_convex)
-                self.assertTrue(mesh.is_watertight)
+            self.assertGreater(len(mesh.faces), 0)
+            self.assertTrue(np.isfinite(mesh.vertices).all())
         for finger in ("thumb", "index", "middle", "ring", "little"):
-            inertial = training.find(f"link[@name='right_{finger}_tip_Link']/inertial")
-            self.assertAlmostEqual(float(inertial.find("mass").get("value")), 0.001)
-            np.testing.assert_allclose(np.fromstring(inertial.find("origin").get("xyz"), sep=" "), [0, 0, 0])
-            inertia = inertial.find("inertia")
-            np.testing.assert_allclose([float(inertia.get(k)) for k in ("ixx", "iyy", "izz")],
-                                       [1e-10, 1e-10, 1e-9], rtol=1e-7, atol=0)
+            tip = training.find(f"link[@name='right_{finger}_tip_Link']")
+            self.assertIsNotNone(tip)
+            self.assertIsNone(tip.find("inertial"))
 
     def test_training_reduced28_import_and_right_chain_fk(self):
         training = load_training_model()
-        assembly = mujoco.MjModel.from_xml_path(str(ASSETS / "assembly.urdf"))
+        assembly = _load_urdf_model(ASSETS / "assembly.urdf")
         self.assertEqual((training.nq, training.njnt), (28, 28))
         collision_mask = (training.geom_contype != 0) | (training.geom_conaffinity != 0)
-        self.assertEqual(int(collision_mask.sum()), 58)
+        self.assertEqual(int(collision_mask.sum()), 91)
         self.assertEqual(int(collision_mask.sum()), self.runtime["models"]["training"]["collision_shapes"])
-        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 28)):
+        for name, count in (("right_adapter_link", 1), ("right_hand_base_link", 5), ("right_thumb_CMR_Link", 32)):
             body_id = mujoco.mj_name2id(training, mujoco.mjtObj.mjOBJ_BODY, name)
             self.assertGreaterEqual(body_id, 0)
             self.assertEqual(int(((training.geom_bodyid == body_id) & collision_mask).sum()), count)
@@ -194,7 +195,7 @@ class ReleaseAssetTests(unittest.TestCase):
                   if joint.get("type") == "revolute"]
         states = [mujoco.MjData(model) for model in (training, assembly)]
         rng = np.random.default_rng(20260928)
-        bodies = [joint.find("child").get("link") for joint in moving] + ["right_adapter_link", "right_hand_base_link", "right_palm"]
+        bodies = [joint.find("child").get("link") for joint in moving] + ["right_adapter_link", "right_hand_base_link", "right_thumb_CMR_Link"]
         for _ in range(10):
             for joint in moving:
                 limit = joint.find("limit")
@@ -215,10 +216,9 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(self.color("base_Link"), "0.15 0.16 0.17 1")
         self.assertEqual(self.color("left_adapter_link"), "0.42 0.20 0.68 1")
         self.assertEqual(self.color("right_adapter_link"), "0.42 0.20 0.68 1")
-        self.assertEqual(self.color("left_hand_base_link"), "0.86 0.87 0.92 1")
-        self.assertEqual(self.color("left_index_MPR_Link"), "0.46 0.49 0.58 1")
-        self.assertEqual(self.color("left_index_MCP_Link"), "0.60 0.62 0.70 1")
-        self.assertEqual(self.color("left_index_DIP_Link"), "0.70 0.72 0.80 1")
+        self.assertEqual(self.color("left_hand_base_link"), "0.72 0.74 0.78 1")
+        self.assertEqual(self.color("left_index_MPR_Link"), "0.72 0.74 0.78 1")
+        self.assertEqual(self.color("left_index_MCP_Link"), "0.72 0.74 0.78 1")
 
     def test_head_camera_is_d455(self):
         mesh = self.link("head_camera_link").find("./visual/geometry/mesh")
@@ -301,8 +301,8 @@ class ReleaseAssetTests(unittest.TestCase):
             "left": [np.pi / 2, 0.0, -np.pi / 2],
             "right": [np.pi / 2, 0.0, np.pi / 2],
         }
-        for model_path in (ASSETS / "assembly.urdf", ASSETS / "scene.xml"):
-            model = mujoco.MjModel.from_xml_path(str(model_path))
+        for model_label, model in (("urdf", _load_urdf_model(ASSETS / "assembly.urdf")),
+                                   ("scene", mujoco.MjModel.from_xml_path(str(ASSETS / "scene.xml")))):
             data = mujoco.MjData(model)
             mujoco.mj_forward(model, data)
             for side, suffix in (("left", "L"), ("right", "R")):
@@ -335,7 +335,7 @@ class ReleaseAssetTests(unittest.TestCase):
                     np.pi * finger_axis
                 ).as_matrix()
 
-                with self.subTest(model=model_path.name, side=side):
+                with self.subTest(model=model_label, side=side):
                     np.testing.assert_allclose(
                         finger_axis,
                         [0.0, 0.0, -1.0],

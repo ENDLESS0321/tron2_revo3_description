@@ -2,6 +2,8 @@
 import hashlib
 import json
 from pathlib import Path
+import shutil
+import tempfile
 import xml.etree.ElementTree as ET
 
 import mujoco
@@ -26,7 +28,9 @@ def verify_assets():
     scene=ET.parse(ASSETS/'scene.xml')
     a={e.get('filename') for e in urdf.findall('.//mesh')}
     b={e.get('file') for e in scene.findall('asset/mesh')}
-    if a!=b or len(a)!=manifest['referenced_mesh_count']:raise ValueError('URDF/MJCF mesh sets disagree')
+    mesh_map=manifest.get('urdf_to_mjcf_mesh',{})
+    if set(mesh_map)-a or {mesh_map.get(path,path) for path in a}!=b or len(a)!=manifest['referenced_mesh_count']:
+        raise ValueError('URDF/MJCF mesh sets disagree with the recorded conversion map')
     if any(Path(p).is_absolute() or not (ASSETS/p).resolve().is_relative_to(ASSETS) for p in a):raise ValueError('Nonportable mesh reference')
     training_path=ASSETS/'assembly_rl_convex.urdf'
     training=ET.parse(training_path)
@@ -50,21 +54,65 @@ def set_pose(model,data,pose):
     mujoco.mj_forward(model,data)
 
 
+def _mujoco_urdf(path):
+    """Stage an official URDF with only its COLLADA visual meshes converted for MuJoCo."""
+    path=Path(path)
+    temporary=tempfile.TemporaryDirectory(prefix='revo3-mujoco-urdf-')
+    root=Path(temporary.name); mesh_root=root/'meshes'; source_mesh_root=ASSETS/'meshes'
+    mesh_root.mkdir()
+    for child in source_mesh_root.iterdir():
+        if child.name!='hands':
+            (mesh_root/child.name).symlink_to(child.resolve(),target_is_directory=child.is_dir())
+    for source in (source_mesh_root/'hands').rglob('*'):
+        relative=source.relative_to(source_mesh_root)
+        target=mesh_root/relative
+        if source.is_dir():
+            target.mkdir(parents=True,exist_ok=True)
+        elif source.suffix.lower()=='.dae':
+            target.parent.mkdir(parents=True,exist_ok=True)
+        else:
+            target.parent.mkdir(parents=True,exist_ok=True)
+            target.symlink_to(source.resolve())
+    text=Path(path).read_text()
+    for dae in (source_mesh_root/'hands').rglob('*.dae'):
+        relative=dae.relative_to(ASSETS).as_posix()
+        converted=relative[:-4]+'.mujoco.stl'
+        output=mesh_root/Path(converted).relative_to('meshes')
+        if not output.exists():
+            trimesh.load(dae,force='mesh').export(output)
+        text=text.replace(relative,converted)
+    staged=root/Path(path).name
+    staged.write_text(text)
+    return temporary,staged
+
+
+def _load_urdf_model(path):
+    temporary,staged=_mujoco_urdf(path)
+    try:
+        return mujoco.MjModel.from_xml_path(str(staged))
+    finally:
+        temporary.cleanup()
+
+
 def load_training_model():
     """Compile the exact training URDF for kinematic preview only.
 
     Historical fingertip inertias violate MuJoCo's triangle inequality.
     Balance them in memory; never rewrite the Isaac training artifact.
     """
-    spec=mujoco.MjSpec.from_file(str(ASSETS/'assembly_rl_convex.urdf'))
-    spec.compiler.balanceinertia=True
-    return spec.compile()
+    temporary,staged=_mujoco_urdf(ASSETS/'assembly_rl_convex.urdf')
+    try:
+        spec=mujoco.MjSpec.from_file(str(staged))
+        spec.compiler.balanceinertia=True
+        return spec.compile()
+    finally:
+        temporary.cleanup()
 
 
 def assembly(model_name='full'):
     cfg=config()
     spec=cfg['models'][model_name]
-    model=load_training_model() if model_name=='training' else mujoco.MjModel.from_xml_path(str(ASSETS/spec['preview']))
+    model=load_training_model() if model_name=='training' else _load_urdf_model(ASSETS/spec['preview'])
     if model_name=='training':
         model.vis.headlight.ambient[:]=[0.8,0.8,0.8]
         model.vis.headlight.diffuse[:]=[0.8,0.8,0.8]
