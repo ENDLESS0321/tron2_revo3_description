@@ -1,0 +1,408 @@
+{
+  "schema": "retarget_collision_reduction/v1",
+  "source": "assembly_rl_convex.urdf",
+  "source_sha256": "623be410f99dce037117fc7b08c888aaa690ae4796e1a5f187c27b120f9ad41f",
+  "output": "assembly_retarget58.urdf",
+  "output_sha256": "4d5c4e573bb6814c1573487c9d48bba615a1c76c7fdc27c53ffc69ce74864c0c",
+  "before": 91,
+  "after": 58,
+  "method": "Greedy minimum added convex-hull volume; merges only within one rigid link; palm/base, all DIP fingertip collisions, thumb MCP/PIP, and non-hand collisions are preserved; source mesh vertices enclosed by hull. Cost subtracts summed component volumes and is not a union-volume measurement.",
+  "changed_links": [
+    {
+      "link": "right_index_MCP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_index_PIP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_little_MCP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_little_PIP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_middle_MCP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_middle_PIP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_ring_MCP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_ring_PIP_Link",
+      "before": 3,
+      "after": 1
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "before": 32,
+      "after": 15
+    }
+  ],
+  "merges": [
+    {
+      "link": "right_index_MCP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_index_MCP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_index_PIP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_index_PIP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_little_MCP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_little_MCP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_little_PIP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_little_PIP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_middle_MCP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_middle_MCP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_middle_PIP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_middle_PIP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_ring_MCP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_ring_MCP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_ring_PIP_Link",
+      "source_parts": [
+        0,
+        1
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_ring_PIP_Link",
+      "source_parts": [
+        0,
+        1,
+        2
+      ],
+      "hull_excess_over_sum_m3": 0.0
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        6,
+        29
+      ],
+      "hull_excess_over_sum_m3": 3.727644728181092e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        24,
+        28
+      ],
+      "hull_excess_over_sum_m3": 4.924307762778236e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        10,
+        14
+      ],
+      "hull_excess_over_sum_m3": 5.963016815193725e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        13,
+        18
+      ],
+      "hull_excess_over_sum_m3": 6.491484291586947e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        7,
+        9
+      ],
+      "hull_excess_over_sum_m3": 7.224460229964758e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        11,
+        19
+      ],
+      "hull_excess_over_sum_m3": 7.653718596633113e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        17,
+        20
+      ],
+      "hull_excess_over_sum_m3": 8.58976590403405e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        26,
+        27
+      ],
+      "hull_excess_over_sum_m3": 9.192554524291787e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        4,
+        30
+      ],
+      "hull_excess_over_sum_m3": 9.208758272726552e-09
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        0,
+        23
+      ],
+      "hull_excess_over_sum_m3": 1.149952990893721e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        22,
+        26,
+        27
+      ],
+      "hull_excess_over_sum_m3": 1.2446428788386234e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        2,
+        17,
+        20
+      ],
+      "hull_excess_over_sum_m3": 2.0993077234700716e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        2,
+        12,
+        17,
+        20
+      ],
+      "hull_excess_over_sum_m3": 2.0739949780712576e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        8,
+        15
+      ],
+      "hull_excess_over_sum_m3": 2.6356736504718092e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        5,
+        13,
+        18
+      ],
+      "hull_excess_over_sum_m3": 2.6885205689950682e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        6,
+        16,
+        29
+      ],
+      "hull_excess_over_sum_m3": 3.27530472047658e-08
+    },
+    {
+      "link": "right_thumb_CMR_Link",
+      "source_parts": [
+        4,
+        6,
+        16,
+        29,
+        30
+      ],
+      "hull_excess_over_sum_m3": 2.857185193222943e-08
+    }
+  ],
+  "limitations": [
+    "Convex merging can fill gaps and enlarge contact surfaces.",
+    "No trajectory, PhysX, dynamics, checkpoint or hardware validation."
+  ],
+  "verification": {
+    "noncollision_xml_unchanged": true,
+    "source_vertices_enclosed_tolerance_m": 1e-08,
+    "mesh_closure": true,
+    "mujoco_kinematic_dof": 28,
+    "mujoco_balanceinertia_preview_only": true,
+    "links": [
+      {
+        "link": "right_index_MCP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 8688,
+        "sampled_max_expansion_m": 0.0020776484959629444
+      },
+      {
+        "link": "right_index_PIP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 9888,
+        "sampled_max_expansion_m": 0.0023039811048785816
+      },
+      {
+        "link": "right_little_MCP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 8688,
+        "sampled_max_expansion_m": 0.0020776483111527885
+      },
+      {
+        "link": "right_little_PIP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 9888,
+        "sampled_max_expansion_m": 0.0023039811409583887
+      },
+      {
+        "link": "right_middle_MCP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 8688,
+        "sampled_max_expansion_m": 0.0020776484842365012
+      },
+      {
+        "link": "right_middle_PIP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 9888,
+        "sampled_max_expansion_m": 0.002303981032000298
+      },
+      {
+        "link": "right_ring_MCP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 8688,
+        "sampled_max_expansion_m": 0.0020776483739014073
+      },
+      {
+        "link": "right_ring_PIP_Link",
+        "source_vertex_max_plane_violation_m": 6.938893903907228e-18,
+        "surface_samples": 9888,
+        "sampled_max_expansion_m": 0.0023039806652498216
+      },
+      {
+        "link": "right_thumb_CMR_Link",
+        "source_vertex_max_plane_violation_m": 8.893526783071426e-10,
+        "surface_samples": 2340,
+        "sampled_max_expansion_m": 0.0011424113028513283
+      }
+    ],
+    "sampled_max_expansion_m": 0.0023039811409583887
+  }
+}
