@@ -8,7 +8,7 @@ Run all checks from the repository root after installing `requirements.txt`.
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The suite verifies manifest hashes and mesh closure; full/reduced model topology and loading; preserved mounts, camera and world placement; 0.45 m tabletop gap; official hand subtree inertias and joint order; fingertip aliases; URDF-to-scene FK at nonzero hand poses; and rejection of a tampered mesh manifest.
+The suite verifies manifest hashes and mesh closure; full/reduced model topology and loading; preserved mounts, camera and world placement; the 0.45 m tabletop gap; official hand inertias and joint order; fingertip aliases; URDF-to-scene and full-to-training FK at nonzero poses; and rejection of a tampered mesh manifest. It also checks the 58-DOF full model's 280 collision elements against the 28-DOF training model's 91, confirms the active official right-hand XML is identical between them, and checks a recorded signature for retained non-hand training elements.
 
 ## Viewer checks
 
@@ -18,7 +18,7 @@ The suite verifies manifest hashes and mesh closure; full/reduced model topology
 ./viewers/view_cameras.sh --check --output outputs/check/cameras
 ```
 
-These checks exercise kinematic preview and rendering only. They do not certify dynamics, trajectory clearance, policy compatibility, hardware operation, or task success. Run training only under a separately approved protocol; this asset task does not launch it.
+These checks exercise kinematic preview and rendering only. They do not certify PhysX runtime contacts, dynamics, trajectory clearance, policy compatibility, hardware operation, or task success. This asset task does not launch training.
 
 ## Asset maintenance
 

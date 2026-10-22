@@ -25,6 +25,13 @@
       "sha256": "623be410f99dce037117fc7b08c888aaa690ae4796e1a5f187c27b120f9ad41f"
     }
   },
+  "training_topology_preservation": {
+    "baseline_commit": "d9d2c7ccf438ff526462360b8d5e0a58071ca15f",
+    "baseline_scope": "all reduced-model links except the active right-hand links and obsolete right_palm placeholder, plus all non-right-hand joints",
+    "retained_non_hand_nodes": 19,
+    "retained_non_hand_signature_sha256": "8cacccf074d446690a783928ece33ad42dc27a6552e10583be6d6ade78127544",
+    "removed_obsolete_nodes": ["right_palm", "right_palm_center"]
+  },
   "hand_joint_order_mappings": {
     "left": {
       "source_joint_order": [
