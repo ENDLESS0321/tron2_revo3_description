@@ -58,10 +58,10 @@ rendering still requires a working graphics runtime. The scripts select EGL
 for `--check` and camera mode, and GLFW for interactive 3D mode unless
 `MUJOCO_GL` is already set. No universal EGL/OSMesa repair is assumed here.
 
-All views are kinematic. The published training URDF has fingertip inertias
-that fail MuJoCo's inertia triangle check when compiled as-is. For the preview,
-the runtime enables `balanceinertia` on an in-memory `MjSpec`; it does not
-rewrite the URDF and does not establish dynamics equivalence with Isaac.
+All views are kinematic. The reduced training preview enables MuJoCo's
+`balanceinertia` compiler option on an in-memory `MjSpec`; it does not rewrite
+the URDF. This import accommodation does not establish dynamics equivalence
+with Isaac or certify training/hardware behavior.
 
 ## Troubleshooting
 

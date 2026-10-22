@@ -1,37 +1,25 @@
-# Release asset tests
+# Asset verification
 
-English | [简体中文](README.zh-CN.md)
+Run all checks from the repository root after installing `requirements.txt`.
 
-Run from the repository root after following the [installation instructions](../README.md#quick-start).
-
-Release 1.8.0 checks the exact shared table dimensions and placement, physical base pose, 45 cm gap and cube support. URDF/MJCF mount poses are compared after applying the explicit scene world transform; both approved robot URDF hashes remain unchanged.
-
-## Existing checks
+## Unit tests
 
 ```bash
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-[test_release_assets.py](test_release_assets.py) checks manifest digests and mesh references; full/training topology and model selection; exact approved URDF identity; mount transforms and URDF/MJCF agreement; the 45 cm base-origin/table-top gap; reduced-model joints, collisions, inertias and right-chain FK; and camera bodies, frames and palette. It also checks that training camera selection is rejected.
+The suite verifies manifest hashes and mesh closure; full/reduced model topology and loading; preserved mounts, camera and world placement; 0.45 m tabletop gap; official hand subtree inertias and joint order; fingertip aliases; URDF-to-scene FK at nonzero hand poses; and rejection of a tampered mesh manifest.
 
-The suite compiles models and checks numerical relationships. Rendering checks below separately create images and inspect nonempty output:
+## Viewer checks
 
 ```bash
-./viewers/view_adapters.sh --check --output outputs/check/adapters
-./viewers/view_camera_brackets.sh --check --output outputs/check/brackets
 ./viewers/view_assembly.sh --model full --check --output outputs/check/assembly
 ./viewers/view_assembly.sh --model training --check --output outputs/check/training
 ./viewers/view_cameras.sh --check --output outputs/check/cameras
 ```
 
-Part checks cover both sides and all four preset viewpoints. Offscreen rendering requires a working EGL or configured alternative backend. See [viewers](../viewers/README.md) and [camera output format](../docs/camera_outputs.md).
+These checks exercise kinematic preview and rendering only. They do not certify dynamics, trajectory clearance, policy compatibility, hardware operation, or task success. Run training only under a separately approved protocol; this asset task does not launch it.
 
-## Maintaining assets
+## Asset maintenance
 
-1. Preserve the released source and make changes in an isolated branch or output.
-2. Check URDF mesh paths, units, joint names and limits; synchronize corresponding full-scene transforms and runtime metadata when relevant.
-3. Record reviewed new hashes, byte counts and source provenance in [manifest.json](../assets/manifest.json). The manifest covers assets, not every repository document.
-4. Review tests with pinned hashes and geometry expectations. Change those expectations only for an intentional approved asset revision; do not just refresh hashes to hide an unexplained mismatch.
-5. Run the unit suite and relevant rendering checks. Inspect resulting images and camera metadata before release, then synchronize both language versions of documentation.
-
-A passing check verifies the stated asset/preview contracts. It does not certify hardware assembly, collision-free motion, physics equivalence, policy compatibility or manipulation success. Simulator caches must be reimported after an asset change.
+When rebuilding a hand subtree, use [`scripts/build_official_revo3_assembly.py`](../scripts/build_official_revo3_assembly.py), supply the exact source assembly and its mesh-root closure, and validate the generated mount/non-hand invariants. Update the migration record and manifest only after reviewing source commit, exact native joint order, all referenced mesh hashes, and tests. Keep source backups and transient build outputs outside the repository.

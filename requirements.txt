@@ -3,3 +3,4 @@ scipy==1.15.3
 trimesh==5.1.0
 mujoco==3.13.0
 pillow==12.3.0
+pycollada==0.9.3

@@ -50,8 +50,9 @@
 所有机器的 EGL／OSMesa 修复办法。
 
 所有预览均为运动学预览。原始训练 URDF 的指尖惯量不满足 MuJoCo 惯量三角
-检查。预览运行时会对内存中的 `MjSpec` 启用 `balanceinertia`；不会改写发布
-的 URDF，也不能据此证明与 Isaac 的动力学等价。
+检查。降阶训练预览会对内存中的 `MjSpec` 启用 MuJoCo 编译选项
+`balanceinertia`，不会改写 URDF。该导入兼容处理不能证明与 Isaac 的动力学
+等价，也不认证训练或硬件行为。
 
 ## 故障排查
 

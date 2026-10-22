@@ -1,19 +1,19 @@
 # Mesh inventory
 
-English | [简体中文](README.zh-CN.md)
+This directory contains only mesh files required by current robot assets. URDF/MJCF paths are relative to `assets/`; per-file hashes are recorded in [`../manifest.json`](../manifest.json).
 
-Mesh paths are referenced relative to `assets/` by the URDF and scene XML. Keep this directory tree beside those files. The authoritative per-file hashes and sizes are in [`../manifest.json`](../manifest.json); scope, model choice, units and frame placement are described in [`../README.md`](../README.md).
+## Mesh groups
 
-| Directory | Contents and role |
+| Directory | Role |
 | --- | --- |
-| `tron2/` | LimX TRON2 visual meshes and selected collision meshes |
-| `revo3/` | BrainCo Revo3 hand visual and collision geometry |
-| `adapter_v2/` | Revised bilateral adapter visuals and decomposed convex collision pieces |
-| `wrist_camera_brackets/` | Supplied, aligned V3 bracket simulation meshes |
-| `cameras/` | D405/D455 camera body visuals |
-| `boundaryfix_exact/` | Hash-named meshes retained by the reduced28 physicsfix training asset |
-| `right_adapter_single_convex.obj` | Training adapter collision mesh |
+| `tron2/` | TRON2 visuals and selected collisions |
+| `hands/` | Official Revo3 hand visuals and collision geometry for both sides |
+| `adapter_v2/` | Current bilateral adapter geometry |
+| `wrist_camera_brackets/` | Aligned camera bracket geometry |
+| `cameras/` | D405/D455 visuals |
 
-URDF visual and collision geometry may use different files: visual meshes preserve appearance while collision meshes are the simplified/convex shapes actually assigned to collision elements. The reduced28 URDF contains 58 collision elements, including 28 palm components; see [the training note](../../docs/training_model.md). The `boundaryfix_exact` directory name identifies its retained asset set, not a documented mesh-generation algorithm. Its 57 files, like the other distributed meshes, are individually hashed in the manifest and included in the training URDF's provenance. No stronger claim about the term “boundaryfix” or the original generation procedure is encoded here.
+## Collision and provenance notes
 
-LimX, BrainCo, RealSense and user-provided CAD lineage, source revisions and licensing qualifications are recorded in [`../../THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md). These converted simulation meshes do not extend upstream licenses or establish mechanical or hardware validation.
+The full URDF references 404 unique mesh URIs; the reduced right-arm URDF references 196. Collision geometry follows the official hand model and may contain multiple meshes per link; the `rl_convex` filename is historical and does not assert that every collision shape is convex. Two official DAE visual meshes are converted to derived MuJoCo STL files for scene compilation. The source-to-derived mapping and source hashes are recorded in `assets/manifest.json` and `assets/official_revo3_migration.json`.
+
+The official source revision and unresolved license status are documented in [`../../THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md). These assets do not certify mechanical properties or hardware safety.

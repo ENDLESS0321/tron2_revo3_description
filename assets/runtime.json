@@ -124,7 +124,7 @@
   "depth_convention": "Optical Z in meters; out-of-range pixels are NaN; raw depth is not color-registered",
   "kinematic_preview_only": true,
   "strength_certified": false,
-  "release": "1.8.0",
+  "release": "2.0.0",
   "models": {
     "full": {
       "urdf": "assembly.urdf",
@@ -142,7 +142,8 @@
         "elbow_R_Joint": -1.0,
         "wrist_pitch_L_Joint": -0.15,
         "wrist_pitch_R_Joint": -0.15
-      }
+      },
+      "official_hand_source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6"
     },
     "training": {
       "urdf": "assembly_rl_convex.urdf",
@@ -150,7 +151,7 @@
       "expected_dof": 28,
       "expected_render_cameras": 0,
       "table_included": false,
-      "collision_shapes": 58,
+      "collision_shapes": 91,
       "provenance": "manifest.json",
       "display_pose": {
         "proximal_pitch_R_Joint": -0.4,
@@ -172,7 +173,8 @@
         ],
         "left_hand_joints": "all zero"
       },
-      "preview_inertia_policy": "balanceinertia_in_memory_for_kinematic_preview_only"
+      "preview_inertia_policy": "balanceinertia_in_memory_for_kinematic_preview_only",
+      "official_hand_source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6"
     }
   },
   "world_layout": {
