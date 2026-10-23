@@ -1,0 +1,4 @@
+# Preserve authored geometry bytes; meshes are data, not source diffs.
+*.obj -text -diff
+*.stl -text -diff
+*.urdf -text
