@@ -2,7 +2,7 @@
 
 [English](training_model.md) | [简体中文](training_model.zh-CN.md)
 
-The repository packages source and Isaac runtime robot URDFs for a fresh run using the original model_5200 training framework. They are not bound to the historical model_5200.pt checkpoint, which used the previous 2776/f898 assets. Both files and the complete relative mesh/texture closure are hash-verified in [assets/training/manifest.json](../assets/training/manifest.json).
+The repository packages source and Isaac runtime robot URDFs for a fresh run using the original model_5200 training framework. The new 6e/8e URDF asset set is incompatible with the historical model_5200.pt checkpoint, which was bound to the earlier 2776/f898 assets. Both new files and the complete relative mesh/texture closure are hash-verified in [assets/training/manifest.json](../assets/training/manifest.json).
 
 ## Contents
 
@@ -17,7 +17,7 @@ The repository packages source and Isaac runtime robot URDFs for a fresh run usi
 | assets/training/model5200_official_aligned_20261023_icp.source.urdf | Retargeting/source binding | 6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103 |
 | assets/training/model5200_official_aligned_20261023_importer_runtime.urdf | Exact Isaac runtime import and preview | 8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23 |
 
-The source has 37 links and 28 moving joints. The runtime has 32 bodies including world and 28 moving joints; it removes five empty fixed tip links while preserving their virtual sensor frames in [runtime_derivation.json](../assets/training/runtime_derivation.json). Both contain 58 collisions: 28 on the palm, 21 on fingers, and 9 on the arm, base, and adapter. Mesh bytes and scales follow the model5200 training asset.
+The source has 37 links and 28 moving joints. The runtime has 32 bodies including world and 28 moving joints; it removes five empty fixed tip links while preserving their virtual sensor frames in [runtime_derivation.json](../assets/training/runtime_derivation.json). Both contain 58 collisions: 28 on the palm, 21 on fingers, and 9 on the arm, base, and adapter. Mesh bytes, scales, and per-link collision counts follow the model5200 training asset. The model retains the existing palm/thumb structural overlap; 58 collision elements are a geometry count and do not claim robot-wide geometric or trajectory collision freedom.
 
 ## Mount and simulation values
 
@@ -34,4 +34,4 @@ python3 -m unittest discover -s tests -v
 ./viewers/view_assembly.sh --model training --check
 ```
 
-These checks verify packaged bytes, relative URI closure, topology, and kinematic preview. They do not verify training replay, policy performance, dynamics, or hardware behavior.
+The training viewer sets joint positions directly and calls MuJoCo mj_forward for forward kinematics; it does not step dynamics. These checks verify packaged bytes, relative URI closure, topology, and kinematic preview. They do not verify training replay, policy performance, dynamics, or hardware behavior.

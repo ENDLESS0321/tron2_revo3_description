@@ -841,5 +841,11 @@
   "virtual_tip_offsets_note": "Offsets are authored in fixed tip joints; five empty runtime-only tip links were removed.",
   "texture_closure_count": 1,
   "tip_frames_file": "assets/training/runtime_derivation.json",
-  "hand_mass_before_startup_dr_kg": 1.105000027
+  "hand_mass_before_startup_dr_kg": 1.105000027,
+  "documentation_sha256": {
+    "README.md": "61512a470f377aca0d47cc8071111c8dd4c461749cd238bf49476a2afd69c215",
+    "README.zh-CN.md": "7500967d808ef66251c19cc9487eaa60a3d6de0ea07e1a69e547d8682bdf7e72",
+    "docs/training_model.md": "30bd04f5a04c5f57d3e94dab350c7e6f8eac495d14016b53728b3905ca02f46e",
+    "docs/training_model.zh-CN.md": "bcd0bcd3cf08ce781b20bc2ef6c4a63941557d167ef949c7df4db5e8c8d0e7ae"
+  }
 }

@@ -1,6 +1,6 @@
 # TRON2 + Revo3 Assembly Models
 
-This repository preserves the unchanged full visual assembly and packages the new robot assets for a fresh run using the original model_5200 training framework. This asset set is not bound to the historical model_5200.pt checkpoint, which used earlier 2776/f898 assets.
+This repository preserves the unchanged full visual assembly and packages new robot assets for a fresh run using the original model_5200 training framework. The new 6e/8e URDF asset set is incompatible with the historical model_5200.pt checkpoint, which was bound to earlier 2776/f898 assets.
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -22,15 +22,16 @@ The training source and runtime URDF are distinct files with their original byte
 
 ## Preview and verification
 
-Install Python dependencies with python3 -m pip install -r requirements.txt, then run:
+Install dependencies and run:
 
 ```bash
+python3 -m pip install -r requirements.txt
 ./viewers/view_assembly.sh --model full
 ./viewers/view_assembly.sh --model training
 python3 -m unittest discover -s tests -v
 ```
 
-The training viewer loads the exact runtime URDF for kinematic preview. [The frame contract](TABLETOP_FRAME_CONTRACT.md) fixes the tabletop to physical-base gap at 0.45 m.
+The training viewer sets joint positions directly and calls MuJoCo mj_forward for forward kinematics; it does not step dynamics. [The frame contract](TABLETOP_FRAME_CONTRACT.md) fixes the tabletop to physical-base gap at 0.45 m.
 
 ## Limits
 

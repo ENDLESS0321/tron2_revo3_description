@@ -1,6 +1,6 @@
 # TRON2 + Revo3 总成模型
 
-本仓库保留未修改的完整可视化总成，并为使用原 model_5200 训练框架的新一轮从零训练提供机器人资产。该资产组不绑定历史 model_5200.pt 检查点；历史检查点使用较早的 2776/f898 资产。
+本仓库保留未修改的完整可视化总成，并为使用原 model_5200 训练框架的新一轮从零训练提供机器人资产。新的 6e/8e URDF 资产与历史 model_5200.pt 检查点不兼容；该检查点绑定较早的 2776/f898 资产。
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -22,15 +22,16 @@
 
 ## 预览与验证
 
-使用 python3 -m pip install -r requirements.txt 安装 Python 依赖，然后运行：
+安装依赖后运行以下命令：
 
 ```bash
+python3 -m pip install -r requirements.txt
 ./viewers/view_assembly.sh --model full
 ./viewers/view_assembly.sh --model training
 python3 -m unittest discover -s tests -v
 ```
 
-训练查看器使用精确的运行时 URDF 进行运动学预览。[坐标系约定](TABLETOP_FRAME_CONTRACT.md)规定桌面到物理基座的高度差固定为 0.45 m。
+训练查看器直接设置关节位置并调用 MuJoCo mj_forward 计算正向运动学，不执行动力学步进。[坐标系约定](TABLETOP_FRAME_CONTRACT.md)规定桌面到物理基座的高度差固定为 0.45 m。
 
 ## 限制
 
