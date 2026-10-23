@@ -146,35 +146,21 @@
       "official_hand_source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6"
     },
     "training": {
-      "urdf": "assembly_rl_convex.urdf",
-      "preview": "assembly_rl_convex.urdf",
+      "urdf": "training/model5200_official_aligned_20261023_importer_runtime.urdf",
+      "preview": "training/model5200_official_aligned_20261023_importer_runtime.urdf",
       "expected_dof": 28,
       "expected_render_cameras": 0,
       "table_included": false,
       "collision_shapes": 58,
-      "provenance": "manifest.json",
+      "provenance": "training/manifest.json",
       "display_pose": {
         "proximal_pitch_R_Joint": -0.4,
         "proximal_roll_R_Joint": -0.12,
         "elbow_R_Joint": -1.0,
         "wrist_pitch_R_Joint": -0.15
       },
-      "frozen_pose": {
-        "head_yaw": 0,
-        "head_pitch": 0.35,
-        "left_arm": [
-          1.2395190538964451,
-          0.0050965579201923406,
-          0.0706739400409262,
-          -0.10075078688932715,
-          -0.33794336457190877,
-          -0.6172884125393175,
-          0.5453728186806424
-        ],
-        "left_hand_joints": "all zero"
-      },
-      "preview_inertia_policy": "balanceinertia_in_memory_for_kinematic_preview_only",
-      "official_hand_source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6"
+      "official_hand_source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6",
+      "note": "Exact Isaac runtime URDF for model5200 training; preview only."
     }
   },
   "world_layout": {

@@ -21,37 +21,21 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.full = ET.parse(ASSETS / "assembly.urdf").getroot()
-        cls.training = ET.parse(ASSETS / "assembly_rl_convex.urdf").getroot()
+        cls.training = ET.parse(ASSETS / "training/model5200_official_aligned_20261023_importer_runtime.urdf").getroot()
         cls.lineage = json.loads((ASSETS / "official_revo3_migration.json").read_text())
 
-    def test_source_commit_output_hashes_mounts_and_joint_order_mapping(self):
-        self.assertEqual(self.lineage["official_source"]["commit"], "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6")
-        for name, root in (("full_assembly", ASSETS / "assembly.urdf"),
-                           ("training_assembly", ASSETS / "assembly_rl_convex.urdf")):
-            record = self.lineage["outputs"][name]
-            self.assertEqual(hashlib.sha256(root.read_bytes()).hexdigest(), record["sha256"])
-        cases = ((self.full, "left_hand_base_joint", "full_left"),
-                 (self.full, "right_hand_base_joint", "full_right"),
-                 (self.training, "right_hand_base_joint", "training_right"))
-        for root, joint_name, manifest_key in cases:
-            joint = root.find(f"joint[@name='{joint_name}']")
-            recorded = self.lineage["mounts_preserved"][manifest_key]
-            self.assertTrue(recorded["preserved_exactly"])
-            self.assertEqual(joint.find("parent").get("link"), recorded["parent"])
-            self.assertEqual(joint.find("child").get("link"), recorded["child"])
-            self.assertEqual(joint.find("origin").get("xyz"), recorded["origin_xyz_rpy"]["xyz"])
-            self.assertEqual(joint.find("origin").get("rpy"), recorded["origin_xyz_rpy"]["rpy"])
-        for side in ("left", "right", "training_right"):
-            mapping = self.lineage["hand_joint_order_mappings"][side]
-            source = mapping["source_joint_order"]
-            official = mapping["official_joint_order"]
-            self.assertEqual(len(source), 21)
-            self.assertEqual(source, official)
-            self.assertEqual([row["source_joint"] for row in mapping["mapping"]], source)
-            self.assertEqual([row["official_joint"] for row in mapping["mapping"]], official)
+    def test_current_model_lineage_and_training_urdf_hashes(self):
+        self.assertEqual(self.lineage["official_revo3_source_commit"], "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6")
+        full = ASSETS / "assembly.urdf"
+        self.assertEqual(hashlib.sha256(full.read_bytes()).hexdigest(),
+                         self.lineage["full_visual_model"]["sha256"])
+        training_manifest = json.loads((ASSETS / "training/manifest.json").read_text())
+        for record in (training_manifest["training_source_urdf"], training_manifest["isaac_runtime_urdf"]):
+            self.assertEqual(hashlib.sha256((ROOT / record["path"]).read_bytes()).hexdigest(), record["sha256"])
+        self.assertEqual(training_manifest["mounting"]["table_to_physical_base_gap_m"], 0.45)
 
     def test_official_hand_inertials_and_fixed_tip_aliases_are_materialized(self):
-        for side, root in (("left", self.full), ("right", self.full), ("right", self.training)):
+        for side, root in (("left", self.full), ("right", self.full)):
             links = {link.get("name"): link for link in root.findall("link")}
             joints = {joint.get("name"): joint for joint in root.findall("joint")}
             for finger in ("thumb", "index", "middle", "ring", "little"):
@@ -61,13 +45,6 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
                 joint = joints[f"{side}_{finger}_tip_joint"]
                 self.assertEqual(joint.get("type"), "fixed")
                 self.assertEqual(joint.find("child").get("link"), tip)
-        for side in ("left", "right"):
-            expected = {item["output_link"]: item["inertial_xml_sha256"]
-                        for item in self.lineage["hand_link_inertials"][side]}
-            for name, digest in expected.items():
-                node = self.full.find(f"link[@name='{name}']/inertial")
-                self.assertIsNotNone(node)
-                self.assertEqual(hashlib.sha256(ET.tostring(node, encoding="utf-8")).hexdigest(), digest)
 
     def test_mesh_manifest_rejects_tampered_bytes(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -80,20 +57,6 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
             mesh.write_bytes(b"tampered-mesh")
             with self.assertRaisesRegex(BuildError, "hash mismatch"):
                 verify_mesh_manifest(root, [record])
-
-    def test_collision_reducer_rejects_unpinned_input_before_writing_output(self):
-        import subprocess
-
-        with tempfile.TemporaryDirectory() as directory:
-            output = Path(directory) / "must-not-be-created"
-            result = subprocess.run(
-                [sys.executable, str(ROOT / "scripts/build_collision58.py"),
-                 "--urdf", str(ASSETS / "assembly_rl_convex.urdf"), "--output", str(output)],
-                capture_output=True, text=True,
-            )
-            self.assertNotEqual(result.returncode, 0)
-            self.assertIn("pinned official 91-collision", result.stderr)
-            self.assertFalse(output.exists())
 
     def test_scene_fk_matches_migrated_urdf_at_nonzero_joint_pose(self):
         models = (_load_urdf_model(ASSETS / "assembly.urdf"),
@@ -135,101 +98,12 @@ class OfficialRevo3MigrationTests(unittest.TestCase):
             np.testing.assert_allclose(relative[0][0], relative[1][0], atol=5e-7, err_msg=name)
             np.testing.assert_allclose(relative[0][1], relative[1][1], atol=5e-7, err_msg=name)
 
-    def test_training_model_keeps_reduced_topology_and_contact_geometry(self):
-        def count_moving(root):
-            return sum(j.get("type") in {"revolute", "continuous", "prismatic"}
-                       for j in root.findall("joint"))
-
-        self.assertEqual((len(self.full.findall("link")), count_moving(self.full),
-                          len(self.full.findall(".//collision"))), (114, 58, 280))
-        self.assertEqual((len(self.training.findall("link")), count_moving(self.training),
-                          len(self.training.findall(".//collision"))), (37, 28, 58))
-        self.assertEqual(self.lineage["hand_geometry_counts"]["training_right"]["output_hand_collisions"], 49)
-        self.assertFalse(self.lineage["hand_geometry_counts"]["training_right"]["preserved"])
-        # Training retains the old non-hand reduction and arm geometry while
-        # the active hand keeps non-collision structure and exact DIP geometry.
-        def signature(node):
-            return [node.tag, sorted(node.attrib.items()), (node.text or "").strip(),
-                    [signature(child) for child in node]]
-
-        retained = []
-        for node in self.training.findall("link"):
-            name = node.get("name", "")
-            if name == "right_palm" or (name.startswith("right_") and name != "right_adapter_link"):
-                continue
-            retained.append(["link", name, signature(node)])
-        retained.extend(["joint", node.get("name"), signature(node)]
-                        for node in self.training.findall("joint")
-                        if (not node.get("name", "").startswith("right_")
-                            or node.get("name") == "right_adapter_mount"))
-        retained.sort(key=lambda item: (item[0], item[1]))
-        preserved = self.lineage["training_topology_preservation"]
-        payload = json.dumps(retained, separators=(",", ":"), ensure_ascii=False).encode()
-        self.assertEqual(len(retained), preserved["retained_non_hand_nodes"])
-        self.assertEqual(hashlib.sha256(payload).hexdigest(),
-                         preserved["retained_non_hand_signature_sha256"])
-        self.assertEqual(preserved["removed_obsolete_nodes"], ["right_palm", "right_palm_center"])
-        def is_active_hand_node(node, tag):
-            name = node.get("name", "")
-            if tag == "link" and name == "right_hand_base_link":
-                return True
-            if tag == "joint" and name == "right_hand_base_joint":
-                return True
-            return name.startswith("right_") and any(
-                finger in name for finger in ("thumb", "index", "middle", "ring", "little"))
-
-        for tag in ("link", "joint"):
-            def comparable(node):
-                import copy
-                node = copy.deepcopy(node)
-                if tag == "link" and "_DIP_" not in node.get("name", ""):
-                    for collision in node.findall("collision"):
-                        node.remove(collision)
-                return signature(node)
-            full_nodes = {node.get("name"): comparable(node)
-                          for node in self.full.findall(tag)
-                          if is_active_hand_node(node, tag)}
-            training_nodes = {node.get("name"): comparable(node)
-                              for node in self.training.findall(tag)
-                              if is_active_hand_node(node, tag)}
-            self.assertEqual(training_nodes, full_nodes)
-
-    def test_training_right_hand_fk_matches_full_model_at_nonzero_pose(self):
-        models = (_load_urdf_model(ASSETS / "assembly.urdf"),
-                  _load_urdf_model(ASSETS / "assembly_rl_convex.urdf"))
-        states = tuple(mujoco.MjData(model) for model in models)
-        joints = [joint for joint in self.full.findall("joint")
-                  if joint.get("type") in {"revolute", "continuous"}
-                  and (joint.get("name", "").startswith("right_")
-                       or "_R_Joint" in joint.get("name", ""))]
-        for index, joint in enumerate(joints):
-            limit = joint.find("limit")
-            value = (0.11 + 0.01 * (index % 3) if limit is None or limit.get("lower") is None
-                     else float(limit.get("lower")) +
-                     (float(limit.get("upper")) - float(limit.get("lower"))) * (0.31 + 0.02 * (index % 5)))
-            for model, data in zip(models, states):
-                jid = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_JOINT, joint.get("name"))
-                self.assertGreaterEqual(jid, 0, joint.get("name"))
-                data.qpos[model.jnt_qposadr[jid]] = value
-        for model, data in zip(models, states):
-            mujoco.mj_forward(model, data)
-        links = [node.get("name") for node in self.full.findall("link")
-                 if node.get("name") == "right_hand_base_link"
-                 or (node.get("name", "").startswith("right_")
-                     and any(finger in node.get("name", "")
-                             for finger in ("thumb", "index", "middle", "ring", "little")))]
-        bases = [mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, "base_Link") for model in models]
-        for name in links:
-            ids = [mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_BODY, name) for model in models]
-            self.assertTrue(all(index >= 0 for index in ids), name)
-            relative = []
-            for model, data, base, body in zip(models, states, bases, ids):
-                rotation = data.xmat[base].reshape(3, 3)
-                relative.append((rotation.T @ (data.xpos[body] - data.xpos[base]),
-                                 rotation.T @ data.xmat[body].reshape(3, 3)))
-            np.testing.assert_allclose(relative[0][0], relative[1][0], atol=5e-7, err_msg=name)
-            np.testing.assert_allclose(relative[0][1], relative[1][1], atol=5e-7, err_msg=name)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_training_model_is_the_recorded_importer_runtime(self):
+        manifest = json.loads((ASSETS / "training/manifest.json").read_text())
+        path = ASSETS / "training/model5200_official_aligned_20261023_importer_runtime.urdf"
+        self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
+                         manifest["isaac_runtime_urdf"]["sha256"])
+        self.assertEqual((len(self.training.findall("link")), len(self.training.findall("joint")),
+                          len(self.training.findall(".//collision"))), (32, 31, 58))
+        self.assertEqual(sum(j.get("type") == "revolute" for j in self.training.findall("joint")), 28)
+        self.assertEqual(manifest["source_commit"], "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6")

@@ -32,15 +32,23 @@ def verify_assets():
     if set(mesh_map)-a or {mesh_map.get(path,path) for path in a}!=b or len(a)!=manifest['referenced_mesh_count']:
         raise ValueError('URDF/MJCF mesh sets disagree with the recorded conversion map')
     if any(Path(p).is_absolute() or not (ASSETS/p).resolve().is_relative_to(ASSETS) for p in a):raise ValueError('Nonportable mesh reference')
-    training_path=ASSETS/'assembly_rl_convex.urdf'
+    training_path=ASSETS/'training/model5200_official_aligned_20261023_importer_runtime.urdf'
+    training_manifest=json.loads((ASSETS/'training/manifest.json').read_text())
+    for key,record in training_manifest['files'].items():
+        path=(training_path.parent/key).resolve()
+        if not path.is_relative_to(training_path.parent) or not path.is_file():raise ValueError('Missing or invalid training asset: '+key)
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=record['sha256']:raise ValueError('Training asset changed: '+key)
+    for key,record in (('training_source_urdf',training_manifest['training_source_urdf']),('isaac_runtime_urdf',training_manifest['isaac_runtime_urdf'])):
+        path=ROOT/record['path']
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=record['sha256']:raise ValueError('Training URDF changed: '+key)
     training=ET.parse(training_path)
     meshes={node.get('filename') for node in training.findall('.//mesh')}
-    if len(meshes)!=manifest['training_referenced_mesh_count']:raise ValueError('Training mesh inventory disagrees')
+    if len(meshes)!=training_manifest['mesh_closure_count']:raise ValueError('Training mesh inventory disagrees')
     for name in meshes:
-        path=(ASSETS/name).resolve()
-        if Path(name).is_absolute() or not path.is_relative_to(ASSETS) or not path.is_file():raise ValueError('Nonportable training mesh: '+name)
-        record=manifest['files'].get('assets/'+name)
-        if record is None:raise ValueError('Training mesh missing from manifest: '+name)
+        path=(training_path.parent/name).resolve()
+        if Path(name).is_absolute() or not path.is_relative_to(training_path.parent) or not path.is_file():raise ValueError('Nonportable training mesh: '+name)
+    if len(training.findall('.//collision'))!=training_manifest['collisions']:
+        raise ValueError('Training collision count disagrees')
     return {'verified_files':len(manifest['files']),'referenced_meshes':len(a),'training_referenced_meshes':len(meshes)}
 
 
@@ -58,11 +66,8 @@ def _mujoco_urdf(path):
     """Stage an official URDF with only its COLLADA visual meshes converted for MuJoCo."""
     path=Path(path)
     temporary=tempfile.TemporaryDirectory(prefix='revo3-mujoco-urdf-')
-    root=Path(temporary.name); mesh_root=root/'meshes'; source_mesh_root=ASSETS/'meshes'
+    root=Path(temporary.name); mesh_root=root/'meshes'; source_mesh_root=path.parent/'meshes'
     mesh_root.mkdir()
-    collision58=path.parent/'collision58_meshes'
-    if collision58.is_dir():
-        (root/'collision58_meshes').symlink_to(collision58.resolve(),target_is_directory=True)
     for child in source_mesh_root.iterdir():
         if child.name!='hands':
             (mesh_root/child.name).symlink_to(child.resolve(),target_is_directory=child.is_dir())
@@ -78,7 +83,7 @@ def _mujoco_urdf(path):
             target.symlink_to(source.resolve())
     text=Path(path).read_text()
     for dae in (source_mesh_root/'hands').rglob('*.dae'):
-        relative=dae.relative_to(ASSETS).as_posix()
+        relative=dae.relative_to(path.parent).as_posix()
         converted=relative[:-4]+'.mujoco.stl'
         output=mesh_root/Path(converted).relative_to('meshes')
         if not output.exists():
@@ -103,7 +108,7 @@ def load_training_model():
     Historical fingertip inertias violate MuJoCo's triangle inequality.
     Balance them in memory; never rewrite the Isaac training artifact.
     """
-    temporary,staged=_mujoco_urdf(ASSETS/'assembly_rl_convex.urdf')
+    temporary,staged=_mujoco_urdf(ASSETS/'training/model5200_official_aligned_20261023_importer_runtime.urdf')
     try:
         spec=mujoco.MjSpec.from_file(str(staged))
         spec.compiler.balanceinertia=True
