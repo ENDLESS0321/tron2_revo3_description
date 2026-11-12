@@ -14,12 +14,12 @@
   },
   "files": {
     "assets/README.md": {
-      "sha256": "4978dd1996988eb421c8df91ebad6f2725a4962115dfa6ca721bdc4d93ee8c18",
-      "bytes": 895
+      "sha256": "4495ce48bda4bf5a901dcc537c2e3b1085fad7f54d58ed6dee3a2ffa77b87a3d",
+      "bytes": 990
     },
     "assets/README.zh-CN.md": {
-      "sha256": "63ee29edc54152eb8cf83f8f004d22eaafc7f01da9027448cf2423de076992ee",
-      "bytes": 854
+      "sha256": "abc1c12bcec19c7939372191a22072bd04c832e93eb822f9984f39f8ed946094",
+      "bytes": 957
     },
     "assets/assembly.urdf": {
       "sha256": "e2b84835786aa5ccf21dac63c64afa23e53d19113152067acbc7872692ffe07e",
@@ -1838,8 +1838,8 @@
       "bytes": 176778
     },
     "assets/training/manifest.json": {
-      "sha256": "9626ddd126dc2aefa1827766579a0796759572bc8735a63c2b834388d00ece14",
-      "bytes": 37925
+      "sha256": "3495bce2fe85533b3ef19e98995010de8ecaffc98d4438fe8e919dde1c979e55",
+      "bytes": 38524
     },
     "assets/training/meshes/adapter_v2/left/adapter_left_v2_visual.stl": {
       "sha256": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
@@ -2508,6 +2508,10 @@
     "assets/training/runtime_derivation.json": {
       "sha256": "75ed53bbdac9b55f2ffe3f4439ac9e15cbc0f20802987f156148dfaec8dd7778",
       "bytes": 2080
+    },
+    "assets/training/revo3_pace_sysid.json": {
+      "sha256": "1f7240769ad9e5402c6b874c74b31bea40480993d8c298d0ce4e1168250beb6b",
+      "bytes": 13345
     }
   },
   "training_urdf": "assets/training/model5200_official_aligned_20261023_importer_runtime.urdf"

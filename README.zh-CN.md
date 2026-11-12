@@ -35,4 +35,4 @@ python3 -m unittest discover -s tests -v
 
 ## 限制
 
-此仓库记录模型与预览配置，不代表轨迹净空、动力学、任务成功、硬件运行或硬件限位认证。手部导入器覆盖参数为 6.28 rad/s 速度、0.35 Nm 力矩和 3/0.1 PD 增益，仅适用于 Revo3 手部，且不是硬件限值。1 kg 世界导入器质量与 1.105000027 kg Revo3 手部 22 个 body 在启动 DR 前的总质量分开记录。详见[第三方声明](THIRD_PARTY_NOTICES.zh-CN.md)。
+此仓库记录模型与预览配置，不代表轨迹净空、动力学、任务成功、硬件运行或硬件限位认证。Revo3 手部的增益、力矩限幅、附加惯量和摩擦采用 [revo3_pace_sysid.json](assets/training/revo3_pace_sysid.json) 中的逐关节 PACE 辨识值（见[训练模型说明](docs/training_model.zh-CN.md#pace-辨识的手部动力学参数)）；导入器保留 6.28 rad/s 速度覆盖。这些是仿真等效值，不是 SDK 增益，也不是硬件限值。1 kg 世界导入器质量与 1.105000027 kg Revo3 手部 22 个 body 在启动 DR 前的总质量分开记录。详见[第三方声明](THIRD_PARTY_NOTICES.zh-CN.md)。

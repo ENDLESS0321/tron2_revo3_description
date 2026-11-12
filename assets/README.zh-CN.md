@@ -13,4 +13,6 @@
 
 ```bash
 python3 -m unittest discover -s tests -v
-```导入器覆盖参数记录在训练 manifest 中，它们不是硬件限值。
+```
+
+导入器覆盖参数记录在训练 manifest 中；PACE 辨识的 Revo3 手部逐关节动力学参数记录在 training/revo3_pace_sysid.json 中。两者都不是硬件限值。

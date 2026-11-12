@@ -15,4 +15,4 @@ From the repository root, run:
 python3 -m unittest discover -s tests -v
 ```
 
-This verifies hashes and closure. Importer overrides are documented in the training manifest and are not hardware limits.
+This verifies hashes and closure. Importer overrides are documented in the training manifest; per-joint Revo3 hand dynamics from PACE identification are in training/revo3_pace_sysid.json. Neither is a hardware limit.
