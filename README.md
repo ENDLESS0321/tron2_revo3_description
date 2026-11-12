@@ -31,8 +31,8 @@ python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests -v
 ```
 
-The training viewer sets joint positions directly and calls MuJoCo mj_forward for forward kinematics; it does not step dynamics. [The frame contract](TABLETOP_FRAME_CONTRACT.md) fixes the tabletop to physical-base gap at 0.45 m.
+The training viewer sets joint positions directly and calls MuJoCo mj_forward for forward kinematics; it does not step dynamics. The frame contract fixes the tabletop to physical-base gap at 0.45 m.
 
 ## Limits
 
-The package records a model and preview configuration. It does not certify trajectory clearance, dynamics, task success, hardware operation, or hardware limits. The hand importer overrides are 6.28 rad/s velocity, 0.35 Nm effort, and PD gains 3/0.1. They apply to the Revo3 hand only and are not hardware limits. The 1 kg world importer mass is separate from the 1.105000027 kg total mass of the 22 Revo3 hand bodies before startup DR. See [third-party notices](THIRD_PARTY_NOTICES.md).
+The package records a model and preview configuration. It does not certify trajectory clearance, dynamics, task success, hardware operation, or hardware limits. The hand importer overrides are 6.28 rad/s velocity, 0.35 Nm effort, and PD gains 3/0.1. They apply to the Revo3 hand only and are not hardware limits. The 1 kg world importer mass is separate from the 1.105000027 kg total mass of the 22 Revo3 hand bodies before startup DR.

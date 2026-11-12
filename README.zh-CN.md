@@ -31,8 +31,8 @@ python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests -v
 ```
 
-训练查看器直接设置关节位置并调用 MuJoCo mj_forward 计算正向运动学，不执行动力学步进。[坐标系约定](TABLETOP_FRAME_CONTRACT.md)规定桌面到物理基座的高度差固定为 0.45 m。
+训练查看器直接设置关节位置并调用 MuJoCo mj_forward 计算正向运动学，不执行动力学步进。坐标系约定规定桌面到物理基座的高度差固定为 0.45 m。
 
 ## 限制
 
-此仓库记录模型与预览配置，不代表轨迹净空、动力学、任务成功、硬件运行或硬件限位认证。手部导入器覆盖参数为 6.28 rad/s 速度、0.35 Nm 力矩和 3/0.1 PD 增益，仅适用于 Revo3 手部，且不是硬件限值。1 kg 世界导入器质量与 1.105000027 kg Revo3 手部 22 个 body 在启动 DR 前的总质量分开记录。详见[第三方声明](THIRD_PARTY_NOTICES.zh-CN.md)。
+此仓库记录模型与预览配置，不代表轨迹净空、动力学、任务成功、硬件运行或硬件限位认证。手部导入器覆盖参数为 6.28 rad/s 速度、0.35 Nm 力矩和 3/0.1 PD 增益，仅适用于 Revo3 手部，且不是硬件限值。1 kg 世界导入器质量与 1.105000027 kg Revo3 手部 22 个 body 在启动 DR 前的总质量分开记录。
