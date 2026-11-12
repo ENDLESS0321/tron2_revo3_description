@@ -1,12 +1,13 @@
 {
   "schema": "revo3_pace_sysid_v1",
-  "description": "Per-joint simulation-equivalent dynamics for the Revo3 right hand, identified with PACE against real MIT-mode logs. Replaces the uniform hand importer gains (Kp 3.0, Kd 0.1, effort 0.35 Nm) for new training runs.",
+  "description": "Per-joint simulation-equivalent dynamics for the Revo3 right hand, identified with PACE against real MIT-mode logs: the fit_03 baseline with the 7 fields from report section 17 (balanced_20261101_01) replaced. Replaces the uniform hand importer gains (Kp 3.0, Kd 0.1, effort 0.35 Nm) for new training runs.",
   "applies_to": {
     "urdf": "model5200_official_aligned_20261023_importer_runtime.urdf",
     "also_valid_for": "model5200_official_aligned_20261023_icp.source.urdf",
     "side": "right",
     "joint_count": 21,
-    "arm_joints": "not covered; arm joints keep their existing configuration"
+    "arm_joints": "not covered; arm joints keep their existing configuration",
+    "urdf_fields_written": "effort_limit -> <limit effort>, viscous_damping -> <dynamics damping>, friction -> <dynamics friction> on the 21 hand joints of both training URDFs. kp, kd, armature and the command delay have no URDF field and live only here."
   },
   "source": {
     "report": "Revo3全关节PACE辨识结果报告_更新版.docx",
@@ -79,13 +80,16 @@
       "viscous_damping": "joint damping"
     }
   },
-  "default_profile": "fit_03",
-  "profiles": {
-    "fit_03": {
-      "status": "frozen baseline",
-      "source_dir": "BrainCo-Pace-main/experiments/gui_mit_grouped_2048_20261030_02/fit_03",
-      "parameters_json_sha256": "5c3ae8f00334d20941bf51e58e0cddba7d7b1efb95437e1061aa518302bc7736",
-      "metrics_deg": {
+  "parameters": {
+    "name": "fit_03 + section 17",
+    "composition": "fit_03 baseline for all fields, except the 7 fields of balanced_20261101_01 (report section 17), which replace the fit_03 values. This equals the balanced_20261101_01 candidate.",
+    "fit_03_source_dir": "BrainCo-Pace-main/experiments/gui_mit_grouped_2048_20261030_02/fit_03",
+    "fit_03_parameters_json_sha256": "5c3ae8f00334d20941bf51e58e0cddba7d7b1efb95437e1061aa518302bc7736",
+    "section17_source_dir": "BrainCo-Pace-main/experiments/gui_mit_balanced_2048_20261101_01",
+    "section17_parameters_json_sha256": "bc1d03e1eea0f83e9388b3c93c4b23ad0b5aa68c0da61ea7d8d0b4ba681b75be",
+    "validation_status": "The section 17 refit reused the old step data and has not been validated on new captures; fit_03 was checked on 26 held-out segments.",
+    "metrics_deg": {
+      "fit_03_vs_initial_model": {
         "train_rmse": {
           "initial": 2.603,
           "identified": 0.919
@@ -99,273 +103,7 @@
           "identified": 1.227
         }
       },
-      "known_regressions": "Step response worse than the initial model on thumb CMP (1.418 -> 3.142 deg), thumb CMR (1.410 -> 2.260 deg) and ring PIP (1.339 -> 2.013 deg).",
-      "joints": {
-        "right_thumb_CMP_joint": {
-          "kp": 7.151,
-          "kd": 0.339,
-          "armature": 0.00532,
-          "friction": 0.004,
-          "viscous_damping": 0.083,
-          "effort_limit": 0.593
-        },
-        "right_thumb_CMR_joint": {
-          "kp": 0.785,
-          "kd": 0.033,
-          "armature": 0.001005,
-          "friction": 0.024,
-          "viscous_damping": 0.008,
-          "effort_limit": 0.6
-        },
-        "right_thumb_MCP_joint": {
-          "kp": 7.222,
-          "kd": 0.193,
-          "armature": 0.001455,
-          "friction": 0.021,
-          "viscous_damping": 0.017,
-          "effort_limit": 0.846
-        },
-        "right_thumb_PIP_joint": {
-          "kp": 5.758,
-          "kd": 0.216,
-          "armature": 0.001537,
-          "friction": 0.024,
-          "viscous_damping": 0.0,
-          "effort_limit": 0.841
-        },
-        "right_thumb_DIP_joint": {
-          "kp": 5.235,
-          "kd": 0.17,
-          "armature": 0.001389,
-          "friction": 0.021,
-          "viscous_damping": 0.0,
-          "effort_limit": 0.819
-        },
-        "right_index_MPR_joint": {
-          "kp": 21.42,
-          "kd": 0.277,
-          "armature": 0.002399,
-          "friction": 0.026,
-          "viscous_damping": 0.015,
-          "effort_limit": 1.322
-        },
-        "right_index_MCP_joint": {
-          "kp": 5.444,
-          "kd": 0.117,
-          "armature": 0.000896,
-          "friction": 0.0,
-          "viscous_damping": 0.0,
-          "effort_limit": 0.364
-        },
-        "right_index_PIP_joint": {
-          "kp": 6.949,
-          "kd": 0.147,
-          "armature": 0.001594,
-          "friction": 0.009,
-          "viscous_damping": 0.0,
-          "effort_limit": 0.598
-        },
-        "right_index_DIP_joint": {
-          "kp": 6.875,
-          "kd": 0.11,
-          "armature": 0.00138,
-          "friction": 0.012,
-          "viscous_damping": 0.005,
-          "effort_limit": 0.944
-        },
-        "right_middle_MPR_joint": {
-          "kp": 5.272,
-          "kd": 0.079,
-          "armature": 0.000815,
-          "friction": 0.034,
-          "viscous_damping": 0.007,
-          "effort_limit": 0.6
-        },
-        "right_middle_MCP_joint": {
-          "kp": 11.656,
-          "kd": 0.17,
-          "armature": 0.001098,
-          "friction": 0.014,
-          "viscous_damping": 0.022,
-          "effort_limit": 0.85
-        },
-        "right_middle_PIP_joint": {
-          "kp": 7.79,
-          "kd": 0.139,
-          "armature": 0.00144,
-          "friction": 0.0,
-          "viscous_damping": 0.016,
-          "effort_limit": 0.839
-        },
-        "right_middle_DIP_joint": {
-          "kp": 9.336,
-          "kd": 0.161,
-          "armature": 0.00131,
-          "friction": 0.008,
-          "viscous_damping": 0.029,
-          "effort_limit": 0.97
-        },
-        "right_ring_MPR_joint": {
-          "kp": 6.354,
-          "kd": 0.153,
-          "armature": 0.000668,
-          "friction": 0.0,
-          "viscous_damping": 0.024,
-          "effort_limit": 0.6
-        },
-        "right_ring_MCP_joint": {
-          "kp": 6.987,
-          "kd": 0.202,
-          "armature": 0.001435,
-          "friction": 0.0,
-          "viscous_damping": 0.007,
-          "effort_limit": 0.831
-        },
-        "right_ring_PIP_joint": {
-          "kp": 2.29,
-          "kd": 0.134,
-          "armature": 0.00075,
-          "friction": 0.023,
-          "viscous_damping": 0.006,
-          "effort_limit": 0.6
-        },
-        "right_ring_DIP_joint": {
-          "kp": 9.491,
-          "kd": 0.293,
-          "armature": 0.001789,
-          "friction": 0.004,
-          "viscous_damping": 0.0,
-          "effort_limit": 1.35
-        },
-        "right_little_MPR_joint": {
-          "kp": 6.092,
-          "kd": 0.122,
-          "armature": 0.000915,
-          "friction": 0.0,
-          "viscous_damping": 0.018,
-          "effort_limit": 0.6
-        },
-        "right_little_MCP_joint": {
-          "kp": 10.584,
-          "kd": 0.112,
-          "armature": 0.001611,
-          "friction": 0.029,
-          "viscous_damping": 0.024,
-          "effort_limit": 0.795
-        },
-        "right_little_PIP_joint": {
-          "kp": 10.225,
-          "kd": 0.17,
-          "armature": 0.001131,
-          "friction": 0.0,
-          "viscous_damping": 0.019,
-          "effort_limit": 0.955
-        },
-        "right_little_DIP_joint": {
-          "kp": 5.896,
-          "kd": 0.115,
-          "armature": 0.000705,
-          "friction": 0.02,
-          "viscous_damping": 0.022,
-          "effort_limit": 0.929
-        }
-      },
-      "flags": {
-        "right_thumb_CMP_joint": {
-          "friction": "W"
-        },
-        "right_thumb_CMR_joint": {
-          "effort_limit": "FW"
-        },
-        "right_thumb_MCP_joint": {
-          "friction": "W"
-        },
-        "right_thumb_PIP_joint": {
-          "friction": "W",
-          "viscous_damping": "B"
-        },
-        "right_thumb_DIP_joint": {
-          "friction": "W",
-          "viscous_damping": "B",
-          "effort_limit": "W"
-        },
-        "right_index_MPR_joint": {
-          "armature": "W",
-          "friction": "W",
-          "viscous_damping": "W",
-          "effort_limit": "W"
-        },
-        "right_index_MCP_joint": {
-          "friction": "WB",
-          "viscous_damping": "B"
-        },
-        "right_index_PIP_joint": {
-          "friction": "W",
-          "viscous_damping": "B"
-        },
-        "right_index_DIP_joint": {
-          "friction": "W",
-          "effort_limit": "W"
-        },
-        "right_middle_MPR_joint": {
-          "armature": "W",
-          "friction": "W",
-          "effort_limit": "FW"
-        },
-        "right_middle_MCP_joint": {
-          "armature": "W",
-          "friction": "W"
-        },
-        "right_middle_PIP_joint": {
-          "friction": "WB",
-          "effort_limit": "W"
-        },
-        "right_middle_DIP_joint": {
-          "friction": "W"
-        },
-        "right_ring_MPR_joint": {
-          "kp": "W",
-          "armature": "W",
-          "friction": "WB",
-          "effort_limit": "FW"
-        },
-        "right_ring_MCP_joint": {
-          "friction": "WB",
-          "effort_limit": "W"
-        },
-        "right_ring_PIP_joint": {
-          "effort_limit": "FW"
-        },
-        "right_ring_DIP_joint": {
-          "friction": "W",
-          "viscous_damping": "WB",
-          "effort_limit": "W"
-        },
-        "right_little_MPR_joint": {
-          "armature": "W",
-          "friction": "WB",
-          "effort_limit": "FW"
-        },
-        "right_little_MCP_joint": {
-          "friction": "W"
-        },
-        "right_little_PIP_joint": {
-          "armature": "W",
-          "friction": "WB"
-        },
-        "right_little_DIP_joint": {
-          "armature": "W",
-          "friction": "W",
-          "effort_limit": "W"
-        }
-      }
-    },
-    "balanced_20261101_01": {
-      "status": "exploratory candidate; refit reused the old step data, not validated on new captures",
-      "parent": "fit_03",
-      "source_dir": "BrainCo-Pace-main/experiments/gui_mit_balanced_2048_20261101_01",
-      "parameters_json_sha256": "bc1d03e1eea0f83e9388b3c93c4b23ad0b5aa68c0da61ea7d8d0b4ba681b75be",
-      "metrics_deg": {
+      "replay_fit_03_vs_current": {
         "replay_all21_step_rmse": {
           "fit_03": 1.228,
           "balanced": 1.034
@@ -378,23 +116,304 @@
           "fit_03": 1.605,
           "balanced": 2.303
         }
+      }
+    },
+    "known_tradeoff": "Compared with fit_03: better step response on thumb CMP/CMR and ring PIP (all-21 step RMSE 1.228 -> 1.034 deg), worse thumb 4 Hz tracking (1.605 -> 2.303 deg).",
+    "replaced_from_fit_03": {
+      "right_thumb_CMP_joint": {
+        "armature": {
+          "fit_03": 0.00532,
+          "current": 0.004364
+        },
+        "kp": {
+          "fit_03": 7.151,
+          "current": 23.543235
+        },
+        "kd": {
+          "fit_03": 0.339,
+          "current": 0.698884
+        }
       },
-      "tradeoff": "Better step response on the three target joints, worse thumb 4 Hz tracking.",
-      "overrides": {
-        "right_thumb_CMP_joint": {
-          "armature": 0.004364,
-          "kp": 23.543235,
-          "kd": 0.698884
+      "right_thumb_CMR_joint": {
+        "kp": {
+          "fit_03": 0.785,
+          "current": 1.10393
         },
-        "right_thumb_CMR_joint": {
-          "kp": 1.10393,
-          "kd": 0.042304
+        "kd": {
+          "fit_03": 0.033,
+          "current": 0.042304
+        }
+      },
+      "right_ring_PIP_joint": {
+        "kp": {
+          "fit_03": 2.29,
+          "current": 4.652494
         },
-        "right_ring_PIP_joint": {
-          "kp": 4.652494,
-          "kd": 0.120927
+        "kd": {
+          "fit_03": 0.134,
+          "current": 0.120927
         }
       }
-    }
+    },
+    "joints": {
+      "right_thumb_CMP_joint": {
+        "kp": 23.543235,
+        "kd": 0.698884,
+        "armature": 0.004364,
+        "friction": 0.004,
+        "viscous_damping": 0.083,
+        "effort_limit": 0.593
+      },
+      "right_thumb_CMR_joint": {
+        "kp": 1.10393,
+        "kd": 0.042304,
+        "armature": 0.001005,
+        "friction": 0.024,
+        "viscous_damping": 0.008,
+        "effort_limit": 0.6
+      },
+      "right_thumb_MCP_joint": {
+        "kp": 7.222,
+        "kd": 0.193,
+        "armature": 0.001455,
+        "friction": 0.021,
+        "viscous_damping": 0.017,
+        "effort_limit": 0.846
+      },
+      "right_thumb_PIP_joint": {
+        "kp": 5.758,
+        "kd": 0.216,
+        "armature": 0.001537,
+        "friction": 0.024,
+        "viscous_damping": 0.0,
+        "effort_limit": 0.841
+      },
+      "right_thumb_DIP_joint": {
+        "kp": 5.235,
+        "kd": 0.17,
+        "armature": 0.001389,
+        "friction": 0.021,
+        "viscous_damping": 0.0,
+        "effort_limit": 0.819
+      },
+      "right_index_MPR_joint": {
+        "kp": 21.42,
+        "kd": 0.277,
+        "armature": 0.002399,
+        "friction": 0.026,
+        "viscous_damping": 0.015,
+        "effort_limit": 1.322
+      },
+      "right_index_MCP_joint": {
+        "kp": 5.444,
+        "kd": 0.117,
+        "armature": 0.000896,
+        "friction": 0.0,
+        "viscous_damping": 0.0,
+        "effort_limit": 0.364
+      },
+      "right_index_PIP_joint": {
+        "kp": 6.949,
+        "kd": 0.147,
+        "armature": 0.001594,
+        "friction": 0.009,
+        "viscous_damping": 0.0,
+        "effort_limit": 0.598
+      },
+      "right_index_DIP_joint": {
+        "kp": 6.875,
+        "kd": 0.11,
+        "armature": 0.00138,
+        "friction": 0.012,
+        "viscous_damping": 0.005,
+        "effort_limit": 0.944
+      },
+      "right_middle_MPR_joint": {
+        "kp": 5.272,
+        "kd": 0.079,
+        "armature": 0.000815,
+        "friction": 0.034,
+        "viscous_damping": 0.007,
+        "effort_limit": 0.6
+      },
+      "right_middle_MCP_joint": {
+        "kp": 11.656,
+        "kd": 0.17,
+        "armature": 0.001098,
+        "friction": 0.014,
+        "viscous_damping": 0.022,
+        "effort_limit": 0.85
+      },
+      "right_middle_PIP_joint": {
+        "kp": 7.79,
+        "kd": 0.139,
+        "armature": 0.00144,
+        "friction": 0.0,
+        "viscous_damping": 0.016,
+        "effort_limit": 0.839
+      },
+      "right_middle_DIP_joint": {
+        "kp": 9.336,
+        "kd": 0.161,
+        "armature": 0.00131,
+        "friction": 0.008,
+        "viscous_damping": 0.029,
+        "effort_limit": 0.97
+      },
+      "right_ring_MPR_joint": {
+        "kp": 6.354,
+        "kd": 0.153,
+        "armature": 0.000668,
+        "friction": 0.0,
+        "viscous_damping": 0.024,
+        "effort_limit": 0.6
+      },
+      "right_ring_MCP_joint": {
+        "kp": 6.987,
+        "kd": 0.202,
+        "armature": 0.001435,
+        "friction": 0.0,
+        "viscous_damping": 0.007,
+        "effort_limit": 0.831
+      },
+      "right_ring_PIP_joint": {
+        "kp": 4.652494,
+        "kd": 0.120927,
+        "armature": 0.00075,
+        "friction": 0.023,
+        "viscous_damping": 0.006,
+        "effort_limit": 0.6
+      },
+      "right_ring_DIP_joint": {
+        "kp": 9.491,
+        "kd": 0.293,
+        "armature": 0.001789,
+        "friction": 0.004,
+        "viscous_damping": 0.0,
+        "effort_limit": 1.35
+      },
+      "right_little_MPR_joint": {
+        "kp": 6.092,
+        "kd": 0.122,
+        "armature": 0.000915,
+        "friction": 0.0,
+        "viscous_damping": 0.018,
+        "effort_limit": 0.6
+      },
+      "right_little_MCP_joint": {
+        "kp": 10.584,
+        "kd": 0.112,
+        "armature": 0.001611,
+        "friction": 0.029,
+        "viscous_damping": 0.024,
+        "effort_limit": 0.795
+      },
+      "right_little_PIP_joint": {
+        "kp": 10.225,
+        "kd": 0.17,
+        "armature": 0.001131,
+        "friction": 0.0,
+        "viscous_damping": 0.019,
+        "effort_limit": 0.955
+      },
+      "right_little_DIP_joint": {
+        "kp": 5.896,
+        "kd": 0.115,
+        "armature": 0.000705,
+        "friction": 0.02,
+        "viscous_damping": 0.022,
+        "effort_limit": 0.929
+      }
+    },
+    "flags": {
+      "right_thumb_CMP_joint": {
+        "friction": "W"
+      },
+      "right_thumb_CMR_joint": {
+        "effort_limit": "FW"
+      },
+      "right_thumb_MCP_joint": {
+        "friction": "W"
+      },
+      "right_thumb_PIP_joint": {
+        "friction": "W",
+        "viscous_damping": "B"
+      },
+      "right_thumb_DIP_joint": {
+        "friction": "W",
+        "viscous_damping": "B",
+        "effort_limit": "W"
+      },
+      "right_index_MPR_joint": {
+        "armature": "W",
+        "friction": "W",
+        "viscous_damping": "W",
+        "effort_limit": "W"
+      },
+      "right_index_MCP_joint": {
+        "friction": "WB",
+        "viscous_damping": "B"
+      },
+      "right_index_PIP_joint": {
+        "friction": "W",
+        "viscous_damping": "B"
+      },
+      "right_index_DIP_joint": {
+        "friction": "W",
+        "effort_limit": "W"
+      },
+      "right_middle_MPR_joint": {
+        "armature": "W",
+        "friction": "W",
+        "effort_limit": "FW"
+      },
+      "right_middle_MCP_joint": {
+        "armature": "W",
+        "friction": "W"
+      },
+      "right_middle_PIP_joint": {
+        "friction": "WB",
+        "effort_limit": "W"
+      },
+      "right_middle_DIP_joint": {
+        "friction": "W"
+      },
+      "right_ring_MPR_joint": {
+        "kp": "W",
+        "armature": "W",
+        "friction": "WB",
+        "effort_limit": "FW"
+      },
+      "right_ring_MCP_joint": {
+        "friction": "WB",
+        "effort_limit": "W"
+      },
+      "right_ring_PIP_joint": {
+        "effort_limit": "FW"
+      },
+      "right_ring_DIP_joint": {
+        "friction": "W",
+        "viscous_damping": "WB",
+        "effort_limit": "W"
+      },
+      "right_little_MPR_joint": {
+        "armature": "W",
+        "friction": "WB",
+        "effort_limit": "FW"
+      },
+      "right_little_MCP_joint": {
+        "friction": "W"
+      },
+      "right_little_PIP_joint": {
+        "armature": "W",
+        "friction": "WB"
+      },
+      "right_little_DIP_joint": {
+        "armature": "W",
+        "friction": "W",
+        "effort_limit": "W"
+      }
+    },
+    "flags_note": "Flags come from the fit_03 sensitivity analysis; they were not recomputed for the 7 replaced fields."
   }
 }

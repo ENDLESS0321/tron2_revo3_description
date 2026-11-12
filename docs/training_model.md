@@ -15,8 +15,8 @@ The repository packages source and Isaac runtime robot URDFs for a fresh run usi
 
 | File | Purpose | SHA-256 |
 | --- | --- | --- |
-| assets/training/model5200_official_aligned_20261023_icp.source.urdf | Retargeting/source binding | 6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103 |
-| assets/training/model5200_official_aligned_20261023_importer_runtime.urdf | Exact Isaac runtime import and preview | 8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23 |
+| assets/training/model5200_official_aligned_20261023_icp.source.urdf | Retargeting/source binding | 68301474686571650d6614be7d30109e6d086f1a6497978605d3f105379667a8 |
+| assets/training/model5200_official_aligned_20261023_importer_runtime.urdf | Isaac runtime import and preview | 0e379bce7fdbe731f3447bdbc1c4a119d9a6ea71d79a27c46532404ef7976a7c |
 
 The source has 37 links and 28 moving joints. The runtime has 32 bodies including world and 28 moving joints; it removes five empty fixed tip links while preserving their virtual sensor frames in [runtime_derivation.json](../assets/training/runtime_derivation.json). Both contain 58 collisions: 28 on the palm, 21 on fingers, and 9 on the arm, base, and adapter. Mesh bytes, scales, and per-link collision counts follow the model5200 training asset. The model retains the existing palm/thumb structural overlap; 58 collision elements are a geometry count and do not claim robot-wide geometric or trajectory collision freedom.
 
@@ -40,26 +40,22 @@ The hand importer keeps the 6.28 rad/s velocity override. Per-joint hand gains, 
 
 The fit assumed a 15 ms shared command delay, a 5 ms PD update, a 2.5 ms physics step, asset link masses, a fixed palm and self-collision on. Keep the 5 ms PD period when reusing the values; the report shows the predictions are sensitive to it.
 
-Two profiles are recorded:
+The values are one parameter set: the fit_03 baseline, with the 7 fields that report section 17 refit (candidate balanced_20261101_01) replacing their fit_03 values. The report tables round for display; the full-precision best_parameters.json files are not in this repository and are identified by SHA-256 in the sidecar. Velocity limits, the current-to-torque constant, other SDK gain settings and contact parameters were not identified.
 
-- **fit_03 (default):** the frozen baseline. On held-out data it cuts 4 Hz RMSE from 3.803° to 1.163°. Step response is worse than the initial model on thumb CMP, thumb CMR and ring PIP.
-- **balanced_20261101_01:** an exploratory overlay that changes 7 fields (thumb CMP armature/Kp/Kd, thumb CMR Kp/Kd, ring PIP Kp/Kd). It improves step RMSE from 1.228° to 1.034°, but thumb 4 Hz RMSE rises from 1.605° to 2.303°. It reused the old step data and has not been validated on new captures.
-
-The report tables round for display; the full-precision best_parameters.json files are not in this repository and are identified by SHA-256 in the sidecar. Velocity limits, the current-to-torque constant, other SDK gain settings and contact parameters were not identified.
-
-### Choosing a profile
-
-Use exactly one profile. The two are not independent parameter sets: the balanced candidate is fit_03 with 7 fields replaced, and the loader does that merge for you.
+### Load the parameters
 
 ```python
 from revo3_pace_profile import load_profile
-joints = load_profile()                          # fit_03
-joints = load_profile("balanced_20261101_01")    # fit_03 + the 7 fields from report section 17
+joints = load_profile()   # fit_03 with the 7 section-17 fields replaced
 ```
 
-Both calls return `{joint_name: {kp, kd, armature, friction, viscous_damping, effort_limit}}` for all 21 hand joints. The two results differ only in these 7 values; the other 18 joints and all friction, damping and torque-limit values are identical.
+`load_profile()` returns `{joint_name: {kp, kd, armature, friction, viscous_damping, effort_limit}}` for all 21 hand joints. There is no profile argument.
 
-| Joint | Field | fit_03 | balanced_20261101_01 |
+### What changed relative to fit_03
+
+Only these 7 values differ from fit_03; the other 18 joints and every friction, damping and torque-limit value are fit_03 values. The sidecar keeps the replaced values under `parameters.replaced_from_fit_03`.
+
+| Joint | Field | fit_03 (replaced) | Current value |
 | --- | --- | ---: | ---: |
 | thumb CMP | armature (kg·m²) | 0.00532 | 0.004364 |
 | thumb CMP | kp (N·m/rad) | 7.151 | 23.543235 |
@@ -69,25 +65,26 @@ Both calls return `{joint_name: {kp, kd, armature, friction, viscous_damping, ef
 | ring PIP | kp (N·m/rad) | 2.29 | 4.652494 |
 | ring PIP | kd (N·m·s/rad) | 0.134 | 0.120927 |
 
-fit_03 values are the report's rounded display values; the balanced values are printed to 6 decimals in the report.
+fit_03 made the step response of these three joints worse than the initial model. The section 17 refit fixes that at the cost of thumb periodic tracking:
 
-The balanced candidate was refit to fix the three joints whose step response fit_03 made worse. It trades periodic tracking for transient response:
-
-| Replay of the recorded commands (RMSE, °) | fit_03 | balanced |
+| Replay of the recorded commands (RMSE, °) | fit_03 | Current |
 | --- | ---: | ---: |
 | All 21 joints, step stages | 1.228 | 1.034 |
 | Five fingers, 4 Hz stages | 1.164 | 1.352 |
 | Thumb, 4 Hz | 1.605 | 2.303 |
 | Ring finger, 4 Hz | 1.241 | 1.086 |
 
-Use fit_03 by default: it is the frozen baseline and was checked on 26 held-out segments. The balanced refit reused those step segments and has not been tested on new captures. Consider the balanced profile when fast thumb or ring-finger closing matters more than periodic tracking, for example as a comparison run, or randomize the 7 fields between the two values during training.
+The section 17 refit reused the old step data and has not been validated on new captures.
+
+### Values written into the URDFs
+
+Both training URDFs carry the URDF-expressible part of these values on the 21 hand joints: `<limit effort>` is effort_limit, `<dynamics damping>` is viscous_damping and `<dynamics friction>` is dry friction. Joint ranges, `velocity="0"`, origins, inertials and meshes are unchanged; the manifest keeps the original model5200 SHA-256 of each file. URDF has no field for kp, kd, armature or the command delay, so those come only from the sidecar. If an Isaac Lab actuator config also sets friction or viscous_friction, its values replace what the importer read from the URDF.
 
 From the command line:
 
 ```bash
-python3 scripts/revo3_pace_profile.py                                  # fit_03 table
-python3 scripts/revo3_pace_profile.py --profile balanced_20261101_01
-python3 scripts/revo3_pace_profile.py --isaaclab                       # DelayedPDActuatorCfg field dicts
+python3 scripts/revo3_pace_profile.py              # table of the 21 hand joints
+python3 scripts/revo3_pace_profile.py --isaaclab   # DelayedPDActuatorCfg field dicts
 ```
 
 In Isaac Lab, map kp/kd/effort_limit/armature/friction/viscous_damping to the `stiffness`/`damping`/`effort_limit`/`armature`/`friction`/`viscous_friction` fields of `DelayedPDActuatorCfg`. With `sim.dt = 0.005` the 15 ms delay is `min_delay = max_delay = 3` steps. The fit's 2.5 ms physics substep has no direct PhysX equivalent.

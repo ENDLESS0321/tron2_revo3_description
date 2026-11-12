@@ -8,11 +8,15 @@
   },
   "training_source": {
     "path": "assets/training/model5200_official_aligned_20261023_icp.source.urdf",
-    "sha256": "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103"
+    "sha256": "68301474686571650d6614be7d30109e6d086f1a6497978605d3f105379667a8",
+    "model5200_original_sha256": "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103",
+    "note": "model5200 bytes except PACE effort/damping/friction on the 21 Revo3 hand joints."
   },
   "training_isaac_runtime": {
     "path": "assets/training/model5200_official_aligned_20261023_importer_runtime.urdf",
-    "sha256": "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23"
+    "sha256": "0e379bce7fdbe731f3447bdbc1c4a119d9a6ea71d79a27c46532404ef7976a7c",
+    "model5200_original_sha256": "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23",
+    "note": "model5200 bytes except PACE effort/damping/friction on the 21 Revo3 hand joints."
   },
   "training_manifest": "assets/training/manifest.json"
 }

@@ -2,11 +2,13 @@
   "schema": "training_robot_assets_v1",
   "training_source_urdf": {
     "path": "assets/training/model5200_official_aligned_20261023_icp.source.urdf",
-    "sha256": "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103"
+    "sha256": "68301474686571650d6614be7d30109e6d086f1a6497978605d3f105379667a8",
+    "model5200_original_sha256": "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103"
   },
   "isaac_runtime_urdf": {
     "path": "assets/training/model5200_official_aligned_20261023_importer_runtime.urdf",
-    "sha256": "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23"
+    "sha256": "0e379bce7fdbe731f3447bdbc1c4a119d9a6ea71d79a27c46532404ef7976a7c",
+    "model5200_original_sha256": "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23"
   },
   "source_commit": "6db7e2ed1d864ee0a3ab6ff62d43a303787137f6",
   "active_joints": 28,
@@ -675,8 +677,8 @@
       "bytes": 2080
     },
     "revo3_pace_sysid.json": {
-      "sha256": "1f7240769ad9e5402c6b874c74b31bea40480993d8c298d0ce4e1168250beb6b",
-      "bytes": 13345
+      "sha256": "b1d4fc92ee9be6eab08d22170d0b296518c03f7fc0ce5e54f15c90f5702274af",
+      "bytes": 13859
     }
   },
   "geometry": {
@@ -727,8 +729,7 @@
   "runtime_only_overrides": {
     "joint_velocity_rad_s": 6.28,
     "per_joint_hand_dynamics": "revo3_pace_sysid.json",
-    "per_joint_hand_dynamics_default_profile": "fit_03",
-    "note": "Simulation importer overrides; not hardware limits. Hand kp/kd/effort/armature/friction come from the PACE sidecar; velocity was not identified and keeps 6.28 rad/s.",
+    "note": "Simulation importer overrides; not hardware limits. Hand kp/kd/effort/armature/friction come from the PACE sidecar (fit_03 with the 7 report section 17 fields replaced); effort, damping and friction are also written into the training URDF hand joints. Velocity was not identified and keeps 6.28 rad/s.",
     "scope": "Revo3 hand",
     "superseded_uniform_values": {
       "actuator_effort_nm": 0.35,
@@ -853,9 +854,9 @@
   "tip_frames_file": "assets/training/runtime_derivation.json",
   "hand_mass_before_startup_dr_kg": 1.105000027,
   "documentation_sha256": {
-    "README.md": "55c68dbf17dc54d5478dd786d709e3ce6397b2194e069fc1771d238e04d42752",
-    "README.zh-CN.md": "06ffc8d848656c8a27567abbaf16f35d847fc40c7c1345e05c02ae9f7b50144b",
-    "docs/training_model.md": "1c082554aa699015822e4506086105441ececcea66092c75fa3ced525c6847bd",
-    "docs/training_model.zh-CN.md": "b0af27e05a1b3260e4e1c8ec7ac838be13d6d3cb09424533f75aa9aa990af3b9"
+    "README.md": "806675929ceb302710d033de5339fc7328e5747dc07a069a36a85ef6308a43cb",
+    "README.zh-CN.md": "b7f907d789c990b4129db41e71091c332e8bdbd1c690c7880477646f9edd3666",
+    "docs/training_model.md": "71290655a0c6c66ecfa07d1dc76758cf5c1d53acab7747f4a786e2b665864b67",
+    "docs/training_model.zh-CN.md": "90acd22b5707608434503fca180ec7b8b1be8d21afc4e70b23882cabd14443fa"
   }
 }

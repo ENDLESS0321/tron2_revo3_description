@@ -18,7 +18,7 @@
 | [训练源模型](assets/training/model5200_official_aligned_20261023_icp.source.urdf) | 重定向及源侧资产绑定 | 28 |
 | [Isaac 运行时模型](assets/training/model5200_official_aligned_20261023_importer_runtime.urdf) | 复现 model5200 的 Isaac 导入 | 28 |
 
-训练源 URDF 和运行时 URDF 是两个不同文件，均保留原始字节。运行时模型为兼容导入器移除了五个空的固定指尖 link；对应传感器坐标系记录在[运行时派生信息](assets/training/runtime_derivation.json)中。[训练 manifest](assets/training/manifest.json)记录哈希、mesh 闭包、几何数量、安装高度和仿真覆盖参数。
+训练源 URDF 和运行时 URDF 是两个不同文件。两者除 21 个手部关节外均保留 model5200 原始字节；手部关节写入了 PACE 辨识的力矩限幅、黏性阻尼和干摩擦，manifest 记录了原始哈希。运行时模型为兼容导入器移除了五个空的固定指尖 link；对应传感器坐标系记录在[运行时派生信息](assets/training/runtime_derivation.json)中。[训练 manifest](assets/training/manifest.json)记录哈希、mesh 闭包、几何数量、安装高度和仿真覆盖参数。
 
 ## 预览与验证
 

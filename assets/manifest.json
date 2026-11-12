@@ -14,12 +14,12 @@
   },
   "files": {
     "assets/README.md": {
-      "sha256": "4495ce48bda4bf5a901dcc537c2e3b1085fad7f54d58ed6dee3a2ffa77b87a3d",
-      "bytes": 990
+      "sha256": "dd6e2e8ea015f335f700d6aed7cc55148d764c370f3319c856b2afa5de78ba73",
+      "bytes": 1172
     },
     "assets/README.zh-CN.md": {
-      "sha256": "abc1c12bcec19c7939372191a22072bd04c832e93eb822f9984f39f8ed946094",
-      "bytes": 957
+      "sha256": "3b8df82dc3f1207ef4e0112c25ba6638f52a5f5d53cec60da2e330d179ad6477",
+      "bytes": 1160
     },
     "assets/assembly.urdf": {
       "sha256": "e2b84835786aa5ccf21dac63c64afa23e53d19113152067acbc7872692ffe07e",
@@ -1826,8 +1826,8 @@
       "bytes": 513084
     },
     "assets/official_revo3_migration.json": {
-      "sha256": "f4323f10081c698f69eddbf5a0b0904a092f4fc4f38160656d25ffbda870a48e",
-      "bytes": 811
+      "sha256": "43cb580d381c488b6d4cca7cc1a49a4a4b6fe6ea8662e0cd3009991c7009f891",
+      "bytes": 1205
     },
     "assets/runtime.json": {
       "sha256": "eaa26a4e75ee2cfa0d1ebea0e6888e73e2c45dfdfd9f276b06bb834e3a85f980",
@@ -1838,8 +1838,8 @@
       "bytes": 176778
     },
     "assets/training/manifest.json": {
-      "sha256": "3495bce2fe85533b3ef19e98995010de8ecaffc98d4438fe8e919dde1c979e55",
-      "bytes": 38524
+      "sha256": "5f1241468c672c12f6241138f4bb99f178bc1a1bfe9dd2476e840246a517522c",
+      "bytes": 38805
     },
     "assets/training/meshes/adapter_v2/left/adapter_left_v2_visual.stl": {
       "sha256": "3309953baf9e03710ab1beeac67f0e334cf42511296b66be76924b854cfe8fa7",
@@ -2498,20 +2498,20 @@
       "bytes": 513084
     },
     "assets/training/model5200_official_aligned_20261023_icp.source.urdf": {
-      "sha256": "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103",
-      "bytes": 79629
+      "sha256": "68301474686571650d6614be7d30109e6d086f1a6497978605d3f105379667a8",
+      "bytes": 80684
     },
     "assets/training/model5200_official_aligned_20261023_importer_runtime.urdf": {
-      "sha256": "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23",
-      "bytes": 79155
+      "sha256": "0e379bce7fdbe731f3447bdbc1c4a119d9a6ea71d79a27c46532404ef7976a7c",
+      "bytes": 80231
     },
     "assets/training/runtime_derivation.json": {
       "sha256": "75ed53bbdac9b55f2ffe3f4439ac9e15cbc0f20802987f156148dfaec8dd7778",
       "bytes": 2080
     },
     "assets/training/revo3_pace_sysid.json": {
-      "sha256": "1f7240769ad9e5402c6b874c74b31bea40480993d8c298d0ce4e1168250beb6b",
-      "bytes": 13345
+      "sha256": "b1d4fc92ee9be6eab08d22170d0b296518c03f7fc0ce5e54f15c90f5702274af",
+      "bytes": 13859
     }
   },
   "training_urdf": "assets/training/model5200_official_aligned_20261023_importer_runtime.urdf"

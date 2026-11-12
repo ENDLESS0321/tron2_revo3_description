@@ -18,7 +18,7 @@ This repository preserves the unchanged full visual assembly and packages new ro
 | [Training source](assets/training/model5200_official_aligned_20261023_icp.source.urdf) | Retargeting and source-side asset binding | 28 |
 | [Isaac runtime](assets/training/model5200_official_aligned_20261023_importer_runtime.urdf) | Reproducing the model5200 Isaac import | 28 |
 
-The training source and runtime URDF are distinct files with their original bytes preserved. The runtime URDF removes five empty fixed tip links for importer compatibility; their sensor frames remain documented in [runtime derivation](assets/training/runtime_derivation.json). The [training manifest](assets/training/manifest.json) records hashes, mesh closure, geometry counts, mount height, and simulation overrides.
+The training source and runtime URDF are distinct files. Both keep the model5200 bytes except the 21 hand joints, which carry the PACE-identified torque limit, viscous damping and dry friction; the manifest records the original hashes. The runtime URDF removes five empty fixed tip links for importer compatibility; their sensor frames remain documented in [runtime derivation](assets/training/runtime_derivation.json). The [training manifest](assets/training/manifest.json) records hashes, mesh closure, geometry counts, mount height, and simulation overrides.
 
 ## Preview and verification
 

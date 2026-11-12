@@ -145,7 +145,7 @@ class ReleaseAssetTests(unittest.TestCase):
         record = self.runtime["models"]["training"]
         self.assertEqual(record["urdf"], "training/model5200_official_aligned_20261023_importer_runtime.urdf")
         self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
-                         "8e330b11ecafb4cfc4dbeaafa44441261a6e915256e2a804e3bf701535ae0a23")
+                         "0e379bce7fdbe731f3447bdbc1c4a119d9a6ea71d79a27c46532404ef7976a7c")
         root = ET.parse(path).getroot()
         self.assertEqual((len(root.findall("link")), len(root.findall("joint")),
                           len(root.findall(".//collision"))), (32, 31, 58))
@@ -153,7 +153,7 @@ class ReleaseAssetTests(unittest.TestCase):
         self.assertEqual(len(moving), 28)
         manifest = json.loads((ASSETS / "training/manifest.json").read_text())
         self.assertEqual(manifest["training_source_urdf"]["sha256"],
-                         "6e3592a9b0a648cbc73f6c96aaac5884d640e8fc9f3c31810ed64f38bed4b103")
+                         "68301474686571650d6614be7d30109e6d086f1a6497978605d3f105379667a8")
         self.assertEqual(manifest["mesh_closure_count"], 163)
         for mesh in {node.get("filename") for node in root.findall(".//mesh")}:
             self.assertTrue((path.parent / mesh).is_file(), mesh)
